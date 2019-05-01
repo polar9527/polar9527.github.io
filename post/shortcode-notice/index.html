@@ -609,7 +609,27 @@ A warning disclaimer
 
   
 
-  
+  <div class="post bg-white">
+      <div id="comments-gitment"></div>
+      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+      <script type="text/javascript">
+      const gitment = new Gitment({
+        id: 'shortcode-notice.md',
+        title: 'Shortcodes Notice Preview',
+        link: decodeURI(location.href),
+        desc: 'normal use Note example: {{% notice note %}} A notice disclaimer {{% \/notice %}} Result: note A notice disclaimer You could custom title : {{% notice note 笔记 %}} A notice disclaimer {{% \/notice %}} 笔记 A notice disclaimer tip {{% notice tip %}} A tip disclaimer {{% \/tip %}} tip A tip disclaimer info {{% notice info %}} A info disclaimer {{% \/notice %}} info An information',
+        owner: 'polar9527',
+        repo: 'https:\/\/github.com\/polar9527\/polar9527.github.io.git',
+        oauth: {
+          client_id: 'b27ebf99e55863c6fc19',
+          client_secret: '3d04ec8b1388ddf7d3c693e69c5ebe91e51dcee3'
+        }
+      })
+      gitment.render('comments-gitment')
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    </div>
 
   <div class="disqus-comment">
   <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
@@ -639,7 +659,20 @@ A warning disclaimer
   
   </div>
 
-    
+    <div id="lv-container" class="disqus-comment" data-id="city" data-uid='MTAyMC80NDAyNi8yMDU2MQ=='>
+   <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://www.livere.com">comments powered by LiveRe.</a>
+   </div>
 
 
 

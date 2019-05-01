@@ -609,7 +609,27 @@ Having nearly instant feedback enables you to have your creativity flow without 
 
   
 
-  
+  <div class="post bg-white">
+      <div id="comments-gitment"></div>
+      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+      <script type="text/javascript">
+      const gitment = new Gitment({
+        id: 'hugoisforlovers.md',
+        title: 'Getting Started with Hugo',
+        link: decodeURI(location.href),
+        desc: 'Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.\nSave it somewhere specific as we will be using it in the next step.\nMore complete instructions are available at installing hugo\nStep 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.\nFollow the following steps:\n Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http:\/\/localhost:1313  Corresponding pseudo commands:',
+        owner: 'polar9527',
+        repo: 'https:\/\/github.com\/polar9527\/polar9527.github.io.git',
+        oauth: {
+          client_id: 'b27ebf99e55863c6fc19',
+          client_secret: '3d04ec8b1388ddf7d3c693e69c5ebe91e51dcee3'
+        }
+      })
+      gitment.render('comments-gitment')
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    </div>
 
   <div class="disqus-comment">
   <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
@@ -639,7 +659,20 @@ Having nearly instant feedback enables you to have your creativity flow without 
   
   </div>
 
-    
+    <div id="lv-container" class="disqus-comment" data-id="city" data-uid='MTAyMC80NDAyNi8yMDU2MQ=='>
+   <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://www.livere.com">comments powered by LiveRe.</a>
+   </div>
 
 
 

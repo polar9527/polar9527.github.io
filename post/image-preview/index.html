@@ -656,7 +656,27 @@ This is an image in static/image folder.
 
   
 
-  
+  <div class="post bg-white">
+      <div id="comments-gitment"></div>
+      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+      <script type="text/javascript">
+      const gitment = new Gitment({
+        id: 'image-preview.md',
+        title: 'Image Preview',
+        link: decodeURI(location.href),
+        desc: '\x3cp\x3eThanks for \x3ca href=\x22https:\/\/github.com\/liwenyip\/hugo-easy-gallery\x22\x3eliwenyip\/hugo-easy-gallery\x3c\/a\x3e \x26amp; \x3ca href=\x22https:\/\/github.com\/xianmin\/hugo-theme-jane\/pull\/48\x22\x3eZebradil · Pull Request #48\x3c\/a\x3e .\x3c\/p\x3e\n\n\x3cp\x3eNow, we could use \x3ccode\x3e{{\x26lt; gallery \x26gt;}}\x3c\/code\x3e shortcode in hugo-theme-jane.\x3c\/p\x3e\n\n\x3ch2 id=\x22normal-image\x22\x3eNormal Image\x3c\/h2\x3e\n\n\x3cp\x3eThis is an image in \x3ccode\x3estatic\/image\x3c\/code\x3e folder.\x3c\/p\x3e\n\n\x3cpre\x3e\x3ccode class=\x22language-markdown\x22\x3e![This is an image in `static\/image` folder.](\/image\/example.jpg)\n\x3c\/code\x3e\x3c\/pre\x3e',
+        owner: 'polar9527',
+        repo: 'https:\/\/github.com\/polar9527\/polar9527.github.io.git',
+        oauth: {
+          client_id: 'b27ebf99e55863c6fc19',
+          client_secret: '3d04ec8b1388ddf7d3c693e69c5ebe91e51dcee3'
+        }
+      })
+      gitment.render('comments-gitment')
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    </div>
 
   <div class="disqus-comment">
   <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
@@ -686,7 +706,20 @@ This is an image in static/image folder.
   
   </div>
 
-    
+    <div id="lv-container" class="disqus-comment" data-id="city" data-uid='MTAyMC80NDAyNi8yMDU2MQ=='>
+   <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://www.livere.com">comments powered by LiveRe.</a>
+   </div>
 
 
 
