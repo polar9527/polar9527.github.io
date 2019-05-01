@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shortcodes on Jane - A super concise theme for Hugo</title>
+    <title>shortcodes on Polar9527 - A super concise theme for Hugo</title>
     <link>https://polar9527.github.io/tags/shortcodes/</link>
-    <description>Recent content in shortcodes on Jane - A super concise theme for Hugo</description>
+    <description>Recent content in shortcodes on Polar9527 - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Jane 主题预览</title>
-      <link>https://polar9527.github.io/post/jane-theme-preview.zh-cn/</link>
+      <link>https://polar9527.github.io/post/jane-theme-preview/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://polar9527.github.io/post/jane-theme-preview.zh-cn/</guid>
+      <guid>https://polar9527.github.io/post/jane-theme-preview/</guid>
       <description>主题预览,内容有待填充。</description>
     </item>
     
