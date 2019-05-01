@@ -22,7 +22,7 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xianmin" />
+<meta name="author" content="polar9527" />
   <meta name="description" content="Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates." />
 
@@ -794,7 +794,7 @@ so, such as in this example:</p>
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
-    <span class="item-content">xianmin</span>
+    <span class="item-content">polar9527</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
@@ -888,7 +888,33 @@ so, such as in this example:</p>
       <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
     </div>
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://polar9527.github.io/post/goisforlovers/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'polar9527-github-io-1.disqus.com';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
   
+  </div>
 
     <div id="lv-container" class="disqus-comment" data-id="city" data-uid='MTAyMC80NDAyNi8yMDU2MQ=='>
    <script type="text/javascript">
@@ -1145,7 +1171,7 @@ so, such as in this example:</p>
 
       </i>
     </span><span class="author">
-        xianmin
+        polar9527
         
       </span></span>
 
@@ -1196,6 +1222,8 @@ so, such as in this example:</p>
 
 
 
+
+  <script id="dsq-count-scr" src="//polar9527-github-io-1.disqus.com.disqus.com/count.js" async></script>
 
 
 
