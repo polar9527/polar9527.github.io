@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Shortcodes Preview - Polar9527 - A super concise theme for Hugo</title>
+  <title>A Record of Golang Runtime - Polar9527 - A super concise theme for Hugo</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,12 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polar9527" />
-  <meta name="description" content="What a Shortcode is Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &amp;lt;iframes&amp;gt;) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&amp;rsquo;s syntax.
-Hugo created shortcodes to circumvent these limitations.
-A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.
-In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.
-More details: https://gohugo.io/content-management/shortcodes/
-" />
+  <meta name="description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -40,7 +35,7 @@ More details: https://gohugo.io/content-management/shortcodes/
 <meta name="generator" content="Hugo 0.55.4" />
 
 
-<link rel="canonical" href="https://polar9527.github.io/post/shortcodes-preview/" />
+<link rel="canonical" href="https://polar9527.github.io/post/a-record-of-golang-runtime/" />
 
 
 
@@ -62,57 +57,27 @@ More details: https://gohugo.io/content-management/shortcodes/
 
 
 
-<meta property="og:title" content="Shortcodes Preview" />
-<meta property="og:description" content="What a Shortcode is
-
-Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;iframes&gt;) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&rsquo;s syntax.
-
-Hugo created shortcodes to circumvent these limitations.
-
-A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.
-
-In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.
-
-More details: https://gohugo.io/content-management/shortcodes/" />
+<meta property="og:title" content="A Record of Golang Runtime" />
+<meta property="og:description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://polar9527.github.io/post/shortcodes-preview/" />
-<meta property="article:published_time" content="2018-03-04T16:01:23&#43;08:00"/>
-<meta property="article:modified_time" content="2018-03-05T16:01:23&#43;08:00"/>
+<meta property="og:url" content="https://polar9527.github.io/post/a-record-of-golang-runtime/" />
+<meta property="article:published_time" content="2019-05-09T18:35:42&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-09T18:35:42&#43;08:00"/>
 
-<meta itemprop="name" content="Shortcodes Preview">
-<meta itemprop="description" content="What a Shortcode is
-
-Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;iframes&gt;) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&rsquo;s syntax.
-
-Hugo created shortcodes to circumvent these limitations.
-
-A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.
-
-In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.
-
-More details: https://gohugo.io/content-management/shortcodes/">
+<meta itemprop="name" content="A Record of Golang Runtime">
+<meta itemprop="description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的">
 
 
-<meta itemprop="datePublished" content="2018-03-04T16:01:23&#43;08:00" />
-<meta itemprop="dateModified" content="2018-03-05T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="405">
+<meta itemprop="datePublished" content="2019-05-09T18:35:42&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-09T18:35:42&#43;08:00" />
+<meta itemprop="wordCount" content="3073">
 
 
 
-<meta itemprop="keywords" content="preview,shortcodes,tag-6," />
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Shortcodes Preview"/>
-<meta name="twitter:description" content="What a Shortcode is
-
-Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;iframes&gt;) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&rsquo;s syntax.
-
-Hugo created shortcodes to circumvent these limitations.
-
-A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.
-
-In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.
-
-More details: https://gohugo.io/content-management/shortcodes/"/>
+<meta name="twitter:title" content="A Record of Golang Runtime"/>
+<meta name="twitter:description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -382,7 +347,7 @@ More details: https://gohugo.io/content-management/shortcodes/"/>
 
       </li>
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           <a class="menu-item-link menu-parent" href="https://polar9527.github.io/">docs</a>
@@ -423,20 +388,15 @@ More details: https://gohugo.io/content-management/shortcodes/"/>
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Shortcodes Preview</h1>
+      <h1 class="post-title">A Record of Golang Runtime</h1>
       
       <div class="post-meta">
-        <time datetime="2018-03-04" class="post-time">
-          2018-03-04
+        <time datetime="2019-05-09" class="post-time">
+          2019-05-09
         </time>
-        <div class="post-category">
-            <a href="https://polar9527.github.io/categories/docs/"> docs </a>
-            <a href="https://polar9527.github.io/categories/shortcodes/"> shortcodes </a>
-            <a href="https://polar9527.github.io/categories/index/"> index </a>
-            
-          </div>
-        <span class="more-meta"> 约 405 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+        <span class="more-meta"> 约 3073 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
 
         
         
@@ -459,17 +419,11 @@ More details: https://gohugo.io/content-management/shortcodes/"/>
 <ul>
 <li>
 <ul>
-<li><a href="#what-a-shortcode-is">What a Shortcode is</a></li>
-<li><a href="#blockquotes">blockquotes</a></li>
-<li><a href="#music">music</a></li>
-<li><a href="#gist">gist</a></li>
-<li><a href="#expand">expand</a>
+<li><a href="#记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</a>
 <ul>
-<li><a href="#usage">Usage</a></li>
+<li><a href="#调试环境">调试环境</a></li>
+<li><a href="#问题描述">问题描述</a></li>
 </ul></li>
-<li><a href="#youtube">youtube</a></li>
-<li><a href="#vimeo">vimeo</a></li>
-<li><a href="#youku">youku</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -478,414 +432,445 @@ More details: https://gohugo.io/content-management/shortcodes/"/>
 
     
     <div class="post-content">
-      <h2 id="what-a-shortcode-is">What a Shortcode is</h2>
-
-<p>Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video <code>&lt;iframes&gt;</code>) to Markdown content. We think this contradicts the beautiful simplicity of Markdown&rsquo;s syntax.</p>
-
-<p>Hugo created <strong>shortcodes</strong> to circumvent these limitations.</p>
-
-<p>A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.</p>
-
-<p>In addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.</p>
-
-<p>More details: <a href="https://gohugo.io/content-management/shortcodes/">https://gohugo.io/content-management/shortcodes/</a></p>
-
-<h2 id="blockquotes">blockquotes</h2>
-
-<p>Normal quote:
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<blockquote>
-  <p>This is a simple quote.</p>
-  <footer>
-    <strong></strong>
-    
       
-        
-      
-    
-  </footer>
-</blockquote>
-</p>
 
-<p>Quote with author:
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-  
-
-
-<blockquote>
-  <p>This is a quote with only an Author named Author2.</p>
-  <footer>
-    <strong>Author2</strong>
-    
-      
-        
-      
-    
-  </footer>
-</blockquote>
-</p>
-
-<p>Quote with author and source:
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-  
-
-
-<blockquote>
-  <p>This is a quote from Author3 and source &ldquo;source.&rdquo;</p>
-  <footer>
-    <strong>Author3</strong>
-    
-      <cite>Source</cite>
-    
-  </footer>
-</blockquote>
-</p>
-
-<p>Quote with author and link:
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-      
-      
-      
-    
-     
-      
-    
-    
-
-    
-    
-  
-
-
-<blockquote>
-  <p>This is a quote from Author4 and links to <a href="https://www.google.com">https://www.google.com</a>.</p>
-  <footer>
-    <strong>Author4</strong>
-    
-      
-        <cite>
-          <a href="https://www.google.com" title="https://www.google.com">google.com</a> 
-        </cite>
-      
-    
-  </footer>
-</blockquote>
-</p>
-
-<p>Quote with author, link and title:
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-  
-
-
-<blockquote>
-  <p>This is a quote from Author5 and links to <a href="https://www.google.com">https://www.google.com</a> with title &ldquo;Google.&rdquo;</p>
-  <footer>
-    <strong>Author5</strong>
-    
-      
-        <cite>
-          <a href="https://www.google.com" title="https://www.google.com">Google</a> 
-        </cite>
-      
-    
-  </footer>
-</blockquote>
-</p>
-
-<p>Quote with author and a link longer than 32 characters, string is first cut at 32 characters then everything after the last forward slash is removed
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-      
-      
-      
-    
-     
-      
-    
-    
-
-    
-    
-         
-         
-         
-
-         
-        
-        
-        
-        
-      
-      
-    
-  
-
-
-<blockquote>
-  <p>This is a quote from Author5 and links to <a href="https://twitter.com/CryptoGangsta/status/716427930126196737">https://twitter.com/CryptoGangsta/status/716427930126196737</a> which is longer than 32 characters.
-  <br>And this is a new line in the quote with the HTML br tag.</p>
-  <footer>
-    <strong>Author6</strong>
-    
-      
-        <cite>
-          <a href="https://twitter.com/CryptoGangsta/status/716427930126196737" title="https://twitter.com/CryptoGangsta/status/716427930126196737">twitter.com/CryptoGangsta/...</a> 
-        </cite>
-      
-    
-  </footer>
-</blockquote>
-</p>
-
-<p>Test from the Octopress blockquote page at: <a href="http://octopress.org/docs/plugins/blockquote/">http://octopress.org/docs/plugins/blockquote/</a>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-      
-      
-      
-    
-     
-      
-    
-    
-
-    
-    
-         
-         
-         
-
-         
-        
-        
-        
-        
-        
-        
-      
-      
-    
-  
-
-
-<blockquote>
-  <p>Over the past 24 hours I&rsquo;ve been reflecting on my life &amp; I&rsquo;ve realized only one thing. I need a medieval battle axe.</p>
-  <footer>
-    <strong>@allanbranch</strong>
-    
-      
-        <cite>
-          <a href="https://twitter.com/allanbranch/status/90766146063712256" title="https://twitter.com/allanbranch/status/90766146063712256">twitter.com/allanbranch/status/...</a> 
-        </cite>
-      
-    
-  </footer>
-</blockquote>
-</p>
-
-<h2 id="music">music</h2>
-
-<p><iframe style="max-width: 100%"
-      class="music163"
-      frameborder="no"
-      border="0"
-      marginwidth="0"
-      marginheight="0"
-      width="330"
-      height="86"
-      src="//music.163.com/outchain/player?type=2&id=3950552&auto=0&height=66">
-    </iframe></p>
-
-<h2 id="gist">gist</h2>
-
-<p>We can embed the gist in our content via username and gist ID pulled from the URL:</p>
-
-<pre><code>{{&lt; gist spf13 7896402 &gt;}}
+<h2 id="记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</h2>
+
+<h3 id="调试环境">调试环境</h3>
+
+<ul>
+<li><p>go 版本和平台<br />
+go version go1.5.4 linux/amd64</p></li>
+
+<li><p>delve 版本<br />
+Delve Debugger<br />
+Version: 1.0.0<br />
+Build: $Id:   c98a142125d0b17bb11ec0513bde346229b5f533 $</p></li>
+</ul>
+
+<h3 id="问题描述">问题描述</h3>
+
+<p>一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的 main 函数启动前，golang 的 runtime 会做一系列的工作来为我们准备好运行时环境，这包括运行时 golang 程序层面的内存管理和垃圾回收，最重要的是还帮我们建立了一套 goroutine(协程)的调度机制。
+为了了解这个 golang 的底层 runtime 是怎么工作的，在看完一些关于 runtime 的资料后，我打算用调试工具来 debug，追踪一下 runtime 的运行过程，以此来验证一下自己的理解。
+可是在刚开始调试的时候，就遇到了麻烦。</p>
+
+<p>golang 的入口代码如下：<br />
+runtime/asm_amd64.s</p>
+
+<pre><code class="language-Go">TEXT runtime·rt0_go(SB),NOSPLIT,$0
+	// copy arguments forward on an even stack
+	MOVQ	DI, AX		// argc
+	MOVQ	SI, BX		// argv
+	SUBQ	$(4*8+7), SP		// 2args 2auto
+	ANDQ	$~15, SP
+	MOVQ	AX, 16(SP)
+	MOVQ	BX, 24(SP)
+
+	// 这里去掉一些不影响阅读的代码
+
+	LEAQ	runtime·tls0(SB), DI
+	CALL	runtime·settls(SB)
+
+	// store through it, to make sure it works
+	get_tls(BX)
+	MOVQ	$0x123, g(BX)
+	MOVQ	runtime·tls0(SB), AX
+	CMPQ	AX, $0x123
+	JEQ 2(PC)
+	MOVL	AX, 0	// abort
+ok:
+	// set the per-goroutine and per-mach &quot;registers&quot;
+	get_tls(BX)
+	LEAQ	runtime·g0(SB), CX
+	MOVQ	CX, g(BX)
+	LEAQ	runtime·m0(SB), AX
+
+	// save m-&gt;g0 = g0
+	MOVQ	CX, m_g0(AX)
+	// save m0 to g0-&gt;m
+	MOVQ	AX, g_m(CX)
+
+	CLD				// convention is D is always left cleared
+	CALL	runtime·check(SB)
+
+	MOVL	16(SP), AX		// copy argc
+	MOVL	AX, 0(SP)
+	MOVQ	24(SP), AX		// copy argv
+	MOVQ	AX, 8(SP)
+	CALL	runtime·args(SB)
+	CALL	runtime·osinit(SB)
+	CALL	runtime·schedinit(SB)
+
+	// create a new goroutine to start program
+	MOVQ	$runtime·mainPC(SB), AX		// entry
+	PUSHQ	AX
+	PUSHQ	$0			// arg size
+	CALL	runtime·newproc(SB)
+	POPQ	AX
+	POPQ	AX
+
+	// start this M
+	CALL	runtime·mstart(SB)
+
+	MOVL	$0xf1, 0xf1  // crash
+	RET
 </code></pre>
 
-<p>Display:</p>
+<p>在 runtime 中，定义了两个全局变量<br />
+runtime/proc1.go</p>
 
-<script type="application/javascript" src="//gist.github.com/spf13/7896402.js"></script>
-
-<h2 id="expand">expand</h2>
-
-<p>The Expand shortcode displays an expandable/collapsible section of text on your page. Here is an example</p>
-
-<details>
-  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Is this learn theme rocks ?
-    
-  </summary>
-  
-Yes !.
-
-</details>
-
-
-<h3 id="usage">Usage</h3>
-
-<p>this shortcode takes exactly one optional parameter to define the text that appears next to the expand/collapse icon. (default is “Click to expand”)</p>
-
-<pre><code>{{&lt; expand &quot;Is this learn theme rocks ?&quot; &gt;}}
-Yes !.
-{{&lt; /expand &gt;}}
+<pre><code class="language-go">var (
+	m0 m
+	g0 g
+)
 </code></pre>
 
-<h2 id="youtube">youtube</h2>
+<p>在 golang runtime GPM 模型初始化运行之前就存在了，
+这个 m0 是程序启动后，在 GPM 模型中，代表 runtime.rt0_go 这个主线程的对象。
+这个 m0 负责执行初始化操作以及启动第一个 goroutine。
+而 g0 的作用主要是给 m0 提供线程栈空间，以及在 cpu 切换线程时，为线程提供标识。</p>
 
+<p>rt0_go 这个汇编函数中有段注释</p>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/w7Ft2ymGmfc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+<pre><code class="language-go">// save m-&gt;g0 = g0
 
+// save m0 to g0-&gt;m
+</code></pre>
 
-<h2 id="vimeo">vimeo</h2>
+<p>就是把这两个对象在开始发挥作用前绑定起来。</p>
 
+<p>在 rt0_go 这个汇编函数的尾部，有这样一段代码</p>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//player.vimeo.com/video/146022717" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
- </div>
+<pre><code class="language-GO">	// create a new goroutine to start program
+	MOVQ	$runtime·mainPC(SB), AX		// entry
+	PUSHQ	AX
+	PUSHQ	$0			// arg size
+	CALL	runtime·newproc(SB)
+	POPQ	AX
+	POPQ	AX
 
+	// start this M
+	CALL	runtime·mstart(SB)
+</code></pre>
 
-<h2 id="youku">youku</h2>
+<p>源码注释很明白，就是将我们 main 包里的 main 函数放到一个新建的 goroutine 当中以启动程序，后面就是启动 m0 这个线程。
+于是我就在这两个 CALL 的函数定义处分别打了断点，准备跟进去走个流程。</p>
 
+<blockquote>
+<p>[test]$ go build -gcflags &ldquo;-N -l&rdquo; test<br />
+[test]$ dlv debug test<br />
+Type &lsquo;help&rsquo; for list of commands.<br />
+(dlv) b runtime.newproc<br />
+Breakpoint 1 set at 0x4327e0 for runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216
+(dlv) b runtime.mstart<br />
+Breakpoint 2 set at 0x42e650 for runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668</p>
+</blockquote>
 
+<p>从 runtime.rt0_go 那里调用这个 runtime.newproc 主要是将我们的 main 包中的 main 函数装进一个新的 goroutine 当中，然后放到与当前的 m0 绑定的 P(在之前 runtime.rt0_go 中初始化时的 runtime.schedinit 中绑定的)的 runnable goroutine 队列中，待调度机制调度后开始工作。</p>
 
-<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-    <iframe src="https://player.youku.com/embed/XMzQ0ODUxMjM2NA?autoplay=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouKu Video">
-    </iframe>
-</div>
+<p>runtime/proc1.go</p>
+
+<pre><code class="language-go">func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
+	_g_ := getg()
+    ......
+	_p_ := _g_.m.p.ptr()
+	newg := gfget(_p_)
+	if newg == nil {
+		newg = malg(_StackMin)
+		casgstatus(newg, _Gidle, _Gdead)
+		allgadd(newg) // publishes with a g-&gt;status of Gdead so GC scanner doesn't look at uninitialized stack.
+	}
+    ......
+	runqput(_p_, newg, true)
+    ......
+	return newg
+}
+</code></pre>
+
+<p>这里用调试器查看一下*g*值，和前面提到的 g0 和 m0 这两个全局的变量的地址</p>
+
+<pre><code class="language-go">(dlv) n
+&gt; runtime.newproc.func1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2220 (PC: 0x44f5c3)
+  2215:	//go:nosplit
+  2216:	func newproc(siz int32, fn *funcval) {
+  2217:		argp := add(unsafe.Pointer(&amp;fn), ptrSize)
+  2218:		pc := getcallerpc(unsafe.Pointer(&amp;siz))
+  2219:		systemstack(func() {
+=&gt;2220:			newproc1(fn, (*uint8)(argp), siz, 0, pc)
+  2221:		})
+  2222:	}
+
+</code></pre>
+
+<pre><code class="language-go">(dlv) n
+&gt; runtime.newproc1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2231 (PC: 0x432875)
+  2226:	// address of the go statement that created this.  The new g is put
+  2227:	// on the queue of g's waiting to run.
+  2228:	func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
+  2229:		_g_ := getg()
+  2230:
+=&gt;2231:		if fn == nil {
+  2232:			_g_.m.throwing = -1 // do not dump full stacks
+  2233:			throw(&quot;go of nil func value&quot;)
+  2234:		}
+  2235:		_g_.m.locks++ // disable preemption because it can be holding p in a local var
+  2236:		siz := narg + nret
+(dlv) local
+Command failed: command not available
+(dlv) locals
+siz = 200
+sp = 139891379798019
+newg = (*runtime.g)(0x4341ec)
+_p_ = (*runtime.p)(0x896a40)
+_g_ = (*runtime.g)(0x872aa0)
+(dlv) p unsafe.Pointer(uintptr(&amp;g0))
+unsafe.Pointer(0x872aa0)
+(dlv) p unsafe.Pointer(uintptr(&amp;m0))
+unsafe.Pointer(0x873040)
+</code></pre>
+
+<p>这个_g_ 指向 g0, 和预想的一样</p>
+
+<p>这个返回<em>g</em> 的函数是编译器实现的，源代码注释有解释</p>
+
+<pre><code class="language-go">// getg returns the pointer to the current g.
+// The compiler rewrites calls to this function into instructions
+// that fetch the g directly (from TLS or from the dedicated register).
+func getg() *g
+</code></pre>
+
+<p>这段 runtime.newproc 的代码到此结束，接下来转到 runtime.mstart,看看线程时怎么启动起来的。<br />
+直接 continue 一下到 runtime.mstart 这个断点。</p>
+
+<pre><code class="language-go">(dlv) c
+&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:671 (PC: 0x42e65d)
+   666:	// Called to start an M.
+   667:	//go:nosplit
+   668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+=&gt; 671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+   674:			size := _g_.stack.hi
+   675:			if size == 0 {
+   676:				size = 8192 * stackGuardMultiplier
+   678:			_g_.stack.hi = uintptr(noescape(unsafe.Pointer(&amp;size)))
+   679:			_g_.stack.lo = _g_.stack.hi - size + 1024
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+   685:		mstart1()
+   686:	}
+(dlv) locals
+size = 0
+(dlv) p _g_
+Command failed: could not find symbol value for _g_
+</code></pre>
+
+<p>这回*g*这个变量查不出来，前面说了这个返回<em>g</em> 的函数是编译器实现的。
+查了相关资料，这个 TLS,<br />
+全称是 Thread-local storage, 代表每个线程的中的本地数据.
+例如标准 c 中的 errno 就是一个典型的 TLS 变量, 每个线程都有一个独自的 errno, 写入它不会干扰到其他线程中的值.
+go 在实现协程时非常依赖 TLS 机制, 会用于获取系统线程中当前的 G 和 G 所属的 M 的实例.</p>
+
+<p>因为 go 并不使用 glibc, 操作 TLS 会使用系统原生的接口, 以 linux x64 为例,
+go 在新建 M 时会调用 arch_prctl 这个 syscall 设置 FS 寄存器的值为 M.tls 的地址,
+运行中每个 M 的 FS 寄存器都会指向它们对应的 M 实例的 tls, linux 内核调度线程时 FS 寄存器会跟着线程一起切换,
+这样 go 代码只需要访问 FS 寄存器就可以存取线程本地的数据.</p>
+
+<p>那就看看汇编代码。</p>
+
+<pre><code class="language-go">(dlv) disassemble
+TEXT runtime.mstart(SB) /root/.gvm/gos/go1.5.4/src/runtime/proc1.go
+	proc1.go:668	0x42e650*	4883ec08		sub rsp, 0x8
+	proc1.go:669	0x42e654	64488b0425f8ffffff	mov rax, qword ptr fs:[0xfffffff8]
+	proc1.go:671	0x42e65d	488b18			mov rbx, qword ptr [rax]
+	proc1.go:671	0x42e660	4883fb00		cmp rbx, 0x0
+	proc1.go:671	0x42e664	753b			jnz 0x42e6a1
+=&gt;	proc1.go:674	0x42e666	488b6808		mov rbp, qword ptr [rax+0x8]
+</code></pre>
+
+<p>FS 寄存器看样子是放到 rax 寄存器里面了，我们验证一下，看看 rax 的值是不是和 g0 的地址一样。</p>
+
+<pre><code class="language-go">(dlv) regs
+     Rip = 0x000000000042e65d
+     Rsp = 0x00007ffd936859d0
+     Rax = 0x0000000000872aa0
+     Rbx = 0x000000c820000180
+     Rcx = 0x000000000077e320
+     Rdx = 0x0000000000872aa0
+     Rdi = 0x000000000042b6e0
+     Rsi = 0x00007ffd936859e0
+     Rbp = 0x0000000000873040
+      R8 = 0x000000000077e318
+      R9 = 0x0000000000000008
+     R10 = 0x0000000000629e00
+     R11 = 0x0000000000000000
+     R12 = 0x0000000000000008
+     R13 = 0x000000000077b770
+     R14 = 0x0000000000000000
+     R15 = 0x0000000000000008
+Orig_rax = 0xffffffffffffffff
+      Cs = 0x0000000000000033
+  Eflags = 0x0000000000000202	[IF IOPL=0]
+      Ss = 0x000000000000002b
+ Fs_base = 0x00007fbf429ae740
+ Gs_base = 0x0000000000000000
+      Ds = 0x0000000000000000
+      Es = 0x0000000000000000
+      Fs = 0x0000000000000000
+      Gs = 0x0000000000000000
+(dlv) p unsafe.Pointer(uintptr(&amp;g0))
+unsafe.Pointer(0x872aa0)
+</code></pre>
+
+<p>都是 0x872aa0，没问题。继续走流程。</p>
+
+<pre><code class="language-go">(dlv) n
+&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+=&gt; 685:		mstart1()
+   686:	}
+</code></pre>
+
+<p>调试器又回到了 mstart 函数开始处，并没有跳进 mstart1 函数，并且多显示了两行调试信息，和<code>hits total:X</code>的额外信息。</p>
+
+<pre><code class="language-go">(dlv) n
+&gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
+	breakpoint hit during next, continuing...
+&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
+   663:		}
+   664:	}
+   665:
+   666:	// Called to start an M.
+   667:	//go:nosplit
+=&gt; 668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+   671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+</code></pre>
+
+<p>发生了什么事情，为什么又跳回去了？</p>
+
+<p>看一下寄存器</p>
+
+<pre><code class="language-go">(dlv) regs
+     Rip = 0x000000000042e65d
+     Rsp = 0x00007f23e3133eb8
+     Rax = 0x000000c820000900
+     Rbx = 0x000000000042e650
+     Rcx = 0x00000000017f6000
+     Rdx = 0x00000000ffffffff
+     Rdi = 0x000000000042e650
+     Rsi = 0x00007f23e34fb768
+     Rbp = 0x000000c820000900
+      R8 = 0x0000000000000000
+      R9 = 0x00000000017f6010
+     R10 = 0x00007f23e3133960
+     R11 = 0x00007f23e31ba580
+     R12 = 0x0000000000000000
+     R13 = 0x0000000000801000
+     R14 = 0x0000000000000000
+     R15 = 0x00007f23e3134700
+Orig_rax = 0xffffffffffffffff
+      Cs = 0x0000000000000033
+  Eflags = 0x0000000000000216	[PF AF IF IOPL=0]
+      Ss = 0x000000000000002b
+ Fs_base = 0x00007f23e3134700
+ Gs_base = 0x0000000000000000
+      Ds = 0x0000000000000000
+      Es = 0x0000000000000000
+      Fs = 0x0000000000000000
+      Gs = 0x0000000000000000
+(dlv) p unsafe.Pointer(uintptr(&amp;g0))
+unsafe.Pointer(0x872aa0)
+</code></pre>
+
+<p>Rax = 0x000000c820000900, 也就是说_g_的值和 g0 的地址不相等。</p>
+
+<p>调试信息说 runtime.mstart()被 hit 了两次，发生了什么？</p>
+
+<p>我们再复现一下这个场景。</p>
+
+<pre><code class="language-go">(dlv) r  \\重启调试过程
+(dlv) c  \\到达第一个断点runtime.newproc()
+(dlv) c  \\到达第二个断点runtime.mstart()
+(dlv) n  \\几次next命令之后，在即将进入mstart1函数之前停下
+&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+=&gt; 685:		mstart1()
+   686:	}
+   687:
+   688:	func mstart1() {
+   689:		_g_ := getg()
+   690:
+(dlv) goroutines
+[1 goroutines]
+  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc.go:28 runtime.main (0x42b6e0)
+(dlv) threads
+* Thread 22392 at 0x42e6bd /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 runtime.mstart
+(dlv)
+</code></pre>
+
+<p>我们用 golang 专属调试器 delve 提供针对 goroutine 的调试命令来查看一下。
+显示有一个编号为 1 的 goroutine 和一个编号为 22392 的 Thread。
+继续，</p>
+
+<pre><code class="language-go">(dlv) n
+&gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
+	breakpoint hit during next, continuing...
+&gt; runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 (hits goroutine(1):1 total:2) (PC: 0x4327e0)
+&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
+   663:		}
+   664:	}
+   665:
+   666:	// Called to start an M.
+   667:	//go:nosplit
+=&gt; 668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+   671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+(dlv) goroutines
+[2 goroutines]
+  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc (0x4327e0) (thread 22392)
+  Goroutine 17 - User: /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722 runtime.goexit (0x45b1a1)
+(dlv) threads
+  Thread 22392 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
+* Thread 23645 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
+(dlv)
+</code></pre>
+
+<p>原来出现了线程切换，调试信息显示第二次跳回 mstart 函数的时候，因为线程切换，调试器直接 next 到了新线程里面最先出现的断点，也就是 runtime.mstart 函数处。这也是为什么_g*的值和 g0 的地址不相等， 因为_g*是从 TLS 取的值，而底层操作系统做线程调度切换的时候，会将 TLS 更新。<br />
+但是为什么会跳到 runtime.mstart 函数这里呢？为什么总是在 runtime.mstart1()这个地方做线程切换，而不是其他地方呢？</p>
+
+<p>我们查一下线程栈</p>
+
+<pre><code class="language-go">(dlv) goroutine 17 stack -full
+0  0x000000000045b1a1 in runtime.goexit
+   at /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722
+(dlv) threads
+  Thread 26556 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
+* Thread 26616 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
+(dlv)
+</code></pre>
+
+<p>（未完待续）</p>
+
     </div>
 
     
@@ -897,7 +882,7 @@ Yes !.
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-03-05</span>
+    <span class="item-content">2019-05-09</span>
   </p>
   
   <p class="copyright-item">
@@ -911,17 +896,12 @@ Yes !.
     
 
     <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://polar9527.github.io/tags/preview/">preview</a>
-          <a href="https://polar9527.github.io/tags/shortcodes/">shortcodes</a>
-          <a href="https://polar9527.github.io/tags/tag-6/">tag-6</a>
-          
-        </div>
+      
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/first/">
+          <a class="prev" href="/post/jane-theme-preview/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -931,12 +911,12 @@ Yes !.
 </svg>
 
             </i>
-            <span class="prev-text nav-default">First</span>
+            <span class="prev-text nav-default">Jane Theme Preview</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/image-preview/">
-            <span class="next-text nav-default">Image Preview</span>
+          <a class="next" href="/post/first/">
+            <span class="next-text nav-default">First</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -969,10 +949,10 @@ Yes !.
         <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
       <script type="text/javascript">
       const gitment = new Gitment({
-        id: 'shortcodes-preview.md',
-        title: 'Shortcodes Preview',
+        id: 'a-record-of-golang-runtime.md',
+        title: 'A Record of Golang Runtime',
         link: decodeURI(location.href),
-        desc: '\x3ch2 id=\x22what-a-shortcode-is\x22\x3eWhat a Shortcode is\x3c\/h2\x3e\n\n\x3cp\x3eHugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video \x3ccode\x3e\x26lt;iframes\x26gt;\x3c\/code\x3e) to Markdown content. We think this contradicts the beautiful simplicity of Markdown\x26rsquo;s syntax.\x3c\/p\x3e\n\n\x3cp\x3eHugo created \x3cstrong\x3eshortcodes\x3c\/strong\x3e to circumvent these limitations.\x3c\/p\x3e\n\n\x3cp\x3eA shortcode is a simple snippet inside a content file that Hugo will render using a predefined template. Note that shortcodes will not work in template files. If you need the type of drop-in functionality that shortcodes provide but in a template, you most likely want a [partial template][partials] instead.\x3c\/p\x3e\n\n\x3cp\x3eIn addition to cleaner Markdown, shortcodes can be updated any time to reflect new classes, techniques, or standards. At the point of site generation, Hugo shortcodes will easily merge in your changes. You avoid a possibly complicated search and replace operation.\x3c\/p\x3e\n\n\x3cp\x3eMore details: \x3ca href=\x22https:\/\/gohugo.io\/content-management\/shortcodes\/\x22\x3ehttps:\/\/gohugo.io\/content-management\/shortcodes\/\x3c\/a\x3e\x3c\/p\x3e',
+        desc: '记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux\/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的',
         owner: 'polar9527',
         repo: 'site_comments',
         oauth: {
@@ -992,7 +972,7 @@ Yes !.
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "https://polar9527.github.io/post/shortcodes-preview/";
+      this.page.url = "https://polar9527.github.io/post/a-record-of-golang-runtime/";
     };
     function load_disqus() {
       

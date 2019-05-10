@@ -6,7 +6,7 @@
     <description>Recent content on Polar9527 - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 May 2019 21:38:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2019 18:35:42 +0800</lastBuildDate>
     
         <atom:link href="https://polar9527.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -392,6 +392,455 @@ __double underscores__
       <guid>https://polar9527.github.io/about/</guid>
       
         <description>&lt;p&gt;成为一个爆栈工程师.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>A Record of Golang Runtime</title>
+      <link>https://polar9527.github.io/post/a-record-of-golang-runtime/</link>
+      <pubDate>Thu, 09 May 2019 18:35:42 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/a-record-of-golang-runtime/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;记一次-golang-runtime-的调试&#34;&gt;记一次 Golang runtime 的调试&lt;/h2&gt;
+
+&lt;h3 id=&#34;调试环境&#34;&gt;调试环境&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;go 版本和平台&lt;br /&gt;
+go version go1.5.4 linux/amd64&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;delve 版本&lt;br /&gt;
+Delve Debugger&lt;br /&gt;
+Version: 1.0.0&lt;br /&gt;
+Build: $Id:   c98a142125d0b17bb11ec0513bde346229b5f533 $&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+
+&lt;p&gt;一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的 main 函数启动前，golang 的 runtime 会做一系列的工作来为我们准备好运行时环境，这包括运行时 golang 程序层面的内存管理和垃圾回收，最重要的是还帮我们建立了一套 goroutine(协程)的调度机制。
+为了了解这个 golang 的底层 runtime 是怎么工作的，在看完一些关于 runtime 的资料后，我打算用调试工具来 debug，追踪一下 runtime 的运行过程，以此来验证一下自己的理解。
+可是在刚开始调试的时候，就遇到了麻烦。&lt;/p&gt;
+
+&lt;p&gt;golang 的入口代码如下：&lt;br /&gt;
+runtime/asm_amd64.s&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Go&#34;&gt;TEXT runtime·rt0_go(SB),NOSPLIT,$0
+	// copy arguments forward on an even stack
+	MOVQ	DI, AX		// argc
+	MOVQ	SI, BX		// argv
+	SUBQ	$(4*8+7), SP		// 2args 2auto
+	ANDQ	$~15, SP
+	MOVQ	AX, 16(SP)
+	MOVQ	BX, 24(SP)
+
+	// 这里去掉一些不影响阅读的代码
+
+	LEAQ	runtime·tls0(SB), DI
+	CALL	runtime·settls(SB)
+
+	// store through it, to make sure it works
+	get_tls(BX)
+	MOVQ	$0x123, g(BX)
+	MOVQ	runtime·tls0(SB), AX
+	CMPQ	AX, $0x123
+	JEQ 2(PC)
+	MOVL	AX, 0	// abort
+ok:
+	// set the per-goroutine and per-mach &amp;quot;registers&amp;quot;
+	get_tls(BX)
+	LEAQ	runtime·g0(SB), CX
+	MOVQ	CX, g(BX)
+	LEAQ	runtime·m0(SB), AX
+
+	// save m-&amp;gt;g0 = g0
+	MOVQ	CX, m_g0(AX)
+	// save m0 to g0-&amp;gt;m
+	MOVQ	AX, g_m(CX)
+
+	CLD				// convention is D is always left cleared
+	CALL	runtime·check(SB)
+
+	MOVL	16(SP), AX		// copy argc
+	MOVL	AX, 0(SP)
+	MOVQ	24(SP), AX		// copy argv
+	MOVQ	AX, 8(SP)
+	CALL	runtime·args(SB)
+	CALL	runtime·osinit(SB)
+	CALL	runtime·schedinit(SB)
+
+	// create a new goroutine to start program
+	MOVQ	$runtime·mainPC(SB), AX		// entry
+	PUSHQ	AX
+	PUSHQ	$0			// arg size
+	CALL	runtime·newproc(SB)
+	POPQ	AX
+	POPQ	AX
+
+	// start this M
+	CALL	runtime·mstart(SB)
+
+	MOVL	$0xf1, 0xf1  // crash
+	RET
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在 runtime 中，定义了两个全局变量&lt;br /&gt;
+runtime/proc1.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;var (
+	m0 m
+	g0 g
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在 golang runtime GPM 模型初始化运行之前就存在了，
+这个 m0 是程序启动后，在 GPM 模型中，代表 runtime.rt0_go 这个主线程的对象。
+这个 m0 负责执行初始化操作以及启动第一个 goroutine。
+而 g0 的作用主要是给 m0 提供线程栈空间，以及在 cpu 切换线程时，为线程提供标识。&lt;/p&gt;
+
+&lt;p&gt;rt0_go 这个汇编函数中有段注释&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;// save m-&amp;gt;g0 = g0
+
+// save m0 to g0-&amp;gt;m
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;就是把这两个对象在开始发挥作用前绑定起来。&lt;/p&gt;
+
+&lt;p&gt;在 rt0_go 这个汇编函数的尾部，有这样一段代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-GO&#34;&gt;	// create a new goroutine to start program
+	MOVQ	$runtime·mainPC(SB), AX		// entry
+	PUSHQ	AX
+	PUSHQ	$0			// arg size
+	CALL	runtime·newproc(SB)
+	POPQ	AX
+	POPQ	AX
+
+	// start this M
+	CALL	runtime·mstart(SB)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;源码注释很明白，就是将我们 main 包里的 main 函数放到一个新建的 goroutine 当中以启动程序，后面就是启动 m0 这个线程。
+于是我就在这两个 CALL 的函数定义处分别打了断点，准备跟进去走个流程。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[test]$ go build -gcflags &amp;ldquo;-N -l&amp;rdquo; test&lt;br /&gt;
+[test]$ dlv debug test&lt;br /&gt;
+Type &amp;lsquo;help&amp;rsquo; for list of commands.&lt;br /&gt;
+(dlv) b runtime.newproc&lt;br /&gt;
+Breakpoint 1 set at 0x4327e0 for runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216
+(dlv) b runtime.mstart&lt;br /&gt;
+Breakpoint 2 set at 0x42e650 for runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;从 runtime.rt0_go 那里调用这个 runtime.newproc 主要是将我们的 main 包中的 main 函数装进一个新的 goroutine 当中，然后放到与当前的 m0 绑定的 P(在之前 runtime.rt0_go 中初始化时的 runtime.schedinit 中绑定的)的 runnable goroutine 队列中，待调度机制调度后开始工作。&lt;/p&gt;
+
+&lt;p&gt;runtime/proc1.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
+	_g_ := getg()
+    ......
+	_p_ := _g_.m.p.ptr()
+	newg := gfget(_p_)
+	if newg == nil {
+		newg = malg(_StackMin)
+		casgstatus(newg, _Gidle, _Gdead)
+		allgadd(newg) // publishes with a g-&amp;gt;status of Gdead so GC scanner doesn&#39;t look at uninitialized stack.
+	}
+    ......
+	runqput(_p_, newg, true)
+    ......
+	return newg
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里用调试器查看一下*g*值，和前面提到的 g0 和 m0 这两个全局的变量的地址&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.newproc.func1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2220 (PC: 0x44f5c3)
+  2215:	//go:nosplit
+  2216:	func newproc(siz int32, fn *funcval) {
+  2217:		argp := add(unsafe.Pointer(&amp;amp;fn), ptrSize)
+  2218:		pc := getcallerpc(unsafe.Pointer(&amp;amp;siz))
+  2219:		systemstack(func() {
+=&amp;gt;2220:			newproc1(fn, (*uint8)(argp), siz, 0, pc)
+  2221:		})
+  2222:	}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.newproc1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2231 (PC: 0x432875)
+  2226:	// address of the go statement that created this.  The new g is put
+  2227:	// on the queue of g&#39;s waiting to run.
+  2228:	func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
+  2229:		_g_ := getg()
+  2230:
+=&amp;gt;2231:		if fn == nil {
+  2232:			_g_.m.throwing = -1 // do not dump full stacks
+  2233:			throw(&amp;quot;go of nil func value&amp;quot;)
+  2234:		}
+  2235:		_g_.m.locks++ // disable preemption because it can be holding p in a local var
+  2236:		siz := narg + nret
+(dlv) local
+Command failed: command not available
+(dlv) locals
+siz = 200
+sp = 139891379798019
+newg = (*runtime.g)(0x4341ec)
+_p_ = (*runtime.p)(0x896a40)
+_g_ = (*runtime.g)(0x872aa0)
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;g0))
+unsafe.Pointer(0x872aa0)
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;m0))
+unsafe.Pointer(0x873040)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个_g_ 指向 g0, 和预想的一样&lt;/p&gt;
+
+&lt;p&gt;这个返回&lt;em&gt;g&lt;/em&gt; 的函数是编译器实现的，源代码注释有解释&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;// getg returns the pointer to the current g.
+// The compiler rewrites calls to this function into instructions
+// that fetch the g directly (from TLS or from the dedicated register).
+func getg() *g
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这段 runtime.newproc 的代码到此结束，接下来转到 runtime.mstart,看看线程时怎么启动起来的。&lt;br /&gt;
+直接 continue 一下到 runtime.mstart 这个断点。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) c
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:671 (PC: 0x42e65d)
+   666:	// Called to start an M.
+   667:	//go:nosplit
+   668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+=&amp;gt; 671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+   674:			size := _g_.stack.hi
+   675:			if size == 0 {
+   676:				size = 8192 * stackGuardMultiplier
+   678:			_g_.stack.hi = uintptr(noescape(unsafe.Pointer(&amp;amp;size)))
+   679:			_g_.stack.lo = _g_.stack.hi - size + 1024
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+   685:		mstart1()
+   686:	}
+(dlv) locals
+size = 0
+(dlv) p _g_
+Command failed: could not find symbol value for _g_
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这回*g*这个变量查不出来，前面说了这个返回&lt;em&gt;g&lt;/em&gt; 的函数是编译器实现的。
+查了相关资料，这个 TLS,&lt;br /&gt;
+全称是 Thread-local storage, 代表每个线程的中的本地数据.
+例如标准 c 中的 errno 就是一个典型的 TLS 变量, 每个线程都有一个独自的 errno, 写入它不会干扰到其他线程中的值.
+go 在实现协程时非常依赖 TLS 机制, 会用于获取系统线程中当前的 G 和 G 所属的 M 的实例.&lt;/p&gt;
+
+&lt;p&gt;因为 go 并不使用 glibc, 操作 TLS 会使用系统原生的接口, 以 linux x64 为例,
+go 在新建 M 时会调用 arch_prctl 这个 syscall 设置 FS 寄存器的值为 M.tls 的地址,
+运行中每个 M 的 FS 寄存器都会指向它们对应的 M 实例的 tls, linux 内核调度线程时 FS 寄存器会跟着线程一起切换,
+这样 go 代码只需要访问 FS 寄存器就可以存取线程本地的数据.&lt;/p&gt;
+
+&lt;p&gt;那就看看汇编代码。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) disassemble
+TEXT runtime.mstart(SB) /root/.gvm/gos/go1.5.4/src/runtime/proc1.go
+	proc1.go:668	0x42e650*	4883ec08		sub rsp, 0x8
+	proc1.go:669	0x42e654	64488b0425f8ffffff	mov rax, qword ptr fs:[0xfffffff8]
+	proc1.go:671	0x42e65d	488b18			mov rbx, qword ptr [rax]
+	proc1.go:671	0x42e660	4883fb00		cmp rbx, 0x0
+	proc1.go:671	0x42e664	753b			jnz 0x42e6a1
+=&amp;gt;	proc1.go:674	0x42e666	488b6808		mov rbp, qword ptr [rax+0x8]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;FS 寄存器看样子是放到 rax 寄存器里面了，我们验证一下，看看 rax 的值是不是和 g0 的地址一样。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) regs
+     Rip = 0x000000000042e65d
+     Rsp = 0x00007ffd936859d0
+     Rax = 0x0000000000872aa0
+     Rbx = 0x000000c820000180
+     Rcx = 0x000000000077e320
+     Rdx = 0x0000000000872aa0
+     Rdi = 0x000000000042b6e0
+     Rsi = 0x00007ffd936859e0
+     Rbp = 0x0000000000873040
+      R8 = 0x000000000077e318
+      R9 = 0x0000000000000008
+     R10 = 0x0000000000629e00
+     R11 = 0x0000000000000000
+     R12 = 0x0000000000000008
+     R13 = 0x000000000077b770
+     R14 = 0x0000000000000000
+     R15 = 0x0000000000000008
+Orig_rax = 0xffffffffffffffff
+      Cs = 0x0000000000000033
+  Eflags = 0x0000000000000202	[IF IOPL=0]
+      Ss = 0x000000000000002b
+ Fs_base = 0x00007fbf429ae740
+ Gs_base = 0x0000000000000000
+      Ds = 0x0000000000000000
+      Es = 0x0000000000000000
+      Fs = 0x0000000000000000
+      Gs = 0x0000000000000000
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;g0))
+unsafe.Pointer(0x872aa0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;都是 0x872aa0，没问题。继续走流程。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+=&amp;gt; 685:		mstart1()
+   686:	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;调试器又回到了 mstart 函数开始处，并没有跳进 mstart1 函数，并且多显示了两行调试信息，和&lt;code&gt;hits total:X&lt;/code&gt;的额外信息。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
+	breakpoint hit during next, continuing...
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
+   663:		}
+   664:	}
+   665:
+   666:	// Called to start an M.
+   667:	//go:nosplit
+=&amp;gt; 668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+   671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;发生了什么事情，为什么又跳回去了？&lt;/p&gt;
+
+&lt;p&gt;看一下寄存器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) regs
+     Rip = 0x000000000042e65d
+     Rsp = 0x00007f23e3133eb8
+     Rax = 0x000000c820000900
+     Rbx = 0x000000000042e650
+     Rcx = 0x00000000017f6000
+     Rdx = 0x00000000ffffffff
+     Rdi = 0x000000000042e650
+     Rsi = 0x00007f23e34fb768
+     Rbp = 0x000000c820000900
+      R8 = 0x0000000000000000
+      R9 = 0x00000000017f6010
+     R10 = 0x00007f23e3133960
+     R11 = 0x00007f23e31ba580
+     R12 = 0x0000000000000000
+     R13 = 0x0000000000801000
+     R14 = 0x0000000000000000
+     R15 = 0x00007f23e3134700
+Orig_rax = 0xffffffffffffffff
+      Cs = 0x0000000000000033
+  Eflags = 0x0000000000000216	[PF AF IF IOPL=0]
+      Ss = 0x000000000000002b
+ Fs_base = 0x00007f23e3134700
+ Gs_base = 0x0000000000000000
+      Ds = 0x0000000000000000
+      Es = 0x0000000000000000
+      Fs = 0x0000000000000000
+      Gs = 0x0000000000000000
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;g0))
+unsafe.Pointer(0x872aa0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rax = 0x000000c820000900, 也就是说_g_的值和 g0 的地址不相等。&lt;/p&gt;
+
+&lt;p&gt;调试信息说 runtime.mstart()被 hit 了两次，发生了什么？&lt;/p&gt;
+
+&lt;p&gt;我们再复现一下这个场景。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) r  \\重启调试过程
+(dlv) c  \\到达第一个断点runtime.newproc()
+(dlv) c  \\到达第二个断点runtime.mstart()
+(dlv) n  \\几次next命令之后，在即将进入mstart1函数之前停下
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+=&amp;gt; 685:		mstart1()
+   686:	}
+   687:
+   688:	func mstart1() {
+   689:		_g_ := getg()
+   690:
+(dlv) goroutines
+[1 goroutines]
+  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc.go:28 runtime.main (0x42b6e0)
+(dlv) threads
+* Thread 22392 at 0x42e6bd /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 runtime.mstart
+(dlv)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们用 golang 专属调试器 delve 提供针对 goroutine 的调试命令来查看一下。
+显示有一个编号为 1 的 goroutine 和一个编号为 22392 的 Thread。
+继续，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
+	breakpoint hit during next, continuing...
+&amp;gt; runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 (hits goroutine(1):1 total:2) (PC: 0x4327e0)
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
+   663:		}
+   664:	}
+   665:
+   666:	// Called to start an M.
+   667:	//go:nosplit
+=&amp;gt; 668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+   671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+(dlv) goroutines
+[2 goroutines]
+  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc (0x4327e0) (thread 22392)
+  Goroutine 17 - User: /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722 runtime.goexit (0x45b1a1)
+(dlv) threads
+  Thread 22392 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
+* Thread 23645 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
+(dlv)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;原来出现了线程切换，调试信息显示第二次跳回 mstart 函数的时候，因为线程切换，调试器直接 next 到了新线程里面最先出现的断点，也就是 runtime.mstart 函数处。这也是为什么_g*的值和 g0 的地址不相等， 因为_g*是从 TLS 取的值，而底层操作系统做线程调度切换的时候，会将 TLS 更新。&lt;br /&gt;
+但是为什么会跳到 runtime.mstart 函数这里呢？为什么总是在 runtime.mstart1()这个地方做线程切换，而不是其他地方呢？&lt;/p&gt;
+
+&lt;p&gt;我们查一下线程栈&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) goroutine 17 stack -full
+0  0x000000000045b1a1 in runtime.goexit
+   at /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722
+(dlv) threads
+  Thread 26556 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
+* Thread 26616 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
+(dlv)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（未完待续）&lt;/p&gt;
 </description>
       
     </item>
