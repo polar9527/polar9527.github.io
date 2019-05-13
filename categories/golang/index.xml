@@ -17,7 +17,7 @@
       <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/performance-without-the-event-loop/</guid>
-      <description>Performance without the event loop 不依赖事件循环的性能表现 英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行</description>
+      <description>不依赖事件循环的性能表现 英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈</description>
     </item>
     
     <item>

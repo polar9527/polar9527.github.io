@@ -32,12 +32,11 @@
       
         <description>
 
-&lt;h2 id=&#34;performance-without-the-event-loop&#34;&gt;Performance without the event loop&lt;/h2&gt;
-
 &lt;h2 id=&#34;不依赖事件循环的性能表现&#34;&gt;不依赖事件循环的性能表现&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/2015/08/08/performance-without-the-event-loop&#34;&gt;英文原文&lt;/a&gt;
-&lt;a href=&#34;https://polar9527.github.io/post/performance-without-the-event-loop/&#34;&gt;译文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/2015/08/08/performance-without-the-event-loop&#34;&gt;英文原文&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://polar9527.github.io/post/performance-without-the-event-loop/&#34;&gt;译文&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。&lt;/p&gt;
 
@@ -187,8 +186,7 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
 
 &lt;h5 id=&#34;线程栈&#34;&gt;线程栈&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/threads.png&#34; alt=&#34;&#34; /&gt;
-address space is reduced.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/threads.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;线程共享相同的地址空间，因此对于每个线程，它必须有自己的栈和自己的保护页。&lt;/p&gt;
 
