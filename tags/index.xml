@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Polar9527 - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 18:34:58 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>go</title>
+      <link>https://polar9527.github.io/tags/go/</link>
+      <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://polar9527.github.io/tags/golang/</link>
+      <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>preview</title>
@@ -107,24 +125,6 @@
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>https://polar9527.github.io/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://polar9527.github.io/tags/go/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://polar9527.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://polar9527.github.io/tags/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://polar9527.github.io/tags/golang/</guid>
       <description></description>
     </item>
     

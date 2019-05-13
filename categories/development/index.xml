@@ -6,10 +6,28 @@
     <description>Recent content in Development on Polar9527 - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 18:34:58 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Performance Without the Event Loop</title>
+      <link>https://polar9527.github.io/post/performance-without-the-event-loop/</link>
+      <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/performance-without-the-event-loop/</guid>
+      <description>Performance without the event loop 不依赖事件循环的性能表现 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到</description>
+    </item>
+    
+    <item>
+      <title>A Record of Golang Runtime</title>
+      <link>https://polar9527.github.io/post/a-record-of-golang-runtime/</link>
+      <pubDate>Thu, 09 May 2019 18:35:42 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/a-record-of-golang-runtime/</guid>
+      <description>记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的</description>
+    </item>
     
     <item>
       <title>Creating a New Theme</title>
@@ -17,8 +35,7 @@
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>https://polar9527.github.io/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <description></description>
     </item>
     
     <item>

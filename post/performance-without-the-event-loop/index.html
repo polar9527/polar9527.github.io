@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>A Record of Golang Runtime - Polar9527 - A super concise theme for Hugo</title>
+  <title>Performance Without the Event Loop - Polar9527 - A super concise theme for Hugo</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polar9527" />
-  <meta name="description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的" />
+  <meta name="description" content="Performance without the event loop 不依赖事件循环的性能表现 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.55.4" />
 
 
-<link rel="canonical" href="https://polar9527.github.io/post/a-record-of-golang-runtime/" />
+<link rel="canonical" href="https://polar9527.github.io/post/performance-without-the-event-loop/" />
 
 
 
@@ -57,27 +57,27 @@
 
 
 
-<meta property="og:title" content="A Record of Golang Runtime" />
-<meta property="og:description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的" />
+<meta property="og:title" content="Performance Without the Event Loop" />
+<meta property="og:description" content="Performance without the event loop 不依赖事件循环的性能表现 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://polar9527.github.io/post/a-record-of-golang-runtime/" />
-<meta property="article:published_time" content="2019-05-09T18:35:42&#43;08:00"/>
-<meta property="article:modified_time" content="2019-05-09T18:35:42&#43;08:00"/>
+<meta property="og:url" content="https://polar9527.github.io/post/performance-without-the-event-loop/" />
+<meta property="article:published_time" content="2019-05-13T18:34:58&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-13T18:34:58&#43;08:00"/>
 
-<meta itemprop="name" content="A Record of Golang Runtime">
-<meta itemprop="description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的">
+<meta itemprop="name" content="Performance Without the Event Loop">
+<meta itemprop="description" content="Performance without the event loop 不依赖事件循环的性能表现 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到">
 
 
-<meta itemprop="datePublished" content="2019-05-09T18:35:42&#43;08:00" />
-<meta itemprop="dateModified" content="2019-05-09T18:35:42&#43;08:00" />
-<meta itemprop="wordCount" content="3073">
+<meta itemprop="datePublished" content="2019-05-13T18:34:58&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-13T18:34:58&#43;08:00" />
+<meta itemprop="wordCount" content="4711">
 
 
 
 <meta itemprop="keywords" content="go,golang," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A Record of Golang Runtime"/>
-<meta name="twitter:description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的"/>
+<meta name="twitter:title" content="Performance Without the Event Loop"/>
+<meta name="twitter:description" content="Performance without the event loop 不依赖事件循环的性能表现 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -388,11 +388,11 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">A Record of Golang Runtime</h1>
+      <h1 class="post-title">Performance Without the Event Loop</h1>
       
       <div class="post-meta">
-        <time datetime="2019-05-09" class="post-time">
-          2019-05-09
+        <time datetime="2019-05-13" class="post-time">
+          2019-05-13
         </time>
         <div class="post-category">
             <a href="https://polar9527.github.io/categories/development/"> Development </a>
@@ -400,8 +400,8 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 3073 字 </span>
-          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        <span class="more-meta"> 约 4711 字 </span>
+          <span class="more-meta"> 预计阅读 10 分钟 </span>
 
         
         
@@ -424,10 +424,33 @@
 <ul>
 <li>
 <ul>
-<li><a href="#记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</a>
+<li><a href="#performance-without-the-event-loop">Performance without the event loop</a></li>
+<li><a href="#不依赖事件循环的性能表现">不依赖事件循环的性能表现</a>
 <ul>
-<li><a href="#调试环境">调试环境</a></li>
-<li><a href="#问题描述">问题描述</a></li>
+<li><a href="#需要高效编程语言的一个依据">需要高效编程语言的一个依据</a></li>
+<li><a href="#摩尔定律">摩尔定律</a></li>
+<li><a href="#能源被消耗到哪里去了">能源被消耗到哪里去了？</a></li>
+<li><a href="#免费午餐结束了">“免费午餐结束了”</a></li>
+<li><a href="#处理器单元-线程-和-goroutines">处理器单元, 线程 和 goroutines</a>
+<ul>
+<li><a href="#处理器单元">处理器单元</a></li>
+<li><a href="#上下文切换">上下文切换</a>
+<ul>
+<li><a href="#上下文切换有三个主要成本">上下文切换有三个主要成本。</a></li>
+<li><a href="#线程">线程</a></li>
+<li><a href="#goroutines">Goroutines</a></li>
+</ul></li>
+<li><a href="#栈的管理">栈的管理</a>
+<ul>
+<li><a href="#进程地址空间">进程地址空间</a></li>
+<li><a href="#线程栈">线程栈</a></li>
+<li><a href="#管理-goroutine-的栈">管理 Goroutine 的栈</a></li>
+<li><a href="#goroutine-栈的增长过程">Goroutine 栈的增长过程</a></li>
+<li><a href="#集成的-network-poller">集成的 network poller</a></li>
+</ul></li>
+<li><a href="#go-对-c10k-问题给出的解决方案">Go 对 c10k 问题给出的解决方案</a></li>
+<li><a href="#goroutines-栈管理和被集成了的-network-poller">Goroutines, 栈管理和被集成了的 network poller</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -439,442 +462,225 @@
     <div class="post-content">
       
 
-<h2 id="记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</h2>
+<h2 id="performance-without-the-event-loop">Performance without the event loop</h2>
 
-<h3 id="调试环境">调试环境</h3>
+<h2 id="不依赖事件循环的性能表现">不依赖事件循环的性能表现</h2>
+
+<p>本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。</p>
+
+<p>谈到 Go 的时候，一个常见的说法是,Go 是一种在服务器上运行良好的语言;静态二进制文件、强大的并发性和高性能。</p>
+
+<p>本文重点讨论最后两项，Go 语言和它的运行时是如何透明地让程序员编写高度可伸缩的网络服务器，而不必担心线程管理或 I/O 阻塞。</p>
+
+<h3 id="需要高效编程语言的一个依据">需要高效编程语言的一个依据</h3>
+
+<p>But before I launch into the technical discussion, I want to make two arguments to illustrate the market that Go targets.
+但在我开始技术讨论之前，我想用两个指标来说明 Go 语言的目标市场。</p>
+
+<h3 id="摩尔定律">摩尔定律</h3>
+
+<p>oft mis 援引摩尔定律称，每平方英寸晶体管的数量大约每 18 个月翻一番。</p>
+
+<p>然而，时钟频率却是一个功能完全不同的特性，十年 Intel 设计的 Pentium 4 就在时钟频率上达到了峰值，并在那之后 CPU 的时钟频率一直在倒退。
+<img src="https://dave.cheney.net/wp-content/uploads/2015/08/CPU.png" alt="" />
+Image credit: Herb Sutter (Dr. Dobb’s Journal, March 2005)</p>
+
+<p>###　空间和功率限制
+<img src="https://dave.cheney.net/wp-content/uploads/2015/08/sun-ultra-enterprise-450-400mhz-2gb-20-bay-workgroup-server-system-no-hdd-parts_131514071457.jpg" alt="" />
+Sun Enterprise e450—about the size of a bar fridge, about the same power consumption. Image credit: eBay</p>
+
+<p>这是 SUN 公司的 e450。当我开始我的职业生涯时，他们是这个行业的主力。</p>
+
+<p>这些东西是非常大的。三个这样的机器叠在一起，将装满 19 英寸的架子。它们每个功率大约 500 瓦。</p>
+
+<p>在过去的十年里，数据中心已经从空间受限转向电力受限。在我参与的前两次数据中心部署中，当机架仅仅装满 <sup>1</sup>&frasl;<sub>3</sub> 时，我们就达到了用电上限。</p>
+
+<p>由于计算密度提高得如此之快，数据中心空间不再是一个问题。然而，现代服务器在更小的体积内消耗了更多的能源，这使得给机房降温更加困难，但同时也是至关重要的。</p>
+
+<p>在宏观层面上受到功率上限的限制，你无法为一个机架 1200 瓦 1RU serverser 获得足够的功率配额，而在微观层面上，每一个微小的硅片上消耗了数百瓦能源。</p>
+
+<h3 id="能源被消耗到哪里去了">能源被消耗到哪里去了？</h3>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/220px-CMOS_Inverter.svg_.png" alt="" />
+CMOS Inverter. Image credit: Wikipedia</p>
+
+<p>这是一个反向器，可能是最简单的逻辑门之一。如果输入 A 为高，那么输出 Q 为低，反之亦然。</p>
+
+<p>今天所有的消费电子产品都是用 CMOS 逻辑构建的。CMOS 代表互补金属氧化物半导体。互补部分是关键。CPU 内部的每个逻辑元件都由一对晶体管实现，一个开关打开，另一个开关关闭。</p>
+
+<p>当电路接通或断开时，没有电流直接从源极流向漏极。然而，在过渡期间有一个短暂的时期，两个晶体管都导电，造成直接短路。</p>
+
+<p>功耗，和因此导致的散热，与每秒晶体管状态转换的次数成正比——CPU 时钟频率。
+[1]
+CMOS power consumption is not only caused by the short circuit current when the circuit is switching. Additional power consumption comes from charging the output capacitance of the gate, and leakage current through the MOSFET gate increases as the size of the transistor decreases. You can read more about this from in a the lecture materials from CMU’s ECE322 course. Bill Herd has a published a series of articles on how CMOS works.</p>
+
+<p>CPU 特征尺寸的降低主要是为了降低功耗。减少电力消耗并不仅仅意味着“绿色”。其主要目标是将功耗和散热保持在导致 CPU 损坏的水平以下。</p>
+
+<p>随着时钟频率的下降，以及与功耗的直接冲突，性能的提高主要来自于微体系结构的调整和深奥的向量指令，它们对一般计算没有直接的用处。总的来说，每一个微架构(5 年一个周期)的变化在每一代中最多产生 10%的改进，最近只有 4-6%。</p>
+
+<h3 id="免费午餐结束了">“免费午餐结束了”</h3>
+
+<p>希望现在你已经很清楚，硬件并没有变得更快。如果性能和规模对你很重要，那么你会同意我的观点，即至少在传统意义上，靠堆硬件来解决这个问题的日子已经结束了。正如赫伯•萨特(Herb Sutter)所言:“免费午餐结束了。”</p>
+
+<p>你需要一种高效的语言，因为低效的语言在生产上，在规模上，在资本支出的基础上都是不合理的。</p>
+
+<p>###　需要并发编程语言的一个依据
+我的第二个论点紧跟着我的第一个论点。CPU 并没有变快，而是变宽了。这就是晶体管的发展方向，这并不令人惊讶。</p>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/Ivy-Bridge_Die_Flat-HR.jpg" alt="" />
+Image credit: Intel</p>
+
+<p>多线程并行，或者如 Intel 所称的超线程，允许一个内核在添加少量硬件的同时并行执行多个指令流。英特尔使用超线程来人为地细分处理器市场，甲骨文和富士通更积极地将超线程应用到他们的产品中，每个处理器核使用 8 或 16 个硬件线程。</p>
+
+<p>自上世纪 90 年代末以来，Pentium Pro 就实现了 quad socket，现在大多数服务器都支持 dual socket 或者 quad socket 设计，dual socket 已成为主流。晶体管数量的增加使得整个 CPU 处理单元可以与同一硅片上的同级 CPU 处理单元共存。移动部件上的双核，桌面部件上的四核，甚至服务器部件上的更多核现在都成为了现实。在预算允许的情况下，您可以在服务器中购买尽可能多的核心。</p>
+
+<p>为了利用这些额外的核心，您需要一种能有效开发出并发程序的编程语言。</p>
+
+<h3 id="处理器单元-线程-和-goroutines">处理器单元, 线程 和 goroutines</h3>
+
+<p>Go 有 goroutines，这是它能有效开发出并发程序的基础。我想先退一步，来看看产生 goroutines 的历史背景。</p>
+
+<h4 id="处理器单元">处理器单元</h4>
+
+<p>起初，计算机在批处理模型中一次运行一个任务。在 60 年代，对更多交互形式的计算的渴望导致了多处理，或分时操作系统的发展。到了 70 年代，这一想法已经在网络服务器、ftp、telnet、rlogin 以及后来 Tim Burners-Lee 的 CERN httpd 上得到了很好的应用，这些服务器通过划分子进程来处理每个传入的网络连接。</p>
+
+<p>在分时系统中，操作系统通过记录当前进程的状态，然后恢复另一个进程的状态，从而在活动进程之间快速切换 CPU，从而保持并发的假象。这称为上下文切换。</p>
+
+<h4 id="上下文切换">上下文切换</h4>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/640px-Table_of_x86_Registers_svg.svg_.png" alt="" />
+Image credit: Immae (CC BY-SA 3.0)</p>
+
+<h5 id="上下文切换有三个主要成本">上下文切换有三个主要成本。</h5>
 
 <ul>
-<li><p>go 版本和平台<br />
-go version go1.5.4 linux/amd64</p></li>
+<li><p>内核需要存储该进程的所有 CPU 寄存器的内容，然后恢复另一个进程的值。因为进程切换可以在进程执行的任何位置发生，所以操作系统需要存储所有这些寄存器的内容，因为它不知道当前正在使用哪些寄存器
+[2]
+This is an oversimplification. In some cases the operating system can avoid saving and restoring infrequently used architectural registers by starting the the process in a mode where access to floating point or MMX/SSE registers will cause the program to fault, thereby informing the kernel that the process will now use those registers and it should from then on save and restore them.</p></li>
 
-<li><p>delve 版本<br />
-Delve Debugger<br />
-Version: 1.0.0<br />
-Build: $Id:   c98a142125d0b17bb11ec0513bde346229b5f533 $</p></li>
+<li><p>内核需要将 CPU 的虚拟地址刷新为物理地址映射(TLB 缓存)
+[3]
+Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support the operating system can tell the processor to associate particular TLB cache entries with an identifier, derived from the process ID, rather than treating each cache entry as global. The upside is this avoids flushing out entries on each process switch if the process is placed back on the same CPU in short order.</p></li>
+
+<li><p>操作系统上下文切换的开销，以及选择下一个进程占用 CPU 的调度程序函数的开销。</p></li>
 </ul>
 
-<h3 id="问题描述">问题描述</h3>
+<p>由于与硬件相关，这些成本相对固定，并且依赖于上下文切换之间所做的工作量来摊销它们的成本-快速上下文切换往往会超过上下文切换之间所做的工作量。</p>
 
-<p>一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的 main 函数启动前，golang 的 runtime 会做一系列的工作来为我们准备好运行时环境，这包括运行时 golang 程序层面的内存管理和垃圾回收，最重要的是还帮我们建立了一套 goroutine(协程)的调度机制。
-为了了解这个 golang 的底层 runtime 是怎么工作的，在看完一些关于 runtime 的资料后，我打算用调试工具来 debug，追踪一下 runtime 的运行过程，以此来验证一下自己的理解。
-可是在刚开始调试的时候，就遇到了麻烦。</p>
+<h5 id="线程">线程</h5>
 
-<p>golang 的入口代码如下：<br />
-runtime/asm_amd64.s</p>
+<p>这导致线程的被设计开发出来，线程在概念上与进程相同，但共享相同的内存空间。由于线程共享地址空间，所以它们的调度比进程更轻松，因此创建和切换更快。</p>
 
-<pre><code class="language-Go">TEXT runtime·rt0_go(SB),NOSPLIT,$0
-	// copy arguments forward on an even stack
-	MOVQ	DI, AX		// argc
-	MOVQ	SI, BX		// argv
-	SUBQ	$(4*8+7), SP		// 2args 2auto
-	ANDQ	$~15, SP
-	MOVQ	AX, 16(SP)
-	MOVQ	BX, 24(SP)
+<p>线程仍然有一个昂贵的上下文切换成本;必须保留许多状态。Goroutines 将线程的概念又向前推进了一步。</p>
 
-	// 这里去掉一些不影响阅读的代码
+<h5 id="goroutines">Goroutines</h5>
 
-	LEAQ	runtime·tls0(SB), DI
-	CALL	runtime·settls(SB)
+<p>goroutine 不是依赖内核来管理它们之间的调度，而是通过协作的方式调度的。goroutine 之间的切换只发生在预先设计好的时间点，当显式调用 Go 运行时调度程序时。goroutine 被调度器抢占的主要原因包括:</p>
 
-	// store through it, to make sure it works
-	get_tls(BX)
-	MOVQ	$0x123, g(BX)
-	MOVQ	runtime·tls0(SB), AX
-	CMPQ	AX, $0x123
-	JEQ 2(PC)
-	MOVL	AX, 0	// abort
-ok:
-	// set the per-goroutine and per-mach &quot;registers&quot;
-	get_tls(BX)
-	LEAQ	runtime·g0(SB), CX
-	MOVQ	CX, g(BX)
-	LEAQ	runtime·m0(SB), AX
+<ul>
+<li>在 Channel（Go 特有的语言特性，另一个是 goroutine）上产生阻塞的收发操作。</li>
+<li>Go 语言中 go 这个关键字的使用，虽然不能保证新的 goroutine 会立即被调度。</li>
+<li>文件操作和网络操作等系统调用。</li>
+<li>由于进入内存垃圾回收周期而被暂停。</li>
+</ul>
 
-	// save m-&gt;g0 = g0
-	MOVQ	CX, m_g0(AX)
-	// save m0 to g0-&gt;m
-	MOVQ	AX, g_m(CX)
+<p>换句话说，goroutine 的调度会在这些时间点发生，在不能得到更多数据，一个 goroutine 无法继续执行时； 或者是在执行环境中，一个 goroutine 需要更多内存空间时。</p>
 
-	CLD				// convention is D is always left cleared
-	CALL	runtime·check(SB)
+<p>许多 goroutine 在 Go 运行时被多路复用到一个操作系统线程上。这使得 goroutines 的制造成本和切换成本都很低。在一个进程中有成千上万的 goroutine 是正常的，成百上千的 goroutine 是低于预期的。</p>
 
-	MOVL	16(SP), AX		// copy argc
-	MOVL	AX, 0(SP)
-	MOVQ	24(SP), AX		// copy argv
-	MOVQ	AX, 8(SP)
-	CALL	runtime·args(SB)
-	CALL	runtime·osinit(SB)
-	CALL	runtime·schedinit(SB)
+<p>从语言的角度来看，调度看起来像一个函数调用，并且具有相同的语义。编译器知道当前正在使用寄存器并自动保存它们。线程调用包含一个特定 goroutine 栈的调度器，这个调度器返回另外一个不同的 goroutine 栈。将此与线程应用程序进行比较，在线程应用程序中，可以在任何时间、任何指令抢占线程。</p>
 
-	// create a new goroutine to start program
-	MOVQ	$runtime·mainPC(SB), AX		// entry
-	PUSHQ	AX
-	PUSHQ	$0			// arg size
-	CALL	runtime·newproc(SB)
-	POPQ	AX
-	POPQ	AX
+<p>这导致每个 Go 进程的操作系统线程相对较少，而 Go 的 runtime 负责将一个可运行的 goroutine 分配给一个空闲的操作系统线程。</p>
 
-	// start this M
-	CALL	runtime·mstart(SB)
+<h4 id="栈的管理">栈的管理</h4>
 
-	MOVL	$0xf1, 0xf1  // crash
-	RET
-</code></pre>
+<p>在前一节中，我讨论了 goroutine 如何减少管理(有时是数十万个)过多并发执行线程时的开销。goroutine 还有另一个方面，那就是堆栈管理。</p>
 
-<p>在 runtime 中，定义了两个全局变量<br />
-runtime/proc1.go</p>
+<h5 id="进程地址空间">进程地址空间</h5>
 
-<pre><code class="language-go">var (
-	m0 m
-	g0 g
-)
-</code></pre>
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/process.png" alt="" /></p>
 
-<p>在 golang runtime GPM 模型初始化运行之前就存在了，
-这个 m0 是程序启动后，在 GPM 模型中，代表 runtime.rt0_go 这个主线程的对象。
-这个 m0 负责执行初始化操作以及启动第一个 goroutine。
-而 g0 的作用主要是给 m0 提供线程栈空间，以及在 cpu 切换线程时，为线程提供标识。</p>
+<p>这是一个典型的进程内存布局图。我们感兴趣的关键是堆和栈的位置。</p>
 
-<p>rt0_go 这个汇编函数中有段注释</p>
+<p>在进程的地址空间中，堆通常位于内存的底部，位于程序代码之上，并向上增长。</p>
 
-<pre><code class="language-go">// save m-&gt;g0 = g0
+<p>堆栈位于虚拟地址空间的顶部，并向下增长。</p>
 
-// save m0 to g0-&gt;m
-</code></pre>
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/guard-page.png" alt="" /></p>
 
-<p>就是把这两个对象在开始发挥作用前绑定起来。</p>
+<p>因为堆和栈相互覆盖将是灾难性的，所以操作系统在堆栈和堆之间安排了一个不可访问的内存区域。</p>
 
-<p>在 rt0_go 这个汇编函数的尾部，有这样一段代码</p>
+<p>这称为保护页，它有效地限制了进程的栈大小，通常按几兆字节的顺序。</p>
 
-<pre><code class="language-GO">	// create a new goroutine to start program
-	MOVQ	$runtime·mainPC(SB), AX		// entry
-	PUSHQ	AX
-	PUSHQ	$0			// arg size
-	CALL	runtime·newproc(SB)
-	POPQ	AX
-	POPQ	AX
+<h5 id="线程栈">线程栈</h5>
 
-	// start this M
-	CALL	runtime·mstart(SB)
-</code></pre>
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/threads.png" alt="" />
+address space is reduced.</p>
 
-<p>源码注释很明白，就是将我们 main 包里的 main 函数放到一个新建的 goroutine 当中以启动程序，后面就是启动 m0 这个线程。
-于是我就在这两个 CALL 的函数定义处分别打了断点，准备跟进去走个流程。</p>
+<p>线程共享相同的地址空间，因此对于每个线程，它必须有自己的栈和自己的保护页。</p>
 
-<blockquote>
-<p>[test]$ go build -gcflags &ldquo;-N -l&rdquo; test<br />
-[test]$ dlv debug test<br />
-Type &lsquo;help&rsquo; for list of commands.<br />
-(dlv) b runtime.newproc<br />
-Breakpoint 1 set at 0x4327e0 for runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216
-(dlv) b runtime.mstart<br />
-Breakpoint 2 set at 0x42e650 for runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668</p>
-</blockquote>
+<p>由于很难预测特定线程的栈需求，因此必须为每个线程的栈保留大量内存。并寄希望于需求会比这低，同时作为警戒的保护页永远不会被触发。</p>
 
-<p>从 runtime.rt0_go 那里调用这个 runtime.newproc 主要是将我们的 main 包中的 main 函数装进一个新的 goroutine 当中，然后放到与当前的 m0 绑定的 P(在之前 runtime.rt0_go 中初始化时的 runtime.schedinit 中绑定的)的 runnable goroutine 队列中，待调度机制调度后开始工作。</p>
+<p>缺点是，随着程序中线程数量的增加，可用地址空间的数量会减少。</p>
 
-<p>runtime/proc1.go</p>
+<h5 id="管理-goroutine-的栈">管理 Goroutine 的栈</h5>
 
-<pre><code class="language-go">func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
-	_g_ := getg()
-    ......
-	_p_ := _g_.m.p.ptr()
-	newg := gfget(_p_)
-	if newg == nil {
-		newg = malg(_StackMin)
-		casgstatus(newg, _Gidle, _Gdead)
-		allgadd(newg) // publishes with a g-&gt;status of Gdead so GC scanner doesn't look at uninitialized stack.
-	}
-    ......
-	runqput(_p_, newg, true)
-    ......
-	return newg
-}
-</code></pre>
+<p>早期的进程模型允许程序员查看堆和栈，一边观察其是否足够大，而不必为此担心。缺点是复杂而昂贵的子进程模型。</p>
 
-<p>这里用调试器查看一下*g*值，和前面提到的 g0 和 m0 这两个全局的变量的地址</p>
+<p>线程稍微改善了这种情况，但要求程序员猜测最合适的栈大小;太小，程序将中止;太大，虚拟地址空间将耗尽。</p>
 
-<pre><code class="language-go">(dlv) n
-&gt; runtime.newproc.func1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2220 (PC: 0x44f5c3)
-  2215:	//go:nosplit
-  2216:	func newproc(siz int32, fn *funcval) {
-  2217:		argp := add(unsafe.Pointer(&amp;fn), ptrSize)
-  2218:		pc := getcallerpc(unsafe.Pointer(&amp;siz))
-  2219:		systemstack(func() {
-=&gt;2220:			newproc1(fn, (*uint8)(argp), siz, 0, pc)
-  2221:		})
-  2222:	}
+<p>我们已经看到，Go 运行时将大量 goroutine 调度到少量线程上，但是这些 goroutine 的栈需求如何呢?</p>
 
-</code></pre>
+<h5 id="goroutine-栈的增长过程">Goroutine 栈的增长过程</h5>
 
-<pre><code class="language-go">(dlv) n
-&gt; runtime.newproc1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2231 (PC: 0x432875)
-  2226:	// address of the go statement that created this.  The new g is put
-  2227:	// on the queue of g's waiting to run.
-  2228:	func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
-  2229:		_g_ := getg()
-  2230:
-=&gt;2231:		if fn == nil {
-  2232:			_g_.m.throwing = -1 // do not dump full stacks
-  2233:			throw(&quot;go of nil func value&quot;)
-  2234:		}
-  2235:		_g_.m.locks++ // disable preemption because it can be holding p in a local var
-  2236:		siz := narg + nret
-(dlv) local
-Command failed: command not available
-(dlv) locals
-siz = 200
-sp = 139891379798019
-newg = (*runtime.g)(0x4341ec)
-_p_ = (*runtime.p)(0x896a40)
-_g_ = (*runtime.g)(0x872aa0)
-(dlv) p unsafe.Pointer(uintptr(&amp;g0))
-unsafe.Pointer(0x872aa0)
-(dlv) p unsafe.Pointer(uintptr(&amp;m0))
-unsafe.Pointer(0x873040)
-</code></pre>
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/stack-growth.png" alt="" /></p>
 
-<p>这个_g_ 指向 g0, 和预想的一样</p>
+<p>每个 goroutine 都从堆中分配的一个小尺寸的栈开始。大小随时间而变化，但在 Go 1.5 中，每一个 goroutine 都以 2k 的分配开始栈。</p>
 
-<p>这个返回<em>g</em> 的函数是编译器实现的，源代码注释有解释</p>
+<p>Go 编译器不使用保护页，而是在每个函数调用中插入一个检查，以测试是否有足够的栈空间供函数运行。如果有足够的栈空间，函数将正常运行。（在函数的汇编代码前面，由编译器插入一段检查代码。这个动作可以在函数定义前配置编译器指令，禁用掉，不过要非常非常谨慎地使用）</p>
 
-<pre><code class="language-go">// getg returns the pointer to the current g.
-// The compiler rewrites calls to this function into instructions
-// that fetch the g directly (from TLS or from the dedicated register).
-func getg() *g
-</code></pre>
+<p>如果空间不足，Go 进程的 runtime 将在堆上分配一个更大的栈空间，将当前栈的内容复制到新的栈空间，释放旧的栈空间，然后重新启动函数调用。</p>
 
-<p>这段 runtime.newproc 的代码到此结束，接下来转到 runtime.mstart,看看线程时怎么启动起来的。<br />
-直接 continue 一下到 runtime.mstart 这个断点。</p>
+<p>由于这种检查，goroutine 的初始堆栈可以变得更小，这反过来又允许 Go 程序员将 goroutine 视为廉价的资源。如果有足够多的部分未被使用，Goroutine 栈也会收缩。这是在垃圾回收期间处理的。</p>
 
-<pre><code class="language-go">(dlv) c
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:671 (PC: 0x42e65d)
-   666:	// Called to start an M.
-   667:	//go:nosplit
-   668:	func mstart() {
-   669:		_g_ := getg()
-   670:
-=&gt; 671:		if _g_.stack.lo == 0 {
-   672:			// Initialize stack bounds from system stack.
-   673:			// Cgo may have left stack size in stack.hi.
-   674:			size := _g_.stack.hi
-   675:			if size == 0 {
-   676:				size = 8192 * stackGuardMultiplier
-   678:			_g_.stack.hi = uintptr(noescape(unsafe.Pointer(&amp;size)))
-   679:			_g_.stack.lo = _g_.stack.hi - size + 1024
-   680:		}
-   681:		// Initialize stack guards so that we can start calling
-   682:		// both Go and C functions with stack growth prologues.
-   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
-   684:		_g_.stackguard1 = _g_.stackguard0
-   685:		mstart1()
-   686:	}
-(dlv) locals
-size = 0
-(dlv) p _g_
-Command failed: could not find symbol value for _g_
-</code></pre>
+<h5 id="集成的-network-poller">集成的 network poller</h5>
 
-<p>这回*g*这个变量查不出来，前面说了这个返回<em>g</em> 的函数是编译器实现的。
-查了相关资料，这个 TLS,<br />
-全称是 Thread-local storage, 代表每个线程的中的本地数据.
-例如标准 c 中的 errno 就是一个典型的 TLS 变量, 每个线程都有一个独自的 errno, 写入它不会干扰到其他线程中的值.
-go 在实现协程时非常依赖 TLS 机制, 会用于获取系统线程中当前的 G 和 G 所属的 M 的实例.</p>
+<p>2002 年，丹·凯格尔（Dan Kegel）发表了他所谓的<a href="http://www.kegel.com/c10k.html">c10k</a>问题。简单地说，如何编写服务器软件来处理每天至少 10000 个 TCP 会话。自从那篇论文撰写以来，传统观点认为高性能服务器需要原生线程（native threads），而最近的几年，基于事件的循环代替了原生线程。</p>
 
-<p>因为 go 并不使用 glibc, 操作 TLS 会使用系统原生的接口, 以 linux x64 为例,
-go 在新建 M 时会调用 arch_prctl 这个 syscall 设置 FS 寄存器的值为 M.tls 的地址,
-运行中每个 M 的 FS 寄存器都会指向它们对应的 M 实例的 tls, linux 内核调度线程时 FS 寄存器会跟着线程一起切换,
-这样 go 代码只需要访问 FS 寄存器就可以存取线程本地的数据.</p>
+<p>线程在调度成本和内存占用方面有很高的开销。事件循环降低了这些成本，但是这引入了回调驱动的复杂编程风格。</p>
 
-<p>那就看看汇编代码。</p>
+<p>Go 为程序员提供了两全其美解决方案。</p>
 
-<pre><code class="language-go">(dlv) disassemble
-TEXT runtime.mstart(SB) /root/.gvm/gos/go1.5.4/src/runtime/proc1.go
-	proc1.go:668	0x42e650*	4883ec08		sub rsp, 0x8
-	proc1.go:669	0x42e654	64488b0425f8ffffff	mov rax, qword ptr fs:[0xfffffff8]
-	proc1.go:671	0x42e65d	488b18			mov rbx, qword ptr [rax]
-	proc1.go:671	0x42e660	4883fb00		cmp rbx, 0x0
-	proc1.go:671	0x42e664	753b			jnz 0x42e6a1
-=&gt;	proc1.go:674	0x42e666	488b6808		mov rbp, qword ptr [rax+0x8]
-</code></pre>
+<h4 id="go-对-c10k-问题给出的解决方案">Go 对 c10k 问题给出的解决方案</h4>
 
-<p>FS 寄存器看样子是放到 rax 寄存器里面了，我们验证一下，看看 rax 的值是不是和 g0 的地址一样。</p>
+<p>在 Go 中，系统调用通常是阻塞操作，这包括读取和写入文件描述符。Go 的 runtime 调度器通过找到一个空闲线程或生成另一个线程来处理这个问题，以便在原始线程阻塞时继续为 goroutines 提供服务。实际上，这对于文件 IO 很有效，因为少量阻塞线程可以快速耗尽本地 IO 带宽。</p>
 
-<pre><code class="language-go">(dlv) regs
-     Rip = 0x000000000042e65d
-     Rsp = 0x00007ffd936859d0
-     Rax = 0x0000000000872aa0
-     Rbx = 0x000000c820000180
-     Rcx = 0x000000000077e320
-     Rdx = 0x0000000000872aa0
-     Rdi = 0x000000000042b6e0
-     Rsi = 0x00007ffd936859e0
-     Rbp = 0x0000000000873040
-      R8 = 0x000000000077e318
-      R9 = 0x0000000000000008
-     R10 = 0x0000000000629e00
-     R11 = 0x0000000000000000
-     R12 = 0x0000000000000008
-     R13 = 0x000000000077b770
-     R14 = 0x0000000000000000
-     R15 = 0x0000000000000008
-Orig_rax = 0xffffffffffffffff
-      Cs = 0x0000000000000033
-  Eflags = 0x0000000000000202	[IF IOPL=0]
-      Ss = 0x000000000000002b
- Fs_base = 0x00007fbf429ae740
- Gs_base = 0x0000000000000000
-      Ds = 0x0000000000000000
-      Es = 0x0000000000000000
-      Fs = 0x0000000000000000
-      Gs = 0x0000000000000000
-(dlv) p unsafe.Pointer(uintptr(&amp;g0))
-unsafe.Pointer(0x872aa0)
-</code></pre>
+<p>但是对于网络套接字，按照设计，任何时候几乎所有的 goroutine 都将被阻塞，等待网络 IO。在一个简单的实现中，这将需要和 goroutine 一样多的线程，所有线程都被阻塞，等待网络流量。由于 runtime 和 net 包之间的协作，集成到 Go 的 runtime 中的 network poller 可以有效地处理这个问题。</p>
 
-<p>都是 0x872aa0，没问题。继续走流程。</p>
+<p>在较早版本的 Go 中，network poller 是一个 goroutine，负责使用 kqueue 或 epoll 轮询准备就绪通知。轮询 goroutine 将通过 channel 与等待的 goroutine 通信。这实现了避免每个线程都做操作系统调用产生的瓶颈，而使用了通过 channel 发送消息这种通用唤醒机制。这意味着调度器不需要关心唤醒源，不需要把唤醒操作看的比较重要。</p>
 
-<pre><code class="language-go">(dlv) n
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
-   680:		}
-   681:		// Initialize stack guards so that we can start calling
-   682:		// both Go and C functions with stack growth prologues.
-   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
-   684:		_g_.stackguard1 = _g_.stackguard0
-=&gt; 685:		mstart1()
-   686:	}
-</code></pre>
+<p>在 Go 的当前版本中，network poller 已经集成到 runtime 本身中。当 runtime 知道哪个 goroutine 正在等待网络套接字就绪时，它可以在数据包到达时立即将 goroutine 放回相同的 CPU 上，从而减少延迟并增加吞吐量。</p>
 
-<p>调试器又回到了 mstart 函数开始处，并没有跳进 mstart1 函数，并且多显示了两行调试信息，和<code>hits total:X</code>的额外信息。</p>
+<h4 id="goroutines-栈管理和被集成了的-network-poller">Goroutines, 栈管理和被集成了的 network poller</h4>
 
-<pre><code class="language-go">(dlv) n
-&gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
-	breakpoint hit during next, continuing...
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
-   663:		}
-   664:	}
-   665:
-   666:	// Called to start an M.
-   667:	//go:nosplit
-=&gt; 668:	func mstart() {
-   669:		_g_ := getg()
-   670:
-   671:		if _g_.stack.lo == 0 {
-   672:			// Initialize stack bounds from system stack.
-   673:			// Cgo may have left stack size in stack.hi.
-</code></pre>
+<p>总之，goroutines 提供了一个强大的抽象，使程序员不必担心线程池或事件循环。</p>
 
-<p>发生了什么事情，为什么又跳回去了？</p>
+<p>goroutine 的栈已经足够大，而不需要考虑线程栈或线程池的大小。</p>
 
-<p>看一下寄存器</p>
+<p>被集成了的 network poller 允许程序员避免了复杂的回调风格代码，同时仍然利用操作系统中可用的最有效的 IO 完成逻辑。</p>
 
-<pre><code class="language-go">(dlv) regs
-     Rip = 0x000000000042e65d
-     Rsp = 0x00007f23e3133eb8
-     Rax = 0x000000c820000900
-     Rbx = 0x000000000042e650
-     Rcx = 0x00000000017f6000
-     Rdx = 0x00000000ffffffff
-     Rdi = 0x000000000042e650
-     Rsi = 0x00007f23e34fb768
-     Rbp = 0x000000c820000900
-      R8 = 0x0000000000000000
-      R9 = 0x00000000017f6010
-     R10 = 0x00007f23e3133960
-     R11 = 0x00007f23e31ba580
-     R12 = 0x0000000000000000
-     R13 = 0x0000000000801000
-     R14 = 0x0000000000000000
-     R15 = 0x00007f23e3134700
-Orig_rax = 0xffffffffffffffff
-      Cs = 0x0000000000000033
-  Eflags = 0x0000000000000216	[PF AF IF IOPL=0]
-      Ss = 0x000000000000002b
- Fs_base = 0x00007f23e3134700
- Gs_base = 0x0000000000000000
-      Ds = 0x0000000000000000
-      Es = 0x0000000000000000
-      Fs = 0x0000000000000000
-      Gs = 0x0000000000000000
-(dlv) p unsafe.Pointer(uintptr(&amp;g0))
-unsafe.Pointer(0x872aa0)
-</code></pre>
+<p>runtime 确保有足够的线程来服务所有 goroutine 并保持 CPU 核处于活动状态。</p>
 
-<p>Rax = 0x000000c820000900, 也就是说_g_的值和 g0 的地址不相等。</p>
+<p>所有这些特性对 Go 程序员来说都是透明的。</p>
 
-<p>调试信息说 runtime.mstart()被 hit 了两次，发生了什么？</p>
+<p>原文作者相关文章:</p>
 
-<p>我们再复现一下这个场景。</p>
-
-<pre><code class="language-go">(dlv) r  \\重启调试过程
-(dlv) c  \\到达第一个断点runtime.newproc()
-(dlv) c  \\到达第二个断点runtime.mstart()
-(dlv) n  \\几次next命令之后，在即将进入mstart1函数之前停下
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
-   680:		}
-   681:		// Initialize stack guards so that we can start calling
-   682:		// both Go and C functions with stack growth prologues.
-   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
-   684:		_g_.stackguard1 = _g_.stackguard0
-=&gt; 685:		mstart1()
-   686:	}
-   687:
-   688:	func mstart1() {
-   689:		_g_ := getg()
-   690:
-(dlv) goroutines
-[1 goroutines]
-  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc.go:28 runtime.main (0x42b6e0)
-(dlv) threads
-* Thread 22392 at 0x42e6bd /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 runtime.mstart
-(dlv)
-</code></pre>
-
-<p>我们用 golang 专属调试器 delve 提供针对 goroutine 的调试命令来查看一下。
-显示有一个编号为 1 的 goroutine 和一个编号为 22392 的 Thread。
-继续，</p>
-
-<pre><code class="language-go">(dlv) n
-&gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
-	breakpoint hit during next, continuing...
-&gt; runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 (hits goroutine(1):1 total:2) (PC: 0x4327e0)
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
-   663:		}
-   664:	}
-   665:
-   666:	// Called to start an M.
-   667:	//go:nosplit
-=&gt; 668:	func mstart() {
-   669:		_g_ := getg()
-   670:
-   671:		if _g_.stack.lo == 0 {
-   672:			// Initialize stack bounds from system stack.
-   673:			// Cgo may have left stack size in stack.hi.
-(dlv) goroutines
-[2 goroutines]
-  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc (0x4327e0) (thread 22392)
-  Goroutine 17 - User: /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722 runtime.goexit (0x45b1a1)
-(dlv) threads
-  Thread 22392 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
-* Thread 23645 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
-(dlv)
-</code></pre>
-
-<p>原来出现了线程切换，调试信息显示第二次跳回 mstart 函数的时候，因为线程切换，调试器直接 next 到了新线程里面最先出现的断点，也就是 runtime.mstart 函数处。这也是为什么_g*的值和 g0 的地址不相等， 因为_g*是从 TLS 取的值，而底层操作系统做线程调度切换的时候，会将 TLS 更新。<br />
-但是为什么会跳到 runtime.mstart 函数这里呢？为什么总是在 runtime.mstart1()这个地方做线程切换，而不是其他地方呢？</p>
-
-<p>我们查一下线程栈</p>
-
-<pre><code class="language-go">(dlv) goroutine 17 stack -full
-0  0x000000000045b1a1 in runtime.goexit
-   at /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722
-(dlv) threads
-  Thread 26556 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
-* Thread 26616 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
-(dlv)
-</code></pre>
-
-<p>（未完待续）</p>
+<ol>
+<li><a href="https://dave.cheney.net/2015/05/31/hear-me-speak-about-go-performance-at-oscon">Hear me speak about Go performance at OSCON</a></li>
+<li><a href="https://dave.cheney.net/2013/05/21/go-11-performance-improvements">Go 1.1 performance improvements</a></li>
+<li><a href="https://dave.cheney.net/2013/12/02/go-12-performance-improvements">Go 1.2 performance improvements</a></li>
+<li><a href="https://dave.cheney.net/2013/05/25/go-11-performance-improvements-part-2">Go 1.1 performance improvements, part 2</a></li>
+</ol>
 
     </div>
 
@@ -887,7 +693,7 @@ unsafe.Pointer(0x872aa0)
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-05-09</span>
+    <span class="item-content">2019-05-13</span>
   </p>
   
   <p class="copyright-item">
@@ -910,7 +716,7 @@ unsafe.Pointer(0x872aa0)
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/performance-without-the-event-loop/">
+          <a class="prev" href="/post/jane-theme-preview/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -920,12 +726,12 @@ unsafe.Pointer(0x872aa0)
 </svg>
 
             </i>
-            <span class="prev-text nav-default">Performance Without the Event Loop</span>
+            <span class="prev-text nav-default">Jane Theme Preview</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/first/">
-            <span class="next-text nav-default">First</span>
+          <a class="next" href="/post/a-record-of-golang-runtime/">
+            <span class="next-text nav-default">A Record of Golang Runtime</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -958,10 +764,10 @@ unsafe.Pointer(0x872aa0)
         <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
       <script type="text/javascript">
       const gitment = new Gitment({
-        id: 'a-record-of-golang-runtime.md',
-        title: 'A Record of Golang Runtime',
+        id: 'performance-without-the-event-loop.md',
+        title: 'Performance Without the Event Loop',
         link: decodeURI(location.href),
-        desc: '记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux\/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的',
+        desc: 'Performance without the event loop 不依赖事件循环的性能表现 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到',
         owner: 'polar9527',
         repo: 'site_comments',
         oauth: {
@@ -981,7 +787,7 @@ unsafe.Pointer(0x872aa0)
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "https://polar9527.github.io/post/a-record-of-golang-runtime/";
+      this.page.url = "https://polar9527.github.io/post/performance-without-the-event-loop/";
     };
     function load_disqus() {
       
