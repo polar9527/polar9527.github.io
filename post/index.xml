@@ -37,7 +37,7 @@
       <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/performance-without-the-event-loop/</guid>
-      <description>Performance without the event loop 不依赖事件循环的性能表现 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到</description>
+      <description>Performance without the event loop 不依赖事件循环的性能表现 英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行</description>
     </item>
     
     <item>
@@ -139,7 +139,8 @@
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>https://polar9527.github.io/post/creating-a-new-theme/</guid>
-      <description></description>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>

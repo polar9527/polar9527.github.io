@@ -409,6 +409,9 @@ __double underscores__
 
 &lt;h2 id=&#34;不依赖事件循环的性能表现&#34;&gt;不依赖事件循环的性能表现&lt;/h2&gt;
 
+&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/2015/08/08/performance-without-the-event-loop&#34;&gt;英文原文&lt;/a&gt;
+&lt;a href=&#34;https://polar9527.github.io/post/performance-without-the-event-loop/&#34;&gt;译文&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。&lt;/p&gt;
 
 &lt;p&gt;谈到 Go 的时候，一个常见的说法是,Go 是一种在服务器上运行良好的语言;静态二进制文件、强大的并发性和高性能。&lt;/p&gt;
