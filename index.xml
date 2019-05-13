@@ -32,8 +32,6 @@
       
         <description>
 
-&lt;h2 id=&#34;不依赖事件循环的性能表现&#34;&gt;不依赖事件循环的性能表现&lt;/h2&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/2015/08/08/performance-without-the-event-loop&#34;&gt;英文原文&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://polar9527.github.io/post/performance-without-the-event-loop/&#34;&gt;译文&lt;/a&gt;&lt;/p&gt;
@@ -46,8 +44,7 @@
 
 &lt;h3 id=&#34;需要高效编程语言的一个依据&#34;&gt;需要高效编程语言的一个依据&lt;/h3&gt;
 
-&lt;p&gt;But before I launch into the technical discussion, I want to make two arguments to illustrate the market that Go targets.
-但在我开始技术讨论之前，我想用两个指标来说明 Go 语言的目标市场。&lt;/p&gt;
+&lt;p&gt;但在我开始技术讨论之前，我想用两个指标来说明 Go 语言的目标市场。&lt;/p&gt;
 
 &lt;h3 id=&#34;摩尔定律&#34;&gt;摩尔定律&lt;/h3&gt;
 
