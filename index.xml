@@ -42,7 +42,7 @@
 
 &lt;p&gt;本文重点讨论最后两项，Go 语言和它的运行时是如何透明地让程序员编写高度可伸缩的网络服务器，而不必担心线程管理或 I/O 阻塞。&lt;/p&gt;
 
-&lt;h3 id=&#34;需要高效编程语言的一个依据&#34;&gt;需要高效编程语言的一个依据&lt;/h3&gt;
+&lt;h2 id=&#34;需要高效编程语言的一个依据&#34;&gt;需要高效编程语言的一个依据&lt;/h2&gt;
 
 &lt;p&gt;但在我开始技术讨论之前，我想用两个指标来说明 Go 语言的目标市场。&lt;/p&gt;
 
@@ -93,7 +93,7 @@ CMOS power consumption is not only caused by the short circuit current when the 
 
 &lt;p&gt;你需要一种高效的语言，因为低效的语言在生产上，在规模上，在资本支出的基础上都是不合理的。&lt;/p&gt;
 
-&lt;p&gt;###　需要并发编程语言的一个依据
+&lt;p&gt;##　需要并发编程语言的一个依据
 我的第二个论点紧跟着我的第一个论点。CPU 并没有变快，而是变宽了。这就是晶体管的发展方向，这并不令人惊讶。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/Ivy-Bridge_Die_Flat-HR.jpg&#34; alt=&#34;&#34; /&gt;
@@ -136,13 +136,13 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
 
 &lt;p&gt;由于与硬件相关，这些成本相对固定，并且依赖于上下文切换之间所做的工作量来摊销它们的成本-快速上下文切换往往会超过上下文切换之间所做的工作量。&lt;/p&gt;
 
-&lt;h5 id=&#34;线程&#34;&gt;线程&lt;/h5&gt;
+&lt;h4 id=&#34;线程&#34;&gt;线程&lt;/h4&gt;
 
 &lt;p&gt;这导致线程的被设计开发出来，线程在概念上与进程相同，但共享相同的内存空间。由于线程共享地址空间，所以它们的调度比进程更轻松，因此创建和切换更快。&lt;/p&gt;
 
 &lt;p&gt;线程仍然有一个昂贵的上下文切换成本;必须保留许多状态。Goroutines 将线程的概念又向前推进了一步。&lt;/p&gt;
 
-&lt;h5 id=&#34;goroutines&#34;&gt;Goroutines&lt;/h5&gt;
+&lt;h4 id=&#34;goroutines&#34;&gt;Goroutines&lt;/h4&gt;
 
 &lt;p&gt;goroutine 不是依赖内核来管理它们之间的调度，而是通过协作的方式调度的。goroutine 之间的切换只发生在预先设计好的时间点，当显式调用 Go 运行时调度程序时。goroutine 被调度器抢占的主要原因包括:&lt;/p&gt;
 
@@ -161,11 +161,11 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
 
 &lt;p&gt;这导致每个 Go 进程的操作系统线程相对较少，而 Go 的 runtime 负责将一个可运行的 goroutine 分配给一个空闲的操作系统线程。&lt;/p&gt;
 
-&lt;h4 id=&#34;栈的管理&#34;&gt;栈的管理&lt;/h4&gt;
+&lt;h3 id=&#34;栈的管理&#34;&gt;栈的管理&lt;/h3&gt;
 
 &lt;p&gt;在前一节中，我讨论了 goroutine 如何减少管理(有时是数十万个)过多并发执行线程时的开销。goroutine 还有另一个方面，那就是堆栈管理。&lt;/p&gt;
 
-&lt;h5 id=&#34;进程地址空间&#34;&gt;进程地址空间&lt;/h5&gt;
+&lt;h4 id=&#34;进程地址空间&#34;&gt;进程地址空间&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/process.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -181,7 +181,7 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
 
 &lt;p&gt;这称为保护页，它有效地限制了进程的栈大小，通常按几兆字节的顺序。&lt;/p&gt;
 
-&lt;h5 id=&#34;线程栈&#34;&gt;线程栈&lt;/h5&gt;
+&lt;h4 id=&#34;线程栈&#34;&gt;线程栈&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/threads.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -191,7 +191,7 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
 
 &lt;p&gt;缺点是，随着程序中线程数量的增加，可用地址空间的数量会减少。&lt;/p&gt;
 
-&lt;h5 id=&#34;管理-goroutine-的栈&#34;&gt;管理 Goroutine 的栈&lt;/h5&gt;
+&lt;h4 id=&#34;管理-goroutine-的栈&#34;&gt;管理 Goroutine 的栈&lt;/h4&gt;
 
 &lt;p&gt;早期的进程模型允许程序员查看堆和栈，一边观察其是否足够大，而不必为此担心。缺点是复杂而昂贵的子进程模型。&lt;/p&gt;
 
@@ -211,7 +211,7 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
 
 &lt;p&gt;由于这种检查，goroutine 的初始堆栈可以变得更小，这反过来又允许 Go 程序员将 goroutine 视为廉价的资源。如果有足够多的部分未被使用，Goroutine 栈也会收缩。这是在垃圾回收期间处理的。&lt;/p&gt;
 
-&lt;h5 id=&#34;集成的-network-poller&#34;&gt;集成的 network poller&lt;/h5&gt;
+&lt;h3 id=&#34;集成的-network-poller&#34;&gt;集成的 network poller&lt;/h3&gt;
 
 &lt;p&gt;2002 年，丹·凯格尔（Dan Kegel）发表了他所谓的&lt;a href=&#34;http://www.kegel.com/c10k.html&#34;&gt;c10k&lt;/a&gt;问题。简单地说，如何编写服务器软件来处理每天至少 10000 个 TCP 会话。自从那篇论文撰写以来，传统观点认为高性能服务器需要原生线程（native threads），而最近的几年，基于事件的循环代替了原生线程。&lt;/p&gt;
 
@@ -229,7 +229,7 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
 
 &lt;p&gt;在 Go 的当前版本中，network poller 已经集成到 runtime 本身中。当 runtime 知道哪个 goroutine 正在等待网络套接字就绪时，它可以在数据包到达时立即将 goroutine 放回相同的 CPU 上，从而减少延迟并增加吞吐量。&lt;/p&gt;
 
-&lt;h4 id=&#34;goroutines-栈管理和被集成了的-network-poller&#34;&gt;Goroutines, 栈管理和被集成了的 network poller&lt;/h4&gt;
+&lt;h3 id=&#34;goroutines-栈管理和被集成了的-network-poller&#34;&gt;Goroutines, 栈管理和被集成了的 network poller&lt;/h3&gt;
 
 &lt;p&gt;总之，goroutines 提供了一个强大的抽象，使程序员不必担心线程池或事件循环。&lt;/p&gt;
 
@@ -255,10 +255,10 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
     
     <item>
       <title>A Record of Golang Runtime</title>
-      <link>https://polar9527.github.io/post/a-record-of-golang-runtime/</link>
+      <link>https://polar9527.github.io/post/a-record-of-golang-runtime-debugging/</link>
       <pubDate>Thu, 09 May 2019 18:35:42 +0800</pubDate>
       
-      <guid>https://polar9527.github.io/post/a-record-of-golang-runtime/</guid>
+      <guid>https://polar9527.github.io/post/a-record-of-golang-runtime-debugging/</guid>
       
         <description>
 
