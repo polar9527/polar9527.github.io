@@ -254,7 +254,7 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
     </item>
     
     <item>
-      <title>A Record of Golang Runtime Debugging</title>
+      <title>A Record of Debugging Golang Runtime</title>
       <link>https://polar9527.github.io/post/a-record-of-golang-runtime-debugging/</link>
       <pubDate>Thu, 09 May 2019 18:35:42 +0800</pubDate>
       
@@ -285,7 +285,7 @@ Build: $Id:   c98a142125d0b17bb11ec0513bde346229b5f533 $&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;golang 的入口代码如下：&lt;br /&gt;
 runtime/asm_amd64.s&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-Go&#34;&gt;TEXT runtime·rt0_go(SB),NOSPLIT,$0
+&lt;pre&gt;&lt;code&gt;TEXT runtime·rt0_go(SB),NOSPLIT,$0
 	// copy arguments forward on an even stack
 	MOVQ	DI, AX		// argc
 	MOVQ	SI, BX		// argv
