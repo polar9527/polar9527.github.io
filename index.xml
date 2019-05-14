@@ -6,10 +6,427 @@
     <description>Recent content on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 May 2019 18:34:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 17:38:58 +0800</lastBuildDate>
     
         <atom:link href="https://polar9527.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>书单</title>
+      <link>https://polar9527.github.io/book-list/</link>
+      <pubDate>Tue, 14 May 2019 17:38:58 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/book-list/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;mooc-list&#34;&gt;MOOC_list&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Introduction to Computer Science and Programming Using Python
+
+&lt;ul&gt;
+&lt;li&gt;Edx MITx - 6.00.1x 2015.3&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Data Structures and Algorithm Design 数据结构与算法设计
+
+&lt;ul&gt;
+&lt;li&gt;Edx TsinghuaX - 30240184x 2016.3&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Learning How to Learn
+
+&lt;ul&gt;
+&lt;li&gt;Coursera 2016.11&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The Web Developer Bootcamp
+
+&lt;ul&gt;
+&lt;li&gt;Udemy 2018.7 - 2018.11.11&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Vue JS 2 - The Complete Guide
+
+&lt;ul&gt;
+&lt;li&gt;Udemy 2018.11.13 - 2018.11.25&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;reading-list&#34;&gt;Reading_list&lt;/h1&gt;
+
+&lt;p&gt;IT 读书清单&lt;/p&gt;
+
+&lt;h2 id=&#34;第一阶段&#34;&gt;第一阶段：&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Python 基础教程&lt;/li&gt;
+&lt;li&gt;C Primer Plus&lt;/li&gt;
+&lt;li&gt;UNIX &amp;amp; Linux 编程实践&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;鸟哥的 Linux 私房菜：基础学习篇&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;鸟哥的 Linux 私房菜：服务器架设篇（部分）&lt;/li&gt;
+&lt;li&gt;数据结构与算法分析：C 语言描述（部分）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据结构（C 语言版）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;MySQL 必知必会&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 3 月 10 日-2015 年 3 月 17 日 一周&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;C++ Primer Plus&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 3 月 27 日-2015 年 4 月 29 日 四周&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;第二阶段&#34;&gt;第二阶段&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;第-1-部分-已读&#34;&gt;第 1 部分（已读）：&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;计算机系统概论（Yale N. Patt） 380
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 4 月 29 日-2015 年 5 月 17 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;深入理解计算机系统（CSAPP） 700
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 5 月 18 日-2015 年 6 月 22 日 五周&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;计算机组成：结构化方法 500&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 6 月 30 日-2015 年 7 月 28 日 四周&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;del&gt;- 现代操作系统 550&lt;/del&gt;
+&lt;del&gt;- 2015 年 6 月 23 日-2015 年 8 月 03 日 260 [暂停]&lt;/del&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;计算机网络：自顶向下 500&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 8 月 07 日-2015 年 9 月 16 日 六周&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TCP/IP 网络编程&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Linux 程序设计 700&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 10 月 03 日-2015 年 10 月 17 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;剑指 offer 260&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 10 月 18 日-2016 年 01 月 24 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;廖雪峰 Python 教程&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 01 月 21 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据结构（C++） 350&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015 年 10 月 30 日-2016 年 03 月 07 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First HTML 与 CSS 2nd 700&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 03 月 09 日 -2016 年 03 月 16 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;图解 HTTP 250&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 03 月 17 日-2016 年 03 月 21 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;廖雪峰 JavaScript 教程&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 03 月 22 日-2016 年 03 月 23 日 [95%]&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The Definitive Guide to Django&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 03 月 25 日-2016 年 06 月 14 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pro Git&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 04 月 23 日-2016 年 05 月 05 日 [暂停] 6.4 Managing an organization&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First HTML5 Programming 550&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 05 月 04 日-2016 年 05 月 09 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Django by Example 450&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 04 月 27 日-2016 年 07 月 07 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Learning Python 5th 1600&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 04 月 14 日-2016 年 09 月 08 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JavaScript DOM 编程艺术 280&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 09 月 27 日-2016 年 09 月 30 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Redis 入门指南 200&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 10 月 07 日-2016 年 10 月 08 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Programming Python 4th 1500&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 09 月 10 日-2016 年 12 月 12 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据库系统概论 &lt;sup&gt;490&lt;/sup&gt;&amp;frasl;&lt;sub&gt;750&lt;/sub&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2016 年 10 月 24 日-2017 年 03 月 07 日 [65%]&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Web scraping with Python 230&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 03 月 03 日-2017 年 03 月 15 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First Java 675&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 03 月 23 日-2017 年 03 月 25 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First 设计模式 630&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 03 月 19 日-2017 年 03 月 25 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Introduction to Asynchronous Programming with Twisted 100&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 03 月 19 日-2017 年 03 月 29 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Learning Scrapy 225&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 03 月 08 日-2017 年 03 月 31 日 [80%]&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;汇编语言[王爽] 330&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 04 月 01 日-2017 年 04 月 03 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;x86 汇编语言-从实模式到保护模式 370&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 04 月 04 日-2017 年 04 月 14 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Orange&amp;rsquo;s 一个操作系统的实现 &lt;sup&gt;300&lt;/sup&gt;&amp;frasl;&lt;sub&gt;470&lt;/sub&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 04 月 20 日-2017 年 04 月 27 日 [60%]&lt;br /&gt;
+Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
+&lt;li&gt;2017 年 08 月 11 日-2017 年 09 月 09 日 [100%]&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;HTTP 权威指南 &lt;sup&gt;400&lt;/sup&gt;&amp;frasl;&lt;sub&gt;550&lt;/sub&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 04 月 29 日-2017 年 05 月 04 日 [70%]&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Vagrant: Up and Running 150&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 05 月 20 日-2017 年 06 月 10 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python 源码剖析 480&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 09 月 12 日-2017 年 09 月 29 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python Web 开发：测试驱动方法 382 [60%]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 10 月 01 日-2018 年 01 月 07 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;AWK 程序设计语言 168 [36%]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 01 月 08 日-2018 年 01 月 15 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;程序员的自我修养 450 [80%]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 03 月 27 日-2018 年 04 月 12 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;鸟哥的 Linux 私房菜：服务器架设篇 [80%]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 11 月 01 日-2018 年 04 月 01 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Linux/UNIX 系统编程手册   1150&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2017 年 10 月 01 日-2018 年 05 月 14 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TCP/IP 详解 卷 1 核心部分 &lt;sup&gt;250&lt;/sup&gt;&amp;frasl;&lt;sub&gt;400&lt;/sub&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 04 月 28 日-2018 年 06 月 07 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The TCP/IP Guide TCP/IP 相关部分&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 05 月 26 日-2018 年 06 月 07 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The Go Programming Language 370&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 06 月 21 日-2018 年 07 月 01 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The Docker Book 400&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 07 月 01 日-2018 年 07 月 15 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JavaScript 高级程序设计 720&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 09 月 03 日-2018 年 09 月 19 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Java 核心技术 卷一 500&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 09 月 22 日-2018 年 10 月 05 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Java 核心技术 卷二 400&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 10 月 06 日-2018 年 10 月 13 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head first Servlets &amp;amp; JSP 800&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 10 月 16 日-2018 年 10 月 30 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Kubernetes in Action 560&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2018 年 12 月 01 日-2018 年 12 月 28 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Spring 实战 4th 577&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 01 月 09 日-2019 年 01 月 23 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Spring in Action 5th 485&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 01 月 16 日-2019 年 02 月 29 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;MySQL 技术内幕 &lt;sup&gt;363&lt;/sup&gt;&amp;frasl;&lt;sub&gt;770&lt;/sub&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 02 月 15 日-2019 年 03 月 11 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;高性能 MySQL 214 + 213 = &lt;sup&gt;427&lt;/sup&gt;&amp;frasl;&lt;sub&gt;800&lt;/sub&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 02 月 15 日-2019 年 03 月 11 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PEP 3333 &amp;ndash; Python Web Server Gateway Interface v1.0.1&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 03 月 30 日-2019 年 04 月 10 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PEP 342 &amp;ndash; Coroutines via Enhanced Generators&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 03 月 30 日-2019 年 04 月 10 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Flask Web 开发 233&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 04 月 08 日-2019 年 04 月 23 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go Web Programming 300&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 04 月 22 日-2019 年 04 月 27 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go 语言学习笔记 - 下册 200&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2019 年 04 月 28 日-2019 年 05 月 14 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>关于我</title>
@@ -32,19 +449,19 @@
 &lt;h3 id=&#34;技能&#34;&gt;技能&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;熟悉 Python, 代码风格良好，了解 PEP8；&lt;/li&gt;
-&lt;li&gt;了解并使用过 Django、Flask, 理解 PEP3333,并阅读过 flask 框架的源代码，了解 flask 框架的工作机制；&lt;/li&gt;
-&lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机制；&lt;/li&gt;
-&lt;li&gt;熟悉 Linux、AWS 等开发环境；&lt;/li&gt;
+&lt;li&gt;熟悉 Python, 代码风格良好，了解 PEP8&lt;/li&gt;
+&lt;li&gt;了解并使用过 Django、Flask, 理解 PEP3333,并阅读过 flask 框架的源代码，了解 flask 框架的工作机制&lt;/li&gt;
+&lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机制&lt;/li&gt;
+&lt;li&gt;熟悉 Linux、AWS 等开发环境&lt;/li&gt;
 &lt;li&gt;使用过 MySQL、MongoDB、Redis, 了解 MySQL 查询优化，索引优化；&lt;/li&gt;
-&lt;li&gt;了解 TCP/IP、HTTP 协议相关知识;&lt;/li&gt;
-&lt;li&gt;有 Web 前后端完整的知识体系，了解 HTML/CSS/Javascript 等前端知识，有 Vue 的使用经验；&lt;/li&gt;
-&lt;li&gt;了解并使用过 Docker、Kubenetes，理解 Docker 的基本原理，有 Kubenetes 的使用经验；&lt;/li&gt;
-&lt;li&gt;能够突破语言层面的限制，了解 x86 平台下的汇编，了解 Linux 平台下的 C 语言系统编程，对操作系统原理有一定认识；&lt;/li&gt;
-&lt;li&gt;接触过 Java、Spring，对 IoC/DI，AOP 原理有一定认识；&lt;/li&gt;
-&lt;li&gt;熟练使用 Git 进行版本控制；&lt;/li&gt;
-&lt;li&gt;熟悉基本的数据结构和算法；&lt;/li&gt;
-&lt;li&gt;英语水平 CET-6，经常使用 Google/StackOverflow/Wikipedia, 有阅读英文文档并解决工作中遇到的问题的能力；&lt;/li&gt;
+&lt;li&gt;了解 TCP/IP、HTTP 协议相关知识&lt;/li&gt;
+&lt;li&gt;有 Web 前后端完整的知识体系，了解 HTML/CSS/Javascript 等前端知识，有 Vue 的使用经验&lt;/li&gt;
+&lt;li&gt;了解并使用过 Docker、Kubenetes，理解 Docker 的基本原理，有 Kubenetes 的使用经验&lt;/li&gt;
+&lt;li&gt;能够突破语言层面的限制，了解 x86 平台下的汇编，了解 Linux 平台下的 C 语言系统编程，对操作系统原理有一定认识&lt;/li&gt;
+&lt;li&gt;接触过 Java、Spring，对 IoC/DI，AOP 原理有一定认识&lt;/li&gt;
+&lt;li&gt;熟练使用 Git 进行版本控制&lt;/li&gt;
+&lt;li&gt;熟悉基本的数据结构和算法&lt;/li&gt;
+&lt;li&gt;英语水平 CET-6，经常使用 Google/StackOverflow/Wikipedia, 有阅读英文文档并解决工作中遇到的问题的能力&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;项目经验&#34;&gt;项目经验&lt;/h2&gt;
