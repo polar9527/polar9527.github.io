@@ -12,13 +12,200 @@
     
     
     <item>
-      <title>关于</title>
+      <title>关于我</title>
       <link>https://polar9527.github.io/about/</link>
       <pubDate>Wed, 01 May 2019 21:38:52 +0800</pubDate>
       
       <guid>https://polar9527.github.io/about/</guid>
       
-        <description>&lt;p&gt;成为一个爆栈工程师.&lt;/p&gt;
+        <description>
+
+&lt;h2 id=&#34;个人信息&#34;&gt;个人信息&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;邮箱：polar9527@gmail.com&lt;/li&gt;
+&lt;li&gt;GitHub：&lt;a href=&#34;https://github.com/polar9527&#34;&gt;https://github.com/polar9527&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;个人主页：&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Stack Overflow：&lt;a href=&#34;http://stackoverflow.com/users/6419115/polar9527&#34;&gt;http://stackoverflow.com/users/6419115/polar9527&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;技能&#34;&gt;技能&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;熟悉 Python, 代码风格良好，了解 PEP8；&lt;/li&gt;
+&lt;li&gt;了解并使用过 Django、Flask, 理解 PEP3333,并阅读过 flask 框架的源代码，了解 flask 框架的工作机制；&lt;/li&gt;
+&lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机制；&lt;/li&gt;
+&lt;li&gt;熟悉 Linux、AWS 等开发环境；&lt;/li&gt;
+&lt;li&gt;使用过 MySQL、MongoDB、Redis, 了解 MySQL 查询优化，索引优化；&lt;/li&gt;
+&lt;li&gt;了解 TCP/IP、HTTP 协议相关知识;&lt;/li&gt;
+&lt;li&gt;有 Web 前后端完整的知识体系，了解 HTML/CSS/Javascript 等前端知识，有 Vue 的使用经验；&lt;/li&gt;
+&lt;li&gt;了解并使用过 Docker、Kubenetes，理解 Docker 的基本原理，有 Kubenetes 的使用经验；&lt;/li&gt;
+&lt;li&gt;能够突破语言层面的限制，了解 x86 平台下的汇编，了解 Linux 平台下的 C 语言系统编程，对操作系统原理有一定认识；&lt;/li&gt;
+&lt;li&gt;接触过 Java、Spring，对 IoC/DI，AOP 原理有一定认识；&lt;/li&gt;
+&lt;li&gt;熟练使用 Git 进行版本控制；&lt;/li&gt;
+&lt;li&gt;熟悉基本的数据结构和算法；&lt;/li&gt;
+&lt;li&gt;英语水平 CET-6，经常使用 Google/StackOverflow/Wikipedia, 有阅读英文文档并解决工作中遇到的问题的能力；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;项目经验&#34;&gt;项目经验&lt;/h2&gt;
+
+&lt;h3 id=&#34;linkeychain-公链系统&#34;&gt;Linkeychain 公链系统&lt;/h3&gt;
+
+&lt;p&gt;2018 年 6 月 - 2019 年 2 月&lt;br /&gt;
+基于&lt;code&gt;DPOS&lt;/code&gt;的区块链公链&lt;/p&gt;
+
+&lt;h4 id=&#34;项目简介&#34;&gt;项目简介&lt;/h4&gt;
+
+&lt;p&gt;Linkeychain 是第二代区块链系统，支持智能合约，&lt;code&gt;授权股权证明机制 DPOS&lt;/code&gt;，为公司的区块链商业应用提供底层技术支撑。&lt;/p&gt;
+
+&lt;h5 id=&#34;主要职责&#34;&gt;主要职责&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;搭建基于区块链的底层服务&lt;/li&gt;
+&lt;li&gt;负责公链系统的&lt;code&gt;p2p&lt;/code&gt;网络层的搭建和维护&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;技术细节&#34;&gt;技术细节&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;开发语言为&lt;code&gt;Golang&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;参考开源项目&lt;a href=&#34;https://github.com/nebulasio/go-nebulas&#34;&gt;星云链&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;基于第三方&lt;code&gt;p2p&lt;/code&gt;网络库&lt;code&gt;libp2p&lt;/code&gt;做的开发，该第三方的库提供了开发&lt;code&gt;p2p&lt;/code&gt;网络服务所需的数据结构和函数&lt;/li&gt;
+&lt;li&gt;网络服务由两个模块组成：
+
+&lt;ol&gt;
+&lt;li&gt;分发器模块
+
+&lt;ul&gt;
+&lt;li&gt;负责应用层消息注册和消息转发处理&lt;/li&gt;
+&lt;li&gt;采用观察者模式，将消息类型和消息处理渠道注册在分发器模块中&lt;/li&gt;
+&lt;li&gt;其他需要网络服务的模块在此通过对所关注的消息类型下注册&lt;code&gt;channel&lt;/code&gt;，来实现应用服务和网络服务之间的解耦&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;网络数据服务模块
+
+&lt;ul&gt;
+&lt;li&gt;在&lt;code&gt;TCP&lt;/code&gt;层上做网络连接资源的管理&lt;/li&gt;
+&lt;li&gt;应用层网络协议的处理，包括应用层握手和应用层消息通信&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p2p&lt;/code&gt;路由表的管理，包括定时同步和路由表更新。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;conspace-对象存储系统&#34;&gt;ConSpace 对象存储系统&lt;/h3&gt;
+
+&lt;p&gt;2017 年 5 月 - 2017 年 10 月&lt;br /&gt;
+基于&lt;code&gt;Ceph&lt;/code&gt;的对象存储系统&lt;/p&gt;
+
+&lt;h4 id=&#34;项目简介-1&#34;&gt;项目简介&lt;/h4&gt;
+
+&lt;p&gt;ConSpace 是为用户提供国内领先的安全，快速、高效的大容量网络存储服务，助力企业打破数据传递的单一性，实现移动办公和统一管理，使企业实现更高效的管理。通过严格、灵活的权限控制，满足企业复杂多变的文档访问需求，和信息安全合规要求。&lt;/p&gt;
+
+&lt;h5 id=&#34;主要职责-1&#34;&gt;主要职责&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;开发环境中&lt;code&gt;Ceph&lt;/code&gt;集群的搭建部署&lt;/li&gt;
+&lt;li&gt;开发环境中&lt;code&gt;Ceph&lt;/code&gt;对象存储系统的搭建部署&lt;/li&gt;
+&lt;li&gt;基于&lt;code&gt;Ceph&lt;/code&gt;对象存储提供的&lt;code&gt;Amazon S3&lt;/code&gt;兼容的 RESTful 接口 AWS SDK 工具包 Boto3 开发&lt;code&gt;Django&lt;/code&gt;后端逻辑&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;技术细节-1&#34;&gt;技术细节&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;采用了 Python 第三方库&lt;code&gt;boto3&lt;/code&gt;和&lt;code&gt;requests&lt;/code&gt;，在&lt;code&gt;Ceph&lt;/code&gt;对象存储系统提供的与 Amazon S3 兼容的 RESTful 接口上，完成了 Http 协议层的 AWSv4 签名认证，以及与对象存储相关的文件操作功能和对象存储层用户信息的管理。&lt;/li&gt;
+&lt;li&gt;用&lt;code&gt;Django&lt;/code&gt;管理 ConSpace 对象存储系统业务层数据&lt;/li&gt;
+&lt;li&gt;前后端分离，&lt;code&gt;Django&lt;/code&gt;逻辑层采用&lt;code&gt;Django REST framework&lt;/code&gt;为前端提供&lt;code&gt;json&lt;/code&gt;格式数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;bookmarks-开源项目&#34;&gt;Bookmarks(开源项目)&lt;/h3&gt;
+
+&lt;p&gt;2017 年 3 月 - 2016 年 10 月&lt;br /&gt;
+ 基于 Django 的图片社交网站&lt;br /&gt;
+&lt;a href=&#34;https://github.com/polar9527/bookmarks&#34;&gt;Github Repo&lt;/a&gt;&lt;br /&gt;
+&lt;del&gt;&lt;a href=&#34;http://ec2-52-78-179-108.ap-northeast-2.compute.amazonaws.com&#34;&gt;部署地址&lt;/a&gt;&lt;/del&gt;
+&lt;img src=&#34;http://www.lagou.com/i/image/M00/63/81/CgqKkVgCK92AS9VtAAcOzM-AO0I713.png&#34; alt=&#34;Bookmarks_pic&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;项目简介-2&#34;&gt;项目简介&lt;/h4&gt;
+
+&lt;p&gt;Bookmarks 是一个类似于&lt;a href=&#34;https://www.pinterest.com/&#34;&gt;Pinterest&lt;/a&gt;的图片社交网站，用户可以在应用上分享其在网络上发现并收藏的图片。用户之间可以相互关注，并实时获得其关注对象的动态。用户还可以在网站上随时获得最新的图片热度排名。&lt;/p&gt;
+
+&lt;h5 id=&#34;技术细节-2&#34;&gt;技术细节&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用 Django + MySQL + Redis 来编写项目后端系统&lt;/li&gt;
+&lt;li&gt;使用 jQuery + Ajax 编写前端的图片收藏插件&lt;/li&gt;
+&lt;li&gt;通过 python-social-auth 库，在 Django 框架上实现了基于 OAuth2.0 协议的第三方授权登录功能。能够提供微信，Facebook 等第三方账号授权。&lt;/li&gt;
+&lt;li&gt;通过 Django 的 signal 技术实现对用户行为的追踪，记录用户在网站上的活动行为，为网站中的用户活动流提供数据支持。&lt;/li&gt;
+&lt;li&gt;采用 Redis 作为图片热度信息的数据库&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;demo-项目&#34;&gt;Demo 项目&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用&lt;code&gt;Node.js&lt;/code&gt;, &lt;code&gt;express&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;，mlab(&lt;code&gt;mongoDB&lt;/code&gt;)等工具搭建的 demo 集合&lt;/li&gt;
+&lt;li&gt;部署在&lt;code&gt;Heroku&lt;/code&gt;上, 需要 climb over the wall to visit
+&lt;a href=&#34;https://polar9527.herokuapp.com/&#34;&gt;地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;
+
+&lt;h4 id=&#34;链极智能科技-上海-有限公司&#34;&gt;链极智能科技（上海）有限公司&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;2018 年 6 月 - 2019 年 3 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;高级软件开发工程师&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;研究区块链协议及运行机制&lt;/li&gt;
+&lt;li&gt;参与底层实现，并编写网络应用层代码&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;内蒙古君正互联网小额贷款有限公司&#34;&gt;内蒙古君正互联网小额贷款有限公司&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;2017 年 11 月 - 2018 年 05 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python 开发工程师&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用 shell，python 编写公司内部工具，并进行维护&lt;/li&gt;
+&lt;li&gt;在 AWS 云平台上管理服务器和应用，编写运维相关的文档、手册、流程，制定安全、备份、统计策略&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;上海容数信息科技有限公司&#34;&gt;上海容数信息科技有限公司&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;2017 年 5 月 - 2017 年 10 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python 后端开发工程师&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;学习研究 Ceph（一种开源分布式文件系统）&lt;/li&gt;
+&lt;li&gt;通过 Ceph 的对象存储接口，基于 Django 开发文档内容管理系统&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;中航华东光电-上海-有限公司&#34;&gt;中航华东光电(上海)有限公司&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;2012 年 3 月 - 2013 年 9 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;FPGA 工程师&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;参与项目前期技术调研，负责硬件系统中 FPGA 部分通信接口协议的编码、测试工作&lt;/li&gt;
+&lt;li&gt;设计了基于 FPGA 的某型设备外部驱动电路模块，实现了 UART 通信协议到 I2C 通信协议解析转换功能，使硬件系统能够通过该模块和 I2C 总线接口器件进行数据通讯。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;教育经历&#34;&gt;教育经历&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;华中科技大学，&lt;strong&gt;软件工程（硕士）&lt;/strong&gt; 2012 年毕业&lt;/li&gt;
+&lt;li&gt;武汉理工大学，&lt;strong&gt;电子信息工程（本科）&lt;/strong&gt; 2008 年毕业&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
     </item>
