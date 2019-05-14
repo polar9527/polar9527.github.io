@@ -255,10 +255,10 @@ Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support 
     
     <item>
       <title>A Record of Debugging Golang Runtime</title>
-      <link>https://polar9527.github.io/post/a-record-of-golang-runtime-debugging/</link>
+      <link>https://polar9527.github.io/post/a-record-of-debugging-golang-runtime/</link>
       <pubDate>Thu, 09 May 2019 18:35:42 +0800</pubDate>
       
-      <guid>https://polar9527.github.io/post/a-record-of-golang-runtime-debugging/</guid>
+      <guid>https://polar9527.github.io/post/a-record-of-debugging-golang-runtime/</guid>
       
         <description>
 
