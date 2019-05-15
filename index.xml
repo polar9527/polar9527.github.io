@@ -6,7 +6,7 @@
     <description>Recent content on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 14 May 2019 17:38:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 May 2019 19:36:37 +0800</lastBuildDate>
     
         <atom:link href="https://polar9527.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -623,6 +623,146 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;华中科技大学，&lt;strong&gt;软件工程（硕士）&lt;/strong&gt; 2012 年毕业&lt;/li&gt;
 &lt;li&gt;武汉理工大学，&lt;strong&gt;电子信息工程（本科）&lt;/strong&gt; 2008 年毕业&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>如何使用VSCode中的Code Runner插件执行golang代码</title>
+      <link>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</link>
+      <pubDate>Wed, 15 May 2019 19:36:37 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</guid>
+      
+        <description>&lt;p&gt;如何使用VSCode中的Code Runner 插件执行golang代码&lt;/p&gt;
+
+&lt;p&gt;project的文档结如下&lt;/p&gt;
+
+&lt;p&gt;mylab&lt;br /&gt;
+&amp;nbsp;  &amp;nbsp;  &amp;nbsp;  |&amp;mdash;- main.go&lt;br /&gt;
+&amp;#160;  &amp;nbsp;  &amp;nbsp;  |&amp;mdash;- test.go&lt;/p&gt;
+
+&lt;p&gt;main.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+func main() {
+	test()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;test.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+func test() {
+	println(&amp;quot;in test&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner&#34;&gt;Code Runner插件的Doc地址&lt;/a&gt;中&lt;br /&gt;
+找到如下Configuration的配置说明&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Configuration&lt;br /&gt;
+Make sure the executor PATH of each language is set in the environment variable. You could also add entry into code-runner.executorMap to set the executor PATH. e.g. To set the executor PATH for ruby, php and html:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;code-runner.executorMap&amp;quot;: {
+        &amp;quot;javascript&amp;quot;: &amp;quot;node&amp;quot;,
+        &amp;quot;php&amp;quot;: &amp;quot;C:\\php\\php.exe&amp;quot;,
+        &amp;quot;python&amp;quot;: &amp;quot;python&amp;quot;,
+        &amp;quot;perl&amp;quot;: &amp;quot;perl&amp;quot;,
+        &amp;quot;ruby&amp;quot;: &amp;quot;C:\\Ruby23-x64\\bin\\ruby.exe&amp;quot;,
+        &amp;quot;go&amp;quot;: &amp;quot;go run&amp;quot;,
+        &amp;quot;html&amp;quot;: &amp;quot;\&amp;quot;C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\&amp;quot;&amp;quot;,
+        &amp;quot;java&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; javac $fileName &amp;amp;&amp;amp; java $fileNameWithoutExt&amp;quot;,
+        &amp;quot;c&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; gcc $fileName -o $fileNameWithoutExt &amp;amp;&amp;amp; $dir$fileNameWithoutExt&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Supported customized parameters&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$workspaceRoot: The path of the folder opened in VS Code&lt;/li&gt;
+&lt;li&gt;$dir: The directory of the code file being run&lt;/li&gt;
+&lt;li&gt;$dirWithoutTrailingSlash: The directory of the code file being run without a trailing slash&lt;/li&gt;
+&lt;li&gt;$fullFileName: The full name of the code file being run&lt;/li&gt;
+&lt;li&gt;$fileName: The base name of the code file being run, that is the file without the directory&lt;/li&gt;
+&lt;li&gt;$fileNameWithoutExt: The base name of the code file being run without its extension&lt;/li&gt;
+&lt;li&gt;$driveLetter: The drive letter of the code file being run (Windows only)&lt;/li&gt;
+&lt;li&gt;$pythonPath: The path of Python interpreter (set by Python: Select Interpreter command)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please take care of the back slash and the space in file path of the executor&lt;/p&gt;
+
+&lt;p&gt;Back slash: please use &lt;br /&gt;
+If there ares spaces in file path, please use \&amp;rdquo; to surround your file path&lt;/p&gt;
+
+&lt;p&gt;You could set the executor per filename glob:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;code-runner.executorMapByGlob&amp;quot;: {
+        &amp;quot;pom.xml&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; mvn clean package&amp;quot;,
+        &amp;quot;*.test.js&amp;quot;: &amp;quot;tap&amp;quot;,
+        &amp;quot;*.js&amp;quot;: &amp;quot;node&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以看到go的执行命令默认配置成了go run, 并且默认执行当前打开的文件。
+所以需要利用$dir这个变量run整个main包所涉及到的所有文件。并且可以正则匹配文件名。&lt;/p&gt;
+
+&lt;p&gt;查看一下go run这个命令的参数解释，由于众所周知的原因，我们只能上国内的&lt;a href=&#34;https://golang.google.cn/cmd/go/#hdr-Compile_and_run_Go_program&#34;&gt;替代官网&lt;/a&gt;。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Compile and run Go program
+Usage:&lt;/p&gt;
+
+&lt;p&gt;go run [build flags] [-exec xprog] package [arguments&amp;hellip;]
+Run compiles and runs the named main Go package. Typically the package is specified as a list of .go source files, but it may also be an import path, file system path, or pattern matching a single known package, as in &lt;strong&gt;&amp;lsquo;go run .&amp;rsquo;&lt;/strong&gt; or &amp;lsquo;go run my/cmd&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;By default, &amp;lsquo;go run&amp;rsquo; runs the compiled binary directly: &amp;lsquo;a.out arguments&amp;hellip;&amp;rsquo;. If the -exec flag is given, &amp;lsquo;go run&amp;rsquo; invokes the binary using xprog:&lt;/p&gt;
+
+&lt;p&gt;&amp;lsquo;xprog a.out arguments&amp;hellip;&amp;rsquo;.
+If the -exec flag is not given, GOOS or GOARCH is different from the system default, and a program named go&lt;em&gt;$GOOS&lt;/em&gt;$GOARCH_exec can be found on the current search path, &amp;lsquo;go run&amp;rsquo; invokes the binary using that program, for example &amp;lsquo;go_nacl_386_exec a.out arguments&amp;hellip;&amp;lsquo;. This allows execution of cross-compiled programs when a simulator or other execution method is available.&lt;/p&gt;
+
+&lt;p&gt;The exit status of Run is not the exit status of the compiled binary.&lt;/p&gt;
+
+&lt;p&gt;For more about build flags, see &amp;lsquo;go help build&amp;rsquo;. For more about specifying packages, see &amp;lsquo;go help packages&amp;rsquo;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;找到了，使用&lt;code&gt;go run .&lt;/code&gt; 来跑整个package的。&lt;/p&gt;
+
+&lt;p&gt;在VSCode的.vscode目录下创建settings.json文件&lt;/p&gt;
+
+&lt;p&gt;自定义这个project的用户配置如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;code-runner.executorMap&amp;quot;: {
+        &amp;quot;go&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; go run .&amp;quot;,
+    },
+    &amp;quot;code-runner.executorMapByGlob&amp;quot;: {
+        &amp;quot;$dir\\*.go&amp;quot;: &amp;quot;go&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;点击Cdoe Runner在VSCode GUI界面提供的RUN按钮&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Running] cd &amp;quot;d:\Users\polar\go\src\mylab\&amp;quot; &amp;amp;&amp;amp; go run .
+in test
+
+[Done] exited with code=0 in 3.564 seconds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OK!&lt;/p&gt;
+
+&lt;p&gt;当然也可以用VSCode Debug 的launch.json来配置，但是那个debug模式。并不是go run。&lt;/p&gt;
 </description>
       
     </item>
