@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-05-13T18:34:58&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-13T18:34:58&#43;08:00" />
-<meta itemprop="wordCount" content="4675">
+<meta itemprop="wordCount" content="4673">
 
 
 
@@ -366,7 +366,7 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 4675 字 </span>
+        <span class="more-meta"> 约 4673 字 </span>
           <span class="more-meta"> 预计阅读 10 分钟 </span>
 
         
@@ -393,8 +393,12 @@
 <li><a href="#需要高效编程语言的一个依据">需要高效编程语言的一个依据</a>
 <ul>
 <li><a href="#摩尔定律">摩尔定律</a></li>
+<li><a href="#空间和功率限制">空间和功率限制</a></li>
 <li><a href="#能源被消耗到哪里去了">能源被消耗到哪里去了？</a></li>
 <li><a href="#免费午餐结束了">“免费午餐结束了”</a></li>
+</ul></li>
+<li><a href="#需要并发编程语言的一个依据">需要并发编程语言的一个依据</a>
+<ul>
 <li><a href="#处理器单元-线程-和-goroutines">处理器单元, 线程 和 goroutines</a>
 <ul>
 <li><a href="#处理器单元">处理器单元</a></li>
@@ -449,11 +453,12 @@
 <p>oft mis 援引摩尔定律称，每平方英寸晶体管的数量大约每 18 个月翻一番。</p>
 
 <p>然而，时钟频率却是一个功能完全不同的特性，十年 Intel 设计的 Pentium 4 就在时钟频率上达到了峰值，并在那之后 CPU 的时钟频率一直在倒退。
-<img src="https://dave.cheney.net/wp-content/uploads/2015/08/CPU.png" alt="" />
+<img src="https://dave.cheney.net/wp-content/uploads/2015/08/CPU.png" alt="" /><br />
 Image credit: Herb Sutter (Dr. Dobb’s Journal, March 2005)</p>
 
-<p>###　空间和功率限制
-<img src="https://dave.cheney.net/wp-content/uploads/2015/08/sun-ultra-enterprise-450-400mhz-2gb-20-bay-workgroup-server-system-no-hdd-parts_131514071457.jpg" alt="" />
+<h3 id="空间和功率限制">空间和功率限制</h3>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/sun-ultra-enterprise-450-400mhz-2gb-20-bay-workgroup-server-system-no-hdd-parts_131514071457.jpg" alt="" /><br />
 Sun Enterprise e450—about the size of a bar fridge, about the same power consumption. Image credit: eBay</p>
 
 <p>这是 SUN 公司的 e450。当我开始我的职业生涯时，他们是这个行业的主力。</p>
@@ -468,7 +473,7 @@ Sun Enterprise e450—about the size of a bar fridge, about the same power consu
 
 <h3 id="能源被消耗到哪里去了">能源被消耗到哪里去了？</h3>
 
-<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/220px-CMOS_Inverter.svg_.png" alt="" />
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/220px-CMOS_Inverter.svg_.png" alt="" /><br />
 CMOS Inverter. Image credit: Wikipedia</p>
 
 <p>这是一个反向器，可能是最简单的逻辑门之一。如果输入 A 为高，那么输出 Q 为低，反之亦然。</p>
@@ -491,10 +496,11 @@ CMOS power consumption is not only caused by the short circuit current when the 
 
 <p>你需要一种高效的语言，因为低效的语言在生产上，在规模上，在资本支出的基础上都是不合理的。</p>
 
-<p>##　需要并发编程语言的一个依据
-我的第二个论点紧跟着我的第一个论点。CPU 并没有变快，而是变宽了。这就是晶体管的发展方向，这并不令人惊讶。</p>
+<h2 id="需要并发编程语言的一个依据">需要并发编程语言的一个依据</h2>
 
-<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/Ivy-Bridge_Die_Flat-HR.jpg" alt="" />
+<p>我的第二个论点紧跟着我的第一个论点。CPU 并没有变快，而是变宽了。这就是晶体管的发展方向，这并不令人惊讶。</p>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/Ivy-Bridge_Die_Flat-HR.jpg" alt="" /><br />
 Image credit: Intel</p>
 
 <p>多线程并行，或者如 Intel 所称的超线程，允许一个内核在添加少量硬件的同时并行执行多个指令流。英特尔使用超线程来人为地细分处理器市场，甲骨文和富士通更积极地将超线程应用到他们的产品中，每个处理器核使用 8 或 16 个硬件线程。</p>
@@ -515,7 +521,7 @@ Image credit: Intel</p>
 
 <h4 id="上下文切换">上下文切换</h4>
 
-<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/640px-Table_of_x86_Registers_svg.svg_.png" alt="" />
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/640px-Table_of_x86_Registers_svg.svg_.png" alt="" /><br />
 Image credit: Immae (CC BY-SA 3.0)</p>
 
 <h5 id="上下文切换有三个主要成本">上下文切换有三个主要成本。</h5>
