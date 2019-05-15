@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Performance Without the Event Loop - Polar9527&#39; Blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="polar9527" />
+  <meta name="description" content="英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到 Go 的时候，一个常见的说" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4" />
+
+
+<link rel="canonical" href="https://polar9527.github.io/blog/performance-without-the-event-loop/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.19ae5a432863a072ec64433bb1020bd6d3401129f87d6f2ad5af3bcfd84168a1.css" integrity="sha256-Ga5aQyhjoHLsZEM7sQIL1tNAESn4fW8q1a87z9hBaKE=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Performance Without the Event Loop" />
+<meta property="og:description" content="英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到 Go 的时候，一个常见的说" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://polar9527.github.io/blog/performance-without-the-event-loop/" />
+<meta property="article:published_time" content="2019-05-13T18:34:58&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-13T18:34:58&#43;08:00"/>
+
+<meta itemprop="name" content="Performance Without the Event Loop">
+<meta itemprop="description" content="英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到 Go 的时候，一个常见的说">
+
+
+<meta itemprop="datePublished" content="2019-05-13T18:34:58&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-13T18:34:58&#43;08:00" />
+<meta itemprop="wordCount" content="4675">
+
+
+
+<meta itemprop="keywords" content="go,golang," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Performance Without the Event Loop"/>
+<meta name="twitter:description" content="英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到 Go 的时候，一个常见的说"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+  
+  <link rel="stylesheet" href="https://polar9527.github.io/css/styles/googlecode.css">
+  
+  <script src="https://polar9527.github.io/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Polar9527的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/book-list/">书单</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/about/">关于我</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://gohugo.io" rel="noopener" target="_blank">
+              Hugo
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Polar9527的博客
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/book-list/">书单</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://polar9527.github.io/about/">关于我</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://gohugo.io" rel="noopener" target="_blank">
+              Hugo
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+  
+  <header class="post-header">
+    <h1 class="post-title">Performance Without the Event Loop</h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-05-13" class="post-time">
+        2019-05-13
+      </time>
+    </div>
+  </header>
+
+  
+  
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#需要高效编程语言的一个依据">需要高效编程语言的一个依据</a>
+<ul>
+<li><a href="#摩尔定律">摩尔定律</a></li>
+<li><a href="#能源被消耗到哪里去了">能源被消耗到哪里去了？</a></li>
+<li><a href="#免费午餐结束了">“免费午餐结束了”</a></li>
+<li><a href="#处理器单元-线程-和-goroutines">处理器单元, 线程 和 goroutines</a>
+<ul>
+<li><a href="#处理器单元">处理器单元</a></li>
+<li><a href="#上下文切换">上下文切换</a>
+<ul>
+<li><a href="#上下文切换有三个主要成本">上下文切换有三个主要成本。</a></li>
+</ul></li>
+<li><a href="#线程">线程</a></li>
+<li><a href="#goroutines">Goroutines</a></li>
+</ul></li>
+<li><a href="#栈的管理">栈的管理</a>
+<ul>
+<li><a href="#进程地址空间">进程地址空间</a></li>
+<li><a href="#线程栈">线程栈</a></li>
+<li><a href="#管理-goroutine-的栈">管理 Goroutine 的栈</a>
+<ul>
+<li><a href="#goroutine-栈的增长过程">Goroutine 栈的增长过程</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#集成的-network-poller">集成的 network poller</a>
+<ul>
+<li><a href="#go-对-c10k-问题给出的解决方案">Go 对 c10k 问题给出的解决方案</a></li>
+</ul></li>
+<li><a href="#goroutines-栈管理和被集成了的-network-poller">Goroutines, 栈管理和被集成了的 network poller</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+  
+  <div class="post-content">
+      
+
+<p><a href="https://dave.cheney.net/2015/08/08/performance-without-the-event-loop">英文原文</a></p>
+
+<p><a href="https://polar9527.github.io/post/performance-without-the-event-loop/">译文</a></p>
+
+<p>本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。</p>
+
+<p>谈到 Go 的时候，一个常见的说法是,Go 是一种在服务器上运行良好的语言;静态二进制文件、强大的并发性和高性能。</p>
+
+<p>本文重点讨论最后两项，Go 语言和它的运行时是如何透明地让程序员编写高度可伸缩的网络服务器，而不必担心线程管理或 I/O 阻塞。</p>
+
+<h2 id="需要高效编程语言的一个依据">需要高效编程语言的一个依据</h2>
+
+<p>但在我开始技术讨论之前，我想用两个指标来说明 Go 语言的目标市场。</p>
+
+<h3 id="摩尔定律">摩尔定律</h3>
+
+<p>oft mis 援引摩尔定律称，每平方英寸晶体管的数量大约每 18 个月翻一番。</p>
+
+<p>然而，时钟频率却是一个功能完全不同的特性，十年 Intel 设计的 Pentium 4 就在时钟频率上达到了峰值，并在那之后 CPU 的时钟频率一直在倒退。
+<img src="https://dave.cheney.net/wp-content/uploads/2015/08/CPU.png" alt="" />
+Image credit: Herb Sutter (Dr. Dobb’s Journal, March 2005)</p>
+
+<p>###　空间和功率限制
+<img src="https://dave.cheney.net/wp-content/uploads/2015/08/sun-ultra-enterprise-450-400mhz-2gb-20-bay-workgroup-server-system-no-hdd-parts_131514071457.jpg" alt="" />
+Sun Enterprise e450—about the size of a bar fridge, about the same power consumption. Image credit: eBay</p>
+
+<p>这是 SUN 公司的 e450。当我开始我的职业生涯时，他们是这个行业的主力。</p>
+
+<p>这些东西是非常大的。三个这样的机器叠在一起，将装满 19 英寸的架子。它们每个功率大约 500 瓦。</p>
+
+<p>在过去的十年里，数据中心已经从空间受限转向电力受限。在我参与的前两次数据中心部署中，当机架仅仅装满 <sup>1</sup>&frasl;<sub>3</sub> 时，我们就达到了用电上限。</p>
+
+<p>由于计算密度提高得如此之快，数据中心空间不再是一个问题。然而，现代服务器在更小的体积内消耗了更多的能源，这使得给机房降温更加困难，但同时也是至关重要的。</p>
+
+<p>在宏观层面上受到功率上限的限制，你无法为一个机架 1200 瓦 1RU serverser 获得足够的功率配额，而在微观层面上，每一个微小的硅片上消耗了数百瓦能源。</p>
+
+<h3 id="能源被消耗到哪里去了">能源被消耗到哪里去了？</h3>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/220px-CMOS_Inverter.svg_.png" alt="" />
+CMOS Inverter. Image credit: Wikipedia</p>
+
+<p>这是一个反向器，可能是最简单的逻辑门之一。如果输入 A 为高，那么输出 Q 为低，反之亦然。</p>
+
+<p>今天所有的消费电子产品都是用 CMOS 逻辑构建的。CMOS 代表互补金属氧化物半导体。互补部分是关键。CPU 内部的每个逻辑元件都由一对晶体管实现，一个开关打开，另一个开关关闭。</p>
+
+<p>当电路接通或断开时，没有电流直接从源极流向漏极。然而，在过渡期间有一个短暂的时期，两个晶体管都导电，造成直接短路。</p>
+
+<p>功耗，和因此导致的散热，与每秒晶体管状态转换的次数成正比——CPU 时钟频率。
+[1]
+CMOS power consumption is not only caused by the short circuit current when the circuit is switching. Additional power consumption comes from charging the output capacitance of the gate, and leakage current through the MOSFET gate increases as the size of the transistor decreases. You can read more about this from in a the lecture materials from CMU’s ECE322 course. Bill Herd has a published a series of articles on how CMOS works.</p>
+
+<p>CPU 特征尺寸的降低主要是为了降低功耗。减少电力消耗并不仅仅意味着“绿色”。其主要目标是将功耗和散热保持在导致 CPU 损坏的水平以下。</p>
+
+<p>随着时钟频率的下降，以及与功耗的直接冲突，性能的提高主要来自于微体系结构的调整和深奥的向量指令，它们对一般计算没有直接的用处。总的来说，每一个微架构(5 年一个周期)的变化在每一代中最多产生 10%的改进，最近只有 4-6%。</p>
+
+<h3 id="免费午餐结束了">“免费午餐结束了”</h3>
+
+<p>希望现在你已经很清楚，硬件并没有变得更快。如果性能和规模对你很重要，那么你会同意我的观点，即至少在传统意义上，靠堆硬件来解决这个问题的日子已经结束了。正如赫伯•萨特(Herb Sutter)所言:“免费午餐结束了。”</p>
+
+<p>你需要一种高效的语言，因为低效的语言在生产上，在规模上，在资本支出的基础上都是不合理的。</p>
+
+<p>##　需要并发编程语言的一个依据
+我的第二个论点紧跟着我的第一个论点。CPU 并没有变快，而是变宽了。这就是晶体管的发展方向，这并不令人惊讶。</p>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/Ivy-Bridge_Die_Flat-HR.jpg" alt="" />
+Image credit: Intel</p>
+
+<p>多线程并行，或者如 Intel 所称的超线程，允许一个内核在添加少量硬件的同时并行执行多个指令流。英特尔使用超线程来人为地细分处理器市场，甲骨文和富士通更积极地将超线程应用到他们的产品中，每个处理器核使用 8 或 16 个硬件线程。</p>
+
+<p>自上世纪 90 年代末以来，Pentium Pro 就实现了 quad socket，现在大多数服务器都支持 dual socket 或者 quad socket 设计，dual socket 已成为主流。晶体管数量的增加使得整个 CPU 处理单元可以与同一硅片上的同级 CPU 处理单元共存。移动部件上的双核，桌面部件上的四核，甚至服务器部件上的更多核现在都成为了现实。在预算允许的情况下，您可以在服务器中购买尽可能多的核心。</p>
+
+<p>为了利用这些额外的核心，您需要一种能有效开发出并发程序的编程语言。</p>
+
+<h3 id="处理器单元-线程-和-goroutines">处理器单元, 线程 和 goroutines</h3>
+
+<p>Go 有 goroutines，这是它能有效开发出并发程序的基础。我想先退一步，来看看产生 goroutines 的历史背景。</p>
+
+<h4 id="处理器单元">处理器单元</h4>
+
+<p>起初，计算机在批处理模型中一次运行一个任务。在 60 年代，对更多交互形式的计算的渴望导致了多处理，或分时操作系统的发展。到了 70 年代，这一想法已经在网络服务器、ftp、telnet、rlogin 以及后来 Tim Burners-Lee 的 CERN httpd 上得到了很好的应用，这些服务器通过划分子进程来处理每个传入的网络连接。</p>
+
+<p>在分时系统中，操作系统通过记录当前进程的状态，然后恢复另一个进程的状态，从而在活动进程之间快速切换 CPU，从而保持并发的假象。这称为上下文切换。</p>
+
+<h4 id="上下文切换">上下文切换</h4>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/640px-Table_of_x86_Registers_svg.svg_.png" alt="" />
+Image credit: Immae (CC BY-SA 3.0)</p>
+
+<h5 id="上下文切换有三个主要成本">上下文切换有三个主要成本。</h5>
+
+<ul>
+<li><p>内核需要存储该进程的所有 CPU 寄存器的内容，然后恢复另一个进程的值。因为进程切换可以在进程执行的任何位置发生，所以操作系统需要存储所有这些寄存器的内容，因为它不知道当前正在使用哪些寄存器
+[2]
+This is an oversimplification. In some cases the operating system can avoid saving and restoring infrequently used architectural registers by starting the the process in a mode where access to floating point or MMX/SSE registers will cause the program to fault, thereby informing the kernel that the process will now use those registers and it should from then on save and restore them.</p></li>
+
+<li><p>内核需要将 CPU 的虚拟地址刷新为物理地址映射(TLB 缓存)
+[3]
+Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support the operating system can tell the processor to associate particular TLB cache entries with an identifier, derived from the process ID, rather than treating each cache entry as global. The upside is this avoids flushing out entries on each process switch if the process is placed back on the same CPU in short order.</p></li>
+
+<li><p>操作系统上下文切换的开销，以及选择下一个进程占用 CPU 的调度程序函数的开销。</p></li>
+</ul>
+
+<p>由于与硬件相关，这些成本相对固定，并且依赖于上下文切换之间所做的工作量来摊销它们的成本-快速上下文切换往往会超过上下文切换之间所做的工作量。</p>
+
+<h4 id="线程">线程</h4>
+
+<p>这导致线程的被设计开发出来，线程在概念上与进程相同，但共享相同的内存空间。由于线程共享地址空间，所以它们的调度比进程更轻松，因此创建和切换更快。</p>
+
+<p>线程仍然有一个昂贵的上下文切换成本;必须保留许多状态。Goroutines 将线程的概念又向前推进了一步。</p>
+
+<h4 id="goroutines">Goroutines</h4>
+
+<p>goroutine 不是依赖内核来管理它们之间的调度，而是通过协作的方式调度的。goroutine 之间的切换只发生在预先设计好的时间点，当显式调用 Go 运行时调度程序时。goroutine 被调度器抢占的主要原因包括:</p>
+
+<ul>
+<li>在 Channel（Go 特有的语言特性，另一个是 goroutine）上产生阻塞的收发操作。</li>
+<li>Go 语言中 go 这个关键字的使用，虽然不能保证新的 goroutine 会立即被调度。</li>
+<li>文件操作和网络操作等系统调用。</li>
+<li>由于进入内存垃圾回收周期而被暂停。</li>
+</ul>
+
+<p>换句话说，goroutine 的调度会在这些时间点发生，在不能得到更多数据，一个 goroutine 无法继续执行时； 或者是在执行环境中，一个 goroutine 需要更多内存空间时。</p>
+
+<p>许多 goroutine 在 Go 运行时被多路复用到一个操作系统线程上。这使得 goroutines 的制造成本和切换成本都很低。在一个进程中有成千上万的 goroutine 是正常的，成百上千的 goroutine 是低于预期的。</p>
+
+<p>从语言的角度来看，调度看起来像一个函数调用，并且具有相同的语义。编译器知道当前正在使用寄存器并自动保存它们。线程调用包含一个特定 goroutine 栈的调度器，这个调度器返回另外一个不同的 goroutine 栈。将此与线程应用程序进行比较，在线程应用程序中，可以在任何时间、任何指令抢占线程。</p>
+
+<p>这导致每个 Go 进程的操作系统线程相对较少，而 Go 的 runtime 负责将一个可运行的 goroutine 分配给一个空闲的操作系统线程。</p>
+
+<h3 id="栈的管理">栈的管理</h3>
+
+<p>在前一节中，我讨论了 goroutine 如何减少管理(有时是数十万个)过多并发执行线程时的开销。goroutine 还有另一个方面，那就是堆栈管理。</p>
+
+<h4 id="进程地址空间">进程地址空间</h4>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/process.png" alt="" /></p>
+
+<p>这是一个典型的进程内存布局图。我们感兴趣的关键是堆和栈的位置。</p>
+
+<p>在进程的地址空间中，堆通常位于内存的底部，位于程序代码之上，并向上增长。</p>
+
+<p>堆栈位于虚拟地址空间的顶部，并向下增长。</p>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/guard-page.png" alt="" /></p>
+
+<p>因为堆和栈相互覆盖将是灾难性的，所以操作系统在堆栈和堆之间安排了一个不可访问的内存区域。</p>
+
+<p>这称为保护页，它有效地限制了进程的栈大小，通常按几兆字节的顺序。</p>
+
+<h4 id="线程栈">线程栈</h4>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/threads.png" alt="" /></p>
+
+<p>线程共享相同的地址空间，因此对于每个线程，它必须有自己的栈和自己的保护页。</p>
+
+<p>由于很难预测特定线程的栈需求，因此必须为每个线程的栈保留大量内存。并寄希望于需求会比这低，同时作为警戒的保护页永远不会被触发。</p>
+
+<p>缺点是，随着程序中线程数量的增加，可用地址空间的数量会减少。</p>
+
+<h4 id="管理-goroutine-的栈">管理 Goroutine 的栈</h4>
+
+<p>早期的进程模型允许程序员查看堆和栈，一边观察其是否足够大，而不必为此担心。缺点是复杂而昂贵的子进程模型。</p>
+
+<p>线程稍微改善了这种情况，但要求程序员猜测最合适的栈大小;太小，程序将中止;太大，虚拟地址空间将耗尽。</p>
+
+<p>我们已经看到，Go 运行时将大量 goroutine 调度到少量线程上，但是这些 goroutine 的栈需求如何呢?</p>
+
+<h5 id="goroutine-栈的增长过程">Goroutine 栈的增长过程</h5>
+
+<p><img src="https://dave.cheney.net/wp-content/uploads/2015/08/stack-growth.png" alt="" /></p>
+
+<p>每个 goroutine 都从堆中分配的一个小尺寸的栈开始。大小随时间而变化，但在 Go 1.5 中，每一个 goroutine 都以 2k 的分配开始栈。</p>
+
+<p>Go 编译器不使用保护页，而是在每个函数调用中插入一个检查，以测试是否有足够的栈空间供函数运行。如果有足够的栈空间，函数将正常运行。（在函数的汇编代码前面，由编译器插入一段检查代码。这个动作可以在函数定义前配置编译器指令，禁用掉，不过要非常非常谨慎地使用）</p>
+
+<p>如果空间不足，Go 进程的 runtime 将在堆上分配一个更大的栈空间，将当前栈的内容复制到新的栈空间，释放旧的栈空间，然后重新启动函数调用。</p>
+
+<p>由于这种检查，goroutine 的初始堆栈可以变得更小，这反过来又允许 Go 程序员将 goroutine 视为廉价的资源。如果有足够多的部分未被使用，Goroutine 栈也会收缩。这是在垃圾回收期间处理的。</p>
+
+<h3 id="集成的-network-poller">集成的 network poller</h3>
+
+<p>2002 年，丹·凯格尔（Dan Kegel）发表了他所谓的<a href="http://www.kegel.com/c10k.html">c10k</a>问题。简单地说，如何编写服务器软件来处理每天至少 10000 个 TCP 会话。自从那篇论文撰写以来，传统观点认为高性能服务器需要原生线程（native threads），而最近的几年，基于事件的循环代替了原生线程。</p>
+
+<p>线程在调度成本和内存占用方面有很高的开销。事件循环降低了这些成本，但是这引入了回调驱动的复杂编程风格。</p>
+
+<p>Go 为程序员提供了两全其美解决方案。</p>
+
+<h4 id="go-对-c10k-问题给出的解决方案">Go 对 c10k 问题给出的解决方案</h4>
+
+<p>在 Go 中，系统调用通常是阻塞操作，这包括读取和写入文件描述符。Go 的 runtime 调度器通过找到一个空闲线程或生成另一个线程来处理这个问题，以便在原始线程阻塞时继续为 goroutines 提供服务。实际上，这对于文件 IO 很有效，因为少量阻塞线程可以快速耗尽本地 IO 带宽。</p>
+
+<p>但是对于网络套接字，按照设计，任何时候几乎所有的 goroutine 都将被阻塞，等待网络 IO。在一个简单的实现中，这将需要和 goroutine 一样多的线程，所有线程都被阻塞，等待网络流量。由于 runtime 和 net 包之间的协作，集成到 Go 的 runtime 中的 network poller 可以有效地处理这个问题。</p>
+
+<p>在较早版本的 Go 中，network poller 是一个 goroutine，负责使用 kqueue 或 epoll 轮询准备就绪通知。轮询 goroutine 将通过 channel 与等待的 goroutine 通信。这实现了避免每个线程都做操作系统调用产生的瓶颈，而使用了通过 channel 发送消息这种通用唤醒机制。这意味着调度器不需要关心唤醒源，不需要把唤醒操作看的比较重要。</p>
+
+<p>在 Go 的当前版本中，network poller 已经集成到 runtime 本身中。当 runtime 知道哪个 goroutine 正在等待网络套接字就绪时，它可以在数据包到达时立即将 goroutine 放回相同的 CPU 上，从而减少延迟并增加吞吐量。</p>
+
+<h3 id="goroutines-栈管理和被集成了的-network-poller">Goroutines, 栈管理和被集成了的 network poller</h3>
+
+<p>总之，goroutines 提供了一个强大的抽象，使程序员不必担心线程池或事件循环。</p>
+
+<p>goroutine 的栈已经足够大，而不需要考虑线程栈或线程池的大小。</p>
+
+<p>被集成了的 network poller 允许程序员避免了复杂的回调风格代码，同时仍然利用操作系统中可用的最有效的 IO 完成逻辑。</p>
+
+<p>runtime 确保有足够的线程来服务所有 goroutine 并保持 CPU 核处于活动状态。</p>
+
+<p>所有这些特性对 Go 程序员来说都是透明的。</p>
+
+<p>原文作者相关文章:</p>
+
+<ol>
+<li><a href="https://dave.cheney.net/2015/05/31/hear-me-speak-about-go-performance-at-oscon">Hear me speak about Go performance at OSCON</a></li>
+<li><a href="https://dave.cheney.net/2013/05/21/go-11-performance-improvements">Go 1.1 performance improvements</a></li>
+<li><a href="https://dave.cheney.net/2013/12/02/go-12-performance-improvements">Go 1.2 performance improvements</a></li>
+<li><a href="https://dave.cheney.net/2013/05/25/go-11-performance-improvements-part-2">Go 1.1 performance improvements, part 2</a></li>
+</ol>
+
+  </div>
+
+  
+  
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">polar9527</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-05-13</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+  
+  
+</article>
+
+
+
+
+  
+  
+
+  
+
+  <div class="post bg-white">
+      <div id="comments-gitment"></div>
+      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+      <script type="text/javascript">
+      const gitment = new Gitment({
+        id: 'performance-without-the-event-loop.md',
+        title: 'Performance Without the Event Loop',
+        link: decodeURI(location.href),
+        desc: '英文原文 译文 本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。 谈到 Go 的时候，一个常见的说',
+        owner: 'polar9527',
+        repo: 'site_comments',
+        oauth: {
+          client_id: 'b27ebf99e55863c6fc19',
+          client_secret: '3d04ec8b1388ddf7d3c693e69c5ebe91e51dcee3'
+        }
+      })
+      gitment.render('comments-gitment')
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    </div>
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://polar9527.github.io/blog/performance-without-the-event-loop/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'polar9527-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    <div id="lv-container" class="disqus-comment" data-id="city" data-uid='MTAyMC80NDAyNi8yMDU2MQ=='>
+   <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://www.livere.com">comments powered by LiveRe.</a>
+   </div>
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="polar9527@gmail.com" rel="me noopener" class="iconfont"
+      title="email"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://stackoverflow.com/users/6419115/polar9527" rel="me noopener" class="iconfont"
+      title="stack-overflow"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M809.714286 932.571429l-638.857143 0 0-274.285714-91.428571 0 0 365.714286 821.714286 0 0-365.714286-91.428571 0 0 274.285714zm-538.285714-299.428571l18.857143-89.714286 447.428571 94.285714-18.857143 89.142857zm58.857143-213.714286l38.285714-83.428571 414.285714 193.714286-38.285714 82.857143zm114.857143-203.428571l58.285714-70.285714 350.857143 293.142857-58.285714 70.285714zm226.857143-216l272.571429 366.285714-73.142857 54.857143-272.571429-366.285714zm-410.285714 840.571429l0-90.857143 457.142857 0 0 90.857143-457.142857 0z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/polar9527" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.douban.com/people/52877036/" rel="me noopener" class="iconfont"
+      title="douban"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M926.917973 37.80608C959.65184 37.80608 986.19392 64.34816 986.19392 97.082027L986.19392 926.917973C986.19392 959.65184 959.65184 986.19392 926.917973 986.19392L97.082027 986.19392C64.34816 986.19392 37.80608 959.65184 37.80608 926.917973L37.80608 97.082027C37.80608 64.34816 64.34816 37.80608 97.082027 37.80608zM176.653653 176.19968 176.653653 252.678827 825.658027 252.678827 825.658027 176.19968zM217.719467 316.146347 217.719467 628.08064 273.524053 628.08064 341.292373 770.39616 157.259093 770.39616 157.259093 845.417813 842.949973 845.417813 842.949973 770.39616 654.226773 770.39616 722.899627 628.08064 783.67744 628.08064 783.67744 316.146347zM684.885333 392.891733 684.885333 553.987413 312.576 553.987413 312.576 392.891733zM570.770773 770.39616 426.653013 770.39616 359.621973 628.08064 639.443627 628.08064z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.goodreads.com/user/show/70283987-polar9527-sun" rel="me noopener" class="iconfont"
+      title="goodreads"  target="_blank"
+      >
+      <svg viewBox="0 0 128 128" version="1.1"
+  width="32" height="32">
+  <path d="M 85.685714,45.48571 C 87.142857,56.14286 84.342857,68.05714 75.428571,74.25714 69.057143,78.68571 60.342857,78.28571 55.2,75.88571 44.6,70.94286 41.057143,59.14286 41.828571,48.11429 c 1.228572,-17.4 11.685715,-25.11429 21.514286,-25 13.4,-0.0571 20.514286,9.08571 22.342857,22.37142 z M 128,16 v 96 c 0,8.82857 -7.17143,16 -16,16 H 16 C 7.1714286,128 0,120.82857 0,112 V 16 C 0,7.17143 7.1714286,0 16,0 h 96 c 8.82857,0 16,7.17143 16,16 z M 94.285714,80.34286 c 0,0 -0.02857,-9.71429 -0.02857,-62.08572 H 85.97143 V 29.77143 C 85.742858,29.85713 85.628572,29.62857 85.514287,29.42857 82.771429,23.51429 75.257143,16.2 63.8,16.28571 48.971429,16.4 38.885714,25.2 35.057143,38.51429 33.828571,42.77143 33.4,47.11429 33.485714,51.54286 33.971429,73.8 46.371429,85.2 65.6,84.45714 73.857143,84.14286 81.171429,79.6 85.314286,71.54286 85.457143,71.25714 85.628571,71 85.8,70.71429 c 0.05714,0.0286 0.114286,0.0286 0.171429,0.0571 0.08571,1.08571 0.05714,8.77143 0.02857,9.85714 -0.05714,4.22857 -0.571429,8.42857 -2.057143,12.42857 -2.228571,6 -6.371428,9.91429 -12.714286,11.28572 -5.085714,1.11428 -10.171428,1.08571 -15.2,-0.34286 C 49.885714,102.25714 45.6,98.57143 44.285714,92.05714 44.2,91.6 43.914286,91.68571 43.628571,91.68571 H 35.971429 C 36.2,94.71429 36.885714,97.48571 38.4,100.02857 45.314286,111.6 62.028571,113.88571 75.028571,110.71429 89.285714,107.2 94.257143,95.02857 94.285714,80.34286 Z" />
+</svg>
+
+    </a>
+
+
+<a href="https://polar9527.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        polar9527
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="//polar9527-github-io.disqus.com/count.js" async></script>
+
+
+
+
+
+</body>
+</html>

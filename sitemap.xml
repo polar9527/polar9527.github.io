@@ -16,6 +16,12 @@
   </url>
   
   <url>
+    <loc>https://polar9527.github.io/blog/</loc>
+    <lastmod>2019-05-15T19:36:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://polar9527.github.io/</loc>
     <lastmod>2019-05-15T19:36:37+08:00</lastmod>
     <priority>0</priority>
@@ -25,6 +31,13 @@
     <loc>https://polar9527.github.io/post/</loc>
     <lastmod>2019-05-15T19:36:37+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://polar9527.github.io/blog/how-to-use-vscode-run-golang/</loc>
+    <lastmod>2019-05-15T19:36:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -44,6 +57,13 @@
     <loc>https://polar9527.github.io/categories/development/</loc>
     <lastmod>2019-05-13T18:34:58+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://polar9527.github.io/blog/performance-without-the-event-loop/</loc>
+    <lastmod>2019-05-13T18:34:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -81,6 +101,13 @@
     <loc>https://polar9527.github.io/categories/index/</loc>
     <lastmod>2019-05-13T18:34:58+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://polar9527.github.io/blog/a-record-of-debugging-golang-runtime/</loc>
+    <lastmod>2019-05-09T18:35:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
