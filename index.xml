@@ -6,7 +6,7 @@
     <description>Recent content on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 15 May 2019 19:36:37 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 19:40:04 +0800</lastBuildDate>
     
         <atom:link href="https://polar9527.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -528,12 +528,12 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;h5 id=&#34;技术细节-1&#34;&gt;技术细节&lt;/h5&gt;
 
 &lt;ul&gt;
-&lt;li&gt;采用了 Python 第三方库&lt;code&gt;boto3&lt;/code&gt;和&lt;code&gt;requests&lt;/code&gt;，在&lt;code&gt;Ceph&lt;/code&gt;对象存储系统提供的与 Amazon S3 兼容的 RESTful 接口上，完成了 Http 协议层的 AWSv4 签名认证，以及与对象存储相关的文件操作功能和对象存储层用户信息的管理。&lt;/li&gt;
+&lt;li&gt;采用了 Python 第三方库&lt;code&gt;boto3&lt;/code&gt;和&lt;code&gt;requests&lt;/code&gt;，在&lt;code&gt;Ceph&lt;/code&gt;对象存储系统提供的与 Amazon S3 兼容的 RESTful 接口上，完成了 Http 协议层的 AWSv4 签名认证，以及与对象存储相关的文件操作功能和对象存储层用户信息的管理&lt;/li&gt;
 &lt;li&gt;用&lt;code&gt;Django&lt;/code&gt;管理 ConSpace 对象存储系统业务层数据&lt;/li&gt;
 &lt;li&gt;前后端分离，&lt;code&gt;Django&lt;/code&gt;逻辑层采用&lt;code&gt;Django REST framework&lt;/code&gt;为前端提供&lt;code&gt;json&lt;/code&gt;格式数据&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;bookmarks-开源项目&#34;&gt;Bookmarks(开源项目)&lt;/h3&gt;
+&lt;h3 id=&#34;bookmarks-个人开源项目&#34;&gt;Bookmarks(个人开源项目)&lt;/h3&gt;
 
 &lt;p&gt;2017 年 3 月 - 2016 年 10 月&lt;br /&gt;
  基于 Django 的图片社交网站&lt;br /&gt;
@@ -623,6 +623,118 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;华中科技大学，&lt;strong&gt;软件工程（硕士）&lt;/strong&gt; 2012 年毕业&lt;/li&gt;
 &lt;li&gt;武汉理工大学，&lt;strong&gt;电子信息工程（本科）&lt;/strong&gt; 2008 年毕业&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>理解Golang多重赋值</title>
+      <link>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</link>
+      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</guid>
+      
+        <description>&lt;p&gt;Golang 的多重赋值可以用于值交换操作&lt;/p&gt;
+
+&lt;p&gt;两个值可以方便的如下交换：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;a, b = b, a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;四个值同样可以如下交换&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;a, b, c, d = b, c, a, d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;那这个交换底层是怎么实现的呢？
+我们来做个试验，看看这一段四值交换 golang 代码的的汇编代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func main(){
+    a := 1
+    b := 2
+    c := 3
+    d := 4
+    a, b, c, d = b, c, a, d
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$&amp;gt;dlv debug main.go
+Type &#39;help&#39; for list of commands.
+(dlv) b main.main
+Breakpoint 1 set at 0x454b6a for main.main() ~/pathToProject/main.go:3
+(dlv) r
+Process restarted with PID 26528
+(dlv) c
+&amp;gt; main.main() ~/pathToProject/main.go:3 (hits goroutine(1):1 total:1) (PC: 0x454b6a)
+     1: package main
+     2:
+=&amp;gt;   3: func main() {
+     4:         a := 1
+     5:         b := 2
+     6:         c := 3
+     7:         d := 4
+(dlv) disassemble
+TEXT main.main(SB) D:/Users/polar/go/src/mylab/main.go
+        main.go:3       0x454b50        65488b0c2528000000      mov rcx, qword ptr gs:[0x28]
+        main.go:3       0x454b59        488b8900000000          mov rcx, qword ptr [rcx]
+        main.go:3       0x454b60        483b6110                cmp rsp, qword ptr [rcx+0x10]
+        main.go:3       0x454b64        0f8619020000            jbe 0x454d83
+=&amp;gt;      main.go:3       0x454b6a*       4883ec50                sub rsp, 0x50
+        main.go:3       0x454b6e        48896c2448              mov qword ptr [rsp+0x48], rbp
+        main.go:3       0x454b73        488d6c2448              lea rbp, ptr [rsp+0x48]
+        main.go:4       0x454b78        48c744242801000000      mov qword ptr [rsp+0x28], 0x1  // a := 1
+        main.go:5       0x454b81        48c744242002000000      mov qword ptr [rsp+0x20], 0x2  // b := 2
+        main.go:6       0x454b8a        48c744241803000000      mov qword ptr [rsp+0x18], 0x3  // c := 3
+        main.go:7       0x454b93        48c744241004000000      mov qword ptr [rsp+0x10], 0x4  // d := 4
+        main.go:9       0x454b9c        488b442428              mov rax, qword ptr [rsp+0x28]
+        main.go:9       0x454ba1        4889442440              mov qword ptr [rsp+0x40], rax  // temp = a
+        main.go:9       0x454ba6        488b442420              mov rax, qword ptr [rsp+0x20]
+        main.go:9       0x454bab        4889442428              mov qword ptr [rsp+0x28], rax  // a = b
+        main.go:9       0x454bb0        488b442418              mov rax, qword ptr [rsp+0x18]
+        main.go:9       0x454bb5        4889442420              mov qword ptr [rsp+0x20], rax  // b = c
+        main.go:9       0x454bba        488b442410              mov rax, qword ptr [rsp+0x10]
+        main.go:9       0x454bbf        4889442418              mov qword ptr [rsp+0x18], rax  // c = d
+        main.go:9       0x454bc4        488b442440              mov rax, qword ptr [rsp+0x40]
+        main.go:9       0x454bc9        4889442410              mov qword ptr [rsp+0x10], rax  // d = temp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;很好理解了，就是编译器帮我们在栈上创建了一个临时变量 temp, 然后按顺序交换其他各个变量的值。&lt;/p&gt;
+
+&lt;p&gt;那么下面这种情况，会发生什么呢？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;a := 1
+b := 2
+a, b, a = b, a, b
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;a 和 b 最终的值是多少？&lt;/p&gt;
+
+&lt;p&gt;看一下汇编代码就清楚了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-asm&#34;&gt;main.go:5   0x454b9b 48c744241801000000   mov qword ptr [rsp+0x18], 0x1  // a:=1
+main.go:6   0x454ba4 48c744241002000000   mov qword ptr [rsp+0x10], 0x2  // b:=2
+main.go:7   0x454bad 488b442418           mov rax, qword ptr [rsp+0x18]
+main.go:7   0x454bb2 4889442428           mov qword ptr [rsp+0x28], rax  // aTemp := a
+main.go:7   0x454bb7 488b442410           mov rax, qword ptr [rsp+0x10]
+main.go:7   0x454bbc 4889442420           mov qword ptr [rsp+0x20], rax  // bTemp := b
+main.go:7   0x454bc1 488b442410           mov rax, qword ptr [rsp+0x10]
+main.go:7   0x454bc6 4889442418           mov qword ptr [rsp+0x18], rax  // a = b
+main.go:7   0x454bcb 488b442428           mov rax, qword ptr [rsp+0x28]
+main.go:7   0x454bd0 4889442410           mov qword ptr [rsp+0x10], rax  // b = aTemp
+main.go:7   0x454bd5 488b442420           mov rax, qword ptr [rsp+0x20]
+main.go:7   0x454bda 4889442418           mov qword ptr [rsp+0x18], rax  // a = bTemp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;相当于&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aTemp = a
+bTemp = b
+a, b, a = bTemp, aTemp, bTemp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里两个值交换的操作的原理是将两个被赋值的变量的值，都存储在临时变量里，然后再用临时变量去赋值。所以这个例子赋值顺序对结果是无影响的，其结果仍然是 a = 2, b = 1。&lt;/p&gt;
+
+&lt;p&gt;不用再像 C 语言那样写交换函数再内联了，相当于把脏活丢给编译器干了。&lt;/p&gt;
 </description>
       
     </item>

@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 May 2019 18:34:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 19:40:04 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>go</title>
       <link>https://polar9527.github.io/tags/go/</link>
-      <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
+      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
       
       <guid>https://polar9527.github.io/tags/go/</guid>
       <description></description>
@@ -23,9 +23,18 @@
     <item>
       <title>golang</title>
       <link>https://polar9527.github.io/tags/golang/</link>
-      <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
+      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
       
       <guid>https://polar9527.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VSCode</title>
+      <link>https://polar9527.github.io/tags/vscode/</link>
+      <pubDate>Wed, 15 May 2019 19:36:37 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/tags/vscode/</guid>
       <description></description>
     </item>
     

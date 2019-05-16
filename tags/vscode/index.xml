@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode on Polar9527&#39; Blog</title>
+    <link>https://polar9527.github.io/tags/vscode/</link>
+    <description>Recent content in VSCode on Polar9527&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 May 2019 19:36:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://polar9527.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何使用VSCode中的Code Runner插件执行golang代码</title>
+      <link>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</link>
+      <pubDate>Wed, 15 May 2019 19:36:37 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</guid>
+      <description>如何使用VSCode中的Code Runner 插件执行golang代码 project的文档结如下 mylab &amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;mdash;- main.go &amp;#160; &amp;nbsp; &amp;nbsp; |&amp;mdash;- test.go main.go package main func main() { test() } test.go package main func test() { println(&amp;quot;in test&amp;quot;) }</description>
+    </item>
+    
+  </channel>
+</rss>

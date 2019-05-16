@@ -6,10 +6,28 @@
     <description>Recent content in index on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 May 2019 18:34:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 19:40:04 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/categories/index/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>理解Golang多重赋值</title>
+      <link>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</link>
+      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</guid>
+      <description>Golang 的多重赋值可以用于值交换操作 两个值可以方便的如下交换： a, b = b, a 四个值同样可以如下交换 a, b, c, d = b, c, a, d 那这个交换底层是怎么实现的呢？ 我们</description>
+    </item>
+    
+    <item>
+      <title>如何使用VSCode中的Code Runner插件执行golang代码</title>
+      <link>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</link>
+      <pubDate>Wed, 15 May 2019 19:36:37 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</guid>
+      <description>如何使用VSCode中的Code Runner 插件执行golang代码 project的文档结如下 mylab &amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;mdash;- main.go &amp;#160; &amp;nbsp; &amp;nbsp; |&amp;mdash;- test.go main.go package main func main() { test() } test.go package main func test() { println(&amp;quot;in test&amp;quot;) }</description>
+    </item>
     
     <item>
       <title>Performance Without the Event Loop</title>
