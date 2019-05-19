@@ -675,27 +675,27 @@ Process restarted with PID 26528
      7:         d := 4
 (dlv) disassemble
 TEXT main.main(SB) D:/Users/polar/go/src/mylab/main.go
-        main.go:3       0x454b50        65488b0c2528000000      mov rcx, qword ptr gs:[0x28]
-        main.go:3       0x454b59        488b8900000000          mov rcx, qword ptr [rcx]
-        main.go:3       0x454b60        483b6110                cmp rsp, qword ptr [rcx+0x10]
-        main.go:3       0x454b64        0f8619020000            jbe 0x454d83
-=&amp;gt;      main.go:3       0x454b6a*       4883ec50                sub rsp, 0x50
-        main.go:3       0x454b6e        48896c2448              mov qword ptr [rsp+0x48], rbp
-        main.go:3       0x454b73        488d6c2448              lea rbp, ptr [rsp+0x48]
-        main.go:4       0x454b78        48c744242801000000      mov qword ptr [rsp+0x28], 0x1  // a := 1
-        main.go:5       0x454b81        48c744242002000000      mov qword ptr [rsp+0x20], 0x2  // b := 2
-        main.go:6       0x454b8a        48c744241803000000      mov qword ptr [rsp+0x18], 0x3  // c := 3
-        main.go:7       0x454b93        48c744241004000000      mov qword ptr [rsp+0x10], 0x4  // d := 4
-        main.go:9       0x454b9c        488b442428              mov rax, qword ptr [rsp+0x28]
-        main.go:9       0x454ba1        4889442440              mov qword ptr [rsp+0x40], rax  // temp = a
-        main.go:9       0x454ba6        488b442420              mov rax, qword ptr [rsp+0x20]
-        main.go:9       0x454bab        4889442428              mov qword ptr [rsp+0x28], rax  // a = b
-        main.go:9       0x454bb0        488b442418              mov rax, qword ptr [rsp+0x18]
-        main.go:9       0x454bb5        4889442420              mov qword ptr [rsp+0x20], rax  // b = c
-        main.go:9       0x454bba        488b442410              mov rax, qword ptr [rsp+0x10]
-        main.go:9       0x454bbf        4889442418              mov qword ptr [rsp+0x18], rax  // c = d
-        main.go:9       0x454bc4        488b442440              mov rax, qword ptr [rsp+0x40]
-        main.go:9       0x454bc9        4889442410              mov qword ptr [rsp+0x10], rax  // d = temp
+    main.go:3  0x454b50   65488b0c2528000000  mov rcx, qword ptr gs:[0x28]
+    main.go:3  0x454b59   488b8900000000      mov rcx, qword ptr [rcx]
+    main.go:3  0x454b60   483b6110            cmp rsp, qword ptr [rcx+0x10]
+    main.go:3  0x454b64   0f8619020000        jbe 0x454d83
+=&amp;gt;  main.go:3  0x454b6a*  4883ec50            sub rsp, 0x50
+    main.go:3  0x454b6e   48896c2448          mov qword ptr [rsp+0x48], rbp
+    main.go:3  0x454b73   488d6c2448          lea rbp, ptr [rsp+0x48]
+    main.go:4  0x454b78   48c744242801000000  mov qword ptr [rsp+0x28], 0x1  // a := 1
+    main.go:5  0x454b81   48c744242002000000  mov qword ptr [rsp+0x20], 0x2  // b := 2
+    main.go:6  0x454b8a   48c744241803000000  mov qword ptr [rsp+0x18], 0x3  // c := 3
+    main.go:7  0x454b93   48c744241004000000  mov qword ptr [rsp+0x10], 0x4  // d := 4
+    main.go:9  0x454b9c   488b442428          mov rax, qword ptr [rsp+0x28]
+    main.go:9  0x454ba1   4889442440          mov qword ptr [rsp+0x40], rax  // temp = a
+    main.go:9  0x454ba6   488b442420          mov rax, qword ptr [rsp+0x20]
+    main.go:9  0x454bab   4889442428          mov qword ptr [rsp+0x28], rax  // a = b
+    main.go:9  0x454bb0   488b442418          mov rax, qword ptr [rsp+0x18]
+    main.go:9  0x454bb5   4889442420          mov qword ptr [rsp+0x20], rax  // b = c
+    main.go:9  0x454bba   488b442410          mov rax, qword ptr [rsp+0x10]
+    main.go:9  0x454bbf   4889442418          mov qword ptr [rsp+0x18], rax  // c = d
+    main.go:9  0x454bc4   488b442440          mov rax, qword ptr [rsp+0x40]
+    main.go:9  0x454bc9   4889442410          mov qword ptr [rsp+0x10], rax  // d = temp
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;很好理解了，就是编译器帮我们在栈上创建了一个临时变量 temp, 然后按顺序交换其他各个变量的值。&lt;/p&gt;
@@ -711,7 +711,7 @@ a, b, a = b, a, b
 
 &lt;p&gt;看一下汇编代码就清楚了&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-asm&#34;&gt;main.go:5   0x454b9b 48c744241801000000   mov qword ptr [rsp+0x18], 0x1  // a:=1
+&lt;pre&gt;&lt;code&gt;main.go:5   0x454b9b 48c744241801000000   mov qword ptr [rsp+0x18], 0x1  // a:=1
 main.go:6   0x454ba4 48c744241002000000   mov qword ptr [rsp+0x10], 0x2  // b:=2
 main.go:7   0x454bad 488b442418           mov rax, qword ptr [rsp+0x18]
 main.go:7   0x454bb2 4889442428           mov qword ptr [rsp+0x28], rax  // aTemp := a
