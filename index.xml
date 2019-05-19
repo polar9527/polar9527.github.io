@@ -6,7 +6,7 @@
     <description>Recent content on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 May 2019 19:40:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 00:34:14 +0800</lastBuildDate>
     
         <atom:link href="https://polar9527.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -623,6 +623,86 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;华中科技大学，&lt;strong&gt;软件工程（硕士）&lt;/strong&gt; 2012 年毕业&lt;/li&gt;
 &lt;li&gt;武汉理工大学，&lt;strong&gt;电子信息工程（本科）&lt;/strong&gt; 2008 年毕业&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Golang中除法和取模运算与Python3的区别</title>
+      <link>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</link>
+      <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</guid>
+      
+        <description>&lt;p&gt;除法的取整分为三类：向上取整、向下取整、向零取整。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;向上取整：向+∞ 方向取最接近精确值的整数。在这种取整方式下，
+&lt;code&gt;5 / 3 = 2&lt;/code&gt;， &lt;code&gt;-5 / -3 = 2&lt;/code&gt;， &lt;code&gt;-5 / 3 = -1&lt;/code&gt;， &lt;code&gt;5 / -3 = -1&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;向下取整：向-∞ 方向取最接近精确值的整数。在这种取整方式下，
+&lt;code&gt;5 / 3 = 1&lt;/code&gt;， &lt;code&gt;-5 / -3 = 1&lt;/code&gt;， &lt;code&gt;-5 / 3 = -2&lt;/code&gt;， &lt;code&gt;5 / -3 = -2&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;向零取整：向 0 方向取最接近精确值的整数，换言之就是舍去小数部分，因此又称截断取整。在这种取整方式下，
+&lt;code&gt;5 / 3 = 1&lt;/code&gt;， &lt;code&gt;-5 / -3 = 1&lt;/code&gt;， &lt;code&gt;-5 / 3 = -1&lt;/code&gt;， &lt;code&gt;5 / -3 = -1&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;然后由除法结果根据如下公式推导出模运算结果。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a / b = q
+a % b = r
+b * q + r = a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Python3 向负无穷大取整&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-5 / 3 = -(1.66666)=-2
+-5 % 3 = r
+a = -5
+b = 3
+q = -2
+3 * (-2) + r = -5
+r = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Golang 向零取整&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-5 / 3 = -(1.66666)=-1
+-5 % 3 = r
+a = -5
+b = 3
+q = -1
+3 * (-1) + r = -5
+r = -2
+
+-5 / -3 = 1.66666 = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;那么，为何 Python 整除运算采用向下取整的规则，详细内容在&lt;a href=&#34;http://python3.blogspot.kr/2010/08/why-pythons-integer-division-floors.html&#34;&gt;Why Python&amp;rsquo;s Integer Division Floors&lt;/a&gt;？，简单地来讲就是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;因为 python 认为余数 r 用到的机会会更大，采用向下取整的规则可以保证余数 r 与除数 b 的符号相同（同正或者同负）。&lt;/p&gt;
+
+&lt;p&gt;假设 a 和 b 都&amp;gt;=0 时，
+b * q + r = a， 0 &amp;lt;= r &amp;lt; b
+如果希望将这一关系扩展到 a 为负(b 仍为正)的情况，有两个选择：一是 q 向 0 取整，r 取负值，这时约束关系变为 0 &amp;lt;= abs&amp;reg; &amp;lt; b，另一种选择是 q 向下(负无穷方向)取整，约束关系不变，依然是 0 &amp;lt;= r &amp;lt; b。
+在数学的数论中，数学家总是倾向于第二种选择(参见如下 Wikipedia 链接)。
+在 Python 语言中也做了同样选择，因为在某些取模操作应用中被除数 a 取什么符号并不重要。
+例如从 POSIX 时间戳(从 1970 年初开始的秒数)得到其对应当天的时间。因为一天有 24*3600 = 86400 秒，这一操作就是简单的 t % 86400。但是当表达 1970 年之前的时间，这时是一个负数，向 0 取整规则得到的是一个毫无意义的结果！而向下取整规则得到的结果仍然是正确的。
+另外一个我能想到的应用是计算机图形学中计算像素的位置。我相信这样的应用还有更多。
+顺便说一下，b 取负值时，仅需要把符号取反，约束关系变为：
+0 &amp;gt;= r &amp;gt; b
+那么，现在的问题变成，C 为啥不采取(Python)这样的选择呢？可能是设计 C 时硬件不适合这样做，所谓硬件不适合这样做是说指那些最老式的硬件把负数表示为“符号+大小”而不是像现在的硬件用二进制补码表示(至少对整数是用二进制补码)。我的第一台计算机是一台 Control Data 大型机，它用 1 的补码来表示整数和浮点数。60 个 1 的序列表示负 0！
+Tim Peters 对 Python 的浮点数部分洞若观火，对于我想把这一规则推广到浮点数取模运算有些担心。可能他是对的，因为向负无穷取整的规则有可能导致当 x 是绝对值特别小的负数时 x%1.0 会丢失精度。但是这还不足以让我对整数取模，也就是//进行修改。
+附言：注意我用了//而不是/，这是一个 Python 3 语法，而且在 Python 2 中也是有效的，它强调了使用者是要进行整除操作。Python 2 中的 / 有可能产生歧义，因为对两个操作数都是整数时或者一个整数一个浮点数或者两个都是浮点数时，返回的结果类型不同。当然，这是另外的故事，详情参见 PEP238。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;参考：&lt;/p&gt;
+
+&lt;p&gt;[1] &lt;a href=&#34;https://www.cnblogs.com/zijin/p/3468802.html&#34;&gt;https://www.cnblogs.com/zijin/p/3468802.html&lt;/a&gt;&lt;br /&gt;
+[2] &lt;a href=&#34;http://python3.blogspot.kr/2010/08/why-pythons-integer-division-floors.html&#34;&gt;http://python3.blogspot.kr/2010/08/why-pythons-integer-division-floors.html&lt;/a&gt;&lt;br /&gt;
+[3] &lt;a href=&#34;http://python-history.blogspot.com/2010/08/why-pythons-integer-division-floors.html]&#34;&gt;http://python-history.blogspot.com/2010/08/why-pythons-integer-division-floors.html]&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
       
     </item>

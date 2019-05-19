@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 May 2019 19:40:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 00:34:14 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Development</title>
       <link>https://polar9527.github.io/categories/development/</link>
-      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
+      <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
       
       <guid>https://polar9527.github.io/categories/development/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>golang</title>
       <link>https://polar9527.github.io/categories/golang/</link>
-      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
+      <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
       
       <guid>https://polar9527.github.io/categories/golang/</guid>
       <description></description>
@@ -32,9 +32,18 @@
     <item>
       <title>index</title>
       <link>https://polar9527.github.io/categories/index/</link>
-      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
+      <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
       
       <guid>https://polar9527.github.io/categories/index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://polar9527.github.io/categories/python/</link>
+      <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/categories/python/</guid>
       <description></description>
     </item>
     

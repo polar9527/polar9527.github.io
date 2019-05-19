@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 May 2019 19:40:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 00:34:14 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang中除法和取模运算与Python3的区别</title>
+      <link>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</link>
+      <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</guid>
+      <description>除法的取整分为三类：向上取整、向下取整、向零取整。 向上取整：向+∞ 方向取最接近精确值的整数。在这种取整方式下， 5 / 3 = 2， -5 / -3 = 2， -5 / 3</description>
+    </item>
     
     <item>
       <title>理解Golang多重赋值</title>

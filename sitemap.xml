@@ -17,55 +17,74 @@
   
   <url>
     <loc>https://polar9527.github.io/categories/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://polar9527.github.io/categories/development/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</loc>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://polar9527.github.io/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://polar9527.github.io/post/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://polar9527.github.io/tags/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://polar9527.github.io/tags/go/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://polar9527.github.io/categories/golang/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://polar9527.github.io/tags/golang/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://polar9527.github.io/categories/index/</loc>
-    <lastmod>2019-05-16T19:40:04+08:00</lastmod>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://polar9527.github.io/categories/python/</loc>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://polar9527.github.io/tags/python/</loc>
+    <lastmod>2019-05-20T00:34:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
