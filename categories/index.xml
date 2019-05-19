@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 May 2019 19:40:04 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 May 2019 12:25:02 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>杂文</title>
+      <link>https://polar9527.github.io/categories/%E6%9D%82%E6%96%87/</link>
+      <pubDate>Sun, 19 May 2019 12:25:02 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/categories/%E6%9D%82%E6%96%87/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Development</title>
