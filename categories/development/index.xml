@@ -17,7 +17,7 @@
       <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</guid>
-      <description>除法的取整分为三类：向上取整、向下取整、向零取整。 向上取整：向+∞ 方向取最接近精确值的整数。在这种取整方式下， 5 / 3 = 2， -5 / -3 = 2， -5 / 3</description>
+      <description>个人主页：[https://polar9527.github.io] 除法的取整分为三类：向上取整、向下取整、向零取整。 向上取整：向+∞ 方向取</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</guid>
-      <description>Golang 的多重赋值可以用于值交换操作 两个值可以方便的如下交换： a, b = b, a 四个值同样可以如下交换 a, b, c, d = b, c, a, d 那这个交换底层是怎么实现的呢？ 我们</description>
+      <description>个人主页：[https://polar9527.github.io] Golang 的多重赋值可以用于值交换操作 两个值可以方便的如下交换： a, b = b, a 四个值</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 15 May 2019 19:36:37 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</guid>
-      <description>如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab &amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;mdash;- main.go &amp;#160; &amp;nbsp; &amp;nbsp; |&amp;mdash;- test.go main.go package main func main() { test() } test.go package main func test() { println(&amp;quot;in test&amp;quot;) } 在Code Runner 插件的 Doc 地址中 找到如下 Configuration 的</description>
+      <description>个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab &amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;mdash;- main.go &amp;#160; &amp;nbsp; &amp;nbsp; |&amp;mdash;- test.go main.go package</description>
     </item>
     
     <item>
