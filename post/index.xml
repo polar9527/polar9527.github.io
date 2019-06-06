@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 May 2019 00:34:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 11:27:15 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导</title>
+      <link>https://polar9527.github.io/post/floyd-tortoise-and-hare/</link>
+      <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/floyd-tortoise-and-hare/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Golang中除法和取模运算与Python3的区别</title>
@@ -71,10 +80,10 @@
     <item>
       <title>主题与markdown语法测试</title>
       <link>https://polar9527.github.io/post/00-even-theme-preview/</link>
-      <pubDate>Wed, 01 May 2019 12:25:02 +0800</pubDate>
+      <pubDate>Sun, 01 Jan 2017 18:03:09 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/00-even-theme-preview/</guid>
-      <description>&lt;p&gt;主题与 markdown 语法测试。&lt;/p&gt;</description>
+      <description>&lt;p&gt;主题与markdown语法测试。&lt;/p&gt;</description>
     </item>
     
   </channel>

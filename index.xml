@@ -6,7 +6,7 @@
     <description>Recent content on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 May 2019 00:34:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 11:27:15 +0800</lastBuildDate>
     
         <atom:link href="https://polar9527.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -623,6 +623,20 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;华中科技大学，&lt;strong&gt;软件工程（硕士）&lt;/strong&gt; 2012 年毕业&lt;/li&gt;
 &lt;li&gt;武汉理工大学，&lt;strong&gt;电子信息工程（本科）&lt;/strong&gt; 2008 年毕业&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导</title>
+      <link>https://polar9527.github.io/post/floyd-tortoise-and-hare/</link>
+      <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/floyd-tortoise-and-hare/</guid>
+      
+        <description>&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -1741,11 +1755,11 @@ func main()
     <item>
       <title>主题与markdown语法测试</title>
       <link>https://polar9527.github.io/post/00-even-theme-preview/</link>
-      <pubDate>Wed, 01 May 2019 12:25:02 +0800</pubDate>
+      <pubDate>Sun, 01 Jan 2017 18:03:09 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/00-even-theme-preview/</guid>
       
-        <description>&lt;p&gt;主题与 markdown 语法测试。&lt;/p&gt;
+        <description>&lt;p&gt;主题与markdown语法测试。&lt;/p&gt;
 
 &lt;h1 id=&#34;标题&#34;&gt;标题&lt;/h1&gt;
 
@@ -1813,18 +1827,18 @@ func main()
 &lt;h3 id=&#34;有序列表&#34;&gt;有序列表&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;有序列表&lt;/li&gt;
+&lt;li&gt;有序列表
+
+&lt;ol&gt;
 &lt;li&gt;嵌套的有序列表&lt;/li&gt;
 &lt;li&gt;嵌套的有序列表&lt;/li&gt;
-&lt;li&gt;有序列表&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;有序列表
 
 &lt;ul&gt;
 &lt;li&gt;嵌套的无序列表&lt;/li&gt;
 &lt;li&gt;嵌套的无序列表&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;有序列表&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1836,7 +1850,7 @@ func main()
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 支持以 PDF 格式导出文稿&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 新增 Todo 列表功能 &lt;a href=&#34;https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 新增Todo列表功能 &lt;a href=&#34;https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 改进 LaTex 功能&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 修复 LaTex 公式渲染问题&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 新增 LaTex 公式编号功能 &lt;a href=&#34;http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
@@ -1863,11 +1877,11 @@ func main()
 &lt;p&gt;以本站的一段 &lt;code&gt;JavaScript&lt;/code&gt; 代码做演示。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// Initialize video.js player
-if (document.getElementById(&amp;quot;my-player&amp;quot;) !== null) {
+if (document.getElementById(&#39;my-player&#39;) !== null) {
   /* eslint-disable no-undef */
-  videojs(&amp;quot;#my-player&amp;quot;, {
-    aspectRatio: &amp;quot;16:9&amp;quot;,
-    fluid: true
+  videojs(&#39;#my-player&#39;, {
+    aspectRatio: &#39;16:9&#39;,
+    fluid: true,
   });
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1884,7 +1898,7 @@ if (document.getElementById(&amp;quot;my-player&amp;quot;) !== null) {
 
 &lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;
 
-&lt;p&gt;使用 &lt;code&gt;Markdown&lt;/code&gt; 画的表格，如下表 👇&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;Markdown&lt;/code&gt; 画的表格，如下表👇&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -1899,19 +1913,19 @@ if (document.getElementById(&amp;quot;my-player&amp;quot;) !== null) {
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;col 3 is&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;right-aligned&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;\$1600&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$1600&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;col 2 is&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;centered&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;\$12&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$12&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;zebra stripes&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;are neat&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;\$1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1936,7 +1950,7 @@ if (document.getElementById(&amp;quot;my-player&amp;quot;) !== null) {
       marginheight=&#34;0&#34;
       width=&#34;330&#34;
       height=&#34;86&#34;
-      src=&#34;//music.163.com/outchain/player?type=2&amp;id=457492084&amp;auto=0&amp;height=66&#34;&gt;
+      src=&#34;//music.163.com/outchain/player?type=2&amp;id=28196554&amp;auto=0&amp;height=66&#34;&gt;
     &lt;/iframe&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;youtube&#34;&gt;YouTube&lt;/h3&gt;
@@ -2193,7 +2207,7 @@ if (document.getElementById(&amp;quot;my-player&amp;quot;) !== null) {
 
 &lt;blockquote&gt;
   &lt;p&gt;This is a quote from Author5 and links to &lt;a href=&#34;https://twitter.com/CryptoGangsta/status/716427930126196737&#34;&gt;https://twitter.com/CryptoGangsta/status/716427930126196737&lt;/a&gt; which is longer than 32 characters.
-&lt;br&gt;And this is a new line in the quote with the HTML br tag.&lt;/p&gt;
+  &lt;br&gt;And this is a new line in the quote with the HTML br tag.&lt;/p&gt;
   &lt;footer&gt;
     &lt;strong&gt;Author6&lt;/strong&gt;
     

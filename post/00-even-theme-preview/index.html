@@ -23,10 +23,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polar9527" />
-  <meta name="description" content="主题与 markdown 语法测试。
+  <meta name="description" content="主题与markdown语法测试。
 " />
 
-  <meta name="keywords" content="Hugo, theme, jane" />
+  <meta name="keywords" content="Golang, Go, Python" />
 
 
 
@@ -59,26 +59,26 @@
 
 
 <meta property="og:title" content="主题与markdown语法测试" />
-<meta property="og:description" content="主题与 markdown 语法测试。" />
+<meta property="og:description" content="主题与markdown语法测试。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://polar9527.github.io/post/00-even-theme-preview/" />
-<meta property="article:published_time" content="2019-05-01T12:25:02&#43;08:00"/>
-<meta property="article:modified_time" content="2019-05-01T12:25:02&#43;08:00"/>
+<meta property="article:published_time" content="2017-01-01T18:03:09&#43;08:00"/>
+<meta property="article:modified_time" content="2017-01-01T18:03:09&#43;08:00"/>
 
 <meta itemprop="name" content="主题与markdown语法测试">
-<meta itemprop="description" content="主题与 markdown 语法测试。">
+<meta itemprop="description" content="主题与markdown语法测试。">
 
 
-<meta itemprop="datePublished" content="2019-05-01T12:25:02&#43;08:00" />
-<meta itemprop="dateModified" content="2019-05-01T12:25:02&#43;08:00" />
-<meta itemprop="wordCount" content="862">
+<meta itemprop="datePublished" content="2017-01-01T18:03:09&#43;08:00" />
+<meta itemprop="dateModified" content="2017-01-01T18:03:09&#43;08:00" />
+<meta itemprop="wordCount" content="872">
 
 
 
 <meta itemprop="keywords" content="markdown," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="主题与markdown语法测试"/>
-<meta name="twitter:description" content="主题与 markdown 语法测试。"/>
+<meta name="twitter:description" content="主题与markdown语法测试。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -358,14 +358,14 @@
       <h1 class="post-title">主题与markdown语法测试</h1>
       
       <div class="post-meta">
-        <time datetime="2019-05-01" class="post-time">
-          2019-05-01
+        <time datetime="2017-01-01" class="post-time">
+          2017-01-01
         </time>
         <div class="post-category">
             <a href="https://polar9527.github.io/categories/%E6%9D%82%E6%96%87/"> 杂文 </a>
             
           </div>
-        <span class="more-meta"> 约 862 字 </span>
+        <span class="more-meta"> 约 872 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -435,7 +435,7 @@
 
     
     <div class="post-content">
-      <p>主题与 markdown 语法测试。</p>
+      <p>主题与markdown语法测试。</p>
 
 <h1 id="标题">标题</h1>
 
@@ -503,18 +503,18 @@
 <h3 id="有序列表">有序列表</h3>
 
 <ol>
-<li>有序列表</li>
+<li>有序列表
+
+<ol>
 <li>嵌套的有序列表</li>
 <li>嵌套的有序列表</li>
-<li>有序列表</li>
-</ol>
+</ol></li>
+<li>有序列表
 
 <ul>
 <li>嵌套的无序列表</li>
 <li>嵌套的无序列表</li>
-</ul>
-
-<ol>
+</ul></li>
 <li>有序列表</li>
 </ol>
 
@@ -526,7 +526,7 @@
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> 支持以 PDF 格式导出文稿</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 新增 Todo 列表功能 <a href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments">语法参考</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> 新增Todo列表功能 <a href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments">语法参考</a></label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> 改进 LaTex 功能</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> 修复 LaTex 公式渲染问题</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> 新增 LaTex 公式编号功能 <a href="http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers">语法参考</a></label></li>
@@ -553,11 +553,11 @@
 <p>以本站的一段 <code>JavaScript</code> 代码做演示。</p>
 
 <pre><code class="language-javascript">// Initialize video.js player
-if (document.getElementById(&quot;my-player&quot;) !== null) {
+if (document.getElementById('my-player') !== null) {
   /* eslint-disable no-undef */
-  videojs(&quot;#my-player&quot;, {
-    aspectRatio: &quot;16:9&quot;,
-    fluid: true
+  videojs('#my-player', {
+    aspectRatio: '16:9',
+    fluid: true,
   });
 }
 </code></pre>
@@ -574,7 +574,7 @@ if (document.getElementById(&quot;my-player&quot;) !== null) {
 
 <h2 id="表格">表格</h2>
 
-<p>使用 <code>Markdown</code> 画的表格，如下表 👇</p>
+<p>使用 <code>Markdown</code> 画的表格，如下表👇</p>
 
 <table>
 <thead>
@@ -589,19 +589,19 @@ if (document.getElementById(&quot;my-player&quot;) !== null) {
 <tr>
 <td align="left">col 3 is</td>
 <td align="left">right-aligned</td>
-<td align="left">\$1600</td>
+<td align="left">$1600</td>
 </tr>
 
 <tr>
 <td align="left">col 2 is</td>
 <td align="left">centered</td>
-<td align="left">\$12</td>
+<td align="left">$12</td>
 </tr>
 
 <tr>
 <td align="left">zebra stripes</td>
 <td align="left">are neat</td>
-<td align="left">\$1</td>
+<td align="left">$1</td>
 </tr>
 </tbody>
 </table>
@@ -626,7 +626,7 @@ if (document.getElementById(&quot;my-player&quot;) !== null) {
       marginheight="0"
       width="330"
       height="86"
-      src="//music.163.com/outchain/player?type=2&id=457492084&auto=0&height=66">
+      src="//music.163.com/outchain/player?type=2&id=28196554&auto=0&height=66">
     </iframe></p>
 
 <h3 id="youtube">YouTube</h3>
@@ -883,7 +883,7 @@ if (document.getElementById(&quot;my-player&quot;) !== null) {
 
 <blockquote>
   <p>This is a quote from Author5 and links to <a href="https://twitter.com/CryptoGangsta/status/716427930126196737">https://twitter.com/CryptoGangsta/status/716427930126196737</a> which is longer than 32 characters.
-<br>And this is a new line in the quote with the HTML br tag.</p>
+  <br>And this is a new line in the quote with the HTML br tag.</p>
   <footer>
     <strong>Author6</strong>
     
@@ -1131,7 +1131,7 @@ if (document.getElementById(&quot;my-player&quot;) !== null) {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-05-01</span>
+    <span class="item-content">2017-01-01</span>
   </p>
   
   <p class="copyright-item">
@@ -1191,7 +1191,7 @@ if (document.getElementById(&quot;my-player&quot;) !== null) {
         id: '00-even-theme-preview.md',
         title: '主题与markdown语法测试',
         link: decodeURI(location.href),
-        desc: '\x3cp\x3e主题与 markdown 语法测试。\x3c\/p\x3e',
+        desc: '\x3cp\x3e主题与markdown语法测试。\x3c\/p\x3e',
         owner: 'polar9527',
         repo: 'site_comments',
         oauth: {

@@ -6,10 +6,19 @@
     <description>Recent content in golang on Polar9527&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 May 2019 00:34:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 11:27:15 +0800</lastBuildDate>
     
 	<atom:link href="https://polar9527.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导</title>
+      <link>https://polar9527.github.io/post/floyd-tortoise-and-hare/</link>
+      <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/floyd-tortoise-and-hare/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Golang中除法和取模运算与Python3的区别</title>
