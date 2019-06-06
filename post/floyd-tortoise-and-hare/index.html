@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导 - Polar9527&#39; Blog</title>
+  <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法 - Polar9527&#39; Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polar9527" />
-  <meta name="description" content="" />
+  <meta name="description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent" />
 
   <meta name="keywords" content="Golang, Go, Python" />
 
@@ -57,27 +57,27 @@
 
 
 
-<meta property="og:title" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法" />
+<meta property="og:description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://polar9527.github.io/post/floyd-tortoise-and-hare/" />
 <meta property="article:published_time" content="2019-06-06T11:27:15&#43;08:00"/>
 <meta property="article:modified_time" content="2019-06-06T11:27:15&#43;08:00"/>
 
-<meta itemprop="name" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法">
+<meta itemprop="description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent">
 
 
 <meta itemprop="datePublished" content="2019-06-06T11:27:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-06T11:27:15&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="1211">
 
 
 
 <meta itemprop="keywords" content="go,golang," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法"/>
+<meta name="twitter:description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -354,7 +354,7 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导</h1>
+      <h1 class="post-title">Floyd&#39;s Tortoise and Hare &amp; 环检测算法</h1>
       
       <div class="post-meta">
         <time datetime="2019-06-06" class="post-time">
@@ -367,8 +367,8 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 0 字 </span>
-          <span class="more-meta"> 预计阅读 0 分钟 </span>
+        <span class="more-meta"> 约 1211 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
         
@@ -387,15 +387,135 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#算法推导">算法推导</a></li>
+<li><a href="#算法应用">算法应用</a></li>
+<li><a href="#算法实现">算法实现</a>
+<ul>
+<li><a href="#golang">golang</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg" alt="" />
-<img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg" alt="" />
-<img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg" alt="" /></p>
+      
+
+<h2 id="算法推导">算法推导</h2>
+
+<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg" alt="" />
+当<code>hare</code>的移动速度是<code>tortoise</code>的2倍，<br />
+设起始点到环的入口的距离是<code>T</code>，环的长度是<code>C</code>，<br />
+当<code>tortoise</code>第一次走到环的入口<code>entry point</code>时，我们假设这是<code>tortoise</code>与<code>hare</code>之间的在环上的距离是<code>r</code>，<br />
+从<code>start point</code>开始出发到<code>tortoise</code>第一次走到环的入口时，<code>hare</code>移动的距离是 <code>T + r + k*C，k &gt;= 0</code>，<br />
+又因为，<code>hare</code>移动的速度是<code>tortoise</code>的两倍，且这时<code>tortoise</code>移动的距离是<code>T</code>，所以<code>hare</code>移动的距离是2T。<br />
+得到等式A <code>T + r + k*C = 2T，k &gt;= 0</code>
+简化得到等式B <code>r + k*C = T，k &gt;= 0</code></p>
+
+<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg" alt="" />
+当tortoise 第一次走到环的入口<code>entry point</code>时，而这时<code>tortoise</code>与<code>hare</code>之间的距离是r，<br />
+那么如果<code>tortoise</code>现在就不继续移动的话，<code>hare</code>还需要往前走<code>C-r</code>才能追上<code>tortoise</code>。<br />
+但是<code>hare</code>在往前追赶<code>tortoise</code>的时候，<code>tortoise</code>也在移动，而<code>hare</code>的移动速度是<code>tortoise</code>的两倍，<br />
+所以<code>hare</code>可以追上<code>tortoise</code>,并且需要往前走<code>2*（C-r）</code>才能追上<code>tortoise</code>。</p>
+
+<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg" alt="" /></p>
+
+<p>当<code>hare</code>移动了<code>2*（C-r）</code>的距离追上<code>tortoise</code>的时候，<code>tortoise</code>从相对于环的入口<code>entry point</code>移动了<code>C-r</code>。</p>
+
+<p>所以，在<code>tortoise</code>与<code>hare</code>第一次在环上相遇时，环的入口<code>entry point</code>到这个点<code>meet point</code>的距离是<code>C-r</code>, 而从这个相遇点<code>meet point</code>再往前移动<code>r</code>，就又回到了环的入口<code>entry point</code>。</p>
+
+<p>在<code>hare</code>与<code>tortoise</code>第一次相遇的这个时候，将<code>hare</code>从<code>meet point</code>重新放到起始点<code>start point</code>，<code>tortoise</code>仍放在这个相遇点<code>meet point</code>，<br />
+然后让它们以<strong>相同的速度</strong>开始移动，</p>
+
+<p>根据等式B <code>r + k*C = T，k &gt;= 0</code>，</p>
+
+<p><code>tortoise</code>和<code>hare</code>必然会在环的入口点<code>entry point</code>再次相遇。</p>
+
+<p>入口<code>entry point</code>找到后，就能很容易得到<code>T</code>，<br />
+然后入口<code>entry point</code>，让<code>tortoise</code>停下，<code>hare</code> 继续跑一圈，就能得到 <code>C</code>。</p>
+
+<h2 id="算法应用">算法应用</h2>
+
+<ol>
+<li>链表有环检测
+两个指针，慢指针移动速度为1，快指针移动速度为2，判断两个指针是否相遇</li>
+<li>找出有环链表的入口节点
+当两个指针相遇时，将其中一个指针重新放到链表头，然后让两个指针移动速度都为1，当两个指针再次相遇，就找到了有环链表的入口节点</li>
+<li>计算环长度
+在入口节点放置两个个指针，一个指针不动，一个指针移动速度为1，两个指针相遇，就可计算出环的长度</li>
+</ol>
+
+<h2 id="算法实现">算法实现</h2>
+
+<h3 id="golang">golang</h3>
+
+<ol>
+<li><p>链表有环检测 <code>leetcode 141</code></p>
+
+<pre><code class="language-golang">func hasCycle(head *ListNode) bool {
+	if head == nil {
+		return false
+	}
+	t, h := head, head
+	started := false
+	for h != nil &amp;&amp; h.Next != nil {
+		if t == h {
+			if started {
+				return true
+			} else {
+				started = true
+			}
+		}
+		t = t.Next
+		h = h.Next.Next
+	}
+	return false
+}
+</code></pre></li>
+
+<li><p>找出有环链表的入口节点 <code>leetcode 142</code></p>
+
+<pre><code class="language-golang">func detectCycle(head *ListNode) *ListNode {
+	var cycPoint *ListNode
+	if head == nil {
+		return cycPoint
+	}
+	t, h := head, head
+	started := false
+	hasCycle := false
+	for h != nil &amp;&amp; h.Next != nil {
+		if t == h {
+			if started {
+				hasCycle = true
+				break
+			} else {
+				started = true
+			}
+		}
+		t = t.Next
+		h = h.Next.Next
+	}
+	if hasCycle {
+		h = head
+		for h != nil &amp;&amp; t != nil {
+			if h == t {
+				cycPoint = h
+				break
+			}
+			h = h.Next
+			t = t.Next
+		}
+	}
+	return cycPoint
+}
+</code></pre></li>
+</ol>
 
     </div>
 
@@ -467,9 +587,9 @@
       <script type="text/javascript">
       const gitment = new Gitment({
         id: 'floyd-tortoise-and-hare.md',
-        title: 'Floyd\x27s Tortoise and Hare \x26 环检测算法推导',
+        title: 'Floyd\x27s Tortoise and Hare \x26 环检测算法',
         link: decodeURI(location.href),
-        desc: '',
+        desc: '算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent',
         owner: 'polar9527',
         repo: 'site_comments',
         oauth: {

@@ -628,15 +628,123 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
     </item>
     
     <item>
-      <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法推导</title>
+      <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法</title>
       <link>https://polar9527.github.io/post/floyd-tortoise-and-hare/</link>
       <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/floyd-tortoise-and-hare/</guid>
       
-        <description>&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg&#34; alt=&#34;&#34; /&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg&#34; alt=&#34;&#34; /&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+        <description>
+
+&lt;h2 id=&#34;算法推导&#34;&gt;算法推导&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg&#34; alt=&#34;&#34; /&gt;
+当&lt;code&gt;hare&lt;/code&gt;的移动速度是&lt;code&gt;tortoise&lt;/code&gt;的2倍，&lt;br /&gt;
+设起始点到环的入口的距离是&lt;code&gt;T&lt;/code&gt;，环的长度是&lt;code&gt;C&lt;/code&gt;，&lt;br /&gt;
+当&lt;code&gt;tortoise&lt;/code&gt;第一次走到环的入口&lt;code&gt;entry point&lt;/code&gt;时，我们假设这是&lt;code&gt;tortoise&lt;/code&gt;与&lt;code&gt;hare&lt;/code&gt;之间的在环上的距离是&lt;code&gt;r&lt;/code&gt;，&lt;br /&gt;
+从&lt;code&gt;start point&lt;/code&gt;开始出发到&lt;code&gt;tortoise&lt;/code&gt;第一次走到环的入口时，&lt;code&gt;hare&lt;/code&gt;移动的距离是 &lt;code&gt;T + r + k*C，k &amp;gt;= 0&lt;/code&gt;，&lt;br /&gt;
+又因为，&lt;code&gt;hare&lt;/code&gt;移动的速度是&lt;code&gt;tortoise&lt;/code&gt;的两倍，且这时&lt;code&gt;tortoise&lt;/code&gt;移动的距离是&lt;code&gt;T&lt;/code&gt;，所以&lt;code&gt;hare&lt;/code&gt;移动的距离是2T。&lt;br /&gt;
+得到等式A &lt;code&gt;T + r + k*C = 2T，k &amp;gt;= 0&lt;/code&gt;
+简化得到等式B &lt;code&gt;r + k*C = T，k &amp;gt;= 0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg&#34; alt=&#34;&#34; /&gt;
+当tortoise 第一次走到环的入口&lt;code&gt;entry point&lt;/code&gt;时，而这时&lt;code&gt;tortoise&lt;/code&gt;与&lt;code&gt;hare&lt;/code&gt;之间的距离是r，&lt;br /&gt;
+那么如果&lt;code&gt;tortoise&lt;/code&gt;现在就不继续移动的话，&lt;code&gt;hare&lt;/code&gt;还需要往前走&lt;code&gt;C-r&lt;/code&gt;才能追上&lt;code&gt;tortoise&lt;/code&gt;。&lt;br /&gt;
+但是&lt;code&gt;hare&lt;/code&gt;在往前追赶&lt;code&gt;tortoise&lt;/code&gt;的时候，&lt;code&gt;tortoise&lt;/code&gt;也在移动，而&lt;code&gt;hare&lt;/code&gt;的移动速度是&lt;code&gt;tortoise&lt;/code&gt;的两倍，&lt;br /&gt;
+所以&lt;code&gt;hare&lt;/code&gt;可以追上&lt;code&gt;tortoise&lt;/code&gt;,并且需要往前走&lt;code&gt;2*（C-r）&lt;/code&gt;才能追上&lt;code&gt;tortoise&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当&lt;code&gt;hare&lt;/code&gt;移动了&lt;code&gt;2*（C-r）&lt;/code&gt;的距离追上&lt;code&gt;tortoise&lt;/code&gt;的时候，&lt;code&gt;tortoise&lt;/code&gt;从相对于环的入口&lt;code&gt;entry point&lt;/code&gt;移动了&lt;code&gt;C-r&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;所以，在&lt;code&gt;tortoise&lt;/code&gt;与&lt;code&gt;hare&lt;/code&gt;第一次在环上相遇时，环的入口&lt;code&gt;entry point&lt;/code&gt;到这个点&lt;code&gt;meet point&lt;/code&gt;的距离是&lt;code&gt;C-r&lt;/code&gt;, 而从这个相遇点&lt;code&gt;meet point&lt;/code&gt;再往前移动&lt;code&gt;r&lt;/code&gt;，就又回到了环的入口&lt;code&gt;entry point&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;hare&lt;/code&gt;与&lt;code&gt;tortoise&lt;/code&gt;第一次相遇的这个时候，将&lt;code&gt;hare&lt;/code&gt;从&lt;code&gt;meet point&lt;/code&gt;重新放到起始点&lt;code&gt;start point&lt;/code&gt;，&lt;code&gt;tortoise&lt;/code&gt;仍放在这个相遇点&lt;code&gt;meet point&lt;/code&gt;，&lt;br /&gt;
+然后让它们以&lt;strong&gt;相同的速度&lt;/strong&gt;开始移动，&lt;/p&gt;
+
+&lt;p&gt;根据等式B &lt;code&gt;r + k*C = T，k &amp;gt;= 0&lt;/code&gt;，&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;tortoise&lt;/code&gt;和&lt;code&gt;hare&lt;/code&gt;必然会在环的入口点&lt;code&gt;entry point&lt;/code&gt;再次相遇。&lt;/p&gt;
+
+&lt;p&gt;入口&lt;code&gt;entry point&lt;/code&gt;找到后，就能很容易得到&lt;code&gt;T&lt;/code&gt;，&lt;br /&gt;
+然后入口&lt;code&gt;entry point&lt;/code&gt;，让&lt;code&gt;tortoise&lt;/code&gt;停下，&lt;code&gt;hare&lt;/code&gt; 继续跑一圈，就能得到 &lt;code&gt;C&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;算法应用&#34;&gt;算法应用&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;链表有环检测
+两个指针，慢指针移动速度为1，快指针移动速度为2，判断两个指针是否相遇&lt;/li&gt;
+&lt;li&gt;找出有环链表的入口节点
+当两个指针相遇时，将其中一个指针重新放到链表头，然后让两个指针移动速度都为1，当两个指针再次相遇，就找到了有环链表的入口节点&lt;/li&gt;
+&lt;li&gt;计算环长度
+在入口节点放置两个个指针，一个指针不动，一个指针移动速度为1，两个指针相遇，就可计算出环的长度&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;算法实现&#34;&gt;算法实现&lt;/h2&gt;
+
+&lt;h3 id=&#34;golang&#34;&gt;golang&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;链表有环检测 &lt;code&gt;leetcode 141&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;func hasCycle(head *ListNode) bool {
+	if head == nil {
+		return false
+	}
+	t, h := head, head
+	started := false
+	for h != nil &amp;amp;&amp;amp; h.Next != nil {
+		if t == h {
+			if started {
+				return true
+			} else {
+				started = true
+			}
+		}
+		t = t.Next
+		h = h.Next.Next
+	}
+	return false
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;找出有环链表的入口节点 &lt;code&gt;leetcode 142&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;func detectCycle(head *ListNode) *ListNode {
+	var cycPoint *ListNode
+	if head == nil {
+		return cycPoint
+	}
+	t, h := head, head
+	started := false
+	hasCycle := false
+	for h != nil &amp;amp;&amp;amp; h.Next != nil {
+		if t == h {
+			if started {
+				hasCycle = true
+				break
+			} else {
+				started = true
+			}
+		}
+		t = t.Next
+		h = h.Next.Next
+	}
+	if hasCycle {
+		h = head
+		for h != nil &amp;amp;&amp;amp; t != nil {
+			if h == t {
+				cycPoint = h
+				break
+			}
+			h = h.Next
+			t = t.Next
+		}
+	}
+	return cycPoint
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
       
     </item>
