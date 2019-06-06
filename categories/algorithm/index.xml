@@ -17,7 +17,7 @@
       <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/floyd-tortoise-and-hare/</guid>
-      <description>算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent</description>
+      <description>算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent</description>
     </item>
     
   </channel>

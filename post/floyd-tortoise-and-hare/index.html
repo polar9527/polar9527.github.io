@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polar9527" />
-  <meta name="description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent" />
+  <meta name="description" content="算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent" />
 
   <meta name="keywords" content="Golang, Go, Python" />
 
@@ -58,26 +58,26 @@
 
 
 <meta property="og:title" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法" />
-<meta property="og:description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent" />
+<meta property="og:description" content="算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://polar9527.github.io/post/floyd-tortoise-and-hare/" />
 <meta property="article:published_time" content="2019-06-06T11:27:15&#43;08:00"/>
 <meta property="article:modified_time" content="2019-06-06T11:27:15&#43;08:00"/>
 
 <meta itemprop="name" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法">
-<meta itemprop="description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent">
+<meta itemprop="description" content="算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent">
 
 
 <meta itemprop="datePublished" content="2019-06-06T11:27:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-06T11:27:15&#43;08:00" />
-<meta itemprop="wordCount" content="1302">
+<meta itemprop="wordCount" content="1288">
 
 
 
 <meta itemprop="keywords" content="go,golang," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法"/>
-<meta name="twitter:description" content="算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent"/>
+<meta name="twitter:description" content="算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -367,7 +367,7 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 1302 字 </span>
+        <span class="more-meta"> 约 1288 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -410,16 +410,16 @@
 <h2 id="算法推导">算法推导</h2>
 
 <p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg" alt="" />
-当<code>hare</code>的移动速度是<code>tortoise</code>的2倍，<br />
+当<code>hare</code>的移动速度是<code>tortoise</code>的 2 倍，<br />
 设起始点到环的入口的距离是<code>T</code>，环的长度是<code>C</code>，<br />
 当<code>tortoise</code>第一次走到环的入口<code>entry point</code>时，我们假设这是<code>tortoise</code>与<code>hare</code>之间的在环上的距离是<code>r</code>，<br />
 从<code>start point</code>开始出发到<code>tortoise</code>第一次走到环的入口时，<code>hare</code>移动的距离是 <code>T + r + k*C，k &gt;= 0</code>，<br />
-又因为，<code>hare</code>移动的速度是<code>tortoise</code>的两倍，且这时<code>tortoise</code>移动的距离是<code>T</code>，所以<code>hare</code>移动的距离是2T。<br />
-得到等式A <code>T + r + k*C = 2T，k &gt;= 0</code>
-简化得到等式B <code>r + k*C = T，k &gt;= 0</code></p>
+又因为，<code>hare</code>移动的速度是<code>tortoise</code>的两倍，且这时<code>tortoise</code>移动的距离是<code>T</code>，所以<code>hare</code>移动的距离是 2T。<br />
+得到等式 A <code>T + r + k*C = 2T，k &gt;= 0</code>
+简化得到等式 B <code>r + k*C = T，k &gt;= 0</code></p>
 
 <p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg" alt="" />
-当tortoise 第一次走到环的入口<code>entry point</code>时，而这时<code>tortoise</code>与<code>hare</code>之间的距离是r，<br />
+当 tortoise 第一次走到环的入口<code>entry point</code>时，而这时<code>tortoise</code>与<code>hare</code>之间的距离是 r，<br />
 那么如果<code>tortoise</code>现在就不继续移动的话，<code>hare</code>还需要往前走<code>C-r</code>才能追上<code>tortoise</code>。<br />
 但是<code>hare</code>在往前追赶<code>tortoise</code>的时候，<code>tortoise</code>也在移动，而<code>hare</code>的移动速度是<code>tortoise</code>的两倍，<br />
 所以<code>hare</code>可以追上<code>tortoise</code>,并且需要往前走<code>2*（C-r）</code>才能追上<code>tortoise</code>。</p>
@@ -433,7 +433,7 @@
 <p>在<code>hare</code>与<code>tortoise</code>第一次相遇的这个时候，将<code>hare</code>从<code>meet point</code>重新放到起始点<code>start point</code>，<code>tortoise</code>仍放在这个相遇点<code>meet point</code>，<br />
 然后让它们以<strong>相同的速度</strong>开始移动，</p>
 
-<p>根据等式B <code>r + k*C = T，k &gt;= 0</code>，</p>
+<p>根据等式 B <code>r + k*C = T，k &gt;= 0</code>，</p>
 
 <p><code>tortoise</code>和<code>hare</code>必然会在环的入口点<code>entry point</code>再次相遇。</p>
 
@@ -444,11 +444,11 @@
 
 <ol>
 <li>链表有环检测
-两个指针，慢指针移动速度为1，快指针移动速度为2，判断两个指针是否相遇</li>
+两个指针，慢指针移动速度为 1，快指针移动速度为 2，判断两个指针是否相遇</li>
 <li>找出有环链表的入口节点
-当两个指针相遇时，将其中一个指针重新放到链表头，然后让两个指针移动速度都为1，当两个指针再次相遇，就找到了有环链表的入口节点</li>
+当两个指针相遇时，将其中一个指针重新放到链表头，然后让两个指针移动速度都为 1，当两个指针再次相遇，就找到了有环链表的入口节点</li>
 <li>计算环长度
-在入口节点放置两个个指针，一个指针不动，一个指针移动速度为1，两个指针相遇，就可计算出环的长度</li>
+在入口节点放置两个个指针，一个指针不动，一个指针移动速度为 1，两个指针相遇，就可计算出环的长度</li>
 </ol>
 
 <h2 id="算法实现">算法实现</h2>
@@ -456,22 +456,22 @@
 <h3 id="golang">golang</h3>
 
 <ol>
-<li><p>链表有环检测 <code>leetcode 141</code><br />
-```golang
-/*</p>
+<li>链表有环检测 <code>leetcode 141</code></li>
+</ol>
 
-<ul>
-<li>@lc app=leetcode id=141 lang=golang
-*</li>
-<li>[141] Linked List Cycle
-*/
-/**</li>
-<li>Definition for singly-linked list.</li>
-<li>type ListNode struct {</li>
-<li>Val int</li>
-<li>Next *ListNode</li>
-<li>}
-*/
+<pre><code class="language-golang">/*
+ * @lc app=leetcode id=141 lang=golang
+ *
+ * [141] Linked List Cycle
+ */
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
 func hasCycle(head *ListNode) bool {
 	if head == nil {
 		return false
@@ -491,25 +491,25 @@ func hasCycle(head *ListNode) bool {
 	}
 	return false
 }
-```</li>
-</ul></li>
+</code></pre>
 
-<li><p>找出有环链表的入口节点 <code>leetcode 142</code><br />
-```golang
-/*</p>
+<ol>
+<li>找出有环链表的入口节点 <code>leetcode 142</code></li>
+</ol>
 
-<ul>
-<li>@lc app=leetcode id=142 lang=golang
-*</li>
-<li>[142] Linked List Cycle II
-*/
-/**</li>
-<li>Definition for singly-linked list.</li>
-<li>type ListNode struct {</li>
-<li>Val int</li>
-<li>Next *ListNode</li>
-<li>}
-*/
+<pre><code class="language-golang">/*
+ * @lc app=leetcode id=142 lang=golang
+ *
+ * [142] Linked List Cycle II
+ */
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
 func detectCycle(head *ListNode) *ListNode {
 	var cycPoint *ListNode
 	if head == nil {
@@ -543,11 +543,10 @@ func detectCycle(head *ListNode) *ListNode {
 	}
 	return cycPoint
 }
-```</li>
-</ul></li>
-</ol>
+</code></pre>
 
-<p>作者主页：[<a href="https://polar9527.github.io">https://polar9527.github.io</a>]</p>
+<p>欢迎转载，请注明出处~<br />
+<a href="https://polar9527.github.io/">作者个人主页</a></p>
 
     </div>
 
@@ -621,7 +620,7 @@ func detectCycle(head *ListNode) *ListNode {
         id: 'floyd-tortoise-and-hare.md',
         title: 'Floyd\x27s Tortoise and Hare \x26 环检测算法',
         link: decodeURI(location.href),
-        desc: '算法推导 当hare的移动速度是tortoise的2倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent',
+        desc: '算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent',
         owner: 'polar9527',
         repo: 'site_comments',
         oauth: {
