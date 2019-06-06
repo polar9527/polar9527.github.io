@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-06-06T11:27:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-06T11:27:15&#43;08:00" />
-<meta itemprop="wordCount" content="1211">
+<meta itemprop="wordCount" content="1302">
 
 
 
@@ -367,7 +367,7 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 1211 字 </span>
+        <span class="more-meta"> 约 1302 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -456,9 +456,23 @@
 <h3 id="golang">golang</h3>
 
 <ol>
-<li><p>链表有环检测 <code>leetcode 141</code></p>
+<li><p>链表有环检测 <code>leetcode 141</code><br />
+```golang
+/*</p>
 
-<pre><code class="language-golang">func hasCycle(head *ListNode) bool {
+<ul>
+<li>@lc app=leetcode id=141 lang=golang
+*</li>
+<li>[141] Linked List Cycle
+*/
+/**</li>
+<li>Definition for singly-linked list.</li>
+<li>type ListNode struct {</li>
+<li>Val int</li>
+<li>Next *ListNode</li>
+<li>}
+*/
+func hasCycle(head *ListNode) bool {
 	if head == nil {
 		return false
 	}
@@ -477,11 +491,26 @@
 	}
 	return false
 }
-</code></pre></li>
+```</li>
+</ul></li>
 
-<li><p>找出有环链表的入口节点 <code>leetcode 142</code></p>
+<li><p>找出有环链表的入口节点 <code>leetcode 142</code><br />
+```golang
+/*</p>
 
-<pre><code class="language-golang">func detectCycle(head *ListNode) *ListNode {
+<ul>
+<li>@lc app=leetcode id=142 lang=golang
+*</li>
+<li>[142] Linked List Cycle II
+*/
+/**</li>
+<li>Definition for singly-linked list.</li>
+<li>type ListNode struct {</li>
+<li>Val int</li>
+<li>Next *ListNode</li>
+<li>}
+*/
+func detectCycle(head *ListNode) *ListNode {
 	var cycPoint *ListNode
 	if head == nil {
 		return cycPoint
@@ -514,8 +543,11 @@
 	}
 	return cycPoint
 }
-</code></pre></li>
+```</li>
+</ul></li>
 </ol>
+
+<p>作者主页：[<a href="https://polar9527.github.io">https://polar9527.github.io</a>]</p>
 
     </div>
 

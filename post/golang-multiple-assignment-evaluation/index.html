@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-05-16T19:40:04&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-16T19:40:04&#43;08:00" />
-<meta itemprop="wordCount" content="778">
+<meta itemprop="wordCount" content="855">
 
 
 
@@ -366,7 +366,7 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 778 字 </span>
+        <span class="more-meta"> 约 855 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -386,13 +386,28 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#golang多重赋值的经典应用">golang多重赋值的经典应用</a>
+<ul>
+<li><a href="#leetcode-205-reverse-linked-list">leetcode 205 <code>reverse linked list</code></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>个人主页：[<a href="https://polar9527.github.io">https://polar9527.github.io</a>]</p>
+      
+
+<p>个人主页：[<a href="https://polar9527.github.io">https://polar9527.github.io</a>]</p>
 
 <p>Golang 的多重赋值可以用于值交换操作</p>
 
@@ -495,6 +510,31 @@ a, b, a = bTemp, aTemp, bTemp
 <p>这里两个值交换的操作的原理是将两个被赋值的变量的值，都存储在临时变量里，然后再用临时变量去赋值。所以这个例子赋值顺序对结果是无影响的，其结果仍然是 a = 2, b = 1。</p>
 
 <p>不用再像 C 语言那样写交换函数再内联了，相当于把脏活丢给编译器干了。</p>
+
+<h3 id="golang多重赋值的经典应用">golang多重赋值的经典应用</h3>
+
+<h4 id="leetcode-205-reverse-linked-list">leetcode 205 <code>reverse linked list</code></h4>
+
+<pre><code class="language-golang">/*
+ * @lc app=leetcode id=206 lang=golang
+ *
+ * [206] Reverse Linked List
+ */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseList(head *ListNode) *ListNode {
+	var tail *ListNode
+	for head != nil {
+		head.Next, tail, head = tail, head, head.Next
+	}
+	return tail
+}
+</code></pre>
 
 <p>欢迎转载，请注明出处~
 <a href="https://polar9527.github.io/">作者个人主页</a></p>

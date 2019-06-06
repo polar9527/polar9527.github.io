@@ -685,9 +685,23 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;h3 id=&#34;golang&#34;&gt;golang&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;链表有环检测 &lt;code&gt;leetcode 141&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;链表有环检测 &lt;code&gt;leetcode 141&lt;/code&gt;&lt;br /&gt;
+```golang
+/*&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;func hasCycle(head *ListNode) bool {
+&lt;ul&gt;
+&lt;li&gt;@lc app=leetcode id=141 lang=golang
+*&lt;/li&gt;
+&lt;li&gt;[141] Linked List Cycle
+*/
+/**&lt;/li&gt;
+&lt;li&gt;Definition for singly-linked list.&lt;/li&gt;
+&lt;li&gt;type ListNode struct {&lt;/li&gt;
+&lt;li&gt;Val int&lt;/li&gt;
+&lt;li&gt;Next *ListNode&lt;/li&gt;
+&lt;li&gt;}
+*/
+func hasCycle(head *ListNode) bool {
 	if head == nil {
 		return false
 	}
@@ -706,11 +720,26 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 	}
 	return false
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+```&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;找出有环链表的入口节点 &lt;code&gt;leetcode 142&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;找出有环链表的入口节点 &lt;code&gt;leetcode 142&lt;/code&gt;&lt;br /&gt;
+```golang
+/*&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;func detectCycle(head *ListNode) *ListNode {
+&lt;ul&gt;
+&lt;li&gt;@lc app=leetcode id=142 lang=golang
+*&lt;/li&gt;
+&lt;li&gt;[142] Linked List Cycle II
+*/
+/**&lt;/li&gt;
+&lt;li&gt;Definition for singly-linked list.&lt;/li&gt;
+&lt;li&gt;type ListNode struct {&lt;/li&gt;
+&lt;li&gt;Val int&lt;/li&gt;
+&lt;li&gt;Next *ListNode&lt;/li&gt;
+&lt;li&gt;}
+*/
+func detectCycle(head *ListNode) *ListNode {
 	var cycPoint *ListNode
 	if head == nil {
 		return cycPoint
@@ -743,8 +772,11 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 	}
 	return cycPoint
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+```&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;作者主页：[&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;]&lt;/p&gt;
 </description>
       
     </item>
@@ -844,7 +876,9 @@ b * q + r = a， 0 &amp;lt;= r &amp;lt; b
       
       <guid>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</guid>
       
-        <description>&lt;p&gt;个人主页：[&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;]&lt;/p&gt;
+        <description>
+
+&lt;p&gt;个人主页：[&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;]&lt;/p&gt;
 
 &lt;p&gt;Golang 的多重赋值可以用于值交换操作&lt;/p&gt;
 
@@ -947,6 +981,31 @@ a, b, a = bTemp, aTemp, bTemp
 &lt;p&gt;这里两个值交换的操作的原理是将两个被赋值的变量的值，都存储在临时变量里，然后再用临时变量去赋值。所以这个例子赋值顺序对结果是无影响的，其结果仍然是 a = 2, b = 1。&lt;/p&gt;
 
 &lt;p&gt;不用再像 C 语言那样写交换函数再内联了，相当于把脏活丢给编译器干了。&lt;/p&gt;
+
+&lt;h3 id=&#34;golang多重赋值的经典应用&#34;&gt;golang多重赋值的经典应用&lt;/h3&gt;
+
+&lt;h4 id=&#34;leetcode-205-reverse-linked-list&#34;&gt;leetcode 205 &lt;code&gt;reverse linked list&lt;/code&gt;&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;/*
+ * @lc app=leetcode id=206 lang=golang
+ *
+ * [206] Reverse Linked List
+ */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseList(head *ListNode) *ListNode {
+	var tail *ListNode
+	for head != nil {
+		head.Next, tail, head = tail, head, head.Next
+	}
+	return tail
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;欢迎转载，请注明出处~
 &lt;a href=&#34;https://polar9527.github.io/&#34;&gt;作者个人主页&lt;/a&gt;&lt;/p&gt;
