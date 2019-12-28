@@ -449,40 +449,74 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;h3 id=&#34;技能&#34;&gt;技能&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机制&lt;/li&gt;
+&lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机&lt;/li&gt;
+&lt;li&gt;对 P2P 网络分布式算法有一定了解，阅读过星际文件系统（IPFS）网络层 libp2p 协议的 Go 语言实现(go-libp2p)核心模块代码&lt;/li&gt;
+&lt;li&gt;研究过 PBFT(实用拜占庭容错算法),对区块链共识算法 DPOS 有一定认识&lt;/li&gt;
 &lt;li&gt;熟悉 Python, 代码风格良好，了解 PEP8&lt;/li&gt;
 &lt;li&gt;了解并使用过 Django、Flask, 理解 PEP3333,并阅读过 flask 框架的源代码，了解 flask 框架的工作机制&lt;/li&gt;
 &lt;li&gt;熟悉 Linux、AWS 等开发环境&lt;/li&gt;
 &lt;li&gt;使用过 MySQL、MongoDB、Redis, 了解 MySQL 查询优化，索引优化；&lt;/li&gt;
 &lt;li&gt;了解 TCP/IP、HTTP 协议相关知识&lt;/li&gt;
-&lt;li&gt;有 Web 前后端完整的知识体系，了解 HTML/CSS/Javascript 等前端知识，有 Vue 的使用经验&lt;/li&gt;
 &lt;li&gt;了解并使用过 Docker、Kubenetes，理解 Docker 的基本原理，有 Kubenetes 的使用经验&lt;/li&gt;
-&lt;li&gt;能够突破语言层面的限制，了解 x86 平台下的汇编，了解 Linux 平台下的 C 语言系统编程，对操作系统原理有一定认识&lt;/li&gt;
-&lt;li&gt;接触过 Java、Spring&lt;/li&gt;
+&lt;li&gt;能够突破语言层面的限制，了解 x86 平台下的汇编，了解 Unix/Linux 环境下下的 C 语言系统编程，对操作系统原理有一定认识&lt;/li&gt;
+&lt;li&gt;有 Web 前后端完整的知识体系，了解 HTML/CSS/Javascript 等前端知识，有 Vue 的使用经验&lt;/li&gt;
 &lt;li&gt;熟练使用 Git 进行版本控制&lt;/li&gt;
 &lt;li&gt;熟悉基本的数据结构和算法&lt;/li&gt;
-&lt;li&gt;英语水平 CET-6，经常使用 Google/StackOverflow/Wikipedia, 有阅读英文文档并解决工作中遇到的问题的能力&lt;/li&gt;
+&lt;li&gt;英语水平 CET-6，熟练使用 Google/StackOverflow/Wikipedia, 有阅读英文文档并解决工作中遇到的问题的能力&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;项目经验&#34;&gt;项目经验&lt;/h2&gt;
+
+&lt;h3 id=&#34;xtar&#34;&gt;XTAR&lt;/h3&gt;
+
+&lt;p&gt;2019 年 7 月 - 2019 年 12 月&lt;br /&gt;
+基于区块链的去中心化的交易系统&lt;/p&gt;
+
+&lt;h4 id=&#34;项目简介&#34;&gt;项目简介&lt;/h4&gt;
+
+&lt;p&gt;XTAR 是以 VRF(可验证随机函数算法)和 PBFT(实用拜占庭容错算法)为基础来实现 DPOS(Delegated Proof of Stake，委任权益证明)机制的去中心化价值交易平台。独有的两阶段共识算法，提高了整个系统的区块出块速度，并通过 native 系统合约实现了链上治理，保证了共识的公平民主。&lt;/p&gt;
+
+&lt;h5 id=&#34;主要职责&#34;&gt;主要职责&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;XTAR 系统对等网络层(P2P 网络层)的功能重构和性能优化&lt;/li&gt;
+&lt;li&gt;XTAR 底层代码的交叉 review&lt;/li&gt;
+&lt;li&gt;XTAR 系统 Bug 排查修复&lt;/li&gt;
+&lt;li&gt;XTAR 系统生态圈内后端服务的开发&lt;/li&gt;
+&lt;li&gt;基于 XTAR 系统 SDK 的系统流程测试开发&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;技术细节&#34;&gt;技术细节&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;开发语言为&lt;code&gt;Golang&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;网络层第三方库为&lt;code&gt;libp2p&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;将 XTAR 系统生态圈内后端服务的开发系统 P2P 网络层由结构化 P2P 网络(采用 Kademlia 算法实现)修改为无结构化 P2P 网络以提高网络中节点查找性能&lt;/li&gt;
+&lt;li&gt;在 XTAR 系统 P2P 层进行节点网络质量管理，利用 EWMA(指数加权移动平均法)记录的 Peer 节点的 RTT(Round-Trip Time,往返时延)的统计值，对当前节点的 Peer 做排名&lt;/li&gt;
+&lt;li&gt;在 XTAR 系统 P2P 层实现消息限流功能，预防消息过载导致的节点崩溃&lt;/li&gt;
+&lt;li&gt;在 XTAR 系统 P2P 层实现协程池，以降低 GC 压力提升系统性能&lt;/li&gt;
+&lt;li&gt;搭建 XTAR 系统 docker 集群的开发调试的环境&lt;/li&gt;
+&lt;li&gt;XTAR 系统 native 系统合约测试流程开发&lt;/li&gt;
+&lt;li&gt;XTAR 系统在线 IDE(集成开发环境)后端部分的开发&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&#34;linkeychain-公链系统&#34;&gt;Linkeychain 公链系统&lt;/h3&gt;
 
 &lt;p&gt;2018 年 6 月 - 2019 年 2 月&lt;br /&gt;
 基于&lt;code&gt;DPOS&lt;/code&gt;的区块链公链&lt;/p&gt;
 
-&lt;h4 id=&#34;项目简介&#34;&gt;项目简介&lt;/h4&gt;
+&lt;h4 id=&#34;项目简介-1&#34;&gt;项目简介&lt;/h4&gt;
 
 &lt;p&gt;Linkeychain 是第二代区块链系统，支持智能合约，&lt;code&gt;授权股权证明机制 DPOS&lt;/code&gt;，为公司的区块链商业应用提供底层技术支撑。&lt;/p&gt;
 
-&lt;h5 id=&#34;主要职责&#34;&gt;主要职责&lt;/h5&gt;
+&lt;h5 id=&#34;主要职责-1&#34;&gt;主要职责&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;搭建基于区块链的底层服务&lt;/li&gt;
 &lt;li&gt;负责公链系统的&lt;code&gt;p2p&lt;/code&gt;网络层的搭建和维护&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;技术细节&#34;&gt;技术细节&lt;/h5&gt;
+&lt;h5 id=&#34;技术细节-1&#34;&gt;技术细节&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;开发语言为&lt;code&gt;Golang&lt;/code&gt;&lt;/li&gt;
@@ -513,11 +547,11 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;p&gt;2017 年 5 月 - 2017 年 10 月&lt;br /&gt;
 基于&lt;code&gt;Ceph&lt;/code&gt;的对象存储系统&lt;/p&gt;
 
-&lt;h4 id=&#34;项目简介-1&#34;&gt;项目简介&lt;/h4&gt;
+&lt;h4 id=&#34;项目简介-2&#34;&gt;项目简介&lt;/h4&gt;
 
 &lt;p&gt;ConSpace 是为用户提供国内领先的安全，快速、高效的大容量网络存储服务，助力企业打破数据传递的单一性，实现移动办公和统一管理，使企业实现更高效的管理。通过严格、灵活的权限控制，满足企业复杂多变的文档访问需求，和信息安全合规要求。&lt;/p&gt;
 
-&lt;h5 id=&#34;主要职责-1&#34;&gt;主要职责&lt;/h5&gt;
+&lt;h5 id=&#34;主要职责-2&#34;&gt;主要职责&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;开发环境中&lt;code&gt;Ceph&lt;/code&gt;集群的搭建部署&lt;/li&gt;
@@ -525,7 +559,7 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;基于&lt;code&gt;Ceph&lt;/code&gt;对象存储提供的&lt;code&gt;Amazon S3&lt;/code&gt;兼容的 RESTful 接口 AWS SDK 工具包 Boto3 开发&lt;code&gt;Django&lt;/code&gt;后端逻辑&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;技术细节-1&#34;&gt;技术细节&lt;/h5&gt;
+&lt;h5 id=&#34;技术细节-2&#34;&gt;技术细节&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;采用了 Python 第三方库&lt;code&gt;boto3&lt;/code&gt;和&lt;code&gt;requests&lt;/code&gt;，在&lt;code&gt;Ceph&lt;/code&gt;对象存储系统提供的与 Amazon S3 兼容的 RESTful 接口上，完成了 Http 协议层的 AWSv4 签名认证，以及与对象存储相关的文件操作功能和对象存储层用户信息的管理&lt;/li&gt;
@@ -541,11 +575,11 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;del&gt;[部署地址]()&lt;/del&gt;
 &lt;img src=&#34;http://www.lagou.com/i/image/M00/63/81/CgqKkVgCK92AS9VtAAcOzM-AO0I713.png&#34; alt=&#34;Bookmarks_pic&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;项目简介-2&#34;&gt;项目简介&lt;/h4&gt;
+&lt;h4 id=&#34;项目简介-3&#34;&gt;项目简介&lt;/h4&gt;
 
 &lt;p&gt;Bookmarks 是一个类似于&lt;a href=&#34;https://www.pinterest.com/&#34;&gt;Pinterest&lt;/a&gt;的图片社交网站，用户可以在应用上分享其在网络上发现并收藏的图片。用户之间可以相互关注，并实时获得其关注对象的动态。用户还可以在网站上随时获得最新的图片热度排名。&lt;/p&gt;
 
-&lt;h5 id=&#34;技术细节-2&#34;&gt;技术细节&lt;/h5&gt;
+&lt;h5 id=&#34;技术细节-3&#34;&gt;技术细节&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;使用 Django + MySQL + Redis 来编写项目后端系统&lt;/li&gt;
@@ -558,12 +592,25 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;h3 id=&#34;demo-项目&#34;&gt;Demo 项目&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;用&lt;code&gt;Node.js&lt;/code&gt;, &lt;code&gt;express&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;，mlab(&lt;code&gt;mongoDB&lt;/code&gt;)等工具搭建的 demo 集合&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;部署在&lt;code&gt;Heroku&lt;/code&gt;上, 需要 climb over the wall to visit&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://polar9527.herokuapp.com/&#34;&gt;地址&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;用&lt;code&gt;Node.js&lt;/code&gt;, &lt;code&gt;express&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;，mlab(&lt;code&gt;mongoDB&lt;/code&gt;)等工具搭建的 demo 集合&lt;/li&gt;
+&lt;li&gt;部署在&lt;code&gt;Heroku&lt;/code&gt;上, 需要 climb over the wall to visit&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://polar9527.herokuapp.com/&#34;&gt;地址&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;
+
+&lt;h4 id=&#34;上海启日信息技术有限公司&#34;&gt;上海启日信息技术有限公司&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;2019 年 7 月 - 2019 年 12 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Golang 开发工程师&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;区块链底层功能开发&lt;/li&gt;
+&lt;li&gt;服务器后端开发&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&#34;链极智能科技-上海-有限公司&#34;&gt;链极智能科技（上海）有限公司&lt;/h4&gt;
 
