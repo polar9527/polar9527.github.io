@@ -449,9 +449,9 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;h3 id=&#34;技能&#34;&gt;技能&lt;/h3&gt;
 
 &lt;ul&gt;
+&lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机制&lt;/li&gt;
 &lt;li&gt;熟悉 Python, 代码风格良好，了解 PEP8&lt;/li&gt;
 &lt;li&gt;了解并使用过 Django、Flask, 理解 PEP3333,并阅读过 flask 框架的源代码，了解 flask 框架的工作机制&lt;/li&gt;
-&lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机制&lt;/li&gt;
 &lt;li&gt;熟悉 Linux、AWS 等开发环境&lt;/li&gt;
 &lt;li&gt;使用过 MySQL、MongoDB、Redis, 了解 MySQL 查询优化，索引优化；&lt;/li&gt;
 &lt;li&gt;了解 TCP/IP、HTTP 协议相关知识&lt;/li&gt;
@@ -558,9 +558,9 @@ Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;h3 id=&#34;demo-项目&#34;&gt;Demo 项目&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;用&lt;code&gt;Node.js&lt;/code&gt;, &lt;code&gt;express&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;，mlab(&lt;code&gt;mongoDB&lt;/code&gt;)等工具搭建的 demo 集合&lt;/li&gt;
-&lt;li&gt;部署在&lt;code&gt;Heroku&lt;/code&gt;上, 需要 climb over the wall to visit
-&lt;a href=&#34;https://polar9527.herokuapp.com/&#34;&gt;地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;用&lt;code&gt;Node.js&lt;/code&gt;, &lt;code&gt;express&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;，mlab(&lt;code&gt;mongoDB&lt;/code&gt;)等工具搭建的 demo 集合&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;部署在&lt;code&gt;Heroku&lt;/code&gt;上, 需要 climb over the wall to visit&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://polar9527.herokuapp.com/&#34;&gt;地址&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;
