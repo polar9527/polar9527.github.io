@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polar9527" />
-  <meta name="description" content="function helloWorld() { alert(&amp;quot;Hello, World!&amp;quot;); } " />
+  <meta name="description" content="function helloWorld() { alert(&amp;#34;Hello, World!&amp;#34;); } " />
 
   <meta name="keywords" content="Golang, Go, Python" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.4" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="https://polar9527.github.io/post/01-syntax-highlighting/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.19ae5a432863a072ec64433bb1020bd6d3401129f87d6f2ad5af3bcfd84168a1.css" integrity="sha256-Ga5aQyhjoHLsZEM7sQIL1tNAESn4fW8q1a87z9hBaKE=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -59,32 +59,28 @@
 
 <meta property="og:title" content="代码高亮测试" />
 <meta property="og:description" content="function helloWorld() {
-  alert(&quot;Hello, World!&quot;);
+  alert(&#34;Hello, World!&#34;);
 }
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://polar9527.github.io/post/01-syntax-highlighting/" />
-<meta property="article:published_time" content="2019-05-01T12:51:08&#43;08:00"/>
-<meta property="article:modified_time" content="2019-05-01T12:51:08&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-05-01T12:51:08+08:00" />
+<meta property="article:modified_time" content="2019-05-01T12:51:08+08:00" />
 <meta itemprop="name" content="代码高亮测试">
 <meta itemprop="description" content="function helloWorld() {
-  alert(&quot;Hello, World!&quot;);
+  alert(&#34;Hello, World!&#34;);
 }
 ">
-
-
 <meta itemprop="datePublished" content="2019-05-01T12:51:08&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-01T12:51:08&#43;08:00" />
 <meta itemprop="wordCount" content="93">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="代码高亮测试"/>
 <meta name="twitter:description" content="function helloWorld() {
-  alert(&quot;Hello, World!&quot;);
+  alert(&#34;Hello, World!&#34;);
 }
 "/>
 
@@ -390,73 +386,55 @@
 
     
     <div class="post-content">
-      <pre><code class="language-js">function helloWorld() {
-  alert(&quot;Hello, World!&quot;);
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">helloWorld</span>() {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>);
 }
-</code></pre>
-
-<pre><code class="language-java">public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println(&quot;Hello, World!&quot;);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello, World!&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/* Hello */</span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>){
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, World!</span><span style="color:#e6db74">&#34;</span>);
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// &#39;Hello World!&#39; program
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello World!</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl;
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span>{
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(){
+    System.Console.WriteLine(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>);
   }
 }
-</code></pre>
-
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-/* Hello */
-int main(void){
-  printf(&quot;Hello, World!&quot;);
-  return 0;
-}
-</code></pre>
-
-<pre><code class="language-cpp">// 'Hello World!' program
-
-#include &lt;iostream&gt;
-
-int main(){
-  std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;
-  return 0;
-}
-</code></pre>
-
-<pre><code class="language-cs">using System;
-class HelloWorld{
-  public static void Main(){
-    System.Console.WriteLine(&quot;Hello, World!&quot;);
-  }
-}
-</code></pre>
-
-<pre><code class="language-html">&lt;html&gt;
-  &lt;body&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
     Hello, World!
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">fmt</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
-<pre><code class="language-go">package main
-import fmt &quot;fmt&quot;
-
-func main()
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>()
 {
-   fmt.Printf(&quot;Hello, World!\n&quot;);
+   <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Hello, World!\n&#34;</span>);
 }
-</code></pre>
-
-<pre><code class="language-scala">object HelloWorld with Application {
-  Console.println(&quot;Hello, World!&quot;);
-}
-</code></pre>
-
-<pre><code class="language-php">&lt;?php
-  echo 'Hello, World!';
-?&gt;
-</code></pre>
-
-<pre><code class="language-python">print(&quot;Hello, World!&quot;)
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+  <span style="color:#a6e22e">Console</span><span style="color:#f92672">.</span>println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello, World!&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Hello, World!&#39;</span>;
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, World!</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div>
     </div>
 
     
@@ -538,7 +516,7 @@ func main()
         id: '01-syntax-highlighting.md',
         title: '代码高亮测试',
         link: decodeURI(location.href),
-        desc: '\x3cpre\x3e\x3ccode class=\x22language-js\x22\x3efunction helloWorld() {\n  alert(\x26quot;Hello, World!\x26quot;);\n}\n\x3c\/code\x3e\x3c\/pre\x3e',
+        desc: '\x3cdiv class=\x22highlight\x22\x3e\x3cpre style=\x22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4\x22\x3e\x3ccode class=\x22language-js\x22 data-lang=\x22js\x22\x3e\x3cspan style=\x22color:#66d9ef\x22\x3efunction\x3c\/span\x3e \x3cspan style=\x22color:#a6e22e\x22\x3ehelloWorld\x3c\/span\x3e() {\n  \x3cspan style=\x22color:#a6e22e\x22\x3ealert\x3c\/span\x3e(\x3cspan style=\x22color:#e6db74\x22\x3e\x26#34;Hello, World!\x26#34;\x3c\/span\x3e);\n}\n\x3c\/code\x3e\x3c\/pre\x3e\x3c\/div\x3e',
         owner: 'polar9527',
         repo: 'site_comments',
         oauth: {
@@ -683,7 +661,9 @@ func main()
 
   <span class="copyright-year">
     &copy;
-    2019
+    
+      2019 -
+    2020
     <span class="heart">
       
       <i class="iconfont">

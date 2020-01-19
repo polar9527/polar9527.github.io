@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Polar9527&#39; Blog</title>
@@ -44,7 +44,7 @@
       <pubDate>Wed, 15 May 2019 19:36:37 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</guid>
-      <description>个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab &amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;mdash;- main.go &amp;#160; &amp;nbsp; &amp;nbsp; |&amp;mdash;- test.go main.go package</description>
+      <description>个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab |&amp;mdash;- main.go |&amp;mdash;- test.go main.go package main func main() { test() }</description>
     </item>
     
     <item>
@@ -71,10 +71,10 @@
       <pubDate>Wed, 01 May 2019 12:51:08 +0800</pubDate>
       
       <guid>https://polar9527.github.io/post/01-syntax-highlighting/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function helloWorld() {
-  alert(&amp;quot;Hello, World!&amp;quot;);
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;helloWorld&lt;/span&gt;() {
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;alert&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;);
 }
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

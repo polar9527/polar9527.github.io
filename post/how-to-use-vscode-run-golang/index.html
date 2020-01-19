@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polar9527" />
-  <meta name="description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab &amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;mdash;- main.go &amp;#160; &amp;nbsp; &amp;nbsp; |&amp;mdash;- test.go main.go package" />
+  <meta name="description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab |&amp;mdash;- main.go |&amp;mdash;- test.go main.go package main func main() { test() }" />
 
   <meta name="keywords" content="Golang, Go, Python" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.4" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="https://polar9527.github.io/post/how-to-use-vscode-run-golang/" />
@@ -51,33 +51,29 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.19ae5a432863a072ec64433bb1020bd6d3401129f87d6f2ad5af3bcfd84168a1.css" integrity="sha256-Ga5aQyhjoHLsZEM7sQIL1tNAESn4fW8q1a87z9hBaKE=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
 
 
 <meta property="og:title" content="如何使用VSCode中的Code Runner插件执行golang代码" />
-<meta property="og:description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab &nbsp; &nbsp; &nbsp; |&mdash;- main.go &#160; &nbsp; &nbsp; |&mdash;- test.go main.go package" />
+<meta property="og:description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab |&mdash;- main.go |&mdash;- test.go main.go package main func main() { test() }" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://polar9527.github.io/post/how-to-use-vscode-run-golang/" />
-<meta property="article:published_time" content="2019-05-15T19:36:37&#43;08:00"/>
-<meta property="article:modified_time" content="2019-05-15T19:36:37&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-05-15T19:36:37+08:00" />
+<meta property="article:modified_time" content="2019-05-15T19:36:37+08:00" />
 <meta itemprop="name" content="如何使用VSCode中的Code Runner插件执行golang代码">
-<meta itemprop="description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab &nbsp; &nbsp; &nbsp; |&mdash;- main.go &#160; &nbsp; &nbsp; |&mdash;- test.go main.go package">
-
-
+<meta itemprop="description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab |&mdash;- main.go |&mdash;- test.go main.go package main func main() { test() }">
 <meta itemprop="datePublished" content="2019-05-15T19:36:37&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-15T19:36:37&#43;08:00" />
-<meta itemprop="wordCount" content="779">
+<meta itemprop="wordCount" content="773">
 
 
 
-<meta itemprop="keywords" content="go,golang,VSCode," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="go,golang,VSCode," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何使用VSCode中的Code Runner插件执行golang代码"/>
-<meta name="twitter:description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab &nbsp; &nbsp; &nbsp; |&mdash;- main.go &#160; &nbsp; &nbsp; |&mdash;- test.go main.go package"/>
+<meta name="twitter:description" content="个人主页：[https://polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab |&mdash;- main.go |&mdash;- test.go main.go package main func main() { test() }"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -366,7 +362,7 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 779 字 </span>
+        <span class="more-meta"> 约 773 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -386,144 +382,109 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>个人主页：[<a href="https://polar9527.github.io">https://polar9527.github.io</a>]</p>
-
+      <p>个人主页：[https://polar9527.github.io]</p>
 <p>如何使用 VSCode 中的 Code Runner 插件执行 golang 代码</p>
-
 <p>project 的文档结如下</p>
-
-<p>mylab<br />
-&nbsp; &nbsp; &nbsp; |&mdash;- main.go<br />
-&#160; &nbsp; &nbsp; |&mdash;- test.go</p>
-
+<p>mylab<br>
+      |&mdash;- main.go<br>
+      |&mdash;- test.go</p>
 <p>main.go</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<pre><code class="language-go">package main
-
-func main() {
-	test()
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">test</span>()
 }
-</code></pre>
+</code></pre></div><p>test.go</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<p>test.go</p>
-
-<pre><code class="language-go">package main
-
-func test() {
-	println(&quot;in test&quot;)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test</span>() {
+	println(<span style="color:#e6db74">&#34;in test&#34;</span>)
 }
-</code></pre>
-
-<p>在<a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner 插件的 Doc 地址</a>中<br />
+</code></pre></div><p>在<a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner 插件的 Doc 地址</a>中<br>
 找到如下 Configuration 的配置说明</p>
-
 <blockquote>
-<p>Configuration<br />
+<p>Configuration<br>
 Make sure the executor PATH of each language is set in the environment variable. You could also add entry into code-runner.executorMap to set the executor PATH. e.g. To set the executor PATH for ruby, php and html:</p>
 </blockquote>
-
-<pre><code class="language-json">{
-  &quot;code-runner.executorMap&quot;: {
-    &quot;javascript&quot;: &quot;node&quot;,
-    &quot;php&quot;: &quot;C:\\php\\php.exe&quot;,
-    &quot;python&quot;: &quot;python&quot;,
-    &quot;perl&quot;: &quot;perl&quot;,
-    &quot;ruby&quot;: &quot;C:\\Ruby23-x64\\bin\\ruby.exe&quot;,
-    &quot;go&quot;: &quot;go run&quot;,
-    &quot;html&quot;: &quot;\&quot;C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\&quot;&quot;,
-    &quot;java&quot;: &quot;cd $dir &amp;&amp; javac $fileName &amp;&amp; java $fileNameWithoutExt&quot;,
-    &quot;c&quot;: &quot;cd $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;code-runner.executorMap&#34;</span>: {
+    <span style="color:#f92672">&#34;javascript&#34;</span>: <span style="color:#e6db74">&#34;node&#34;</span>,
+    <span style="color:#f92672">&#34;php&#34;</span>: <span style="color:#e6db74">&#34;C:\\php\\php.exe&#34;</span>,
+    <span style="color:#f92672">&#34;python&#34;</span>: <span style="color:#e6db74">&#34;python&#34;</span>,
+    <span style="color:#f92672">&#34;perl&#34;</span>: <span style="color:#e6db74">&#34;perl&#34;</span>,
+    <span style="color:#f92672">&#34;ruby&#34;</span>: <span style="color:#e6db74">&#34;C:\\Ruby23-x64\\bin\\ruby.exe&#34;</span>,
+    <span style="color:#f92672">&#34;go&#34;</span>: <span style="color:#e6db74">&#34;go run&#34;</span>,
+    <span style="color:#f92672">&#34;html&#34;</span>: <span style="color:#e6db74">&#34;\&#34;C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;java&#34;</span>: <span style="color:#e6db74">&#34;cd $dir &amp;&amp; javac $fileName &amp;&amp; java $fileNameWithoutExt&#34;</span>,
+    <span style="color:#f92672">&#34;c&#34;</span>: <span style="color:#e6db74">&#34;cd $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&#34;</span>
   }
 }
-</code></pre>
-
-<blockquote>
+</code></pre></div><blockquote>
 <p>Supported customized parameters</p>
-
 <ul>
-<li>\$workspaceRoot: The path of the folder opened in VS Code</li>
-<li>\$dir: The directory of the code file being run</li>
-<li>\$dirWithoutTrailingSlash: The directory of the code file being run without a trailing slash</li>
-<li>\$fullFileName: The full name of the code file being run</li>
-<li>\$fileName: The base name of the code file being run, that is the file without the directory</li>
-<li>\$fileNameWithoutExt: The base name of the code file being run without its extension</li>
-<li>\$driveLetter: The drive letter of the code file being run (Windows only)</li>
-<li>\$pythonPath: The path of Python interpreter (set by Python: Select Interpreter command)</li>
+<li>$workspaceRoot: The path of the folder opened in VS Code</li>
+<li>$dir: The directory of the code file being run</li>
+<li>$dirWithoutTrailingSlash: The directory of the code file being run without a trailing slash</li>
+<li>$fullFileName: The full name of the code file being run</li>
+<li>$fileName: The base name of the code file being run, that is the file without the directory</li>
+<li>$fileNameWithoutExt: The base name of the code file being run without its extension</li>
+<li>$driveLetter: The drive letter of the code file being run (Windows only)</li>
+<li>$pythonPath: The path of Python interpreter (set by Python: Select Interpreter command)</li>
 </ul>
-
+</blockquote>
+<blockquote>
 <p>Please take care of the back slash and the space in file path of the executor</p>
-
-<p>Back slash: please use <br />
-If there ares spaces in file path, please use \&rdquo; to surround your file path</p>
-
+<p>Back slash: please use \<br>
+If there ares spaces in file path, please use &quot; to surround your file path</p>
+</blockquote>
+<blockquote>
 <p>You could set the executor per filename glob:</p>
 </blockquote>
-
-<pre><code class="language-json">{
-  &quot;code-runner.executorMapByGlob&quot;: {
-    &quot;pom.xml&quot;: &quot;cd $dir &amp;&amp; mvn clean package&quot;,
-    &quot;*.test.js&quot;: &quot;tap&quot;,
-    &quot;*.js&quot;: &quot;node&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;code-runner.executorMapByGlob&#34;</span>: {
+    <span style="color:#f92672">&#34;pom.xml&#34;</span>: <span style="color:#e6db74">&#34;cd $dir &amp;&amp; mvn clean package&#34;</span>,
+    <span style="color:#f92672">&#34;*.test.js&#34;</span>: <span style="color:#e6db74">&#34;tap&#34;</span>,
+    <span style="color:#f92672">&#34;*.js&#34;</span>: <span style="color:#e6db74">&#34;node&#34;</span>
   }
 }
-</code></pre>
-
-<p>可以看到 go 的执行命令默认配置成了 go run, 并且默认执行当前打开的文件。
-所以需要利用\$dir 这个变量 run 整个 main 包所涉及到的所有文件。并且可以正则匹配文件名。</p>
-
+</code></pre></div><p>可以看到 go 的执行命令默认配置成了 go run, 并且默认执行当前打开的文件。
+所以需要利用$dir 这个变量 run 整个 main 包所涉及到的所有文件。并且可以正则匹配文件名。</p>
 <p>查看一下 go run 这个命令的参数解释，由于众所周知的原因，我们只能上国内的<a href="https://golang.google.cn/cmd/go/#hdr-Compile_and_run_Go_program">替代官网</a>。</p>
-
 <blockquote>
 <p>Compile and run Go program
 Usage:</p>
-
 <p>go run [build flags][-exec xprog] package [arguments&hellip;]
-Run compiles and runs the named main Go package. Typically the package is specified as a list of .go source files, but it may also be an import path, file system path, or pattern matching a single known package, as in <strong>&lsquo;go run .&rsquo;</strong> or &lsquo;go run my/cmd&rsquo;.</p>
-
-<p>By default, &lsquo;go run&rsquo; runs the compiled binary directly: &lsquo;a.out arguments&hellip;&rsquo;. If the -exec flag is given, &lsquo;go run&rsquo; invokes the binary using xprog:</p>
-
-<p>&lsquo;xprog a.out arguments&hellip;&rsquo;.
-If the -exec flag is not given, GOOS or GOARCH is different from the system default, and a program named go<em>\$GOOS</em>\$GOARCH_exec can be found on the current search path, &lsquo;go run&rsquo; invokes the binary using that program, for example &lsquo;go_nacl_386_exec a.out arguments&hellip;&lsquo;. This allows execution of cross-compiled programs when a simulator or other execution method is available.</p>
-
+Run compiles and runs the named main Go package. Typically the package is specified as a list of .go source files, but it may also be an import path, file system path, or pattern matching a single known package, as in <strong>&lsquo;go run .'</strong> or &lsquo;go run my/cmd&rsquo;.</p>
+<p>By default, &lsquo;go run&rsquo; runs the compiled binary directly: &lsquo;a.out arguments&hellip;'. If the -exec flag is given, &lsquo;go run&rsquo; invokes the binary using xprog:</p>
+<p>&lsquo;xprog a.out arguments&hellip;'.
+If the -exec flag is not given, GOOS or GOARCH is different from the system default, and a program named go*$GOOS*$GOARCH_exec can be found on the current search path, &lsquo;go run&rsquo; invokes the binary using that program, for example &lsquo;go_nacl_386_exec a.out arguments&hellip;'. This allows execution of cross-compiled programs when a simulator or other execution method is available.</p>
 <p>The exit status of Run is not the exit status of the compiled binary.</p>
-
 <p>For more about build flags, see &lsquo;go help build&rsquo;. For more about specifying packages, see &lsquo;go help packages&rsquo;.</p>
 </blockquote>
-
 <p>找到了，使用<code>go run .</code> 来跑整个 package 的。</p>
-
 <p>在 VSCode 的.vscode 目录下创建 settings.json 文件</p>
-
 <p>自定义这个 project 的用户配置如下</p>
-
-<pre><code class="language-json">{
-  &quot;code-runner.executorMap&quot;: {
-    &quot;go&quot;: &quot;cd $dir &amp;&amp; go run .&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;code-runner.executorMap&#34;</span>: {
+    <span style="color:#f92672">&#34;go&#34;</span>: <span style="color:#e6db74">&#34;cd $dir &amp;&amp; go run .&#34;</span>
   },
-  &quot;code-runner.executorMapByGlob&quot;: {
-    &quot;$dir\\*.go&quot;: &quot;go&quot;
+  <span style="color:#f92672">&#34;code-runner.executorMapByGlob&#34;</span>: {
+    <span style="color:#f92672">&#34;$dir\\*.go&#34;</span>: <span style="color:#e6db74">&#34;go&#34;</span>
   }
 }
-</code></pre>
-
-<p>点击 Cdoe Runner 在 VSCode GUI 界面提供的 RUN 按钮</p>
-
+</code></pre></div><p>点击 Cdoe Runner 在 VSCode GUI 界面提供的 RUN 按钮</p>
 <pre><code>[Running] cd &quot;d:\Users\polar\go\src\mylab\&quot; &amp;&amp; go run .
 in test
 
 [Done] exited with code=0 in 3.564 seconds
-</code></pre>
-
-<p>OK!</p>
-
+</code></pre><p>OK!</p>
 <p>当然也可以用 VSCode Debug 的 launch.json 来配置，但是那是 debug 模式，并不是 go run。</p>
-
 <p>欢迎转载，请注明出处~
 <a href="https://polar9527.github.io/">作者个人主页</a></p>
 
@@ -613,7 +574,7 @@ in test
         id: 'how-to-use-vscode-run-golang.md',
         title: '如何使用VSCode中的Code Runner插件执行golang代码',
         link: decodeURI(location.href),
-        desc: '个人主页：[https:\/\/polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab \x26nbsp; \x26nbsp; \x26nbsp; |\x26mdash;- main.go \x26#160; \x26nbsp; \x26nbsp; |\x26mdash;- test.go main.go package',
+        desc: '个人主页：[https:\/\/polar9527.github.io] 如何使用 VSCode 中的 Code Runner 插件执行 golang 代码 project 的文档结如下 mylab |\x26mdash;- main.go |\x26mdash;- test.go main.go package main func main() { test() }',
         owner: 'polar9527',
         repo: 'site_comments',
         oauth: {
@@ -758,7 +719,9 @@ in test
 
   <span class="copyright-year">
     &copy;
-    2019
+    
+      2019 -
+    2020
     <span class="heart">
       
       <i class="iconfont">
