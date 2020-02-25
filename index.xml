@@ -18,419 +18,429 @@
       
       <guid>https://polar9527.github.io/book-list/</guid>
       
-        <description>&lt;h1 id=&#34;mooc_list&#34;&gt;MOOC_list&lt;/h1&gt;
+        <description>
+
+&lt;h1 id=&#34;mooc-list&#34;&gt;MOOC_list&lt;/h1&gt;
+
 &lt;ol&gt;
 &lt;li&gt;Introduction to Computer Science and Programming Using Python
+
 &lt;ul&gt;
 &lt;li&gt;Edx MITx - 6.00.1x 2015.3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Data Structures and Algorithm Design 数据结构与算法设计
+
 &lt;ul&gt;
 &lt;li&gt;Edx TsinghuaX - 30240184x 2016.3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Learning How to Learn
+
 &lt;ul&gt;
 &lt;li&gt;Coursera 2016.11&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;The Web Developer Bootcamp
+
 &lt;ul&gt;
 &lt;li&gt;Udemy 2018.7 - 2018.11.11&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Vue JS 2 - The Complete Guide
+
 &lt;ul&gt;
 &lt;li&gt;Udemy 2018.11.13 - 2018.11.25&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;reading_list&#34;&gt;Reading_list&lt;/h1&gt;
+
+&lt;h1 id=&#34;reading-list&#34;&gt;Reading_list&lt;/h1&gt;
+
 &lt;p&gt;IT 读书清单&lt;/p&gt;
+
 &lt;h2 id=&#34;第一阶段&#34;&gt;第一阶段：&lt;/h2&gt;
-&lt;hr&gt;
+
+&lt;hr /&gt;
+
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Python 基础教程&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;C Primer Plus&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;UNIX &amp;amp; Linux 编程实践&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;鸟哥的 Linux 私房菜：基础学习篇&lt;/p&gt;
+&lt;li&gt;Python 基础教程&lt;/li&gt;
+&lt;li&gt;C Primer Plus&lt;/li&gt;
+&lt;li&gt;UNIX &amp;amp; Linux 编程实践&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;鸟哥的 Linux 私房菜：基础学习篇&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;鸟哥的 Linux 私房菜：服务器架设篇（部分）&lt;/li&gt;
 &lt;li&gt;数据结构与算法分析：C 语言描述（部分）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;数据结构（C 语言版）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;MySQL 必知必会&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据结构（C 语言版）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;MySQL 必知必会&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 3 月 10 日-2015 年 3 月 17 日 一周&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;C++ Primer Plus&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;C++ Primer Plus&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 3 月 27 日-2015 年 4 月 29 日 四周&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;hr&gt;
+
+&lt;hr /&gt;
+
 &lt;h2 id=&#34;第二阶段&#34;&gt;第二阶段&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;第-1-部分已读&#34;&gt;第 1 部分（已读）：&lt;/h3&gt;
-&lt;ol start=&#34;8&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;计算机系统概论（Yale N. Patt） 380&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;第-1-部分-已读&#34;&gt;第 1 部分（已读）：&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;计算机系统概论（Yale N. Patt） 380
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 4 月 29 日-2015 年 5 月 17 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;深入理解计算机系统（CSAPP） 700&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;深入理解计算机系统（CSAPP） 700
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 5 月 18 日-2015 年 6 月 22 日 五周&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;计算机组成：结构化方法 500&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;计算机组成：结构化方法 500&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 6 月 30 日-2015 年 7 月 28 日 四周&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;p&gt;&lt;del&gt;- 现代操作系统 550&lt;/del&gt;
-&lt;del&gt;- 2015 年 6 月 23 日-2015 年 8 月 03 日 260 [暂停]&lt;/del&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;计算机网络：自顶向下 500&lt;/p&gt;
+&lt;del&gt;- 2015 年 6 月 23 日-2015 年 8 月 03 日 260 [暂停]&lt;/del&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;计算机网络：自顶向下 500&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 8 月 07 日-2015 年 9 月 16 日 六周&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;TCP/IP 网络编程&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Linux 程序设计 700&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TCP/IP 网络编程&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Linux 程序设计 700&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 10 月 03 日-2015 年 10 月 17 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;剑指 offer 260&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;剑指 offer 260&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 10 月 18 日-2016 年 01 月 24 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;廖雪峰 Python 教程&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;廖雪峰 Python 教程&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 01 月 21 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;数据结构（C++） 350&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据结构（C++） 350&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2015 年 10 月 30 日-2016 年 03 月 07 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Head First HTML 与 CSS 2nd 700&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First HTML 与 CSS 2nd 700&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 03 月 09 日 -2016 年 03 月 16 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;图解 HTTP 250&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;图解 HTTP 250&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 03 月 17 日-2016 年 03 月 21 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;廖雪峰 JavaScript 教程&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;廖雪峰 JavaScript 教程&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 03 月 22 日-2016 年 03 月 23 日 [95%]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Definitive Guide to Django&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The Definitive Guide to Django&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 03 月 25 日-2016 年 06 月 14 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Pro Git&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pro Git&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 04 月 23 日-2016 年 05 月 05 日 [暂停] 6.4 Managing an organization&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Head First HTML5 Programming 550&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First HTML5 Programming 550&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 05 月 04 日-2016 年 05 月 09 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Django by Example 450&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Django by Example 450&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 04 月 27 日-2016 年 07 月 07 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Learning Python 5th 1600&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Learning Python 5th 1600&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 04 月 14 日-2016 年 09 月 08 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;JavaScript DOM 编程艺术 280&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JavaScript DOM 编程艺术 280&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 09 月 27 日-2016 年 09 月 30 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Redis 入门指南 200&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Redis 入门指南 200&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 10 月 07 日-2016 年 10 月 08 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Programming Python 4th 1500&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Programming Python 4th 1500&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 09 月 10 日-2016 年 12 月 12 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;数据库系统概论 490/750&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据库系统概论 &lt;sup&gt;490&lt;/sup&gt;&amp;frasl;&lt;sub&gt;750&lt;/sub&gt;&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2016 年 10 月 24 日-2017 年 03 月 07 日 [65%]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Web scraping with Python 230&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Web scraping with Python 230&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 03 月 03 日-2017 年 03 月 15 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Head First Java 675&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First Java 675&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 03 月 23 日-2017 年 03 月 25 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Head First 设计模式 630&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head First 设计模式 630&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 03 月 19 日-2017 年 03 月 25 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Introduction to Asynchronous Programming with Twisted 100&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Introduction to Asynchronous Programming with Twisted 100&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 03 月 19 日-2017 年 03 月 29 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Learning Scrapy 225&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Learning Scrapy 225&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 03 月 08 日-2017 年 03 月 31 日 [80%]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;汇编语言[王爽] 330&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;汇编语言[王爽] 330&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 04 月 01 日-2017 年 04 月 03 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;x86 汇编语言-从实模式到保护模式 370&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;x86 汇编语言-从实模式到保护模式 370&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 04 月 04 日-2017 年 04 月 14 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Orange&#39;s 一个操作系统的实现 300/470&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Orange&amp;rsquo;s 一个操作系统的实现 &lt;sup&gt;300&lt;/sup&gt;&amp;frasl;&lt;sub&gt;470&lt;/sub&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;2017 年 04 月 20 日-2017 年 04 月 27 日 [60%]&lt;br&gt;
-Orange&#39;s 一个操作系统的实现 470&lt;/li&gt;
+&lt;li&gt;2017 年 04 月 20 日-2017 年 04 月 27 日 [60%]&lt;br /&gt;
+Orange&amp;rsquo;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;2017 年 08 月 11 日-2017 年 09 月 09 日 [100%]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;HTTP 权威指南 400/550&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;HTTP 权威指南 &lt;sup&gt;400&lt;/sup&gt;&amp;frasl;&lt;sub&gt;550&lt;/sub&gt;&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 04 月 29 日-2017 年 05 月 04 日 [70%]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Vagrant: Up and Running 150&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Vagrant: Up and Running 150&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 05 月 20 日-2017 年 06 月 10 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Python 源码剖析 480&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python 源码剖析 480&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 09 月 12 日-2017 年 09 月 29 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Python Web 开发：测试驱动方法 382 [60%]&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python Web 开发：测试驱动方法 382 [60%]&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 10 月 01 日-2018 年 01 月 07 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;AWK 程序设计语言 168 [36%]&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;AWK 程序设计语言 168 [36%]&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 01 月 08 日-2018 年 01 月 15 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;程序员的自我修养 450 [80%]&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;程序员的自我修养 450 [80%]&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 03 月 27 日-2018 年 04 月 12 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;鸟哥的 Linux 私房菜：服务器架设篇 [80%]&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;鸟哥的 Linux 私房菜：服务器架设篇 [80%]&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 11 月 01 日-2018 年 04 月 01 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Linux/UNIX 系统编程手册   1150&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Linux/UNIX 系统编程手册   1150&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2017 年 10 月 01 日-2018 年 05 月 14 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;TCP/IP 详解 卷 1 核心部分 250/400&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;TCP/IP 详解 卷 1 核心部分 &lt;sup&gt;250&lt;/sup&gt;&amp;frasl;&lt;sub&gt;400&lt;/sub&gt;&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 04 月 28 日-2018 年 06 月 07 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The TCP/IP Guide TCP/IP 相关部分&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The TCP/IP Guide TCP/IP 相关部分&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 05 月 26 日-2018 年 06 月 07 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Go Programming Language 370&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The Go Programming Language 370&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 06 月 21 日-2018 年 07 月 01 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Docker Book 400&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The Docker Book 400&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 07 月 01 日-2018 年 07 月 15 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;JavaScript 高级程序设计 720&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;JavaScript 高级程序设计 720&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 09 月 03 日-2018 年 09 月 19 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Java 核心技术 卷一 500&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Java 核心技术 卷一 500&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 09 月 22 日-2018 年 10 月 05 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Java 核心技术 卷二 400&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Java 核心技术 卷二 400&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 10 月 06 日-2018 年 10 月 13 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Head first Servlets &amp;amp; JSP 800&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Head first Servlets &amp;amp; JSP 800&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 10 月 16 日-2018 年 10 月 30 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Kubernetes in Action 560&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Kubernetes in Action 560&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2018 年 12 月 01 日-2018 年 12 月 28 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring 实战 4th 577&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Spring 实战 4th 577&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 01 月 09 日-2019 年 01 月 23 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring in Action 5th 485&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Spring in Action 5th 485&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 01 月 16 日-2019 年 02 月 29 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;MySQL 技术内幕 363/770&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;MySQL 技术内幕 &lt;sup&gt;363&lt;/sup&gt;&amp;frasl;&lt;sub&gt;770&lt;/sub&gt;&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 02 月 15 日-2019 年 03 月 11 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;高性能 MySQL 214 + 213 = 427/800&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;高性能 MySQL 214 + 213 = &lt;sup&gt;427&lt;/sup&gt;&amp;frasl;&lt;sub&gt;800&lt;/sub&gt;&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 02 月 15 日-2019 年 03 月 11 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PEP 3333 &amp;ndash; Python Web Server Gateway Interface v1.0.1&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PEP 3333 &amp;ndash; Python Web Server Gateway Interface v1.0.1&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 03 月 30 日-2019 年 04 月 10 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PEP 342 &amp;ndash; Coroutines via Enhanced Generators&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PEP 342 &amp;ndash; Coroutines via Enhanced Generators&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 03 月 30 日-2019 年 04 月 10 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Flask Web 开发 233&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Flask Web 开发 233&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 04 月 08 日-2019 年 04 月 23 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Go Web Programming 300&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go Web Programming 300&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 04 月 22 日-2019 年 04 月 27 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Go 语言学习笔记 - 下册 200&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go 语言学习笔记 - 下册 200&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 04 月 28 日-2019 年 05 月 14 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Unix 环境高级编程 - 600&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Unix 环境高级编程 - 600&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 08 月 01 日-2019 年 12 月 24 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Unix 网络编程 - 400&lt;/p&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Unix 网络编程 - 600&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;2019 年 12 月 24 日-2020 年 01 月 20 日&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;C++ Primer - 760&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2020 年 01 月 21 日-2020 年 02 月 25 日&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
       
@@ -443,14 +453,19 @@ Orange&#39;s 一个操作系统的实现 470&lt;/li&gt;
       
       <guid>https://polar9527.github.io/about/</guid>
       
-        <description>&lt;h2 id=&#34;个人信息&#34;&gt;个人信息&lt;/h2&gt;
+        <description>
+
+&lt;h2 id=&#34;个人信息&#34;&gt;个人信息&lt;/h2&gt;
+
 &lt;ul&gt;
 &lt;li&gt;邮箱：polar9527@gmail.com&lt;/li&gt;
 &lt;li&gt;GitHub：&lt;a href=&#34;https://github.com/polar9527&#34;&gt;https://github.com/polar9527&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;个人主页：&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Stack Overflow：&lt;a href=&#34;http://stackoverflow.com/users/6419115/polar9527&#34;&gt;http://stackoverflow.com/users/6419115/polar9527&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h3 id=&#34;技能&#34;&gt;技能&lt;/h3&gt;
+
 &lt;ul&gt;
 &lt;li&gt;熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机&lt;/li&gt;
 &lt;li&gt;对 P2P 网络分布式算法有一定了解，阅读过星际文件系统（IPFS）网络层 libp2p 协议的 Go 语言实现(go-libp2p)核心模块代码&lt;/li&gt;
@@ -467,13 +482,20 @@ Orange&#39;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;熟悉基本的数据结构和算法&lt;/li&gt;
 &lt;li&gt;英语水平 CET-6，熟练使用 Google/StackOverflow/Wikipedia, 有阅读英文文档并解决工作中遇到的问题的能力&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h2 id=&#34;项目经验&#34;&gt;项目经验&lt;/h2&gt;
+
 &lt;h3 id=&#34;xtar&#34;&gt;XTAR&lt;/h3&gt;
-&lt;p&gt;2019 年 7 月 - 2019 年 12 月&lt;br&gt;
+
+&lt;p&gt;2019 年 7 月 - 2019 年 12 月&lt;br /&gt;
 基于区块链的去中心化的交易系统&lt;/p&gt;
+
 &lt;h4 id=&#34;项目简介&#34;&gt;项目简介&lt;/h4&gt;
+
 &lt;p&gt;XTAR 是以 VRF(可验证随机函数算法)和 PBFT(实用拜占庭容错算法)为基础来实现 DPOS(Delegated Proof of Stake，委任权益证明)机制的去中心化价值交易平台。独有的两阶段共识算法，提高了整个系统的区块出块速度，并通过 native 系统合约实现了链上治理，保证了共识的公平民主。&lt;/p&gt;
+
 &lt;h5 id=&#34;主要职责&#34;&gt;主要职责&lt;/h5&gt;
+
 &lt;ul&gt;
 &lt;li&gt;XTAR 系统对等网络层(P2P 网络层)的功能重构和性能优化&lt;/li&gt;
 &lt;li&gt;XTAR 底层代码的交叉 review&lt;/li&gt;
@@ -481,7 +503,9 @@ Orange&#39;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;XTAR 系统生态圈内后端服务的开发&lt;/li&gt;
 &lt;li&gt;基于 XTAR 系统 SDK 的系统流程测试开发&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h5 id=&#34;技术细节&#34;&gt;技术细节&lt;/h5&gt;
+
 &lt;ul&gt;
 &lt;li&gt;开发语言为&lt;code&gt;Golang&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;网络层第三方库为&lt;code&gt;libp2p&lt;/code&gt;&lt;/li&gt;
@@ -493,66 +517,88 @@ Orange&#39;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;XTAR 系统 native 系统合约测试流程开发&lt;/li&gt;
 &lt;li&gt;XTAR 系统在线 IDE(集成开发环境)后端部分的开发&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h3 id=&#34;linkeychain-公链系统&#34;&gt;Linkeychain 公链系统&lt;/h3&gt;
-&lt;p&gt;2018 年 6 月 - 2019 年 2 月&lt;br&gt;
+
+&lt;p&gt;2018 年 6 月 - 2019 年 2 月&lt;br /&gt;
 基于&lt;code&gt;DPOS&lt;/code&gt;的区块链公链&lt;/p&gt;
+
 &lt;h4 id=&#34;项目简介-1&#34;&gt;项目简介&lt;/h4&gt;
+
 &lt;p&gt;Linkeychain 是第二代区块链系统，支持智能合约，&lt;code&gt;授权股权证明机制 DPOS&lt;/code&gt;，为公司的区块链商业应用提供底层技术支撑。&lt;/p&gt;
+
 &lt;h5 id=&#34;主要职责-1&#34;&gt;主要职责&lt;/h5&gt;
+
 &lt;ul&gt;
 &lt;li&gt;搭建基于区块链的底层服务&lt;/li&gt;
 &lt;li&gt;负责公链系统的&lt;code&gt;p2p&lt;/code&gt;网络层的搭建和维护&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h5 id=&#34;技术细节-1&#34;&gt;技术细节&lt;/h5&gt;
+
 &lt;ul&gt;
 &lt;li&gt;开发语言为&lt;code&gt;Golang&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;参考开源项目&lt;a href=&#34;https://github.com/nebulasio/go-nebulas&#34;&gt;星云链&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;基于第三方&lt;code&gt;p2p&lt;/code&gt;网络库&lt;code&gt;libp2p&lt;/code&gt;做的开发，该第三方的库提供了开发&lt;code&gt;p2p&lt;/code&gt;网络服务所需的数据结构和函数&lt;/li&gt;
 &lt;li&gt;网络服务由两个模块组成：
+
 &lt;ol&gt;
 &lt;li&gt;分发器模块
+
 &lt;ul&gt;
 &lt;li&gt;负责应用层消息注册和消息转发处理&lt;/li&gt;
 &lt;li&gt;采用观察者模式，将消息类型和消息处理渠道注册在分发器模块中&lt;/li&gt;
 &lt;li&gt;其他需要网络服务的模块在此通过对所关注的消息类型下注册&lt;code&gt;channel&lt;/code&gt;，来实现应用服务和网络服务之间的解耦&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;网络数据服务模块
+
 &lt;ul&gt;
 &lt;li&gt;在&lt;code&gt;TCP&lt;/code&gt;层上做网络连接资源的管理&lt;/li&gt;
 &lt;li&gt;应用层网络协议的处理，包括应用层握手和应用层消息通信&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;p2p&lt;/code&gt;路由表的管理，包括定时同步和路由表更新。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+
 &lt;h3 id=&#34;conspace-对象存储系统&#34;&gt;ConSpace 对象存储系统&lt;/h3&gt;
-&lt;p&gt;2017 年 5 月 - 2017 年 10 月&lt;br&gt;
+
+&lt;p&gt;2017 年 5 月 - 2017 年 10 月&lt;br /&gt;
 基于&lt;code&gt;Ceph&lt;/code&gt;的对象存储系统&lt;/p&gt;
+
 &lt;h4 id=&#34;项目简介-2&#34;&gt;项目简介&lt;/h4&gt;
+
 &lt;p&gt;ConSpace 是为用户提供国内领先的安全，快速、高效的大容量网络存储服务，助力企业打破数据传递的单一性，实现移动办公和统一管理，使企业实现更高效的管理。通过严格、灵活的权限控制，满足企业复杂多变的文档访问需求，和信息安全合规要求。&lt;/p&gt;
+
 &lt;h5 id=&#34;主要职责-2&#34;&gt;主要职责&lt;/h5&gt;
+
 &lt;ul&gt;
 &lt;li&gt;开发环境中&lt;code&gt;Ceph&lt;/code&gt;集群的搭建部署&lt;/li&gt;
 &lt;li&gt;开发环境中&lt;code&gt;Ceph&lt;/code&gt;对象存储系统的搭建部署&lt;/li&gt;
 &lt;li&gt;基于&lt;code&gt;Ceph&lt;/code&gt;对象存储提供的&lt;code&gt;Amazon S3&lt;/code&gt;兼容的 RESTful 接口 AWS SDK 工具包 Boto3 开发&lt;code&gt;Django&lt;/code&gt;后端逻辑&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h5 id=&#34;技术细节-2&#34;&gt;技术细节&lt;/h5&gt;
+
 &lt;ul&gt;
 &lt;li&gt;采用了 Python 第三方库&lt;code&gt;boto3&lt;/code&gt;和&lt;code&gt;requests&lt;/code&gt;，在&lt;code&gt;Ceph&lt;/code&gt;对象存储系统提供的与 Amazon S3 兼容的 RESTful 接口上，完成了 Http 协议层的 AWSv4 签名认证，以及与对象存储相关的文件操作功能和对象存储层用户信息的管理&lt;/li&gt;
 &lt;li&gt;用&lt;code&gt;Django&lt;/code&gt;管理 ConSpace 对象存储系统业务层数据&lt;/li&gt;
 &lt;li&gt;前后端分离，&lt;code&gt;Django&lt;/code&gt;逻辑层采用&lt;code&gt;Django REST framework&lt;/code&gt;为前端提供&lt;code&gt;json&lt;/code&gt;格式数据&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;bookmarks个人开源项目&#34;&gt;Bookmarks(个人开源项目)&lt;/h3&gt;
-&lt;p&gt;2017 年 3 月 - 2016 年 10 月&lt;br&gt;
-基于 Django 的图片社交网站&lt;br&gt;
-&lt;a href=&#34;https://github.com/polar9527/bookmarks&#34;&gt;Github Repo&lt;/a&gt;&lt;br&gt;
-&lt;del&gt;&lt;a href=&#34;&#34;&gt;部署地址&lt;/a&gt;&lt;/del&gt;
-&lt;img src=&#34;http://www.lagou.com/i/image/M00/63/81/CgqKkVgCK92AS9VtAAcOzM-AO0I713.png&#34; alt=&#34;Bookmarks_pic&#34;&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;bookmarks-个人开源项目&#34;&gt;Bookmarks(个人开源项目)&lt;/h3&gt;
+
+&lt;p&gt;2017 年 3 月 - 2016 年 10 月&lt;br /&gt;
+ 基于 Django 的图片社交网站&lt;br /&gt;
+&lt;a href=&#34;https://github.com/polar9527/bookmarks&#34;&gt;Github Repo&lt;/a&gt;&lt;br /&gt;
+&lt;del&gt;[部署地址]()&lt;/del&gt;
+&lt;img src=&#34;http://www.lagou.com/i/image/M00/63/81/CgqKkVgCK92AS9VtAAcOzM-AO0I713.png&#34; alt=&#34;Bookmarks_pic&#34; /&gt;&lt;/p&gt;
+
 &lt;h4 id=&#34;项目简介-3&#34;&gt;项目简介&lt;/h4&gt;
+
 &lt;p&gt;Bookmarks 是一个类似于&lt;a href=&#34;https://www.pinterest.com/&#34;&gt;Pinterest&lt;/a&gt;的图片社交网站，用户可以在应用上分享其在网络上发现并收藏的图片。用户之间可以相互关注，并实时获得其关注对象的动态。用户还可以在网站上随时获得最新的图片热度排名。&lt;/p&gt;
+
 &lt;h5 id=&#34;技术细节-3&#34;&gt;技术细节&lt;/h5&gt;
+
 &lt;ul&gt;
 &lt;li&gt;使用 Django + MySQL + Redis 来编写项目后端系统&lt;/li&gt;
 &lt;li&gt;使用 jQuery + Ajax 编写前端的图片收藏插件&lt;/li&gt;
@@ -560,79 +606,84 @@ Orange&#39;s 一个操作系统的实现 470&lt;/li&gt;
 &lt;li&gt;通过 Django 的 signal 技术实现对用户行为的追踪，记录用户在网站上的活动行为，为网站中的用户活动流提供数据支持。&lt;/li&gt;
 &lt;li&gt;采用 Redis 作为图片热度信息的数据库&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h3 id=&#34;demo-项目&#34;&gt;Demo 项目&lt;/h3&gt;
+
 &lt;ul&gt;
 &lt;li&gt;用&lt;code&gt;Node.js&lt;/code&gt;, &lt;code&gt;express&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;，mlab(&lt;code&gt;mongoDB&lt;/code&gt;)等工具搭建的 demo 集合&lt;/li&gt;
 &lt;li&gt;部署在&lt;code&gt;Heroku&lt;/code&gt;上, 需要 climb over the wall to visit&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://polar9527.herokuapp.com/&#34;&gt;地址&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;
+
 &lt;h4 id=&#34;上海启日信息技术有限公司&#34;&gt;上海启日信息技术有限公司&lt;/h4&gt;
+
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;2019 年 7 月 - 2019 年 12 月&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Golang 开发工程师&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;2019 年 7 月 - 2019 年 12 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Golang 开发工程师&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;区块链底层功能开发&lt;/li&gt;
 &lt;li&gt;服务器后端开发&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;链极智能科技上海有限公司&#34;&gt;链极智能科技（上海）有限公司&lt;/h4&gt;
+
+&lt;h4 id=&#34;链极智能科技-上海-有限公司&#34;&gt;链极智能科技（上海）有限公司&lt;/h4&gt;
+
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;2018 年 6 月 - 2019 年 3 月&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;高级软件开发工程师&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;2018 年 6 月 - 2019 年 3 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;高级软件开发工程师&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;研究区块链协议及运行机制&lt;/li&gt;
 &lt;li&gt;参与底层实现，并编写网络应用层代码&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+
 &lt;h4 id=&#34;内蒙古君正互联网小额贷款有限公司&#34;&gt;内蒙古君正互联网小额贷款有限公司&lt;/h4&gt;
+
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;2017 年 11 月 - 2018 年 05 月&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Python 开发工程师&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;2017 年 11 月 - 2018 年 05 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python 开发工程师&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;使用 shell，python 编写公司内部工具，并进行维护&lt;/li&gt;
 &lt;li&gt;在 AWS 云平台上管理服务器和应用，编写运维相关的文档、手册、流程，制定安全、备份、统计策略&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+
 &lt;h4 id=&#34;上海容数信息科技有限公司&#34;&gt;上海容数信息科技有限公司&lt;/h4&gt;
+
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;2017 年 5 月 - 2017 年 10 月&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Python 后端开发工程师&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;2017 年 5 月 - 2017 年 10 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python 后端开发工程师&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;学习研究 Ceph（一种开源分布式文件系统）&lt;/li&gt;
 &lt;li&gt;通过 Ceph 的对象存储接口，基于 Django 开发文档内容管理系统&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;中航华东光电上海有限公司&#34;&gt;中航华东光电(上海)有限公司&lt;/h4&gt;
+
+&lt;h4 id=&#34;中航华东光电-上海-有限公司&#34;&gt;中航华东光电(上海)有限公司&lt;/h4&gt;
+
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;2012 年 3 月 - 2013 年 9 月&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;FPGA 工程师&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;2012 年 3 月 - 2013 年 9 月&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;FPGA 工程师&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;参与项目前期技术调研，负责硬件系统中 FPGA 部分通信接口协议的编码、测试工作&lt;/li&gt;
 &lt;li&gt;设计了基于 FPGA 的某型设备外部驱动电路模块，实现了 UART 通信协议到 I2C 通信协议解析转换功能，使硬件系统能够通过该模块和 I2C 总线接口器件进行数据通讯。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+
 &lt;h2 id=&#34;教育经历&#34;&gt;教育经历&lt;/h2&gt;
+
 &lt;ul&gt;
 &lt;li&gt;华中科技大学，&lt;strong&gt;软件工程（硕士）&lt;/strong&gt; 2012 年毕业&lt;/li&gt;
 &lt;li&gt;武汉理工大学，&lt;strong&gt;电子信息工程（本科）&lt;/strong&gt; 2008 年毕业&lt;/li&gt;
@@ -642,24 +693,1988 @@ Orange&#39;s 一个操作系统的实现 470&lt;/li&gt;
     </item>
     
     <item>
-      <title>Posts</title>
-      <link>https://polar9527.github.io/post/</link>
+      <title>Floyd&#39;s Tortoise and Hare &amp; 环检测算法</title>
+      <link>https://polar9527.github.io/post/floyd-tortoise-and-hare/</link>
       <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
       
-      <guid>https://polar9527.github.io/post/</guid>
+      <guid>https://polar9527.github.io/post/floyd-tortoise-and-hare/</guid>
       
-        <description></description>
+        <description>
+
+&lt;h2 id=&#34;算法推导&#34;&gt;算法推导&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg&#34; alt=&#34;&#34; /&gt;
+当&lt;code&gt;hare&lt;/code&gt;的移动速度是&lt;code&gt;tortoise&lt;/code&gt;的 2 倍，&lt;br /&gt;
+设起始点到环的入口的距离是&lt;code&gt;T&lt;/code&gt;，环的长度是&lt;code&gt;C&lt;/code&gt;，&lt;br /&gt;
+当&lt;code&gt;tortoise&lt;/code&gt;第一次走到环的入口&lt;code&gt;entry point&lt;/code&gt;时，我们假设这是&lt;code&gt;tortoise&lt;/code&gt;与&lt;code&gt;hare&lt;/code&gt;之间的在环上的距离是&lt;code&gt;r&lt;/code&gt;，&lt;br /&gt;
+从&lt;code&gt;start point&lt;/code&gt;开始出发到&lt;code&gt;tortoise&lt;/code&gt;第一次走到环的入口时，&lt;code&gt;hare&lt;/code&gt;移动的距离是 &lt;code&gt;T + r + k*C，k &amp;gt;= 0&lt;/code&gt;，&lt;br /&gt;
+又因为，&lt;code&gt;hare&lt;/code&gt;移动的速度是&lt;code&gt;tortoise&lt;/code&gt;的两倍，且这时&lt;code&gt;tortoise&lt;/code&gt;移动的距离是&lt;code&gt;T&lt;/code&gt;，所以&lt;code&gt;hare&lt;/code&gt;移动的距离是 2T。&lt;br /&gt;
+得到等式 A &lt;code&gt;T + r + k*C = 2T，k &amp;gt;= 0&lt;/code&gt;
+简化得到等式 B &lt;code&gt;r + k*C = T，k &amp;gt;= 0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg&#34; alt=&#34;&#34; /&gt;
+当 tortoise 第一次走到环的入口&lt;code&gt;entry point&lt;/code&gt;时，而这时&lt;code&gt;tortoise&lt;/code&gt;与&lt;code&gt;hare&lt;/code&gt;之间的距离是 r，&lt;br /&gt;
+那么如果&lt;code&gt;tortoise&lt;/code&gt;现在就不继续移动的话，&lt;code&gt;hare&lt;/code&gt;还需要往前走&lt;code&gt;C-r&lt;/code&gt;才能追上&lt;code&gt;tortoise&lt;/code&gt;。&lt;br /&gt;
+但是&lt;code&gt;hare&lt;/code&gt;在往前追赶&lt;code&gt;tortoise&lt;/code&gt;的时候，&lt;code&gt;tortoise&lt;/code&gt;也在移动，而&lt;code&gt;hare&lt;/code&gt;的移动速度是&lt;code&gt;tortoise&lt;/code&gt;的两倍，&lt;br /&gt;
+所以&lt;code&gt;hare&lt;/code&gt;可以追上&lt;code&gt;tortoise&lt;/code&gt;,并且需要往前走&lt;code&gt;2*（C-r）&lt;/code&gt;才能追上&lt;code&gt;tortoise&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当&lt;code&gt;hare&lt;/code&gt;移动了&lt;code&gt;2*（C-r）&lt;/code&gt;的距离追上&lt;code&gt;tortoise&lt;/code&gt;的时候，&lt;code&gt;tortoise&lt;/code&gt;从相对于环的入口&lt;code&gt;entry point&lt;/code&gt;移动了&lt;code&gt;C-r&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;所以，在&lt;code&gt;tortoise&lt;/code&gt;与&lt;code&gt;hare&lt;/code&gt;第一次在环上相遇时，环的入口&lt;code&gt;entry point&lt;/code&gt;到这个点&lt;code&gt;meet point&lt;/code&gt;的距离是&lt;code&gt;C-r&lt;/code&gt;, 而从这个相遇点&lt;code&gt;meet point&lt;/code&gt;再往前移动&lt;code&gt;r&lt;/code&gt;，就又回到了环的入口&lt;code&gt;entry point&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;hare&lt;/code&gt;与&lt;code&gt;tortoise&lt;/code&gt;第一次相遇的这个时候，将&lt;code&gt;hare&lt;/code&gt;从&lt;code&gt;meet point&lt;/code&gt;重新放到起始点&lt;code&gt;start point&lt;/code&gt;，&lt;code&gt;tortoise&lt;/code&gt;仍放在这个相遇点&lt;code&gt;meet point&lt;/code&gt;，&lt;br /&gt;
+然后让它们以&lt;strong&gt;相同的速度&lt;/strong&gt;开始移动，&lt;/p&gt;
+
+&lt;p&gt;根据等式 B &lt;code&gt;r + k*C = T，k &amp;gt;= 0&lt;/code&gt;，&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;tortoise&lt;/code&gt;和&lt;code&gt;hare&lt;/code&gt;必然会在环的入口点&lt;code&gt;entry point&lt;/code&gt;再次相遇。&lt;/p&gt;
+
+&lt;p&gt;入口&lt;code&gt;entry point&lt;/code&gt;找到后，就能很容易得到&lt;code&gt;T&lt;/code&gt;，&lt;br /&gt;
+然后入口&lt;code&gt;entry point&lt;/code&gt;，让&lt;code&gt;tortoise&lt;/code&gt;停下，&lt;code&gt;hare&lt;/code&gt; 继续跑一圈，就能得到 &lt;code&gt;C&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;算法应用&#34;&gt;算法应用&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;链表有环检测
+两个指针，慢指针移动速度为 1，快指针移动速度为 2，判断两个指针是否相遇&lt;/li&gt;
+&lt;li&gt;找出有环链表的入口节点
+当两个指针相遇时，将其中一个指针重新放到链表头，然后让两个指针移动速度都为 1，当两个指针再次相遇，就找到了有环链表的入口节点&lt;/li&gt;
+&lt;li&gt;计算环长度
+在入口节点放置两个个指针，一个指针不动，一个指针移动速度为 1，两个指针相遇，就可计算出环的长度&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;算法实现&#34;&gt;算法实现&lt;/h2&gt;
+
+&lt;h3 id=&#34;golang&#34;&gt;golang&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;链表有环检测 &lt;code&gt;leetcode 141&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;/*
+ * @lc app=leetcode id=141 lang=golang
+ *
+ * [141] Linked List Cycle
+ */
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func hasCycle(head *ListNode) bool {
+	if head == nil {
+		return false
+	}
+	t, h := head, head
+	started := false
+	for h != nil &amp;amp;&amp;amp; h.Next != nil {
+		if t == h {
+			if started {
+				return true
+			} else {
+				started = true
+			}
+		}
+		t = t.Next
+		h = h.Next.Next
+	}
+	return false
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;找出有环链表的入口节点 &lt;code&gt;leetcode 142&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;/*
+ * @lc app=leetcode id=142 lang=golang
+ *
+ * [142] Linked List Cycle II
+ */
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func detectCycle(head *ListNode) *ListNode {
+	var cycPoint *ListNode
+	if head == nil {
+		return cycPoint
+	}
+	t, h := head, head
+	started := false
+	hasCycle := false
+	for h != nil &amp;amp;&amp;amp; h.Next != nil {
+		if t == h {
+			if started {
+				hasCycle = true
+				break
+			} else {
+				started = true
+			}
+		}
+		t = t.Next
+		h = h.Next.Next
+	}
+	if hasCycle {
+		h = head
+		for h != nil &amp;amp;&amp;amp; t != nil {
+			if h == t {
+				cycPoint = h
+				break
+			}
+			h = h.Next
+			t = t.Next
+		}
+	}
+	return cycPoint
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;欢迎转载，请注明出处~&lt;br /&gt;
+&lt;a href=&#34;https://polar9527.github.io/&#34;&gt;作者个人主页&lt;/a&gt;&lt;/p&gt;
+</description>
       
     </item>
     
     <item>
-      <title>Notes</title>
-      <link></link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Golang中除法和取模运算与Python3的区别</title>
+      <link>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</link>
+      <pubDate>Mon, 20 May 2019 00:34:14 +0800</pubDate>
       
-      <guid></guid>
+      <guid>https://polar9527.github.io/post/difference-between-division-and-modular-operation-in-golang-and-python3/</guid>
       
-        <description></description>
+        <description>&lt;p&gt;个人主页：[&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;]&lt;/p&gt;
+
+&lt;p&gt;除法的取整分为三类：向上取整、向下取整、向零取整。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;向上取整：向+∞ 方向取最接近精确值的整数。在这种取整方式下，
+&lt;code&gt;5 / 3 = 2&lt;/code&gt;， &lt;code&gt;-5 / -3 = 2&lt;/code&gt;， &lt;code&gt;-5 / 3 = -1&lt;/code&gt;， &lt;code&gt;5 / -3 = -1&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;向下取整：向-∞ 方向取最接近精确值的整数。在这种取整方式下，
+&lt;code&gt;5 / 3 = 1&lt;/code&gt;， &lt;code&gt;-5 / -3 = 1&lt;/code&gt;， &lt;code&gt;-5 / 3 = -2&lt;/code&gt;， &lt;code&gt;5 / -3 = -2&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;向零取整：向 0 方向取最接近精确值的整数，换言之就是舍去小数部分，因此又称截断取整。在这种取整方式下，
+&lt;code&gt;5 / 3 = 1&lt;/code&gt;， &lt;code&gt;-5 / -3 = 1&lt;/code&gt;， &lt;code&gt;-5 / 3 = -1&lt;/code&gt;， &lt;code&gt;5 / -3 = -1&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;然后由除法结果根据如下公式推导出模运算结果。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a / b = q
+a % b = r
+b * q + r = a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Python3 向负无穷大取整&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-5 / 3 = -(1.66666)=-2
+-5 % 3 = r
+a = -5
+b = 3
+q = -2
+3 * (-2) + r = -5
+r = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Golang 向零取整&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-5 / 3 = -(1.66666)=-1
+-5 % 3 = r
+a = -5
+b = 3
+q = -1
+3 * (-1) + r = -5
+r = -2
+
+-5 / -3 = 1.66666 = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;那么，为何 Python 整除运算采用向下取整的规则，详细内容在&lt;a href=&#34;http://python3.blogspot.kr/2010/08/why-pythons-integer-division-floors.html&#34;&gt;Why Python&amp;rsquo;s Integer Division Floors&lt;/a&gt;？，简单地来讲就是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;因为 python 认为余数 r 用到的机会会更大，采用向下取整的规则可以保证余数 r 与除数 b 的符号相同（同正或者同负）。&lt;/p&gt;
+
+&lt;p&gt;假设 a 和 b 都&amp;gt;=0 时，
+b * q + r = a， 0 &amp;lt;= r &amp;lt; b
+如果希望将这一关系扩展到 a 为负(b 仍为正)的情况，有两个选择：一是 q 向 0 取整，r 取负值，这时约束关系变为 0 &amp;lt;= abs( r ) &amp;lt; b，另一种选择是 q 向下(负无穷方向)取整，约束关系不变，依然是 0 &amp;lt;= r &amp;lt; b。&lt;/p&gt;
+
+&lt;p&gt;在数学的数论中，数学家总是倾向于第二种选择(参见如下 Wikipedia 链接)。
+在 Python 语言中也做了同样选择，因为在某些取模操作应用中被除数 a 取什么符号并不重要。&lt;/p&gt;
+
+&lt;p&gt;例如从 POSIX 时间戳(从 1970 年初开始的秒数)得到其对应当天的时间。因为一天有 24*3600 = 86400 秒，这一操作就是简单的 t % 86400。但是当表达 1970 年之前的时间，这时是一个负数，向 0 取整规则得到的是一个毫无意义的结果！而向下取整规则得到的结果仍然是正确的。&lt;/p&gt;
+
+&lt;p&gt;另外一个我能想到的应用是计算机图形学中计算像素的位置。我相信这样的应用还有更多。
+顺便说一下，b 取负值时，仅需要把符号取反，约束关系变为：
+0 &amp;gt;= r &amp;gt; b&lt;/p&gt;
+
+&lt;p&gt;那么，现在的问题变成，C 为啥不采取(Python)这样的选择呢？可能是设计 C 时硬件不适合这样做，所谓硬件不适合这样做是说指那些最老式的硬件把负数表示为“符号+大小”而不是像现在的硬件用二进制补码表示(至少对整数是用二进制补码)。我的第一台计算机是一台 Control Data 大型机，它用 1 的补码来表示整数和浮点数。60 个 1 的序列表示负 0！&lt;/p&gt;
+
+&lt;p&gt;Tim Peters 对 Python 的浮点数部分洞若观火，对于我想把这一规则推广到浮点数取模运算有些担心。可能他是对的，因为向负无穷取整的规则有可能导致当 x 是绝对值特别小的负数时 x%1.0 会丢失精度。但是这还不足以让我对整数取模，也就是//进行修改。&lt;/p&gt;
+
+&lt;p&gt;附言：注意我用了//而不是/，这是一个 Python 3 语法，而且在 Python 2 中也是有效的，它强调了使用者是要进行整除操作。Python 2 中的 / 有可能产生歧义，因为对两个操作数都是整数时或者一个整数一个浮点数或者两个都是浮点数时，返回的结果类型不同。当然，这是另外的故事，详情参见 PEP238。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;参考：&lt;/p&gt;
+
+&lt;p&gt;[1] &lt;a href=&#34;https://www.cnblogs.com/zijin/p/3468802.html&#34;&gt;https://www.cnblogs.com/zijin/p/3468802.html&lt;/a&gt;&lt;br /&gt;
+[2] &lt;a href=&#34;http://python3.blogspot.kr/2010/08/why-pythons-integer-division-floors.html&#34;&gt;http://python3.blogspot.kr/2010/08/why-pythons-integer-division-floors.html&lt;/a&gt;&lt;br /&gt;
+[3] &lt;a href=&#34;http://python-history.blogspot.com/2010/08/why-pythons-integer-division-floors.html]&#34;&gt;http://python-history.blogspot.com/2010/08/why-pythons-integer-division-floors.html]&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>理解Golang多重赋值</title>
+      <link>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</link>
+      <pubDate>Thu, 16 May 2019 19:40:04 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/golang-multiple-assignment-evaluation/</guid>
+      
+        <description>
+
+&lt;p&gt;个人主页：[&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;]&lt;/p&gt;
+
+&lt;p&gt;Golang 的多重赋值可以用于值交换操作&lt;/p&gt;
+
+&lt;p&gt;两个值可以方便的如下交换：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;a, b = b, a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;四个值同样可以如下交换&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;a, b, c, d = b, c, a, d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;那这个交换底层是怎么实现的呢？
+我们来做个试验，看看这一段四值交换 golang 代码的的汇编代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func main(){
+    a := 1
+    b := 2
+    c := 3
+    d := 4
+    a, b, c, d = b, c, a, d
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$&amp;gt;dlv debug main.go
+Type &#39;help&#39; for list of commands.
+(dlv) b main.main
+Breakpoint 1 set at 0x454b6a for main.main() ~/pathToProject/main.go:3
+(dlv) r
+Process restarted with PID 26528
+(dlv) c
+&amp;gt; main.main() ~/pathToProject/main.go:3 (hits goroutine(1):1 total:1) (PC: 0x454b6a)
+     1: package main
+     2:
+=&amp;gt;   3: func main() {
+     4:         a := 1
+     5:         b := 2
+     6:         c := 3
+     7:         d := 4
+(dlv) disassemble
+TEXT main.main(SB) D:/Users/polar/go/src/mylab/main.go
+    main.go:3  0x454b50   65488b0c2528000000  mov rcx, qword ptr gs:[0x28]
+    main.go:3  0x454b59   488b8900000000      mov rcx, qword ptr [rcx]
+    main.go:3  0x454b60   483b6110            cmp rsp, qword ptr [rcx+0x10]
+    main.go:3  0x454b64   0f8619020000        jbe 0x454d83
+=&amp;gt;  main.go:3  0x454b6a*  4883ec50            sub rsp, 0x50
+    main.go:3  0x454b6e   48896c2448          mov qword ptr [rsp+0x48], rbp
+    main.go:3  0x454b73   488d6c2448          lea rbp, ptr [rsp+0x48]
+    main.go:4  0x454b78   48c744242801000000  mov qword ptr [rsp+0x28], 0x1  // a := 1
+    main.go:5  0x454b81   48c744242002000000  mov qword ptr [rsp+0x20], 0x2  // b := 2
+    main.go:6  0x454b8a   48c744241803000000  mov qword ptr [rsp+0x18], 0x3  // c := 3
+    main.go:7  0x454b93   48c744241004000000  mov qword ptr [rsp+0x10], 0x4  // d := 4
+    main.go:9  0x454b9c   488b442428          mov rax, qword ptr [rsp+0x28]
+    main.go:9  0x454ba1   4889442440          mov qword ptr [rsp+0x40], rax  // temp = a
+    main.go:9  0x454ba6   488b442420          mov rax, qword ptr [rsp+0x20]
+    main.go:9  0x454bab   4889442428          mov qword ptr [rsp+0x28], rax  // a = b
+    main.go:9  0x454bb0   488b442418          mov rax, qword ptr [rsp+0x18]
+    main.go:9  0x454bb5   4889442420          mov qword ptr [rsp+0x20], rax  // b = c
+    main.go:9  0x454bba   488b442410          mov rax, qword ptr [rsp+0x10]
+    main.go:9  0x454bbf   4889442418          mov qword ptr [rsp+0x18], rax  // c = d
+    main.go:9  0x454bc4   488b442440          mov rax, qword ptr [rsp+0x40]
+    main.go:9  0x454bc9   4889442410          mov qword ptr [rsp+0x10], rax  // d = temp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;很好理解了，就是编译器帮我们在栈上创建了一个临时变量 temp, 然后按顺序交换其他各个变量的值。&lt;/p&gt;
+
+&lt;p&gt;那么下面这种情况，会发生什么呢？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;a := 1
+b := 2
+a, b, a = b, a, b
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;a 和 b 最终的值是多少？&lt;/p&gt;
+
+&lt;p&gt;看一下汇编代码就清楚了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;main.go:5   0x454b9b 48c744241801000000   mov qword ptr [rsp+0x18], 0x1  // a:=1
+main.go:6   0x454ba4 48c744241002000000   mov qword ptr [rsp+0x10], 0x2  // b:=2
+main.go:7   0x454bad 488b442418           mov rax, qword ptr [rsp+0x18]
+main.go:7   0x454bb2 4889442428           mov qword ptr [rsp+0x28], rax  // aTemp := a
+main.go:7   0x454bb7 488b442410           mov rax, qword ptr [rsp+0x10]
+main.go:7   0x454bbc 4889442420           mov qword ptr [rsp+0x20], rax  // bTemp := b
+main.go:7   0x454bc1 488b442410           mov rax, qword ptr [rsp+0x10]
+main.go:7   0x454bc6 4889442418           mov qword ptr [rsp+0x18], rax  // a = b
+main.go:7   0x454bcb 488b442428           mov rax, qword ptr [rsp+0x28]
+main.go:7   0x454bd0 4889442410           mov qword ptr [rsp+0x10], rax  // b = aTemp
+main.go:7   0x454bd5 488b442420           mov rax, qword ptr [rsp+0x20]
+main.go:7   0x454bda 4889442418           mov qword ptr [rsp+0x18], rax  // a = bTemp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;相当于&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aTemp = a
+bTemp = b
+a, b, a = bTemp, aTemp, bTemp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里两个值交换的操作的原理是将两个被赋值的变量的值，都存储在临时变量里，然后再用临时变量去赋值。所以这个例子赋值顺序对结果是无影响的，其结果仍然是 a = 2, b = 1。&lt;/p&gt;
+
+&lt;p&gt;不用再像 C 语言那样写交换函数再内联了，相当于把脏活丢给编译器干了。&lt;/p&gt;
+
+&lt;h3 id=&#34;golang多重赋值的经典应用&#34;&gt;golang多重赋值的经典应用&lt;/h3&gt;
+
+&lt;h4 id=&#34;leetcode-205-reverse-linked-list&#34;&gt;leetcode 205 &lt;code&gt;reverse linked list&lt;/code&gt;&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;/*
+ * @lc app=leetcode id=206 lang=golang
+ *
+ * [206] Reverse Linked List
+ */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseList(head *ListNode) *ListNode {
+	var tail *ListNode
+	for head != nil {
+		head.Next, tail, head = tail, head, head.Next
+	}
+	return tail
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;欢迎转载，请注明出处~
+&lt;a href=&#34;https://polar9527.github.io/&#34;&gt;作者个人主页&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>如何使用VSCode中的Code Runner插件执行golang代码</title>
+      <link>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</link>
+      <pubDate>Wed, 15 May 2019 19:36:37 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/how-to-use-vscode-run-golang/</guid>
+      
+        <description>&lt;p&gt;个人主页：[&lt;a href=&#34;https://polar9527.github.io&#34;&gt;https://polar9527.github.io&lt;/a&gt;]&lt;/p&gt;
+
+&lt;p&gt;如何使用 VSCode 中的 Code Runner 插件执行 golang 代码&lt;/p&gt;
+
+&lt;p&gt;project 的文档结如下&lt;/p&gt;
+
+&lt;p&gt;mylab&lt;br /&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;mdash;- main.go&lt;br /&gt;
+&amp;#160; &amp;nbsp; &amp;nbsp; |&amp;mdash;- test.go&lt;/p&gt;
+
+&lt;p&gt;main.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+func main() {
+	test()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;test.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+func test() {
+	println(&amp;quot;in test&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner&#34;&gt;Code Runner 插件的 Doc 地址&lt;/a&gt;中&lt;br /&gt;
+找到如下 Configuration 的配置说明&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Configuration&lt;br /&gt;
+Make sure the executor PATH of each language is set in the environment variable. You could also add entry into code-runner.executorMap to set the executor PATH. e.g. To set the executor PATH for ruby, php and html:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;code-runner.executorMap&amp;quot;: {
+    &amp;quot;javascript&amp;quot;: &amp;quot;node&amp;quot;,
+    &amp;quot;php&amp;quot;: &amp;quot;C:\\php\\php.exe&amp;quot;,
+    &amp;quot;python&amp;quot;: &amp;quot;python&amp;quot;,
+    &amp;quot;perl&amp;quot;: &amp;quot;perl&amp;quot;,
+    &amp;quot;ruby&amp;quot;: &amp;quot;C:\\Ruby23-x64\\bin\\ruby.exe&amp;quot;,
+    &amp;quot;go&amp;quot;: &amp;quot;go run&amp;quot;,
+    &amp;quot;html&amp;quot;: &amp;quot;\&amp;quot;C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\&amp;quot;&amp;quot;,
+    &amp;quot;java&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; javac $fileName &amp;amp;&amp;amp; java $fileNameWithoutExt&amp;quot;,
+    &amp;quot;c&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; gcc $fileName -o $fileNameWithoutExt &amp;amp;&amp;amp; $dir$fileNameWithoutExt&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Supported customized parameters&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;\$workspaceRoot: The path of the folder opened in VS Code&lt;/li&gt;
+&lt;li&gt;\$dir: The directory of the code file being run&lt;/li&gt;
+&lt;li&gt;\$dirWithoutTrailingSlash: The directory of the code file being run without a trailing slash&lt;/li&gt;
+&lt;li&gt;\$fullFileName: The full name of the code file being run&lt;/li&gt;
+&lt;li&gt;\$fileName: The base name of the code file being run, that is the file without the directory&lt;/li&gt;
+&lt;li&gt;\$fileNameWithoutExt: The base name of the code file being run without its extension&lt;/li&gt;
+&lt;li&gt;\$driveLetter: The drive letter of the code file being run (Windows only)&lt;/li&gt;
+&lt;li&gt;\$pythonPath: The path of Python interpreter (set by Python: Select Interpreter command)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please take care of the back slash and the space in file path of the executor&lt;/p&gt;
+
+&lt;p&gt;Back slash: please use &lt;br /&gt;
+If there ares spaces in file path, please use \&amp;rdquo; to surround your file path&lt;/p&gt;
+
+&lt;p&gt;You could set the executor per filename glob:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;code-runner.executorMapByGlob&amp;quot;: {
+    &amp;quot;pom.xml&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; mvn clean package&amp;quot;,
+    &amp;quot;*.test.js&amp;quot;: &amp;quot;tap&amp;quot;,
+    &amp;quot;*.js&amp;quot;: &amp;quot;node&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以看到 go 的执行命令默认配置成了 go run, 并且默认执行当前打开的文件。
+所以需要利用\$dir 这个变量 run 整个 main 包所涉及到的所有文件。并且可以正则匹配文件名。&lt;/p&gt;
+
+&lt;p&gt;查看一下 go run 这个命令的参数解释，由于众所周知的原因，我们只能上国内的&lt;a href=&#34;https://golang.google.cn/cmd/go/#hdr-Compile_and_run_Go_program&#34;&gt;替代官网&lt;/a&gt;。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Compile and run Go program
+Usage:&lt;/p&gt;
+
+&lt;p&gt;go run [build flags][-exec xprog] package [arguments&amp;hellip;]
+Run compiles and runs the named main Go package. Typically the package is specified as a list of .go source files, but it may also be an import path, file system path, or pattern matching a single known package, as in &lt;strong&gt;&amp;lsquo;go run .&amp;rsquo;&lt;/strong&gt; or &amp;lsquo;go run my/cmd&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;By default, &amp;lsquo;go run&amp;rsquo; runs the compiled binary directly: &amp;lsquo;a.out arguments&amp;hellip;&amp;rsquo;. If the -exec flag is given, &amp;lsquo;go run&amp;rsquo; invokes the binary using xprog:&lt;/p&gt;
+
+&lt;p&gt;&amp;lsquo;xprog a.out arguments&amp;hellip;&amp;rsquo;.
+If the -exec flag is not given, GOOS or GOARCH is different from the system default, and a program named go&lt;em&gt;\$GOOS&lt;/em&gt;\$GOARCH_exec can be found on the current search path, &amp;lsquo;go run&amp;rsquo; invokes the binary using that program, for example &amp;lsquo;go_nacl_386_exec a.out arguments&amp;hellip;&amp;lsquo;. This allows execution of cross-compiled programs when a simulator or other execution method is available.&lt;/p&gt;
+
+&lt;p&gt;The exit status of Run is not the exit status of the compiled binary.&lt;/p&gt;
+
+&lt;p&gt;For more about build flags, see &amp;lsquo;go help build&amp;rsquo;. For more about specifying packages, see &amp;lsquo;go help packages&amp;rsquo;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;找到了，使用&lt;code&gt;go run .&lt;/code&gt; 来跑整个 package 的。&lt;/p&gt;
+
+&lt;p&gt;在 VSCode 的.vscode 目录下创建 settings.json 文件&lt;/p&gt;
+
+&lt;p&gt;自定义这个 project 的用户配置如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;code-runner.executorMap&amp;quot;: {
+    &amp;quot;go&amp;quot;: &amp;quot;cd $dir &amp;amp;&amp;amp; go run .&amp;quot;
+  },
+  &amp;quot;code-runner.executorMapByGlob&amp;quot;: {
+    &amp;quot;$dir\\*.go&amp;quot;: &amp;quot;go&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;点击 Cdoe Runner 在 VSCode GUI 界面提供的 RUN 按钮&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Running] cd &amp;quot;d:\Users\polar\go\src\mylab\&amp;quot; &amp;amp;&amp;amp; go run .
+in test
+
+[Done] exited with code=0 in 3.564 seconds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OK!&lt;/p&gt;
+
+&lt;p&gt;当然也可以用 VSCode Debug 的 launch.json 来配置，但是那是 debug 模式，并不是 go run。&lt;/p&gt;
+
+&lt;p&gt;欢迎转载，请注明出处~
+&lt;a href=&#34;https://polar9527.github.io/&#34;&gt;作者个人主页&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Performance Without the Event Loop</title>
+      <link>https://polar9527.github.io/post/performance-without-the-event-loop/</link>
+      <pubDate>Mon, 13 May 2019 18:34:58 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/performance-without-the-event-loop/</guid>
+      
+        <description>
+
+&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/2015/08/08/performance-without-the-event-loop&#34;&gt;英文原文&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://polar9527.github.io/post/performance-without-the-event-loop/&#34;&gt;译文&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本文基于我今年早些时候在 OSCON 所做的一场演讲。为了简明扼要，并针对我在演讲后收到的一些反馈意见进行了编辑。&lt;/p&gt;
+
+&lt;p&gt;谈到 Go 的时候，一个常见的说法是,Go 是一种在服务器上运行良好的语言;静态二进制文件、强大的并发性和高性能。&lt;/p&gt;
+
+&lt;p&gt;本文重点讨论最后两项，Go 语言和它的运行时是如何透明地让程序员编写高度可伸缩的网络服务器，而不必担心线程管理或 I/O 阻塞。&lt;/p&gt;
+
+&lt;h2 id=&#34;需要高效编程语言的一个依据&#34;&gt;需要高效编程语言的一个依据&lt;/h2&gt;
+
+&lt;p&gt;但在我开始技术讨论之前，我想用两个指标来说明 Go 语言的目标市场。&lt;/p&gt;
+
+&lt;h3 id=&#34;摩尔定律&#34;&gt;摩尔定律&lt;/h3&gt;
+
+&lt;p&gt;oft mis 援引摩尔定律称，每平方英寸晶体管的数量大约每 18 个月翻一番。&lt;/p&gt;
+
+&lt;p&gt;然而，时钟频率却是一个功能完全不同的特性，十年 Intel 设计的 Pentium 4 就在时钟频率上达到了峰值，并在那之后 CPU 的时钟频率一直在倒退。
+&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/CPU.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+Image credit: Herb Sutter (Dr. Dobb’s Journal, March 2005)&lt;/p&gt;
+
+&lt;h3 id=&#34;空间和功率限制&#34;&gt;空间和功率限制&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/sun-ultra-enterprise-450-400mhz-2gb-20-bay-workgroup-server-system-no-hdd-parts_131514071457.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+Sun Enterprise e450—about the size of a bar fridge, about the same power consumption. Image credit: eBay&lt;/p&gt;
+
+&lt;p&gt;这是 SUN 公司的 e450。当我开始我的职业生涯时，他们是这个行业的主力。&lt;/p&gt;
+
+&lt;p&gt;这些东西是非常大的。三个这样的机器叠在一起，将装满 19 英寸的架子。它们每个功率大约 500 瓦。&lt;/p&gt;
+
+&lt;p&gt;在过去的十年里，数据中心已经从空间受限转向电力受限。在我参与的前两次数据中心部署中，当机架仅仅装满 &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; 时，我们就达到了用电上限。&lt;/p&gt;
+
+&lt;p&gt;由于计算密度提高得如此之快，数据中心空间不再是一个问题。然而，现代服务器在更小的体积内消耗了更多的能源，这使得给机房降温更加困难，但同时也是至关重要的。&lt;/p&gt;
+
+&lt;p&gt;在宏观层面上受到功率上限的限制，你无法为一个机架 1200 瓦 1RU serverser 获得足够的功率配额，而在微观层面上，每一个微小的硅片上消耗了数百瓦能源。&lt;/p&gt;
+
+&lt;h3 id=&#34;能源被消耗到哪里去了&#34;&gt;能源被消耗到哪里去了？&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/220px-CMOS_Inverter.svg_.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+CMOS Inverter. Image credit: Wikipedia&lt;/p&gt;
+
+&lt;p&gt;这是一个反向器，可能是最简单的逻辑门之一。如果输入 A 为高，那么输出 Q 为低，反之亦然。&lt;/p&gt;
+
+&lt;p&gt;今天所有的消费电子产品都是用 CMOS 逻辑构建的。CMOS 代表互补金属氧化物半导体。互补部分是关键。CPU 内部的每个逻辑元件都由一对晶体管实现，一个开关打开，另一个开关关闭。&lt;/p&gt;
+
+&lt;p&gt;当电路接通或断开时，没有电流直接从源极流向漏极。然而，在过渡期间有一个短暂的时期，两个晶体管都导电，造成直接短路。&lt;/p&gt;
+
+&lt;p&gt;功耗，和因此导致的散热，与每秒晶体管状态转换的次数成正比——CPU 时钟频率。
+[1]
+CMOS power consumption is not only caused by the short circuit current when the circuit is switching. Additional power consumption comes from charging the output capacitance of the gate, and leakage current through the MOSFET gate increases as the size of the transistor decreases. You can read more about this from in a the lecture materials from CMU’s ECE322 course. Bill Herd has a published a series of articles on how CMOS works.&lt;/p&gt;
+
+&lt;p&gt;CPU 特征尺寸的降低主要是为了降低功耗。减少电力消耗并不仅仅意味着“绿色”。其主要目标是将功耗和散热保持在导致 CPU 损坏的水平以下。&lt;/p&gt;
+
+&lt;p&gt;随着时钟频率的下降，以及与功耗的直接冲突，性能的提高主要来自于微体系结构的调整和深奥的向量指令，它们对一般计算没有直接的用处。总的来说，每一个微架构(5 年一个周期)的变化在每一代中最多产生 10%的改进，最近只有 4-6%。&lt;/p&gt;
+
+&lt;h3 id=&#34;免费午餐结束了&#34;&gt;“免费午餐结束了”&lt;/h3&gt;
+
+&lt;p&gt;希望现在你已经很清楚，硬件并没有变得更快。如果性能和规模对你很重要，那么你会同意我的观点，即至少在传统意义上，靠堆硬件来解决这个问题的日子已经结束了。正如赫伯•萨特(Herb Sutter)所言:“免费午餐结束了。”&lt;/p&gt;
+
+&lt;p&gt;你需要一种高效的语言，因为低效的语言在生产上，在规模上，在资本支出的基础上都是不合理的。&lt;/p&gt;
+
+&lt;h2 id=&#34;需要并发编程语言的一个依据&#34;&gt;需要并发编程语言的一个依据&lt;/h2&gt;
+
+&lt;p&gt;我的第二个论点紧跟着我的第一个论点。CPU 并没有变快，而是变宽了。这就是晶体管的发展方向，这并不令人惊讶。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/Ivy-Bridge_Die_Flat-HR.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+Image credit: Intel&lt;/p&gt;
+
+&lt;p&gt;多线程并行，或者如 Intel 所称的超线程，允许一个内核在添加少量硬件的同时并行执行多个指令流。英特尔使用超线程来人为地细分处理器市场，甲骨文和富士通更积极地将超线程应用到他们的产品中，每个处理器核使用 8 或 16 个硬件线程。&lt;/p&gt;
+
+&lt;p&gt;自上世纪 90 年代末以来，Pentium Pro 就实现了 quad socket，现在大多数服务器都支持 dual socket 或者 quad socket 设计，dual socket 已成为主流。晶体管数量的增加使得整个 CPU 处理单元可以与同一硅片上的同级 CPU 处理单元共存。移动部件上的双核，桌面部件上的四核，甚至服务器部件上的更多核现在都成为了现实。在预算允许的情况下，您可以在服务器中购买尽可能多的核心。&lt;/p&gt;
+
+&lt;p&gt;为了利用这些额外的核心，您需要一种能有效开发出并发程序的编程语言。&lt;/p&gt;
+
+&lt;h3 id=&#34;处理器单元-线程-和-goroutines&#34;&gt;处理器单元, 线程 和 goroutines&lt;/h3&gt;
+
+&lt;p&gt;Go 有 goroutines，这是它能有效开发出并发程序的基础。我想先退一步，来看看产生 goroutines 的历史背景。&lt;/p&gt;
+
+&lt;h4 id=&#34;处理器单元&#34;&gt;处理器单元&lt;/h4&gt;
+
+&lt;p&gt;起初，计算机在批处理模型中一次运行一个任务。在 60 年代，对更多交互形式的计算的渴望导致了多处理，或分时操作系统的发展。到了 70 年代，这一想法已经在网络服务器、ftp、telnet、rlogin 以及后来 Tim Burners-Lee 的 CERN httpd 上得到了很好的应用，这些服务器通过划分子进程来处理每个传入的网络连接。&lt;/p&gt;
+
+&lt;p&gt;在分时系统中，操作系统通过记录当前进程的状态，然后恢复另一个进程的状态，从而在活动进程之间快速切换 CPU，从而保持并发的假象。这称为上下文切换。&lt;/p&gt;
+
+&lt;h4 id=&#34;上下文切换&#34;&gt;上下文切换&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/640px-Table_of_x86_Registers_svg.svg_.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+Image credit: Immae (CC BY-SA 3.0)&lt;/p&gt;
+
+&lt;h5 id=&#34;上下文切换有三个主要成本&#34;&gt;上下文切换有三个主要成本。&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;内核需要存储该进程的所有 CPU 寄存器的内容，然后恢复另一个进程的值。因为进程切换可以在进程执行的任何位置发生，所以操作系统需要存储所有这些寄存器的内容，因为它不知道当前正在使用哪些寄存器
+[2]
+This is an oversimplification. In some cases the operating system can avoid saving and restoring infrequently used architectural registers by starting the the process in a mode where access to floating point or MMX/SSE registers will cause the program to fault, thereby informing the kernel that the process will now use those registers and it should from then on save and restore them.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内核需要将 CPU 的虚拟地址刷新为物理地址映射(TLB 缓存)
+[3]
+Some CPUs have what is known as a tagged TLB. In the case of tagged TLB support the operating system can tell the processor to associate particular TLB cache entries with an identifier, derived from the process ID, rather than treating each cache entry as global. The upside is this avoids flushing out entries on each process switch if the process is placed back on the same CPU in short order.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;操作系统上下文切换的开销，以及选择下一个进程占用 CPU 的调度程序函数的开销。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;由于与硬件相关，这些成本相对固定，并且依赖于上下文切换之间所做的工作量来摊销它们的成本-快速上下文切换往往会超过上下文切换之间所做的工作量。&lt;/p&gt;
+
+&lt;h4 id=&#34;线程&#34;&gt;线程&lt;/h4&gt;
+
+&lt;p&gt;这导致线程的被设计开发出来，线程在概念上与进程相同，但共享相同的内存空间。由于线程共享地址空间，所以它们的调度比进程更轻松，因此创建和切换更快。&lt;/p&gt;
+
+&lt;p&gt;线程仍然有一个昂贵的上下文切换成本;必须保留许多状态。Goroutines 将线程的概念又向前推进了一步。&lt;/p&gt;
+
+&lt;h4 id=&#34;goroutines&#34;&gt;Goroutines&lt;/h4&gt;
+
+&lt;p&gt;goroutine 不是依赖内核来管理它们之间的调度，而是通过协作的方式调度的。goroutine 之间的切换只发生在预先设计好的时间点，当显式调用 Go 运行时调度程序时。goroutine 被调度器抢占的主要原因包括:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在 Channel（Go 特有的语言特性，另一个是 goroutine）上产生阻塞的收发操作。&lt;/li&gt;
+&lt;li&gt;Go 语言中 go 这个关键字的使用，虽然不能保证新的 goroutine 会立即被调度。&lt;/li&gt;
+&lt;li&gt;文件操作和网络操作等系统调用。&lt;/li&gt;
+&lt;li&gt;由于进入内存垃圾回收周期而被暂停。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;换句话说，goroutine 的调度会在这些时间点发生，在不能得到更多数据，一个 goroutine 无法继续执行时； 或者是在执行环境中，一个 goroutine 需要更多内存空间时。&lt;/p&gt;
+
+&lt;p&gt;许多 goroutine 在 Go 运行时被多路复用到一个操作系统线程上。这使得 goroutines 的制造成本和切换成本都很低。在一个进程中有成千上万的 goroutine 是正常的，成百上千的 goroutine 是低于预期的。&lt;/p&gt;
+
+&lt;p&gt;从语言的角度来看，调度看起来像一个函数调用，并且具有相同的语义。编译器知道当前正在使用寄存器并自动保存它们。线程调用包含一个特定 goroutine 栈的调度器，这个调度器返回另外一个不同的 goroutine 栈。将此与线程应用程序进行比较，在线程应用程序中，可以在任何时间、任何指令抢占线程。&lt;/p&gt;
+
+&lt;p&gt;这导致每个 Go 进程的操作系统线程相对较少，而 Go 的 runtime 负责将一个可运行的 goroutine 分配给一个空闲的操作系统线程。&lt;/p&gt;
+
+&lt;h3 id=&#34;栈的管理&#34;&gt;栈的管理&lt;/h3&gt;
+
+&lt;p&gt;在前一节中，我讨论了 goroutine 如何减少管理(有时是数十万个)过多并发执行线程时的开销。goroutine 还有另一个方面，那就是堆栈管理。&lt;/p&gt;
+
+&lt;h4 id=&#34;进程地址空间&#34;&gt;进程地址空间&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/process.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是一个典型的进程内存布局图。我们感兴趣的关键是堆和栈的位置。&lt;/p&gt;
+
+&lt;p&gt;在进程的地址空间中，堆通常位于内存的底部，位于程序代码之上，并向上增长。&lt;/p&gt;
+
+&lt;p&gt;堆栈位于虚拟地址空间的顶部，并向下增长。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/guard-page.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为堆和栈相互覆盖将是灾难性的，所以操作系统在堆栈和堆之间安排了一个不可访问的内存区域。&lt;/p&gt;
+
+&lt;p&gt;这称为保护页，它有效地限制了进程的栈大小，通常按几兆字节的顺序。&lt;/p&gt;
+
+&lt;h4 id=&#34;线程栈&#34;&gt;线程栈&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/threads.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;线程共享相同的地址空间，因此对于每个线程，它必须有自己的栈和自己的保护页。&lt;/p&gt;
+
+&lt;p&gt;由于很难预测特定线程的栈需求，因此必须为每个线程的栈保留大量内存。并寄希望于需求会比这低，同时作为警戒的保护页永远不会被触发。&lt;/p&gt;
+
+&lt;p&gt;缺点是，随着程序中线程数量的增加，可用地址空间的数量会减少。&lt;/p&gt;
+
+&lt;h4 id=&#34;管理-goroutine-的栈&#34;&gt;管理 Goroutine 的栈&lt;/h4&gt;
+
+&lt;p&gt;早期的进程模型允许程序员查看堆和栈，一边观察其是否足够大，而不必为此担心。缺点是复杂而昂贵的子进程模型。&lt;/p&gt;
+
+&lt;p&gt;线程稍微改善了这种情况，但要求程序员猜测最合适的栈大小;太小，程序将中止;太大，虚拟地址空间将耗尽。&lt;/p&gt;
+
+&lt;p&gt;我们已经看到，Go 运行时将大量 goroutine 调度到少量线程上，但是这些 goroutine 的栈需求如何呢?&lt;/p&gt;
+
+&lt;h5 id=&#34;goroutine-栈的增长过程&#34;&gt;Goroutine 栈的增长过程&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dave.cheney.net/wp-content/uploads/2015/08/stack-growth.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;每个 goroutine 都从堆中分配的一个小尺寸的栈开始。大小随时间而变化，但在 Go 1.5 中，每一个 goroutine 都以 2k 的分配开始栈。&lt;/p&gt;
+
+&lt;p&gt;Go 编译器不使用保护页，而是在每个函数调用中插入一个检查，以测试是否有足够的栈空间供函数运行。如果有足够的栈空间，函数将正常运行。（在函数的汇编代码前面，由编译器插入一段检查代码。这个动作可以在函数定义前配置编译器指令，禁用掉，不过要非常非常谨慎地使用）&lt;/p&gt;
+
+&lt;p&gt;如果空间不足，Go 进程的 runtime 将在堆上分配一个更大的栈空间，将当前栈的内容复制到新的栈空间，释放旧的栈空间，然后重新启动函数调用。&lt;/p&gt;
+
+&lt;p&gt;由于这种检查，goroutine 的初始堆栈可以变得更小，这反过来又允许 Go 程序员将 goroutine 视为廉价的资源。如果有足够多的部分未被使用，Goroutine 栈也会收缩。这是在垃圾回收期间处理的。&lt;/p&gt;
+
+&lt;h3 id=&#34;集成的-network-poller&#34;&gt;集成的 network poller&lt;/h3&gt;
+
+&lt;p&gt;2002 年，丹·凯格尔（Dan Kegel）发表了他所谓的&lt;a href=&#34;http://www.kegel.com/c10k.html&#34;&gt;c10k&lt;/a&gt;问题。简单地说，如何编写服务器软件来处理每天至少 10000 个 TCP 会话。自从那篇论文撰写以来，传统观点认为高性能服务器需要原生线程（native threads），而最近的几年，基于事件的循环代替了原生线程。&lt;/p&gt;
+
+&lt;p&gt;线程在调度成本和内存占用方面有很高的开销。事件循环降低了这些成本，但是这引入了回调驱动的复杂编程风格。&lt;/p&gt;
+
+&lt;p&gt;Go 为程序员提供了两全其美解决方案。&lt;/p&gt;
+
+&lt;h4 id=&#34;go-对-c10k-问题给出的解决方案&#34;&gt;Go 对 c10k 问题给出的解决方案&lt;/h4&gt;
+
+&lt;p&gt;在 Go 中，系统调用通常是阻塞操作，这包括读取和写入文件描述符。Go 的 runtime 调度器通过找到一个空闲线程或生成另一个线程来处理这个问题，以便在原始线程阻塞时继续为 goroutines 提供服务。实际上，这对于文件 IO 很有效，因为少量阻塞线程可以快速耗尽本地 IO 带宽。&lt;/p&gt;
+
+&lt;p&gt;但是对于网络套接字，按照设计，任何时候几乎所有的 goroutine 都将被阻塞，等待网络 IO。在一个简单的实现中，这将需要和 goroutine 一样多的线程，所有线程都被阻塞，等待网络流量。由于 runtime 和 net 包之间的协作，集成到 Go 的 runtime 中的 network poller 可以有效地处理这个问题。&lt;/p&gt;
+
+&lt;p&gt;在较早版本的 Go 中，network poller 是一个 goroutine，负责使用 kqueue 或 epoll 轮询准备就绪通知。轮询 goroutine 将通过 channel 与等待的 goroutine 通信。这实现了避免每个线程都做操作系统调用产生的瓶颈，而使用了通过 channel 发送消息这种通用唤醒机制。这意味着调度器不需要关心唤醒源，不需要把唤醒操作看的比较重要。&lt;/p&gt;
+
+&lt;p&gt;在 Go 的当前版本中，network poller 已经集成到 runtime 本身中。当 runtime 知道哪个 goroutine 正在等待网络套接字就绪时，它可以在数据包到达时立即将 goroutine 放回相同的 CPU 上，从而减少延迟并增加吞吐量。&lt;/p&gt;
+
+&lt;h3 id=&#34;goroutines-栈管理和被集成了的-network-poller&#34;&gt;Goroutines, 栈管理和被集成了的 network poller&lt;/h3&gt;
+
+&lt;p&gt;总之，goroutines 提供了一个强大的抽象，使程序员不必担心线程池或事件循环。&lt;/p&gt;
+
+&lt;p&gt;goroutine 的栈已经足够大，而不需要考虑线程栈或线程池的大小。&lt;/p&gt;
+
+&lt;p&gt;被集成了的 network poller 允许程序员避免了复杂的回调风格代码，同时仍然利用操作系统中可用的最有效的 IO 完成逻辑。&lt;/p&gt;
+
+&lt;p&gt;runtime 确保有足够的线程来服务所有 goroutine 并保持 CPU 核处于活动状态。&lt;/p&gt;
+
+&lt;p&gt;所有这些特性对 Go 程序员来说都是透明的。&lt;/p&gt;
+
+&lt;p&gt;原文作者相关文章:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/2015/05/31/hear-me-speak-about-go-performance-at-oscon&#34;&gt;Hear me speak about Go performance at OSCON&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/2013/05/21/go-11-performance-improvements&#34;&gt;Go 1.1 performance improvements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/2013/12/02/go-12-performance-improvements&#34;&gt;Go 1.2 performance improvements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/2013/05/25/go-11-performance-improvements-part-2&#34;&gt;Go 1.1 performance improvements, part 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;欢迎转载，请注明出处~
+&lt;a href=&#34;https://polar9527.github.io/&#34;&gt;作者个人主页&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>A Record of Debugging Golang Runtime</title>
+      <link>https://polar9527.github.io/post/a-record-of-debugging-golang-runtime/</link>
+      <pubDate>Thu, 09 May 2019 18:35:42 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/a-record-of-debugging-golang-runtime/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;记一次-golang-runtime-的调试&#34;&gt;记一次 Golang runtime 的调试&lt;/h2&gt;
+
+&lt;h3 id=&#34;调试环境&#34;&gt;调试环境&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;go 版本和平台&lt;br /&gt;
+go version go1.5.4 linux/amd64&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;delve 版本&lt;br /&gt;
+Delve Debugger&lt;br /&gt;
+Version: 1.0.0&lt;br /&gt;
+Build: $Id:   c98a142125d0b17bb11ec0513bde346229b5f533 $&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+
+&lt;p&gt;一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的 main 函数启动前，golang 的 runtime 会做一系列的工作来为我们准备好运行时环境，这包括运行时 golang 程序层面的内存管理和垃圾回收，最重要的是还帮我们建立了一套 goroutine(协程)的调度机制。
+为了了解这个 golang 的底层 runtime 是怎么工作的，在看完一些关于 runtime 的资料后，我打算用调试工具来 debug，追踪一下 runtime 的运行过程，以此来验证一下自己的理解。
+可是在刚开始调试的时候，就遇到了麻烦。&lt;/p&gt;
+
+&lt;p&gt;golang 的入口代码如下：&lt;br /&gt;
+runtime/asm_amd64.s&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TEXT runtime·rt0_go(SB),NOSPLIT,$0
+	// copy arguments forward on an even stack
+	MOVQ	DI, AX		// argc
+	MOVQ	SI, BX		// argv
+	SUBQ	$(4*8+7), SP		// 2args 2auto
+	ANDQ	$~15, SP
+	MOVQ	AX, 16(SP)
+	MOVQ	BX, 24(SP)
+
+	// 这里去掉一些不影响阅读的代码
+
+	LEAQ	runtime·tls0(SB), DI
+	CALL	runtime·settls(SB)
+
+	// store through it, to make sure it works
+	get_tls(BX)
+	MOVQ	$0x123, g(BX)
+	MOVQ	runtime·tls0(SB), AX
+	CMPQ	AX, $0x123
+	JEQ 2(PC)
+	MOVL	AX, 0	// abort
+ok:
+	// set the per-goroutine and per-mach &amp;quot;registers&amp;quot;
+	get_tls(BX)
+	LEAQ	runtime·g0(SB), CX
+	MOVQ	CX, g(BX)
+	LEAQ	runtime·m0(SB), AX
+
+	// save m-&amp;gt;g0 = g0
+	MOVQ	CX, m_g0(AX)
+	// save m0 to g0-&amp;gt;m
+	MOVQ	AX, g_m(CX)
+
+	CLD				// convention is D is always left cleared
+	CALL	runtime·check(SB)
+
+	MOVL	16(SP), AX		// copy argc
+	MOVL	AX, 0(SP)
+	MOVQ	24(SP), AX		// copy argv
+	MOVQ	AX, 8(SP)
+	CALL	runtime·args(SB)
+	CALL	runtime·osinit(SB)
+	CALL	runtime·schedinit(SB)
+
+	// create a new goroutine to start program
+	MOVQ	$runtime·mainPC(SB), AX		// entry
+	PUSHQ	AX
+	PUSHQ	$0			// arg size
+	CALL	runtime·newproc(SB)
+	POPQ	AX
+	POPQ	AX
+
+	// start this M
+	CALL	runtime·mstart(SB)
+
+	MOVL	$0xf1, 0xf1  // crash
+	RET
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在 runtime 中，定义了两个全局变量&lt;br /&gt;
+runtime/proc1.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;var (
+	m0 m
+	g0 g
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在 golang runtime GPM 模型初始化运行之前就存在了，
+这个 m0 是程序启动后，在 GPM 模型中，代表 runtime.rt0_go 这个主线程的对象。
+这个 m0 负责执行初始化操作以及启动第一个 goroutine。
+而 g0 的作用主要是给 m0 提供线程栈空间，以及在 cpu 切换线程时，为线程提供标识。&lt;/p&gt;
+
+&lt;p&gt;rt0_go 这个汇编函数中有段注释&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;// save m-&amp;gt;g0 = g0
+
+// save m0 to g0-&amp;gt;m
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;就是把这两个对象在开始发挥作用前绑定起来。&lt;/p&gt;
+
+&lt;p&gt;在 rt0_go 这个汇编函数的尾部，有这样一段代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-GO&#34;&gt;	// create a new goroutine to start program
+	MOVQ	$runtime·mainPC(SB), AX		// entry
+	PUSHQ	AX
+	PUSHQ	$0			// arg size
+	CALL	runtime·newproc(SB)
+	POPQ	AX
+	POPQ	AX
+
+	// start this M
+	CALL	runtime·mstart(SB)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;源码注释很明白，就是将我们 main 包里的 main 函数放到一个新建的 goroutine 当中以启动程序，后面就是启动 m0 这个线程。
+于是我就在这两个 CALL 的函数定义处分别打了断点，准备跟进去走个流程。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[test]$ go build -gcflags &amp;ldquo;-N -l&amp;rdquo; test&lt;br /&gt;
+[test]$ dlv debug test&lt;br /&gt;
+Type &amp;lsquo;help&amp;rsquo; for list of commands.&lt;br /&gt;
+(dlv) b runtime.newproc&lt;br /&gt;
+Breakpoint 1 set at 0x4327e0 for runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216
+(dlv) b runtime.mstart&lt;br /&gt;
+Breakpoint 2 set at 0x42e650 for runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;从 runtime.rt0_go 那里调用这个 runtime.newproc 主要是将我们的 main 包中的 main 函数装进一个新的 goroutine 当中，然后放到与当前的 m0 绑定的 P(在之前 runtime.rt0_go 中初始化时的 runtime.schedinit 中绑定的)的 runnable goroutine 队列中，待调度机制调度后开始工作。&lt;/p&gt;
+
+&lt;p&gt;runtime/proc1.go&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
+	_g_ := getg()
+    ......
+	_p_ := _g_.m.p.ptr()
+	newg := gfget(_p_)
+	if newg == nil {
+		newg = malg(_StackMin)
+		casgstatus(newg, _Gidle, _Gdead)
+		allgadd(newg) // publishes with a g-&amp;gt;status of Gdead so GC scanner doesn&#39;t look at uninitialized stack.
+	}
+    ......
+	runqput(_p_, newg, true)
+    ......
+	return newg
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里用调试器查看一下*g*值，和前面提到的 g0 和 m0 这两个全局的变量的地址&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.newproc.func1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2220 (PC: 0x44f5c3)
+  2215:	//go:nosplit
+  2216:	func newproc(siz int32, fn *funcval) {
+  2217:		argp := add(unsafe.Pointer(&amp;amp;fn), ptrSize)
+  2218:		pc := getcallerpc(unsafe.Pointer(&amp;amp;siz))
+  2219:		systemstack(func() {
+=&amp;gt;2220:			newproc1(fn, (*uint8)(argp), siz, 0, pc)
+  2221:		})
+  2222:	}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.newproc1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2231 (PC: 0x432875)
+  2226:	// address of the go statement that created this.  The new g is put
+  2227:	// on the queue of g&#39;s waiting to run.
+  2228:	func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
+  2229:		_g_ := getg()
+  2230:
+=&amp;gt;2231:		if fn == nil {
+  2232:			_g_.m.throwing = -1 // do not dump full stacks
+  2233:			throw(&amp;quot;go of nil func value&amp;quot;)
+  2234:		}
+  2235:		_g_.m.locks++ // disable preemption because it can be holding p in a local var
+  2236:		siz := narg + nret
+(dlv) local
+Command failed: command not available
+(dlv) locals
+siz = 200
+sp = 139891379798019
+newg = (*runtime.g)(0x4341ec)
+_p_ = (*runtime.p)(0x896a40)
+_g_ = (*runtime.g)(0x872aa0)
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;g0))
+unsafe.Pointer(0x872aa0)
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;m0))
+unsafe.Pointer(0x873040)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个_g_ 指向 g0, 和预想的一样&lt;/p&gt;
+
+&lt;p&gt;这个返回&lt;em&gt;g&lt;/em&gt; 的函数是编译器实现的，源代码注释有解释&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;// getg returns the pointer to the current g.
+// The compiler rewrites calls to this function into instructions
+// that fetch the g directly (from TLS or from the dedicated register).
+func getg() *g
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这段 runtime.newproc 的代码到此结束，接下来转到 runtime.mstart,看看线程时怎么启动起来的。&lt;br /&gt;
+直接 continue 一下到 runtime.mstart 这个断点。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) c
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:671 (PC: 0x42e65d)
+   666:	// Called to start an M.
+   667:	//go:nosplit
+   668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+=&amp;gt; 671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+   674:			size := _g_.stack.hi
+   675:			if size == 0 {
+   676:				size = 8192 * stackGuardMultiplier
+   678:			_g_.stack.hi = uintptr(noescape(unsafe.Pointer(&amp;amp;size)))
+   679:			_g_.stack.lo = _g_.stack.hi - size + 1024
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+   685:		mstart1()
+   686:	}
+(dlv) locals
+size = 0
+(dlv) p _g_
+Command failed: could not find symbol value for _g_
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这回*g*这个变量查不出来，前面说了这个返回&lt;em&gt;g&lt;/em&gt; 的函数是编译器实现的。
+查了相关资料，这个 TLS,&lt;br /&gt;
+全称是 Thread-local storage, 代表每个线程的中的本地数据.
+例如标准 c 中的 errno 就是一个典型的 TLS 变量, 每个线程都有一个独自的 errno, 写入它不会干扰到其他线程中的值.
+go 在实现协程时非常依赖 TLS 机制, 会用于获取系统线程中当前的 G 和 G 所属的 M 的实例.&lt;/p&gt;
+
+&lt;p&gt;因为 go 并不使用 glibc, 操作 TLS 会使用系统原生的接口, 以 linux x64 为例,
+go 在新建 M 时会调用 arch_prctl 这个 syscall 设置 FS 寄存器的值为 M.tls 的地址,
+运行中每个 M 的 FS 寄存器都会指向它们对应的 M 实例的 tls, linux 内核调度线程时 FS 寄存器会跟着线程一起切换,
+这样 go 代码只需要访问 FS 寄存器就可以存取线程本地的数据.&lt;/p&gt;
+
+&lt;p&gt;那就看看汇编代码。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) disassemble
+TEXT runtime.mstart(SB) /root/.gvm/gos/go1.5.4/src/runtime/proc1.go
+	proc1.go:668	0x42e650*	4883ec08		sub rsp, 0x8
+	proc1.go:669	0x42e654	64488b0425f8ffffff	mov rax, qword ptr fs:[0xfffffff8]
+	proc1.go:671	0x42e65d	488b18			mov rbx, qword ptr [rax]
+	proc1.go:671	0x42e660	4883fb00		cmp rbx, 0x0
+	proc1.go:671	0x42e664	753b			jnz 0x42e6a1
+=&amp;gt;	proc1.go:674	0x42e666	488b6808		mov rbp, qword ptr [rax+0x8]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;FS 寄存器看样子是放到 rax 寄存器里面了，我们验证一下，看看 rax 的值是不是和 g0 的地址一样。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) regs
+     Rip = 0x000000000042e65d
+     Rsp = 0x00007ffd936859d0
+     Rax = 0x0000000000872aa0
+     Rbx = 0x000000c820000180
+     Rcx = 0x000000000077e320
+     Rdx = 0x0000000000872aa0
+     Rdi = 0x000000000042b6e0
+     Rsi = 0x00007ffd936859e0
+     Rbp = 0x0000000000873040
+      R8 = 0x000000000077e318
+      R9 = 0x0000000000000008
+     R10 = 0x0000000000629e00
+     R11 = 0x0000000000000000
+     R12 = 0x0000000000000008
+     R13 = 0x000000000077b770
+     R14 = 0x0000000000000000
+     R15 = 0x0000000000000008
+Orig_rax = 0xffffffffffffffff
+      Cs = 0x0000000000000033
+  Eflags = 0x0000000000000202	[IF IOPL=0]
+      Ss = 0x000000000000002b
+ Fs_base = 0x00007fbf429ae740
+ Gs_base = 0x0000000000000000
+      Ds = 0x0000000000000000
+      Es = 0x0000000000000000
+      Fs = 0x0000000000000000
+      Gs = 0x0000000000000000
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;g0))
+unsafe.Pointer(0x872aa0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;都是 0x872aa0，没问题。继续走流程。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+=&amp;gt; 685:		mstart1()
+   686:	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;调试器又回到了 mstart 函数开始处，并没有跳进 mstart1 函数，并且多显示了两行调试信息，和&lt;code&gt;hits total:X&lt;/code&gt;的额外信息。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
+	breakpoint hit during next, continuing...
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
+   663:		}
+   664:	}
+   665:
+   666:	// Called to start an M.
+   667:	//go:nosplit
+=&amp;gt; 668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+   671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;发生了什么事情，为什么又跳回去了？&lt;/p&gt;
+
+&lt;p&gt;看一下寄存器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) regs
+     Rip = 0x000000000042e65d
+     Rsp = 0x00007f23e3133eb8
+     Rax = 0x000000c820000900
+     Rbx = 0x000000000042e650
+     Rcx = 0x00000000017f6000
+     Rdx = 0x00000000ffffffff
+     Rdi = 0x000000000042e650
+     Rsi = 0x00007f23e34fb768
+     Rbp = 0x000000c820000900
+      R8 = 0x0000000000000000
+      R9 = 0x00000000017f6010
+     R10 = 0x00007f23e3133960
+     R11 = 0x00007f23e31ba580
+     R12 = 0x0000000000000000
+     R13 = 0x0000000000801000
+     R14 = 0x0000000000000000
+     R15 = 0x00007f23e3134700
+Orig_rax = 0xffffffffffffffff
+      Cs = 0x0000000000000033
+  Eflags = 0x0000000000000216	[PF AF IF IOPL=0]
+      Ss = 0x000000000000002b
+ Fs_base = 0x00007f23e3134700
+ Gs_base = 0x0000000000000000
+      Ds = 0x0000000000000000
+      Es = 0x0000000000000000
+      Fs = 0x0000000000000000
+      Gs = 0x0000000000000000
+(dlv) p unsafe.Pointer(uintptr(&amp;amp;g0))
+unsafe.Pointer(0x872aa0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rax = 0x000000c820000900, 也就是说_g_的值和 g0 的地址不相等。&lt;/p&gt;
+
+&lt;p&gt;调试信息说 runtime.mstart()被 hit 了两次，发生了什么？&lt;/p&gt;
+
+&lt;p&gt;我们再复现一下这个场景。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) r  \\重启调试过程
+(dlv) c  \\到达第一个断点runtime.newproc()
+(dlv) c  \\到达第二个断点runtime.mstart()
+(dlv) n  \\几次next命令之后，在即将进入mstart1函数之前停下
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
+   680:		}
+   681:		// Initialize stack guards so that we can start calling
+   682:		// both Go and C functions with stack growth prologues.
+   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
+   684:		_g_.stackguard1 = _g_.stackguard0
+=&amp;gt; 685:		mstart1()
+   686:	}
+   687:
+   688:	func mstart1() {
+   689:		_g_ := getg()
+   690:
+(dlv) goroutines
+[1 goroutines]
+  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc.go:28 runtime.main (0x42b6e0)
+(dlv) threads
+* Thread 22392 at 0x42e6bd /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 runtime.mstart
+(dlv)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们用 golang 专属调试器 delve 提供针对 goroutine 的调试命令来查看一下。
+显示有一个编号为 1 的 goroutine 和一个编号为 22392 的 Thread。
+继续，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) n
+&amp;gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
+	breakpoint hit during next, continuing...
+&amp;gt; runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 (hits goroutine(1):1 total:2) (PC: 0x4327e0)
+&amp;gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
+   663:		}
+   664:	}
+   665:
+   666:	// Called to start an M.
+   667:	//go:nosplit
+=&amp;gt; 668:	func mstart() {
+   669:		_g_ := getg()
+   670:
+   671:		if _g_.stack.lo == 0 {
+   672:			// Initialize stack bounds from system stack.
+   673:			// Cgo may have left stack size in stack.hi.
+(dlv) goroutines
+[2 goroutines]
+  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc (0x4327e0) (thread 22392)
+  Goroutine 17 - User: /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722 runtime.goexit (0x45b1a1)
+(dlv) threads
+  Thread 22392 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
+* Thread 23645 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
+(dlv)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;原来出现了线程切换，调试信息显示第二次跳回 mstart 函数的时候，因为线程切换，调试器直接 next 到了新线程里面最先出现的断点，也就是 runtime.mstart 函数处。这也是为什么_g*的值和 g0 的地址不相等， 因为_g*是从 TLS 取的值，而底层操作系统做线程调度切换的时候，会将 TLS 更新。&lt;br /&gt;
+但是为什么会跳到 runtime.mstart 函数这里呢？为什么总是在 runtime.mstart1()这个地方做线程切换，而不是其他地方呢？&lt;/p&gt;
+
+&lt;p&gt;我们查一下线程栈&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;(dlv) goroutine 17 stack -full
+0  0x000000000045b1a1 in runtime.goexit
+   at /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722
+(dlv) threads
+  Thread 26556 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
+* Thread 26616 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
+(dlv)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（未完待续）&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>代码高亮测试</title>
+      <link>https://polar9527.github.io/post/01-syntax-highlighting/</link>
+      <pubDate>Wed, 01 May 2019 12:51:08 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/01-syntax-highlighting/</guid>
+      
+        <description>&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function helloWorld() {
+  alert(&amp;quot;Hello, World!&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println(&amp;quot;Hello, World!&amp;quot;);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#include &amp;lt;stdio.h&amp;gt;
+
+/* Hello */
+int main(void){
+  printf(&amp;quot;Hello, World!&amp;quot;);
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// &#39;Hello World!&#39; program
+
+#include &amp;lt;iostream&amp;gt;
+
+int main(){
+  std::cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; std::endl;
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;using System;
+class HelloWorld{
+  public static void Main(){
+    System.Console.WriteLine(&amp;quot;Hello, World!&amp;quot;);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;html&amp;gt;
+  &amp;lt;body&amp;gt;
+    Hello, World!
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+import fmt &amp;quot;fmt&amp;quot;
+
+func main()
+{
+   fmt.Printf(&amp;quot;Hello, World!\n&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;object HelloWorld with Application {
+  Console.println(&amp;quot;Hello, World!&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+  echo &#39;Hello, World!&#39;;
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Hello, World!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>主题与markdown语法测试</title>
+      <link>https://polar9527.github.io/post/00-even-theme-preview/</link>
+      <pubDate>Sun, 01 Jan 2017 18:03:09 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/post/00-even-theme-preview/</guid>
+      
+        <description>&lt;p&gt;主题与markdown语法测试。&lt;/p&gt;
+
+&lt;h1 id=&#34;标题&#34;&gt;标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;h1&#34;&gt;H1&lt;/h1&gt;
+
+&lt;h2 id=&#34;h2&#34;&gt;H2&lt;/h2&gt;
+
+&lt;h3 id=&#34;h3&#34;&gt;H3&lt;/h3&gt;
+
+&lt;h4 id=&#34;h4&#34;&gt;H4&lt;/h4&gt;
+
+&lt;h5 id=&#34;h5&#34;&gt;H5&lt;/h5&gt;
+
+&lt;h6 id=&#34;h6&#34;&gt;H6&lt;/h6&gt;
+
+&lt;h2 id=&#34;段落&#34;&gt;段落&lt;/h2&gt;
+
+&lt;p&gt;使用单引号 &lt;code&gt;*&lt;/code&gt; 或者单下划线 &lt;code&gt;_&lt;/code&gt; 标记 &lt;em&gt;斜体强调&lt;/em&gt; 或者 &lt;em&gt;斜体强调&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;使用两个引号 &lt;code&gt;**&lt;/code&gt; 或者两个下划线 &lt;code&gt;__&lt;/code&gt; 标记 &lt;strong&gt;加粗强调&lt;/strong&gt; 或者 &lt;strong&gt;加粗强调&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;引号和下划线可叠加使用 → &lt;strong&gt;只是加粗 &lt;em&gt;斜体并加粗&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用两个波浪线 &lt;code&gt;~~&lt;/code&gt; 标记 &lt;del&gt;已删除文字&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;插入文字暂无 &lt;code&gt;Markdown&lt;/code&gt; 标记，直接使用 &lt;code&gt;HTML&lt;/code&gt; 标签 &lt;code&gt;&amp;lt;ins&amp;gt;&lt;/code&gt; 标记 &lt;ins&gt;插入文字&lt;/ins&gt;&lt;/p&gt;
+
+&lt;p&gt;行内代码使用反引号标记 → &lt;code&gt;print(&amp;quot;hello world&amp;quot;)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;上标 X&lt;sup&gt;2&lt;/sup&gt; / 下标 X&lt;sub&gt;2&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;按键 &lt;kbd&gt;Ctrl&lt;/kbd&gt;&lt;/p&gt;
+
+&lt;p&gt;参考资料 &lt;sup&gt;&lt;a href=&#34;#ref01&#34;&gt;&lt;a href=&#34;1&#34; title=&#34;这是一个注脚
+&#34;&gt;1&lt;/a&gt;&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;&lt;a href=&#34;#ref02&#34;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;链接&#34;&gt;链接&lt;/h2&gt;
+
+&lt;p&gt;外链 &lt;a href=&#34;http://www.google.com.com&#34;&gt;GOOGLE&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;注脚&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;列表&#34;&gt;列表&lt;/h2&gt;
+
+&lt;p&gt;以下的无序、有序和任务列表均支持二级嵌套，不建议使用二级以上嵌套。&lt;/p&gt;
+
+&lt;h3 id=&#34;无序列表&#34;&gt;无序列表&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;无序列表
+
+&lt;ul&gt;
+&lt;li&gt;嵌套的无序列表&lt;/li&gt;
+&lt;li&gt;嵌套的无序列表&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;无序列表
+
+&lt;ol&gt;
+&lt;li&gt;嵌套的有序列表&lt;/li&gt;
+&lt;li&gt;嵌套的有序列表&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;无序列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;有序列表&#34;&gt;有序列表&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表
+
+&lt;ol&gt;
+&lt;li&gt;嵌套的有序列表&lt;/li&gt;
+&lt;li&gt;嵌套的有序列表&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;有序列表
+
+&lt;ul&gt;
+&lt;li&gt;嵌套的无序列表&lt;/li&gt;
+&lt;li&gt;嵌套的无序列表&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;任务列表&#34;&gt;任务列表&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Cmd Markdown 开发
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 支持以 PDF 格式导出文稿&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 新增Todo列表功能 &lt;a href=&#34;https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 改进 LaTex 功能&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 修复 LaTex 公式渲染问题&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 新增 LaTex 公式编号功能 &lt;a href=&#34;http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers&#34;&gt;语法参考&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 七月旅行准备
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 准备邮轮上需要携带的物品&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 浏览日本免税店的物品&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; 购买蓝宝石公主号七月一日的船票&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;引用&#34;&gt;引用&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;野火烧不尽，春风吹又生。&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&amp;ndash; 白居易《赋得古原草送别》&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+
+&lt;p&gt;以本站的一段 &lt;code&gt;JavaScript&lt;/code&gt; 代码做演示。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// Initialize video.js player
+if (document.getElementById(&#39;my-player&#39;) !== null) {
+  /* eslint-disable no-undef */
+  videojs(&#39;#my-player&#39;, {
+    aspectRatio: &#39;16:9&#39;,
+    fluid: true,
+  });
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;分割线&#34;&gt;分割线&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;中间能写字的分割线，如果你修改了分割线中字的内容，请配合修改 &lt;code&gt;CSS&lt;/code&gt; 样式。&lt;/p&gt;
+
+&lt;h2 id=&#34;图片&#34;&gt;图片&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/olOwOlo/hugo-theme-even/master/images/showcase.png&#34; alt=&#34;hugo even showcase&#34; title=&#34;showcase.png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;
+
+&lt;p&gt;使用 &lt;code&gt;Markdown&lt;/code&gt; 画的表格，如下表👇&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Tables&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Are&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Cool&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;col 3 is&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;right-aligned&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$1600&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;col 2 is&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;centered&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$12&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;zebra stripes&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;are neat&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;数学公式&#34;&gt;数学公式&lt;/h2&gt;
+
+&lt;p&gt;主题使用了 &lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; 开源库来实现对数学公式的支持，使用 &lt;code&gt;$$&lt;/code&gt; 标记。&lt;/p&gt;
+
+&lt;p&gt;$$ evidence_{i}=\sum_{j}W_{ij}x_{j}+b_{i} $$&lt;/p&gt;
+
+&lt;h2 id=&#34;shortcodes&#34;&gt;Shortcodes&lt;/h2&gt;
+
+&lt;h3 id=&#34;网易云音乐&#34;&gt;网易云音乐&lt;/h3&gt;
+
+&lt;p&gt;主题文章中可以轻松插入 &lt;a href=&#34;https://music.163.com/&#34;&gt;网易云音乐&lt;/a&gt; 的指定音乐，你可以根据需要将音乐设置为自动播放，在主题目录 &lt;code&gt;layouts/shortcodes&lt;/code&gt; 文件夹下的 &lt;code&gt;music.html&lt;/code&gt; 对该标签进行定义。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe style=&#34;max-width: 100%&#34;
+      class=&#34;music163&#34;
+      frameborder=&#34;no&#34;
+      border=&#34;0&#34;
+      marginwidth=&#34;0&#34;
+      marginheight=&#34;0&#34;
+      width=&#34;330&#34;
+      height=&#34;86&#34;
+      src=&#34;//music.163.com/outchain/player?type=2&amp;id=28196554&amp;auto=0&amp;height=66&#34;&gt;
+    &lt;/iframe&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;youtube&#34;&gt;YouTube&lt;/h3&gt;
+
+&lt;p&gt;由于不明原因可能无法播放。&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/wC5pJm8RAu4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;blockquote&#34;&gt;blockquote&lt;/h3&gt;
+
+&lt;p&gt;Normal quote:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a simple quote.&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;&lt;/strong&gt;
+    
+      
+        
+      
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Quote with author
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+
+  
+
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a quote with only an Author named Author2.&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;Author2&lt;/strong&gt;
+    
+      
+        
+      
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Quote with author and source
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+
+  
+
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a quote from Author3 and source &amp;ldquo;source.&amp;rdquo;&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;Author3&lt;/strong&gt;
+    
+      &lt;cite&gt;Source&lt;/cite&gt;
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Quote with author and link
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+
+      
+      
+      
+    
+     
+      
+    
+    
+
+    
+    
+  
+
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a quote from Author4 and links to &lt;a href=&#34;https://www.google.com&#34;&gt;https://www.google.com&lt;/a&gt;.&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;Author4&lt;/strong&gt;
+    
+      
+        &lt;cite&gt;
+          &lt;a href=&#34;https://www.google.com&#34; title=&#34;https://www.google.com&#34;&gt;google.com&lt;/a&gt; 
+        &lt;/cite&gt;
+      
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Quote with author, link and title
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+
+  
+
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a quote from Author5 and links to &lt;a href=&#34;https://www.google.com&#34;&gt;https://www.google.com&lt;/a&gt; with title &amp;ldquo;Google.&amp;rdquo;&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;Author5&lt;/strong&gt;
+    
+      
+        &lt;cite&gt;
+          &lt;a href=&#34;https://www.google.com&#34; title=&#34;https://www.google.com&#34;&gt;Google&lt;/a&gt; 
+        &lt;/cite&gt;
+      
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Quote with author and a link longer than 32 characters, string is first cut at 32 characters then everything after the last forward slash is removed
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+
+      
+      
+      
+    
+     
+      
+    
+    
+
+    
+    
+         
+         
+         
+
+         
+        
+        
+        
+        
+      
+      
+    
+  
+
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a quote from Author5 and links to &lt;a href=&#34;https://twitter.com/CryptoGangsta/status/716427930126196737&#34;&gt;https://twitter.com/CryptoGangsta/status/716427930126196737&lt;/a&gt; which is longer than 32 characters.
+  &lt;br&gt;And this is a new line in the quote with the HTML br tag.&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;Author6&lt;/strong&gt;
+    
+      
+        &lt;cite&gt;
+          &lt;a href=&#34;https://twitter.com/CryptoGangsta/status/716427930126196737&#34; title=&#34;https://twitter.com/CryptoGangsta/status/716427930126196737&#34;&gt;twitter.com/CryptoGangsta/...&lt;/a&gt; 
+        &lt;/cite&gt;
+      
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Test from the Octopress blockquote page at: &lt;a href=&#34;http://octopress.org/docs/plugins/blockquote/&#34;&gt;http://octopress.org/docs/plugins/blockquote/&lt;/a&gt;
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+
+      
+      
+      
+    
+     
+      
+    
+    
+
+    
+    
+         
+         
+         
+
+         
+        
+        
+        
+        
+        
+        
+      
+      
+    
+  
+
+
+&lt;blockquote&gt;
+  &lt;p&gt;Over the past 24 hours I&amp;rsquo;ve been reflecting on my life &amp;amp; I&amp;rsquo;ve realized only one thing. I need a medieval battle axe.&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;@allanbranch&lt;/strong&gt;
+    
+      
+        &lt;cite&gt;
+          &lt;a href=&#34;https://twitter.com/allanbranch/status/90766146063712256&#34; title=&#34;https://twitter.com/allanbranch/status/90766146063712256&#34;&gt;twitter.com/allanbranch/status/...&lt;/a&gt; 
+        &lt;/cite&gt;
+      
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;wikipedia-link-generator&#34;&gt;Wikipedia Link Generator&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+&lt;a href=&#34;https://en.wikipedia.org/wiki/VIC_cipher&#34;&gt;VIC_cipher&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+&lt;a href=&#34;https://fr.wikipedia.org/wiki/VIC_cipher&#34;&gt;VIC_cipher&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+&lt;a href=&#34;https://fr.wikipedia.org/wiki/VIC_cipher&#34;&gt;VIC_cipher&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+&lt;a href=&#34;https://en.wikipedia.org/wiki/VIC_cipher&#34;&gt;VIC Cipher&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+&lt;a href=&#34;https://en.wikipedia.org/wiki/VIC_cipher&#34;&gt;VIC Cipher&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;image-caption&#34;&gt;Image Caption&lt;/h3&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://raw.githubusercontent.com/olOwOlo/hugo-theme-even/master/images/showcase.png&#34; title=&#34;Sample caption&#34; alt=&#34;Sample caption&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Sample caption&lt;/span&gt;
+&lt;/span&gt;
+
+
+&lt;h3 id=&#34;youku-video&#34;&gt;Youku Video&lt;/h3&gt;
+
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+    &lt;iframe src=&#34;https://player.youku.com/embed/XMzQ0MDQwMzM5Mg==?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34; title=&#34;YouKu Video&#34;&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a id=&#34;ref01&#34;&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a id=&#34;ref02&#34;&gt;&lt;a href=&#34;https://www.zybuluo.com/EncyKe/note/120103&#34;&gt;Markdown 语法手册&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;这是一个注脚
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
       
     </item>
     

@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.55.4" />
 
 
 <link rel="canonical" href="https://polar9527.github.io/post/floyd-tortoise-and-hare/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.19ae5a432863a072ec64433bb1020bd6d3401129f87d6f2ad5af3bcfd84168a1.css" integrity="sha256-Ga5aQyhjoHLsZEM7sQIL1tNAESn4fW8q1a87z9hBaKE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,17 +61,21 @@
 <meta property="og:description" content="算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://polar9527.github.io/post/floyd-tortoise-and-hare/" />
-<meta property="article:published_time" content="2019-06-06T11:27:15+08:00" />
-<meta property="article:modified_time" content="2019-06-06T11:27:15+08:00" />
+<meta property="article:published_time" content="2019-06-06T11:27:15&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-06T11:27:15&#43;08:00"/>
+
 <meta itemprop="name" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法">
 <meta itemprop="description" content="算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent">
+
+
 <meta itemprop="datePublished" content="2019-06-06T11:27:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-06T11:27:15&#43;08:00" />
 <meta itemprop="wordCount" content="1288">
 
 
 
-<meta itemprop="keywords" content="go,golang," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="go,golang," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Floyd&#39;s Tortoise and Hare &amp; 环检测算法"/>
 <meta name="twitter:description" content="算法推导 当hare的移动速度是tortoise的 2 倍， 设起始点到环的入口的距离是T，环的长度是C， 当tortoise第一次走到环的入口ent"/>
 
@@ -384,45 +388,60 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#算法推导">算法推导</a></li>
-    <li><a href="#算法应用">算法应用</a></li>
-    <li><a href="#算法实现">算法实现</a>
-      <ul>
-        <li><a href="#golang">golang</a></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#算法推导">算法推导</a></li>
+<li><a href="#算法应用">算法应用</a></li>
+<li><a href="#算法实现">算法实现</a>
+<ul>
+<li><a href="#golang">golang</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <h2 id="算法推导">算法推导</h2>
-<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg" alt="">
-当<code>hare</code>的移动速度是<code>tortoise</code>的 2 倍，<br>
-设起始点到环的入口的距离是<code>T</code>，环的长度是<code>C</code>，<br>
-当<code>tortoise</code>第一次走到环的入口<code>entry point</code>时，我们假设这是<code>tortoise</code>与<code>hare</code>之间的在环上的距离是<code>r</code>，<br>
-从<code>start point</code>开始出发到<code>tortoise</code>第一次走到环的入口时，<code>hare</code>移动的距离是 <code>T + r + k*C，k &gt;= 0</code>，<br>
-又因为，<code>hare</code>移动的速度是<code>tortoise</code>的两倍，且这时<code>tortoise</code>移动的距离是<code>T</code>，所以<code>hare</code>移动的距离是 2T。<br>
+      
+
+<h2 id="算法推导">算法推导</h2>
+
+<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare1.jpg" alt="" />
+当<code>hare</code>的移动速度是<code>tortoise</code>的 2 倍，<br />
+设起始点到环的入口的距离是<code>T</code>，环的长度是<code>C</code>，<br />
+当<code>tortoise</code>第一次走到环的入口<code>entry point</code>时，我们假设这是<code>tortoise</code>与<code>hare</code>之间的在环上的距离是<code>r</code>，<br />
+从<code>start point</code>开始出发到<code>tortoise</code>第一次走到环的入口时，<code>hare</code>移动的距离是 <code>T + r + k*C，k &gt;= 0</code>，<br />
+又因为，<code>hare</code>移动的速度是<code>tortoise</code>的两倍，且这时<code>tortoise</code>移动的距离是<code>T</code>，所以<code>hare</code>移动的距离是 2T。<br />
 得到等式 A <code>T + r + k*C = 2T，k &gt;= 0</code>
 简化得到等式 B <code>r + k*C = T，k &gt;= 0</code></p>
-<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg" alt="">
-当 tortoise 第一次走到环的入口<code>entry point</code>时，而这时<code>tortoise</code>与<code>hare</code>之间的距离是 r，<br>
-那么如果<code>tortoise</code>现在就不继续移动的话，<code>hare</code>还需要往前走<code>C-r</code>才能追上<code>tortoise</code>。<br>
-但是<code>hare</code>在往前追赶<code>tortoise</code>的时候，<code>tortoise</code>也在移动，而<code>hare</code>的移动速度是<code>tortoise</code>的两倍，<br>
+
+<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare2.jpg" alt="" />
+当 tortoise 第一次走到环的入口<code>entry point</code>时，而这时<code>tortoise</code>与<code>hare</code>之间的距离是 r，<br />
+那么如果<code>tortoise</code>现在就不继续移动的话，<code>hare</code>还需要往前走<code>C-r</code>才能追上<code>tortoise</code>。<br />
+但是<code>hare</code>在往前追赶<code>tortoise</code>的时候，<code>tortoise</code>也在移动，而<code>hare</code>的移动速度是<code>tortoise</code>的两倍，<br />
 所以<code>hare</code>可以追上<code>tortoise</code>,并且需要往前走<code>2*（C-r）</code>才能追上<code>tortoise</code>。</p>
-<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg" alt=""></p>
+
+<p><img src="https://raw.githubusercontent.com/polar9527/polar9527.github.io/master/image/post/floydtortoiseandhare3.jpg" alt="" /></p>
+
 <p>当<code>hare</code>移动了<code>2*（C-r）</code>的距离追上<code>tortoise</code>的时候，<code>tortoise</code>从相对于环的入口<code>entry point</code>移动了<code>C-r</code>。</p>
+
 <p>所以，在<code>tortoise</code>与<code>hare</code>第一次在环上相遇时，环的入口<code>entry point</code>到这个点<code>meet point</code>的距离是<code>C-r</code>, 而从这个相遇点<code>meet point</code>再往前移动<code>r</code>，就又回到了环的入口<code>entry point</code>。</p>
-<p>在<code>hare</code>与<code>tortoise</code>第一次相遇的这个时候，将<code>hare</code>从<code>meet point</code>重新放到起始点<code>start point</code>，<code>tortoise</code>仍放在这个相遇点<code>meet point</code>，<br>
+
+<p>在<code>hare</code>与<code>tortoise</code>第一次相遇的这个时候，将<code>hare</code>从<code>meet point</code>重新放到起始点<code>start point</code>，<code>tortoise</code>仍放在这个相遇点<code>meet point</code>，<br />
 然后让它们以<strong>相同的速度</strong>开始移动，</p>
+
 <p>根据等式 B <code>r + k*C = T，k &gt;= 0</code>，</p>
+
 <p><code>tortoise</code>和<code>hare</code>必然会在环的入口点<code>entry point</code>再次相遇。</p>
-<p>入口<code>entry point</code>找到后，就能很容易得到<code>T</code>，<br>
+
+<p>入口<code>entry point</code>找到后，就能很容易得到<code>T</code>，<br />
 然后入口<code>entry point</code>，让<code>tortoise</code>停下，<code>hare</code> 继续跑一圈，就能得到 <code>C</code>。</p>
+
 <h2 id="算法应用">算法应用</h2>
+
 <ol>
 <li>链表有环检测
 两个指针，慢指针移动速度为 1，快指针移动速度为 2，判断两个指针是否相遇</li>
@@ -431,93 +450,102 @@
 <li>计算环长度
 在入口节点放置两个个指针，一个指针不动，一个指针移动速度为 1，两个指针相遇，就可计算出环的长度</li>
 </ol>
+
 <h2 id="算法实现">算法实现</h2>
+
 <h3 id="golang">golang</h3>
+
 <ol>
 <li>链表有环检测 <code>leetcode 141</code></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#75715e">/*
-</span><span style="color:#75715e"> * @lc app=leetcode id=141 lang=golang
-</span><span style="color:#75715e"> *
-</span><span style="color:#75715e"> * [141] Linked List Cycle
-</span><span style="color:#75715e"> */</span>
 
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Definition for singly-linked list.
-</span><span style="color:#75715e"> * type ListNode struct {
-</span><span style="color:#75715e"> *     Val int
-</span><span style="color:#75715e"> *     Next *ListNode
-</span><span style="color:#75715e"> * }
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">hasCycle</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+<pre><code class="language-golang">/*
+ * @lc app=leetcode id=141 lang=golang
+ *
+ * [141] Linked List Cycle
+ */
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func hasCycle(head *ListNode) bool {
+	if head == nil {
+		return false
 	}
-	<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">h</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">head</span>
-	<span style="color:#a6e22e">started</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">h</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">started</span> {
-				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#a6e22e">started</span> = <span style="color:#66d9ef">true</span>
+	t, h := head, head
+	started := false
+	for h != nil &amp;&amp; h.Next != nil {
+		if t == h {
+			if started {
+				return true
+			} else {
+				started = true
 			}
 		}
-		<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Next</span>
-		<span style="color:#a6e22e">h</span> = <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span>
+		t = t.Next
+		h = h.Next.Next
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+	return false
 }
-</code></pre></div><ol start="2">
+</code></pre>
+
+<ol>
 <li>找出有环链表的入口节点 <code>leetcode 142</code></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#75715e">/*
-</span><span style="color:#75715e"> * @lc app=leetcode id=142 lang=golang
-</span><span style="color:#75715e"> *
-</span><span style="color:#75715e"> * [142] Linked List Cycle II
-</span><span style="color:#75715e"> */</span>
 
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Definition for singly-linked list.
-</span><span style="color:#75715e"> * type ListNode struct {
-</span><span style="color:#75715e"> *     Val int
-</span><span style="color:#75715e"> *     Next *ListNode
-</span><span style="color:#75715e"> * }
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">detectCycle</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cycPoint</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cycPoint</span>
+<pre><code class="language-golang">/*
+ * @lc app=leetcode id=142 lang=golang
+ *
+ * [142] Linked List Cycle II
+ */
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func detectCycle(head *ListNode) *ListNode {
+	var cycPoint *ListNode
+	if head == nil {
+		return cycPoint
 	}
-	<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">h</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">head</span>
-	<span style="color:#a6e22e">started</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
-	<span style="color:#a6e22e">hasCycle</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">h</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">started</span> {
-				<span style="color:#a6e22e">hasCycle</span> = <span style="color:#66d9ef">true</span>
-				<span style="color:#66d9ef">break</span>
-			} <span style="color:#66d9ef">else</span> {
-				<span style="color:#a6e22e">started</span> = <span style="color:#66d9ef">true</span>
+	t, h := head, head
+	started := false
+	hasCycle := false
+	for h != nil &amp;&amp; h.Next != nil {
+		if t == h {
+			if started {
+				hasCycle = true
+				break
+			} else {
+				started = true
 			}
 		}
-		<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Next</span>
-		<span style="color:#a6e22e">h</span> = <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span>
+		t = t.Next
+		h = h.Next.Next
 	}
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">hasCycle</span> {
-		<span style="color:#a6e22e">h</span> = <span style="color:#a6e22e">head</span>
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">t</span> {
-				<span style="color:#a6e22e">cycPoint</span> = <span style="color:#a6e22e">h</span>
-				<span style="color:#66d9ef">break</span>
+	if hasCycle {
+		h = head
+		for h != nil &amp;&amp; t != nil {
+			if h == t {
+				cycPoint = h
+				break
 			}
-			<span style="color:#a6e22e">h</span> = <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Next</span>
-			<span style="color:#a6e22e">t</span> = <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Next</span>
+			h = h.Next
+			t = t.Next
 		}
 	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cycPoint</span>
+	return cycPoint
 }
-</code></pre></div><p>欢迎转载，请注明出处~<br>
+</code></pre>
+
+<p>欢迎转载，请注明出处~<br />
 <a href="https://polar9527.github.io/">作者个人主页</a></p>
 
     </div>

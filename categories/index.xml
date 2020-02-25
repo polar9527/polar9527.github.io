@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Polar9527&#39; Blog</title>
@@ -12,20 +12,20 @@
     
     
     <item>
-      <title>algorithm</title>
-      <link>https://polar9527.github.io/categories/algorithm/</link>
-      <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
-      
-      <guid>https://polar9527.github.io/categories/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Development</title>
       <link>https://polar9527.github.io/categories/development/</link>
       <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
       
       <guid>https://polar9527.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithm</title>
+      <link>https://polar9527.github.io/categories/algorithm/</link>
+      <pubDate>Thu, 06 Jun 2019 11:27:15 +0800</pubDate>
+      
+      <guid>https://polar9527.github.io/categories/algorithm/</guid>
       <description></description>
     </item>
     
