@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.4" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="https://polar9527.github.io/post/a-record-of-debugging-golang-runtime/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.19ae5a432863a072ec64433bb1020bd6d3401129f87d6f2ad5af3bcfd84168a1.css" integrity="sha256-Ga5aQyhjoHLsZEM7sQIL1tNAESn4fW8q1a87z9hBaKE=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,21 +61,17 @@
 <meta property="og:description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://polar9527.github.io/post/a-record-of-debugging-golang-runtime/" />
-<meta property="article:published_time" content="2019-05-09T18:35:42&#43;08:00"/>
-<meta property="article:modified_time" content="2019-05-09T18:35:42&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-05-09T18:35:42+08:00" />
+<meta property="article:modified_time" content="2019-05-09T18:35:42+08:00" />
 <meta itemprop="name" content="A Record of Debugging Golang Runtime">
 <meta itemprop="description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的">
-
-
 <meta itemprop="datePublished" content="2019-05-09T18:35:42&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-09T18:35:42&#43;08:00" />
-<meta itemprop="wordCount" content="3073">
+<meta itemprop="wordCount" content="3067">
 
 
 
-<meta itemprop="keywords" content="go,golang," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="go,golang," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A Record of Debugging Golang Runtime"/>
 <meta name="twitter:description" content="记一次 Golang runtime 的调试 调试环境 go 版本和平台 go version go1.5.4 linux/amd64 delve 版本 Delve Debugger Version: 1.0.0 Build: $Id: c98a142125d0b17bb11ec0513bde346229b5f533 $ 问题描述 一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的"/>
 
@@ -366,7 +362,7 @@
             <a href="https://polar9527.github.io/categories/index/"> index </a>
             
           </div>
-        <span class="more-meta"> 约 3073 字 </span>
+        <span class="more-meta"> 约 3067 字 </span>
           <span class="more-meta"> 预计阅读 7 分钟 </span>
 
         
@@ -387,47 +383,40 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</a>
-<ul>
-<li><a href="#调试环境">调试环境</a></li>
-<li><a href="#问题描述">问题描述</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</a>
+      <ul>
+        <li><a href="#调试环境">调试环境</a></li>
+        <li><a href="#问题描述">问题描述</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</h2>
-
+      <h2 id="记一次-golang-runtime-的调试">记一次 Golang runtime 的调试</h2>
 <h3 id="调试环境">调试环境</h3>
-
 <ul>
-<li><p>go 版本和平台<br />
-go version go1.5.4 linux/amd64</p></li>
-
-<li><p>delve 版本<br />
-Delve Debugger<br />
-Version: 1.0.0<br />
-Build: $Id:   c98a142125d0b17bb11ec0513bde346229b5f533 $</p></li>
+<li>
+<p>go 版本和平台<br>
+go version go1.5.4 linux/amd64</p>
+</li>
+<li>
+<p>delve 版本<br>
+Delve Debugger<br>
+Version: 1.0.0<br>
+Build: $Id:   c98a142125d0b17bb11ec0513bde346229b5f533 $</p>
+</li>
 </ul>
-
 <h3 id="问题描述">问题描述</h3>
-
 <p>一个编译好的 golang 程序的真正的入口并不是我们的 main 包中的 main 函数，在我们的 main 函数启动前，golang 的 runtime 会做一系列的工作来为我们准备好运行时环境，这包括运行时 golang 程序层面的内存管理和垃圾回收，最重要的是还帮我们建立了一套 goroutine(协程)的调度机制。
 为了了解这个 golang 的底层 runtime 是怎么工作的，在看完一些关于 runtime 的资料后，我打算用调试工具来 debug，追踪一下 runtime 的运行过程，以此来验证一下自己的理解。
 可是在刚开始调试的时候，就遇到了麻烦。</p>
-
-<p>golang 的入口代码如下：<br />
+<p>golang 的入口代码如下：<br>
 runtime/asm_amd64.s</p>
-
 <pre><code>TEXT runtime·rt0_go(SB),NOSPLIT,$0
 	// copy arguments forward on an even stack
 	MOVQ	DI, AX		// argc
@@ -485,362 +474,301 @@ ok:
 
 	MOVL	$0xf1, 0xf1  // crash
 	RET
-</code></pre>
-
-<p>在 runtime 中，定义了两个全局变量<br />
+</code></pre><p>在 runtime 中，定义了两个全局变量<br>
 runtime/proc1.go</p>
-
-<pre><code class="language-go">var (
-	m0 m
-	g0 g
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> (
+	<span style="color:#a6e22e">m0</span> <span style="color:#a6e22e">m</span>
+	<span style="color:#a6e22e">g0</span> <span style="color:#a6e22e">g</span>
 )
-</code></pre>
-
-<p>在 golang runtime GPM 模型初始化运行之前就存在了，
+</code></pre></div><p>在 golang runtime GPM 模型初始化运行之前就存在了，
 这个 m0 是程序启动后，在 GPM 模型中，代表 runtime.rt0_go 这个主线程的对象。
 这个 m0 负责执行初始化操作以及启动第一个 goroutine。
 而 g0 的作用主要是给 m0 提供线程栈空间，以及在 cpu 切换线程时，为线程提供标识。</p>
-
 <p>rt0_go 这个汇编函数中有段注释</p>
-
-<pre><code class="language-go">// save m-&gt;g0 = g0
-
-// save m0 to g0-&gt;m
-</code></pre>
-
-<p>就是把这两个对象在开始发挥作用前绑定起来。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// save m-&gt;g0 = g0
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// save m0 to g0-&gt;m
+</span></code></pre></div><p>就是把这两个对象在开始发挥作用前绑定起来。</p>
 <p>在 rt0_go 这个汇编函数的尾部，有这样一段代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-GO" data-lang="GO">	<span style="color:#75715e">// create a new goroutine to start program
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">MOVQ</span>	<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">runtime</span><span style="color:#960050;background-color:#1e0010">·</span><span style="color:#a6e22e">mainPC</span>(<span style="color:#a6e22e">SB</span>), <span style="color:#a6e22e">AX</span>		<span style="color:#75715e">// entry
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">PUSHQ</span>	<span style="color:#a6e22e">AX</span>
+	<span style="color:#a6e22e">PUSHQ</span>	<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">0</span>			<span style="color:#75715e">// arg size
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">CALL</span>	<span style="color:#a6e22e">runtime</span><span style="color:#960050;background-color:#1e0010">·</span><span style="color:#a6e22e">newproc</span>(<span style="color:#a6e22e">SB</span>)
+	<span style="color:#a6e22e">POPQ</span>	<span style="color:#a6e22e">AX</span>
+	<span style="color:#a6e22e">POPQ</span>	<span style="color:#a6e22e">AX</span>
 
-<pre><code class="language-GO">	// create a new goroutine to start program
-	MOVQ	$runtime·mainPC(SB), AX		// entry
-	PUSHQ	AX
-	PUSHQ	$0			// arg size
-	CALL	runtime·newproc(SB)
-	POPQ	AX
-	POPQ	AX
-
-	// start this M
-	CALL	runtime·mstart(SB)
-</code></pre>
-
-<p>源码注释很明白，就是将我们 main 包里的 main 函数放到一个新建的 goroutine 当中以启动程序，后面就是启动 m0 这个线程。
+	<span style="color:#75715e">// start this M
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">CALL</span>	<span style="color:#a6e22e">runtime</span><span style="color:#960050;background-color:#1e0010">·</span><span style="color:#a6e22e">mstart</span>(<span style="color:#a6e22e">SB</span>)
+</code></pre></div><p>源码注释很明白，就是将我们 main 包里的 main 函数放到一个新建的 goroutine 当中以启动程序，后面就是启动 m0 这个线程。
 于是我就在这两个 CALL 的函数定义处分别打了断点，准备跟进去走个流程。</p>
-
 <blockquote>
-<p>[test]$ go build -gcflags &ldquo;-N -l&rdquo; test<br />
-[test]$ dlv debug test<br />
-Type &lsquo;help&rsquo; for list of commands.<br />
-(dlv) b runtime.newproc<br />
+<p>[test]$ go build -gcflags &ldquo;-N -l&rdquo; test<br>
+[test]$ dlv debug test<br>
+Type &lsquo;help&rsquo; for list of commands.<br>
+(dlv) b runtime.newproc<br>
 Breakpoint 1 set at 0x4327e0 for runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216
-(dlv) b runtime.mstart<br />
+(dlv) b runtime.mstart<br>
 Breakpoint 2 set at 0x42e650 for runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668</p>
 </blockquote>
-
 <p>从 runtime.rt0_go 那里调用这个 runtime.newproc 主要是将我们的 main 包中的 main 函数装进一个新的 goroutine 当中，然后放到与当前的 m0 绑定的 P(在之前 runtime.rt0_go 中初始化时的 runtime.schedinit 中绑定的)的 runnable goroutine 队列中，待调度机制调度后开始工作。</p>
-
 <p>runtime/proc1.go</p>
-
-<pre><code class="language-go">func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
-	_g_ := getg()
-    ......
-	_p_ := _g_.m.p.ptr()
-	newg := gfget(_p_)
-	if newg == nil {
-		newg = malg(_StackMin)
-		casgstatus(newg, _Gidle, _Gdead)
-		allgadd(newg) // publishes with a g-&gt;status of Gdead so GC scanner doesn't look at uninitialized stack.
-	}
-    ......
-	runqput(_p_, newg, true)
-    ......
-	return newg
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newproc1</span>(<span style="color:#a6e22e">fn</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">funcval</span>, <span style="color:#a6e22e">argp</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">uint8</span>, <span style="color:#a6e22e">narg</span> <span style="color:#66d9ef">int32</span>, <span style="color:#a6e22e">nret</span> <span style="color:#66d9ef">int32</span>, <span style="color:#a6e22e">callerpc</span> <span style="color:#66d9ef">uintptr</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">g</span> {
+	<span style="color:#a6e22e">_g_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">getg</span>()
+    <span style="color:#f92672">...</span><span style="color:#f92672">...</span>
+	<span style="color:#a6e22e">_p_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">ptr</span>()
+	<span style="color:#a6e22e">newg</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">gfget</span>(<span style="color:#a6e22e">_p_</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">newg</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">newg</span> = <span style="color:#a6e22e">malg</span>(<span style="color:#a6e22e">_StackMin</span>)
+		<span style="color:#a6e22e">casgstatus</span>(<span style="color:#a6e22e">newg</span>, <span style="color:#a6e22e">_Gidle</span>, <span style="color:#a6e22e">_Gdead</span>)
+		<span style="color:#a6e22e">allgadd</span>(<span style="color:#a6e22e">newg</span>) <span style="color:#75715e">// publishes with a g-&gt;status of Gdead so GC scanner doesn&#39;t look at uninitialized stack.
+</span><span style="color:#75715e"></span>	}
+    <span style="color:#f92672">...</span><span style="color:#f92672">...</span>
+	<span style="color:#a6e22e">runqput</span>(<span style="color:#a6e22e">_p_</span>, <span style="color:#a6e22e">newg</span>, <span style="color:#66d9ef">true</span>)
+    <span style="color:#f92672">...</span><span style="color:#f92672">...</span>
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newg</span>
 }
-</code></pre>
+</code></pre></div><p>这里用调试器查看一下<em>g</em>值，和前面提到的 g0 和 m0 这两个全局的变量的地址</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">n</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">newproc</span>.<span style="color:#a6e22e">func1</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">2220</span> (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x44f5c3</span>)
+  <span style="color:#ae81ff">2215</span>:	<span style="color:#75715e">//go:nosplit
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">2216</span>:	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newproc</span>(<span style="color:#a6e22e">siz</span> <span style="color:#66d9ef">int32</span>, <span style="color:#a6e22e">fn</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">funcval</span>) {
+  <span style="color:#ae81ff">2217</span>:		<span style="color:#a6e22e">argp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">fn</span>), <span style="color:#a6e22e">ptrSize</span>)
+  <span style="color:#ae81ff">2218</span>:		<span style="color:#a6e22e">pc</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">getcallerpc</span>(<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">siz</span>))
+  <span style="color:#ae81ff">2219</span>:		<span style="color:#a6e22e">systemstack</span>(<span style="color:#66d9ef">func</span>() {
+=&gt;<span style="color:#ae81ff">2220</span>:			<span style="color:#a6e22e">newproc1</span>(<span style="color:#a6e22e">fn</span>, (<span style="color:#f92672">*</span><span style="color:#66d9ef">uint8</span>)(<span style="color:#a6e22e">argp</span>), <span style="color:#a6e22e">siz</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">pc</span>)
+  <span style="color:#ae81ff">2221</span>:		})
+  <span style="color:#ae81ff">2222</span>:	}
 
-<p>这里用调试器查看一下*g*值，和前面提到的 g0 和 m0 这两个全局的变量的地址</p>
-
-<pre><code class="language-go">(dlv) n
-&gt; runtime.newproc.func1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2220 (PC: 0x44f5c3)
-  2215:	//go:nosplit
-  2216:	func newproc(siz int32, fn *funcval) {
-  2217:		argp := add(unsafe.Pointer(&amp;fn), ptrSize)
-  2218:		pc := getcallerpc(unsafe.Pointer(&amp;siz))
-  2219:		systemstack(func() {
-=&gt;2220:			newproc1(fn, (*uint8)(argp), siz, 0, pc)
-  2221:		})
-  2222:	}
-
-</code></pre>
-
-<pre><code class="language-go">(dlv) n
-&gt; runtime.newproc1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2231 (PC: 0x432875)
-  2226:	// address of the go statement that created this.  The new g is put
-  2227:	// on the queue of g's waiting to run.
-  2228:	func newproc1(fn *funcval, argp *uint8, narg int32, nret int32, callerpc uintptr) *g {
-  2229:		_g_ := getg()
-  2230:
-=&gt;2231:		if fn == nil {
-  2232:			_g_.m.throwing = -1 // do not dump full stacks
-  2233:			throw(&quot;go of nil func value&quot;)
-  2234:		}
-  2235:		_g_.m.locks++ // disable preemption because it can be holding p in a local var
-  2236:		siz := narg + nret
-(dlv) local
-Command failed: command not available
-(dlv) locals
-siz = 200
-sp = 139891379798019
-newg = (*runtime.g)(0x4341ec)
-_p_ = (*runtime.p)(0x896a40)
-_g_ = (*runtime.g)(0x872aa0)
-(dlv) p unsafe.Pointer(uintptr(&amp;g0))
-unsafe.Pointer(0x872aa0)
-(dlv) p unsafe.Pointer(uintptr(&amp;m0))
-unsafe.Pointer(0x873040)
-</code></pre>
-
-<p>这个_g_ 指向 g0, 和预想的一样</p>
-
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">n</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">newproc1</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">2231</span> (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x432875</span>)
+  <span style="color:#ae81ff">2226</span>:	<span style="color:#75715e">// address of the go statement that created this.  The new g is put
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">2227</span>:	<span style="color:#75715e">// on the queue of g&#39;s waiting to run.
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">2228</span>:	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newproc1</span>(<span style="color:#a6e22e">fn</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">funcval</span>, <span style="color:#a6e22e">argp</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">uint8</span>, <span style="color:#a6e22e">narg</span> <span style="color:#66d9ef">int32</span>, <span style="color:#a6e22e">nret</span> <span style="color:#66d9ef">int32</span>, <span style="color:#a6e22e">callerpc</span> <span style="color:#66d9ef">uintptr</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">g</span> {
+  <span style="color:#ae81ff">2229</span>:		<span style="color:#a6e22e">_g_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">getg</span>()
+  <span style="color:#ae81ff">2230</span>:
+=&gt;<span style="color:#ae81ff">2231</span>:		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fn</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+  <span style="color:#ae81ff">2232</span>:			<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">throwing</span> = <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#75715e">// do not dump full stacks
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">2233</span>:			<span style="color:#a6e22e">throw</span>(<span style="color:#e6db74">&#34;go of nil func value&#34;</span>)
+  <span style="color:#ae81ff">2234</span>:		}
+  <span style="color:#ae81ff">2235</span>:		<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">locks</span><span style="color:#f92672">++</span> <span style="color:#75715e">// disable preemption because it can be holding p in a local var
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">2236</span>:		<span style="color:#a6e22e">siz</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">narg</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">nret</span>
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">local</span>
+<span style="color:#a6e22e">Command</span> <span style="color:#a6e22e">failed</span>: <span style="color:#a6e22e">command</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">available</span>
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">locals</span>
+<span style="color:#a6e22e">siz</span> = <span style="color:#ae81ff">200</span>
+<span style="color:#a6e22e">sp</span> = <span style="color:#ae81ff">139891379798019</span>
+<span style="color:#a6e22e">newg</span> = (<span style="color:#f92672">*</span><span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">g</span>)(<span style="color:#ae81ff">0x4341ec</span>)
+<span style="color:#a6e22e">_p_</span> = (<span style="color:#f92672">*</span><span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">p</span>)(<span style="color:#ae81ff">0x896a40</span>)
+<span style="color:#a6e22e">_g_</span> = (<span style="color:#f92672">*</span><span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">g</span>)(<span style="color:#ae81ff">0x872aa0</span>)
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">p</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(uintptr(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">g0</span>))
+<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#ae81ff">0x872aa0</span>)
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">p</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(uintptr(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">m0</span>))
+<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#ae81ff">0x873040</span>)
+</code></pre></div><p>这个_g_ 指向 g0, 和预想的一样</p>
 <p>这个返回<em>g</em> 的函数是编译器实现的，源代码注释有解释</p>
-
-<pre><code class="language-go">// getg returns the pointer to the current g.
-// The compiler rewrites calls to this function into instructions
-// that fetch the g directly (from TLS or from the dedicated register).
-func getg() *g
-</code></pre>
-
-<p>这段 runtime.newproc 的代码到此结束，接下来转到 runtime.mstart,看看线程时怎么启动起来的。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// getg returns the pointer to the current g.
+</span><span style="color:#75715e"></span><span style="color:#75715e">// The compiler rewrites calls to this function into instructions
+</span><span style="color:#75715e"></span><span style="color:#75715e">// that fetch the g directly (from TLS or from the dedicated register).
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getg</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">g</span>
+</code></pre></div><p>这段 runtime.newproc 的代码到此结束，接下来转到 runtime.mstart,看看线程时怎么启动起来的。<br>
 直接 continue 一下到 runtime.mstart 这个断点。</p>
-
-<pre><code class="language-go">(dlv) c
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:671 (PC: 0x42e65d)
-   666:	// Called to start an M.
-   667:	//go:nosplit
-   668:	func mstart() {
-   669:		_g_ := getg()
-   670:
-=&gt; 671:		if _g_.stack.lo == 0 {
-   672:			// Initialize stack bounds from system stack.
-   673:			// Cgo may have left stack size in stack.hi.
-   674:			size := _g_.stack.hi
-   675:			if size == 0 {
-   676:				size = 8192 * stackGuardMultiplier
-   678:			_g_.stack.hi = uintptr(noescape(unsafe.Pointer(&amp;size)))
-   679:			_g_.stack.lo = _g_.stack.hi - size + 1024
-   680:		}
-   681:		// Initialize stack guards so that we can start calling
-   682:		// both Go and C functions with stack growth prologues.
-   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
-   684:		_g_.stackguard1 = _g_.stackguard0
-   685:		mstart1()
-   686:	}
-(dlv) locals
-size = 0
-(dlv) p _g_
-Command failed: could not find symbol value for _g_
-</code></pre>
-
-<p>这回*g*这个变量查不出来，前面说了这个返回<em>g</em> 的函数是编译器实现的。
-查了相关资料，这个 TLS,<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">c</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">671</span> (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x42e65d</span>)
+   <span style="color:#ae81ff">666</span>:	<span style="color:#75715e">// Called to start an M.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">667</span>:	<span style="color:#75715e">//go:nosplit
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">668</span>:	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mstart</span>() {
+   <span style="color:#ae81ff">669</span>:		<span style="color:#a6e22e">_g_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">getg</span>()
+   <span style="color:#ae81ff">670</span>:
+=&gt; <span style="color:#ae81ff">671</span>:		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">lo</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+   <span style="color:#ae81ff">672</span>:			<span style="color:#75715e">// Initialize stack bounds from system stack.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">673</span>:			<span style="color:#75715e">// Cgo may have left stack size in stack.hi.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">674</span>:			<span style="color:#a6e22e">size</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">hi</span>
+   <span style="color:#ae81ff">675</span>:			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+   <span style="color:#ae81ff">676</span>:				<span style="color:#a6e22e">size</span> = <span style="color:#ae81ff">8192</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">stackGuardMultiplier</span>
+   <span style="color:#ae81ff">678</span>:			<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">hi</span> = uintptr(<span style="color:#a6e22e">noescape</span>(<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">size</span>)))
+   <span style="color:#ae81ff">679</span>:			<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">lo</span> = <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">hi</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1024</span>
+   <span style="color:#ae81ff">680</span>:		}
+   <span style="color:#ae81ff">681</span>:		<span style="color:#75715e">// Initialize stack guards so that we can start calling
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">682</span>:		<span style="color:#75715e">// both Go and C functions with stack growth prologues.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">683</span>:		<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard0</span> = <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">lo</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_StackGuard</span>
+   <span style="color:#ae81ff">684</span>:		<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard1</span> = <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard0</span>
+   <span style="color:#ae81ff">685</span>:		<span style="color:#a6e22e">mstart1</span>()
+   <span style="color:#ae81ff">686</span>:	}
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">locals</span>
+<span style="color:#a6e22e">size</span> = <span style="color:#ae81ff">0</span>
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">p</span> <span style="color:#a6e22e">_g_</span>
+<span style="color:#a6e22e">Command</span> <span style="color:#a6e22e">failed</span>: <span style="color:#a6e22e">could</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">find</span> <span style="color:#a6e22e">symbol</span> <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_g_</span>
+</code></pre></div><p>这回<em>g</em>这个变量查不出来，前面说了这个返回<em>g</em> 的函数是编译器实现的。
+查了相关资料，这个 TLS,<br>
 全称是 Thread-local storage, 代表每个线程的中的本地数据.
 例如标准 c 中的 errno 就是一个典型的 TLS 变量, 每个线程都有一个独自的 errno, 写入它不会干扰到其他线程中的值.
 go 在实现协程时非常依赖 TLS 机制, 会用于获取系统线程中当前的 G 和 G 所属的 M 的实例.</p>
-
 <p>因为 go 并不使用 glibc, 操作 TLS 会使用系统原生的接口, 以 linux x64 为例,
 go 在新建 M 时会调用 arch_prctl 这个 syscall 设置 FS 寄存器的值为 M.tls 的地址,
 运行中每个 M 的 FS 寄存器都会指向它们对应的 M 实例的 tls, linux 内核调度线程时 FS 寄存器会跟着线程一起切换,
 这样 go 代码只需要访问 FS 寄存器就可以存取线程本地的数据.</p>
-
 <p>那就看看汇编代码。</p>
-
-<pre><code class="language-go">(dlv) disassemble
-TEXT runtime.mstart(SB) /root/.gvm/gos/go1.5.4/src/runtime/proc1.go
-	proc1.go:668	0x42e650*	4883ec08		sub rsp, 0x8
-	proc1.go:669	0x42e654	64488b0425f8ffffff	mov rax, qword ptr fs:[0xfffffff8]
-	proc1.go:671	0x42e65d	488b18			mov rbx, qword ptr [rax]
-	proc1.go:671	0x42e660	4883fb00		cmp rbx, 0x0
-	proc1.go:671	0x42e664	753b			jnz 0x42e6a1
-=&gt;	proc1.go:674	0x42e666	488b6808		mov rbp, qword ptr [rax+0x8]
-</code></pre>
-
-<p>FS 寄存器看样子是放到 rax 寄存器里面了，我们验证一下，看看 rax 的值是不是和 g0 的地址一样。</p>
-
-<pre><code class="language-go">(dlv) regs
-     Rip = 0x000000000042e65d
-     Rsp = 0x00007ffd936859d0
-     Rax = 0x0000000000872aa0
-     Rbx = 0x000000c820000180
-     Rcx = 0x000000000077e320
-     Rdx = 0x0000000000872aa0
-     Rdi = 0x000000000042b6e0
-     Rsi = 0x00007ffd936859e0
-     Rbp = 0x0000000000873040
-      R8 = 0x000000000077e318
-      R9 = 0x0000000000000008
-     R10 = 0x0000000000629e00
-     R11 = 0x0000000000000000
-     R12 = 0x0000000000000008
-     R13 = 0x000000000077b770
-     R14 = 0x0000000000000000
-     R15 = 0x0000000000000008
-Orig_rax = 0xffffffffffffffff
-      Cs = 0x0000000000000033
-  Eflags = 0x0000000000000202	[IF IOPL=0]
-      Ss = 0x000000000000002b
- Fs_base = 0x00007fbf429ae740
- Gs_base = 0x0000000000000000
-      Ds = 0x0000000000000000
-      Es = 0x0000000000000000
-      Fs = 0x0000000000000000
-      Gs = 0x0000000000000000
-(dlv) p unsafe.Pointer(uintptr(&amp;g0))
-unsafe.Pointer(0x872aa0)
-</code></pre>
-
-<p>都是 0x872aa0，没问题。继续走流程。</p>
-
-<pre><code class="language-go">(dlv) n
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
-   680:		}
-   681:		// Initialize stack guards so that we can start calling
-   682:		// both Go and C functions with stack growth prologues.
-   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
-   684:		_g_.stackguard1 = _g_.stackguard0
-=&gt; 685:		mstart1()
-   686:	}
-</code></pre>
-
-<p>调试器又回到了 mstart 函数开始处，并没有跳进 mstart1 函数，并且多显示了两行调试信息，和<code>hits total:X</code>的额外信息。</p>
-
-<pre><code class="language-go">(dlv) n
-&gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
-	breakpoint hit during next, continuing...
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
-   663:		}
-   664:	}
-   665:
-   666:	// Called to start an M.
-   667:	//go:nosplit
-=&gt; 668:	func mstart() {
-   669:		_g_ := getg()
-   670:
-   671:		if _g_.stack.lo == 0 {
-   672:			// Initialize stack bounds from system stack.
-   673:			// Cgo may have left stack size in stack.hi.
-</code></pre>
-
-<p>发生了什么事情，为什么又跳回去了？</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">disassemble</span>
+<span style="color:#a6e22e">TEXT</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>(<span style="color:#a6e22e">SB</span>) <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>
+	<span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">668</span>	<span style="color:#ae81ff">0x42e650</span><span style="color:#f92672">*</span>	<span style="color:#ae81ff">4883</span><span style="color:#a6e22e">ec08</span>		<span style="color:#a6e22e">sub</span> <span style="color:#a6e22e">rsp</span>, <span style="color:#ae81ff">0x8</span>
+	<span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">669</span>	<span style="color:#ae81ff">0x42e654</span>	<span style="color:#ae81ff">64488</span><span style="color:#a6e22e">b0425f8ffffff</span>	<span style="color:#a6e22e">mov</span> <span style="color:#a6e22e">rax</span>, <span style="color:#a6e22e">qword</span> <span style="color:#a6e22e">ptr</span> <span style="color:#a6e22e">fs</span>:[<span style="color:#ae81ff">0xfffffff8</span>]
+	<span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">671</span>	<span style="color:#ae81ff">0x42e65d</span>	<span style="color:#ae81ff">488</span><span style="color:#a6e22e">b18</span>			<span style="color:#a6e22e">mov</span> <span style="color:#a6e22e">rbx</span>, <span style="color:#a6e22e">qword</span> <span style="color:#a6e22e">ptr</span> [<span style="color:#a6e22e">rax</span>]
+	<span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">671</span>	<span style="color:#ae81ff">0x42e660</span>	<span style="color:#ae81ff">4883</span><span style="color:#a6e22e">fb00</span>		<span style="color:#a6e22e">cmp</span> <span style="color:#a6e22e">rbx</span>, <span style="color:#ae81ff">0x0</span>
+	<span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">671</span>	<span style="color:#ae81ff">0x42e664</span>	<span style="color:#ae81ff">753</span><span style="color:#a6e22e">b</span>			<span style="color:#a6e22e">jnz</span> <span style="color:#ae81ff">0x42e6a1</span>
+=&gt;	<span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">674</span>	<span style="color:#ae81ff">0x42e666</span>	<span style="color:#ae81ff">488</span><span style="color:#a6e22e">b6808</span>		<span style="color:#a6e22e">mov</span> <span style="color:#a6e22e">rbp</span>, <span style="color:#a6e22e">qword</span> <span style="color:#a6e22e">ptr</span> [<span style="color:#a6e22e">rax</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0x8</span>]
+</code></pre></div><p>FS 寄存器看样子是放到 rax 寄存器里面了，我们验证一下，看看 rax 的值是不是和 g0 的地址一样。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">regs</span>
+     <span style="color:#a6e22e">Rip</span> = <span style="color:#ae81ff">0x000000000042e65d</span>
+     <span style="color:#a6e22e">Rsp</span> = <span style="color:#ae81ff">0x00007ffd936859d0</span>
+     <span style="color:#a6e22e">Rax</span> = <span style="color:#ae81ff">0x0000000000872aa0</span>
+     <span style="color:#a6e22e">Rbx</span> = <span style="color:#ae81ff">0x000000c820000180</span>
+     <span style="color:#a6e22e">Rcx</span> = <span style="color:#ae81ff">0x000000000077e320</span>
+     <span style="color:#a6e22e">Rdx</span> = <span style="color:#ae81ff">0x0000000000872aa0</span>
+     <span style="color:#a6e22e">Rdi</span> = <span style="color:#ae81ff">0x000000000042b6e0</span>
+     <span style="color:#a6e22e">Rsi</span> = <span style="color:#ae81ff">0x00007ffd936859e0</span>
+     <span style="color:#a6e22e">Rbp</span> = <span style="color:#ae81ff">0x0000000000873040</span>
+      <span style="color:#a6e22e">R8</span> = <span style="color:#ae81ff">0x000000000077e318</span>
+      <span style="color:#a6e22e">R9</span> = <span style="color:#ae81ff">0x0000000000000008</span>
+     <span style="color:#a6e22e">R10</span> = <span style="color:#ae81ff">0x0000000000629e00</span>
+     <span style="color:#a6e22e">R11</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+     <span style="color:#a6e22e">R12</span> = <span style="color:#ae81ff">0x0000000000000008</span>
+     <span style="color:#a6e22e">R13</span> = <span style="color:#ae81ff">0x000000000077b770</span>
+     <span style="color:#a6e22e">R14</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+     <span style="color:#a6e22e">R15</span> = <span style="color:#ae81ff">0x0000000000000008</span>
+<span style="color:#a6e22e">Orig_rax</span> = <span style="color:#ae81ff">0xffffffffffffffff</span>
+      <span style="color:#a6e22e">Cs</span> = <span style="color:#ae81ff">0x0000000000000033</span>
+  <span style="color:#a6e22e">Eflags</span> = <span style="color:#ae81ff">0x0000000000000202</span>	[<span style="color:#a6e22e">IF</span> <span style="color:#a6e22e">IOPL</span>=<span style="color:#ae81ff">0</span>]
+      <span style="color:#a6e22e">Ss</span> = <span style="color:#ae81ff">0x000000000000002b</span>
+ <span style="color:#a6e22e">Fs_base</span> = <span style="color:#ae81ff">0x00007fbf429ae740</span>
+ <span style="color:#a6e22e">Gs_base</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Ds</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Es</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Fs</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Gs</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">p</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(uintptr(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">g0</span>))
+<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#ae81ff">0x872aa0</span>)
+</code></pre></div><p>都是 0x872aa0，没问题。继续走流程。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">n</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">685</span> (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x42e6bd</span>)
+   <span style="color:#ae81ff">680</span>:		}
+   <span style="color:#ae81ff">681</span>:		<span style="color:#75715e">// Initialize stack guards so that we can start calling
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">682</span>:		<span style="color:#75715e">// both Go and C functions with stack growth prologues.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">683</span>:		<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard0</span> = <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">lo</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_StackGuard</span>
+   <span style="color:#ae81ff">684</span>:		<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard1</span> = <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard0</span>
+=&gt; <span style="color:#ae81ff">685</span>:		<span style="color:#a6e22e">mstart1</span>()
+   <span style="color:#ae81ff">686</span>:	}
+</code></pre></div><p>调试器又回到了 mstart 函数开始处，并没有跳进 mstart1 函数，并且多显示了两行调试信息，和<code>hits total:X</code>的额外信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">n</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart1</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">688</span> (<span style="color:#a6e22e">hits</span> <span style="color:#a6e22e">total</span>:<span style="color:#ae81ff">1</span>) (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x42e6e3</span>)
+	<span style="color:#a6e22e">breakpoint</span> <span style="color:#a6e22e">hit</span> <span style="color:#a6e22e">during</span> <span style="color:#a6e22e">next</span>, <span style="color:#a6e22e">continuing</span><span style="color:#f92672">...</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">668</span> (<span style="color:#a6e22e">hits</span> <span style="color:#a6e22e">total</span>:<span style="color:#ae81ff">2</span>) (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x42e650</span>)
+   <span style="color:#ae81ff">663</span>:		}
+   <span style="color:#ae81ff">664</span>:	}
+   <span style="color:#ae81ff">665</span>:
+   <span style="color:#ae81ff">666</span>:	<span style="color:#75715e">// Called to start an M.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">667</span>:	<span style="color:#75715e">//go:nosplit
+</span><span style="color:#75715e"></span>=&gt; <span style="color:#ae81ff">668</span>:	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mstart</span>() {
+   <span style="color:#ae81ff">669</span>:		<span style="color:#a6e22e">_g_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">getg</span>()
+   <span style="color:#ae81ff">670</span>:
+   <span style="color:#ae81ff">671</span>:		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">lo</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+   <span style="color:#ae81ff">672</span>:			<span style="color:#75715e">// Initialize stack bounds from system stack.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">673</span>:			<span style="color:#75715e">// Cgo may have left stack size in stack.hi.
+</span></code></pre></div><p>发生了什么事情，为什么又跳回去了？</p>
 <p>看一下寄存器</p>
-
-<pre><code class="language-go">(dlv) regs
-     Rip = 0x000000000042e65d
-     Rsp = 0x00007f23e3133eb8
-     Rax = 0x000000c820000900
-     Rbx = 0x000000000042e650
-     Rcx = 0x00000000017f6000
-     Rdx = 0x00000000ffffffff
-     Rdi = 0x000000000042e650
-     Rsi = 0x00007f23e34fb768
-     Rbp = 0x000000c820000900
-      R8 = 0x0000000000000000
-      R9 = 0x00000000017f6010
-     R10 = 0x00007f23e3133960
-     R11 = 0x00007f23e31ba580
-     R12 = 0x0000000000000000
-     R13 = 0x0000000000801000
-     R14 = 0x0000000000000000
-     R15 = 0x00007f23e3134700
-Orig_rax = 0xffffffffffffffff
-      Cs = 0x0000000000000033
-  Eflags = 0x0000000000000216	[PF AF IF IOPL=0]
-      Ss = 0x000000000000002b
- Fs_base = 0x00007f23e3134700
- Gs_base = 0x0000000000000000
-      Ds = 0x0000000000000000
-      Es = 0x0000000000000000
-      Fs = 0x0000000000000000
-      Gs = 0x0000000000000000
-(dlv) p unsafe.Pointer(uintptr(&amp;g0))
-unsafe.Pointer(0x872aa0)
-</code></pre>
-
-<p>Rax = 0x000000c820000900, 也就是说_g_的值和 g0 的地址不相等。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">regs</span>
+     <span style="color:#a6e22e">Rip</span> = <span style="color:#ae81ff">0x000000000042e65d</span>
+     <span style="color:#a6e22e">Rsp</span> = <span style="color:#ae81ff">0x00007f23e3133eb8</span>
+     <span style="color:#a6e22e">Rax</span> = <span style="color:#ae81ff">0x000000c820000900</span>
+     <span style="color:#a6e22e">Rbx</span> = <span style="color:#ae81ff">0x000000000042e650</span>
+     <span style="color:#a6e22e">Rcx</span> = <span style="color:#ae81ff">0x00000000017f6000</span>
+     <span style="color:#a6e22e">Rdx</span> = <span style="color:#ae81ff">0x00000000ffffffff</span>
+     <span style="color:#a6e22e">Rdi</span> = <span style="color:#ae81ff">0x000000000042e650</span>
+     <span style="color:#a6e22e">Rsi</span> = <span style="color:#ae81ff">0x00007f23e34fb768</span>
+     <span style="color:#a6e22e">Rbp</span> = <span style="color:#ae81ff">0x000000c820000900</span>
+      <span style="color:#a6e22e">R8</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">R9</span> = <span style="color:#ae81ff">0x00000000017f6010</span>
+     <span style="color:#a6e22e">R10</span> = <span style="color:#ae81ff">0x00007f23e3133960</span>
+     <span style="color:#a6e22e">R11</span> = <span style="color:#ae81ff">0x00007f23e31ba580</span>
+     <span style="color:#a6e22e">R12</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+     <span style="color:#a6e22e">R13</span> = <span style="color:#ae81ff">0x0000000000801000</span>
+     <span style="color:#a6e22e">R14</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+     <span style="color:#a6e22e">R15</span> = <span style="color:#ae81ff">0x00007f23e3134700</span>
+<span style="color:#a6e22e">Orig_rax</span> = <span style="color:#ae81ff">0xffffffffffffffff</span>
+      <span style="color:#a6e22e">Cs</span> = <span style="color:#ae81ff">0x0000000000000033</span>
+  <span style="color:#a6e22e">Eflags</span> = <span style="color:#ae81ff">0x0000000000000216</span>	[<span style="color:#a6e22e">PF</span> <span style="color:#a6e22e">AF</span> <span style="color:#a6e22e">IF</span> <span style="color:#a6e22e">IOPL</span>=<span style="color:#ae81ff">0</span>]
+      <span style="color:#a6e22e">Ss</span> = <span style="color:#ae81ff">0x000000000000002b</span>
+ <span style="color:#a6e22e">Fs_base</span> = <span style="color:#ae81ff">0x00007f23e3134700</span>
+ <span style="color:#a6e22e">Gs_base</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Ds</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Es</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Fs</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+      <span style="color:#a6e22e">Gs</span> = <span style="color:#ae81ff">0x0000000000000000</span>
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">p</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(uintptr(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">g0</span>))
+<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#ae81ff">0x872aa0</span>)
+</code></pre></div><p>Rax = 0x000000c820000900, 也就是说_g_的值和 g0 的地址不相等。</p>
 <p>调试信息说 runtime.mstart()被 hit 了两次，发生了什么？</p>
-
 <p>我们再复现一下这个场景。</p>
-
-<pre><code class="language-go">(dlv) r  \\重启调试过程
-(dlv) c  \\到达第一个断点runtime.newproc()
-(dlv) c  \\到达第二个断点runtime.mstart()
-(dlv) n  \\几次next命令之后，在即将进入mstart1函数之前停下
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 (PC: 0x42e6bd)
-   680:		}
-   681:		// Initialize stack guards so that we can start calling
-   682:		// both Go and C functions with stack growth prologues.
-   683:		_g_.stackguard0 = _g_.stack.lo + _StackGuard
-   684:		_g_.stackguard1 = _g_.stackguard0
-=&gt; 685:		mstart1()
-   686:	}
-   687:
-   688:	func mstart1() {
-   689:		_g_ := getg()
-   690:
-(dlv) goroutines
-[1 goroutines]
-  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc.go:28 runtime.main (0x42b6e0)
-(dlv) threads
-* Thread 22392 at 0x42e6bd /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:685 runtime.mstart
-(dlv)
-</code></pre>
-
-<p>我们用 golang 专属调试器 delve 提供针对 goroutine 的调试命令来查看一下。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">r</span>  <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">重启调试过程</span>
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">c</span>  <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">到达第一个断点runtime</span>.<span style="color:#a6e22e">newproc</span>()
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">c</span>  <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">到达第二个断点runtime</span>.<span style="color:#a6e22e">mstart</span>()
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">n</span>  <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">几次next命令之后</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">在即将进入mstart1函数之前停下</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">685</span> (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x42e6bd</span>)
+   <span style="color:#ae81ff">680</span>:		}
+   <span style="color:#ae81ff">681</span>:		<span style="color:#75715e">// Initialize stack guards so that we can start calling
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">682</span>:		<span style="color:#75715e">// both Go and C functions with stack growth prologues.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">683</span>:		<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard0</span> = <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">lo</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_StackGuard</span>
+   <span style="color:#ae81ff">684</span>:		<span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard1</span> = <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stackguard0</span>
+=&gt; <span style="color:#ae81ff">685</span>:		<span style="color:#a6e22e">mstart1</span>()
+   <span style="color:#ae81ff">686</span>:	}
+   <span style="color:#ae81ff">687</span>:
+   <span style="color:#ae81ff">688</span>:	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mstart1</span>() {
+   <span style="color:#ae81ff">689</span>:		<span style="color:#a6e22e">_g_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">getg</span>()
+   <span style="color:#ae81ff">690</span>:
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">goroutines</span>
+[<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">goroutines</span>]
+  <span style="color:#a6e22e">Goroutine</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">User</span>: <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">28</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">main</span> (<span style="color:#ae81ff">0x42b6e0</span>)
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">threads</span>
+<span style="color:#f92672">*</span> <span style="color:#a6e22e">Thread</span> <span style="color:#ae81ff">22392</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">0x42e6bd</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">685</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>
+(<span style="color:#a6e22e">dlv</span>)
+</code></pre></div><p>我们用 golang 专属调试器 delve 提供针对 goroutine 的调试命令来查看一下。
 显示有一个编号为 1 的 goroutine 和一个编号为 22392 的 Thread。
 继续，</p>
-
-<pre><code class="language-go">(dlv) n
-&gt; runtime.mstart1() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:688 (hits total:1) (PC: 0x42e6e3)
-	breakpoint hit during next, continuing...
-&gt; runtime.newproc() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 (hits goroutine(1):1 total:2) (PC: 0x4327e0)
-&gt; runtime.mstart() /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 (hits total:2) (PC: 0x42e650)
-   663:		}
-   664:	}
-   665:
-   666:	// Called to start an M.
-   667:	//go:nosplit
-=&gt; 668:	func mstart() {
-   669:		_g_ := getg()
-   670:
-   671:		if _g_.stack.lo == 0 {
-   672:			// Initialize stack bounds from system stack.
-   673:			// Cgo may have left stack size in stack.hi.
-(dlv) goroutines
-[2 goroutines]
-  Goroutine 1 - User: /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc (0x4327e0) (thread 22392)
-  Goroutine 17 - User: /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722 runtime.goexit (0x45b1a1)
-(dlv) threads
-  Thread 22392 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
-* Thread 23645 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
-(dlv)
-</code></pre>
-
-<p>原来出现了线程切换，调试信息显示第二次跳回 mstart 函数的时候，因为线程切换，调试器直接 next 到了新线程里面最先出现的断点，也就是 runtime.mstart 函数处。这也是为什么_g*的值和 g0 的地址不相等， 因为_g*是从 TLS 取的值，而底层操作系统做线程调度切换的时候，会将 TLS 更新。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">n</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart1</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">688</span> (<span style="color:#a6e22e">hits</span> <span style="color:#a6e22e">total</span>:<span style="color:#ae81ff">1</span>) (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x42e6e3</span>)
+	<span style="color:#a6e22e">breakpoint</span> <span style="color:#a6e22e">hit</span> <span style="color:#a6e22e">during</span> <span style="color:#a6e22e">next</span>, <span style="color:#a6e22e">continuing</span><span style="color:#f92672">...</span>
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">newproc</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">2216</span> (<span style="color:#a6e22e">hits</span> <span style="color:#a6e22e">goroutine</span>(<span style="color:#ae81ff">1</span>):<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">total</span>:<span style="color:#ae81ff">2</span>) (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x4327e0</span>)
+&gt; <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>() <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">668</span> (<span style="color:#a6e22e">hits</span> <span style="color:#a6e22e">total</span>:<span style="color:#ae81ff">2</span>) (<span style="color:#a6e22e">PC</span>: <span style="color:#ae81ff">0x42e650</span>)
+   <span style="color:#ae81ff">663</span>:		}
+   <span style="color:#ae81ff">664</span>:	}
+   <span style="color:#ae81ff">665</span>:
+   <span style="color:#ae81ff">666</span>:	<span style="color:#75715e">// Called to start an M.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">667</span>:	<span style="color:#75715e">//go:nosplit
+</span><span style="color:#75715e"></span>=&gt; <span style="color:#ae81ff">668</span>:	<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mstart</span>() {
+   <span style="color:#ae81ff">669</span>:		<span style="color:#a6e22e">_g_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">getg</span>()
+   <span style="color:#ae81ff">670</span>:
+   <span style="color:#ae81ff">671</span>:		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_g_</span>.<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">lo</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+   <span style="color:#ae81ff">672</span>:			<span style="color:#75715e">// Initialize stack bounds from system stack.
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">673</span>:			<span style="color:#75715e">// Cgo may have left stack size in stack.hi.
+</span><span style="color:#75715e"></span>(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">goroutines</span>
+[<span style="color:#ae81ff">2</span> <span style="color:#a6e22e">goroutines</span>]
+  <span style="color:#a6e22e">Goroutine</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">User</span>: <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">2216</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">newproc</span> (<span style="color:#ae81ff">0x4327e0</span>) (<span style="color:#a6e22e">thread</span> <span style="color:#ae81ff">22392</span>)
+  <span style="color:#a6e22e">Goroutine</span> <span style="color:#ae81ff">17</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">User</span>: <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">asm_amd64</span>.<span style="color:#a6e22e">s</span>:<span style="color:#ae81ff">1722</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">goexit</span> (<span style="color:#ae81ff">0x45b1a1</span>)
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">threads</span>
+  <span style="color:#a6e22e">Thread</span> <span style="color:#ae81ff">22392</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">0x4327e0</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">2216</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">newproc</span>
+<span style="color:#f92672">*</span> <span style="color:#a6e22e">Thread</span> <span style="color:#ae81ff">23645</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">0x42e650</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">668</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>
+(<span style="color:#a6e22e">dlv</span>)
+</code></pre></div><p>原来出现了线程切换，调试信息显示第二次跳回 mstart 函数的时候，因为线程切换，调试器直接 next 到了新线程里面最先出现的断点，也就是 runtime.mstart 函数处。这也是为什么_g<em>的值和 g0 的地址不相等， 因为_g</em>是从 TLS 取的值，而底层操作系统做线程调度切换的时候，会将 TLS 更新。<br>
 但是为什么会跳到 runtime.mstart 函数这里呢？为什么总是在 runtime.mstart1()这个地方做线程切换，而不是其他地方呢？</p>
-
 <p>我们查一下线程栈</p>
-
-<pre><code class="language-go">(dlv) goroutine 17 stack -full
-0  0x000000000045b1a1 in runtime.goexit
-   at /root/.gvm/gos/go1.5.4/src/runtime/asm_amd64.s:1722
-(dlv) threads
-  Thread 26556 at 0x4327e0 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:2216 runtime.newproc
-* Thread 26616 at 0x42e650 /root/.gvm/gos/go1.5.4/src/runtime/proc1.go:668 runtime.mstart
-(dlv)
-</code></pre>
-
-<p>（未完待续）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">goroutine</span> <span style="color:#ae81ff">17</span> <span style="color:#a6e22e">stack</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">full</span>
+<span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0x000000000045b1a1</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">goexit</span>
+   <span style="color:#a6e22e">at</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">asm_amd64</span>.<span style="color:#a6e22e">s</span>:<span style="color:#ae81ff">1722</span>
+(<span style="color:#a6e22e">dlv</span>) <span style="color:#a6e22e">threads</span>
+  <span style="color:#a6e22e">Thread</span> <span style="color:#ae81ff">26556</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">0x4327e0</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">2216</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">newproc</span>
+<span style="color:#f92672">*</span> <span style="color:#a6e22e">Thread</span> <span style="color:#ae81ff">26616</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">0x42e650</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">/</span>.<span style="color:#a6e22e">gvm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gos</span><span style="color:#f92672">/</span><span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.5</span><span style="color:#ae81ff">.4</span><span style="color:#f92672">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">/</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proc1</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">668</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">mstart</span>
+(<span style="color:#a6e22e">dlv</span>)
+</code></pre></div><p>（未完待续）</p>
 
     </div>
 
