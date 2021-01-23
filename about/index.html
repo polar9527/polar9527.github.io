@@ -67,7 +67,7 @@
 <meta itemprop="description" content="个人信息 邮箱：polar9527@gmail.com GitHub：https://github.com/polar9527 个人主页：http">
 <meta itemprop="datePublished" content="2021-01-22T21:38:52&#43;08:00" />
 <meta itemprop="dateModified" content="2021-01-23T21:41:52&#43;08:00" />
-<meta itemprop="wordCount" content="3831">
+<meta itemprop="wordCount" content="3860">
 
 
 
@@ -429,16 +429,15 @@
 <ul>
 <li>熟悉 Golang, 理解 Golang 编程特性，如 goroutine,channel 等，阅读过 Golang runtime 部分的源代码，理解 Golang 的并发机制</li>
 <li>熟悉 Docker、Kubenetes，理解 Docker 的基本原理，有 Kubenetes 的使用经验</li>
-<li>研究过 PBFT(实用拜占庭容错算法),对区块链共识算法 DPOS 有一定认识</li>
+<li>研究过 PBFT(实用拜占庭容错算法),对区块链有一定认识</li>
 <li>熟悉 Python</li>
 <li>熟悉 Linux、AWS 等开发环境</li>
-<li>了解 TCP/IP、HTTP 协议相关知识</li>
-<li>能够突破语言层面的限制，了解 x86 平台下的汇编，了解 Unix/Linux 环境下下的 C 语言系统编程</li>
+<li>能够突破高级编程语言层面的限制，了解 x86 平台下的汇编，了解 Unix/Linux 环境下下的 C 语言系统编程</li>
 <li>对操作系统原理有一定认识，目前正在研读xv6源代码</li>
 <li>有 Web 前后端完整的知识体系，了解 HTML/CSS/Javascript 等前端知识，有 Vue 的使用经验</li>
 <li>熟练使用 Git 进行版本控制</li>
 <li>熟悉基本的数据结构和算法</li>
-<li>英语水平 CET-6，熟练使用 Google/StackOverflow/Wikipedia, 有阅读英文文档并解决工作中遇到的问题的能力</li>
+<li>英语水平 CET-6，熟练使用 Google/StackOverflow/Wikipedia, 能够从源头搜集研读英文技术资料，并输出英文技术文档</li>
 </ul>
 <h2 id="项目经验">项目经验</h2>
 <h3 id="opnenessopen-network-edge-service-software">OpneNESS(Open Network Edge Service Software)</h3>
@@ -462,10 +461,10 @@ OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon 和 F
 <li>Intel K8s Device Plugin 主要是以定制 K8s 系统Pod controller 的形式，给 K8s 集群增加 发现 worker node 硬件feature 的能力，有一定的运维自动化特点。</li>
 <li>NFD 则是通过常规的部署 K8s 应用Pod 的形式，给 K8s 集群 提供发现 worker node 硬件feature 的能力，但是提供扩展接口，能够灵活定制 发现 worker node 硬件feature 的时采用的策略。</li>
 </ol>
-<p>这个应用落地的大体构想是，区块链的方案采用Fabric, 用 Avalon 对接 Fabric 处理链下数据，同时在 Avalon 端采用 TEE 模式提供可信计算，TEE 具体采用 Intel SGX(Software Guard Extensions)指令集扩展以及相关支撑软件,包括SGX PSW(Platform Software)、Intel K8s SGX Device Plugin 以及 NFD 和 定制的 NFD SGX 扩展插件, 而又因为Fabric 以及 Avalon 都是分布式计算平台，通过两者结合并利用OpenNESS做边缘部署以及管理，从而展现 OpenNESS 在区块链和可信计算场景下的能力。</p>
+<p>这个应用落地的大体构想是通过将将 Avalon 部署到 OpenNESS之上，展现 OpenNESS 在区块链和可信计算场景下的管理边缘计算应用的能力。区块链的方案采用Fabric, 用 Avalon 对接 Fabric 处理链下数据，同时在 Avalon 端采用 TEE 模式提供可信计算，TEE 具体采用 Intel SGX(Software Guard Extensions)指令集扩展以及相关支撑软件,包括SGX PSW(Platform Software)、Intel K8s SGX Device Plugin 以及 NFD 和 定制的 NFD SGX 扩展插件, 而又因为Fabric 以及 Avalon 都是分布式计算平台，通过两者结合并利用OpenNESS做边缘部署以及管理，从而展现 OpenNESS 在区块链和可信计算场景下的能力。</p>
 <p>在预研过程中：</p>
 <ol>
-<li>研读 Fabric 和 Avalon 项目官方文档，了解 Fabric 和 Avalon 整体架构，根据业务逻辑流程走读了 Avalon 的代码，了解待计算数据上链，并通过 Avalon 做链下计算的流程。</li>
+<li>研读 Fabric 和 Avalon 项目官方文档，了解 Fabric 和 Avalon 整体架构，根据业务逻辑流程走读了 Avalon 的代码，了解待计算数据上链并通过 Avalon 做链下计算的流程。</li>
 <li>部署 Fabric 测试集群，部署 Avalon, 基于Intel SGX 硬件平台，搭建了一套完整的软硬件验证环境，测试验证了整个可信计算的流程。</li>
 <li>研读 Intel SGX 官方文档，了解 SGX 概念，为正确使用 Intel K8s Device Plugin 以及 NFD 做知识储备。</li>
 <li>研读 Intel K8s Device Plugin 的SGX相关部分源代码，以及 NFD 的源代码，搭建测试环境，部署评估两者在 OpenNESS 上使能 SGX 的可行性。</li>
