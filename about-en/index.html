@@ -67,7 +67,7 @@
 <meta itemprop="description" content="Personal Information  E-mail：polar9527@gmail.com GitHub：https://github.com/polar9527 Personal Home Page：https://polar9527.github.io Stack Overflow：http://stackoverflow.com/users/6419115/polar9527 Douban：https://book.douban.com/people/52877036/  Skills  Familiar with Golang, understand Golang programming features, such as goroutine,channel, etc., read the source code of Golang Runtime partly, understand the concurrency mechanism of Golang Familiar with Docker and Kubernetes, understand the basic principle of Docker and Kubernetes, have experience in using Kubernetes Can use the following languages: Python; Javascript; C/C&#43;&#43; Familiar with Linux, AWS and other development environments Able to break through the limitation of high-level programming language level, understand the assembly under x86 platform, understand the C language system programming under UNIX /Linux environment A certain understanding of the operating system principle, currently studying the XV6 source code Complete knowledge system of Web front and back end, understand HTML/CSS/ JavaScript and other front-end knowledge, have experience in using VUE Skilled in using Git for version control Familiar with basic data structures and algorithms English CET-6, skilled in using Google/StackOverflow/Wikipedia, able to collect and research English technical materials from the source, and output English technical documents  Project Experiences OpneNESS(Open Network Edge Service Software) Jul.">
 <meta itemprop="datePublished" content="2021-01-22T21:38:52&#43;08:00" />
 <meta itemprop="dateModified" content="2021-01-23T21:41:52&#43;08:00" />
-<meta itemprop="wordCount" content="1724">
+<meta itemprop="wordCount" content="1728">
 
 
 
@@ -408,6 +408,7 @@
       </ul>
     </li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#note">Note</a></li>
   </ul>
 </nav>
   </div>
@@ -438,27 +439,17 @@
 </ul>
 <h2 id="project-experiences">Project Experiences</h2>
 <h3 id="opnenessopen-network-edge-service-software">OpneNESS(Open Network Edge Service Software)</h3>
-<p><code>Jul. 2020 - Now</code><br>
-OpenNESS is an open source edge application management system based on Kubernetes that enables service providers and enterprises to build, deploy and operate their own edge applications on the edge of any network, enabling easy migration of apps running on the Telco/Public Cloud to the edge.</p>
-<ul>
-<li>
-<p><code>Jul. 2020 -  - Aug. 2020</code>  <br>
-The development of unit tests for part of the core microservice components of OpenNESS, increased the code unit test coverage from about 50% to 100%,  the development language is Golang.</p>
+<h4 id="jul-2020---now">Jul. 2020 - Now</h4>
+<p>OpenNESS is an open source edge application management system based on Kubernetes that enables service providers and enterprises to build, deploy and operate their own edge applications on the edge of any network, enabling easy migration of apps running on the Telco/Public Cloud to the edge.</p>
+<h5 id="jul-2020---aug-2020">Jul. 2020 - Aug. 2020</h5>
+<p>The development of unit tests for part of the core microservice components of OpenNESS, increased the code unit test coverage from about 50% to 100%,  the development language is Golang.</p>
 <ol>
 <li>Fix a bug introduced by project members via go.mod during development.</li>
 <li>The was introduced by me to cover code branches which the test framework could not test under the normal situation.</li>
 </ol>
-</li>
-<li>
-<p><code>Sep. 2020 - Nov. 2020</code>  <br>
-Investigate the application of blockchain and TCF(Trusted Compute Service) projects in OpenNESS. The main work is the Avalon and Fabric ramp-up, which are the sub-project of Hyperledger, and investigation of the open source project Intel K8s Device Plugin and K8s Add-on NFD(Node Feature Discovery) which can support the deployment of Avalon in OpenNESS.</p>
-<ol>
-<li>Fabric (Golang) is an Enterprise-level Consortium blockchain project with access mechanism. Its core consensus component has been upgraded from the Kafka cluster to the Raft cluster which is a CFT(Crash Fault Tolerance) cluster and will continue to evolve into the PBFT(Practical Byzantine Fault Tolerance) cluster in the future to enhance the decentralized nature of its blockchain.</li>
-<li>Avalon (Python/C++) is a Trusted Compute Service (TCF) software framework that aims to provide off-chain trusted computing for blockchains, addressing pain points such as scalability and privacy while maintaining the security and resilience of transactions. It supports Trusted Execution Environment (TEE), Zero Knowledge Proofs (ZKP), and Multi-Party Compute (MPC).</li>
-<li>Intel K8S Device Plugin is mainly in the form of customized K8S system Pod controller, which adds the ability to discover worker node hardware feature to the K8S cluster, and has the features of operation and maintenance automation.</li>
-<li>NFD provides the K8S cluster with the ability to discover the hardware feature of worker nodes in the form of conventional deployment of K8S application Pod, but it also provides an extension interface, which can flexibly customize the strategy when discovering the hardware feature of worker nodes.</li>
-</ol>
-<p>The general idea behind this application is that Fabric and Avalon which both are distributed computing platforms will be deployed by OpenNESS to show OpenNESS's ability to manage edge computing applications in blockchain and trusted computing scenarios. The blockchain scheme adopts Fabric and Avalon will be used to connect Fabric to do the off-chain computation. Meanwhile, TEE mode is adopted in the Avalon platform to provide trusted compute. TEE uses Intel SGX(Software Guard Extensions) instruction set Extensions and supporting Software, including SGX PSW(Platform Software), Intel K8S SGX Device Plugin, NFD and custom NFD SGX Extension.</p>
+<h5 id="sep-2020---nov-2020">Sep. 2020 - Nov. 2020</h5>
+<p>Investigate the application of blockchain and TCF(Trusted Compute Service) projects in OpenNESS. The main work is the Avalon and Fabric ramp-up, which are the sub-project of Hyperledger, and investigation of the open source project Intel K8s Device Plugin and K8s Add-on NFD(Node Feature Discovery) which can support the deployment of Avalon in OpenNESS.</p>
+<p>The general idea behind this application is that Avalon<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and Fabric<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> which both are distributed computing platforms will be deployed by OpenNESS to show OpenNESS's ability to manage edge computing applications in blockchain and trusted computing scenarios. The blockchain scheme adopts Fabric and Avalon will be used to connect Fabric to do the off-chain computation. Meanwhile, TEE mode is adopted in the Avalon platform to provide trusted compute. TEE uses Intel SGX(Software Guard Extensions) instruction set Extensions and supporting Software, including SGX PSW(Platform Software), Intel K8S SGX Device Plugin<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, NFD<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> and custom NFD SGX Extension.</p>
 <p>During investigation:</p>
 <ol>
 <li>I read the official documentation of Fabric and Avalon projects, understood the overall architecture of Fabric and Avalon, walk through the code of Avalon according to the business logic process, clarify myself about how the data is uploaded to blockchain and sent to Avalon for off-chain trusted computing.</li>
@@ -467,10 +458,8 @@ Investigate the application of blockchain and TCF(Trusted Compute Service) proje
 <li>I read Intel K8S Device Plugin SGX related part of the source code, as well as the source code of NFD, setup a test environment to figure out how to use both in order to enable SGX on OpenNESS.</li>
 <li>Two technical slides, about Avalon and SGX NFD , are exported, as well as several technical specification documents.</li>
 </ol>
-</li>
-<li>
-<p><code>Nov. 2020 - now</code> <br>
-Participate in the integration development of EMCO (Edge Multi-Cluster Orchestrator) and OpenNESS to ensure the delivery of tasks at a critical time-point. EMCO is a software framework that provides multi-cluster cloud native application deployment capabilities, it is integrated into OpenNESS to enhance its edge deployment capabilities.</p>
+<h5 id="nov-2020---now">Nov. 2020 - now</h5>
+<p>Participate in the integration development of EMCO (Edge Multi-Cluster Orchestrator) and OpenNESS to ensure the delivery of tasks at a critical time-point. EMCO is a software framework that provides multi-cluster cloud native application deployment capabilities, it is integrated into OpenNESS to enhance its edge deployment capabilities.</p>
 <p>Job content:</p>
 <ol>
 <li>I complete the ramp-up of EMCO in several days, take over the existing work, clarify the development tasks, cooperate with foreign developers of EMCO project, and complete the development of Ansible script of OpenNESS automation integration tool.</li>
@@ -478,8 +467,6 @@ Participate in the integration development of EMCO (Edge Multi-Cluster Orchestra
 <li>I complete relevant automation scripts and output internal test manual documents, and assist the QA for validation.</li>
 <li>I resolve bugs reported by QA and other teams using this feature.</li>
 </ol>
-</li>
-</ul>
 <h3 id="xtar">XTAR</h3>
 <p>Jul. 2019 - Dec. 2019
 Decentralized trading system based on blockchain</p>
@@ -500,7 +487,7 @@ Decentralized trading system based on blockchain</p>
 <li>The P2P network layer of the back-end service development system in the XTAR ecosystem was modified by me from a structured P2P network (implemented by Kademlia algorithm) to an unstructured P2P network to improve the node search performance.</li>
 <li>In XTAR system P2P layer node network quality management, using EWMA(exponential weighted moving average) record of Peer node RTT(round-trip Time, round-trip Time) statistics for the ranking of the current node's peer.</li>
 <li>The function of message limiting flow is implemented in the P2P layer of XTAR system to prevent the node crashing caused by message overload</li>
-<li>The coprogram pool is implemented in the P2P layer of XTAR system to reduce GC pressure and improve system performance</li>
+<li>The coroutine pool is implemented in the P2P layer of XTAR system to reduce GC pressure and improve system performance</li>
 <li>Setup XTAR system Docker cluster development and debugging environment</li>
 <li>XTAR Native System Contract Test Process Development</li>
 <li>The development of XTAR system online IDE(integrated development environment) backend</li>
@@ -619,9 +606,27 @@ Object Storage System Based on &lsquo;Ceph&rsquo;</p>
 </ul>
 <h2 id="education">Education</h2>
 <ul>
-<li>Huazhong University of Science and Technology，<strong>Software Engineering (Master)</strong> 2009 - 2012</li>
-<li>Wuhan University of Technology，<strong>Electronic Information Engineering (Bach.)</strong> 2004 - 2008</li>
+<li>Huazhong University of Science and Technology，2009 - 2012  <strong>Software Engineering (Master)</strong></li>
+<li>Wuhan University of Technology，2004 - 2008  <strong>Electronic Information Engineering (Bach.)</strong></li>
 </ul>
+<h2 id="note">Note</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Avalon (Python/C++) is a Trusted Compute Service (TCF) software framework that aims to provide off-chain trusted computing for blockchains, addressing pain points such as scalability and privacy while maintaining the security and resilience of transactions. It supports Trusted Execution Environment (TEE), Zero Knowledge Proofs (ZKP), and Multi-Party Compute (MPC). <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Fabric (Golang) is an Enterprise-level Consortium blockchain project with access mechanism. Its core consensus component has been upgraded from the Kafka cluster to the Raft cluster which is a CFT(Crash Fault Tolerance) cluster and will continue to evolve into the PBFT(Practical Byzantine Fault Tolerance) cluster in the future to enhance the decentralized nature of its blockchain. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Intel K8S Device Plugin is mainly in the form of customized K8S system Pod controller, which adds the ability to discover worker node hardware feature to the K8S cluster, and has the features of operation and maintenance automation. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>NFD provides the K8S cluster with the ability to discover the hardware feature of worker nodes in the form of conventional deployment of K8S application Pod, but it also provides an extension interface, which can flexibly customize the strategy when discovering the hardware feature of worker nodes. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
   </div>
 

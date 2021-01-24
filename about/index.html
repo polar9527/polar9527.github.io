@@ -67,7 +67,7 @@
 <meta itemprop="description" content="个人信息 邮箱：polar9527@gmail.com GitHub：https://github.com/polar9527 个人主页：http">
 <meta itemprop="datePublished" content="2021-01-22T21:38:52&#43;08:00" />
 <meta itemprop="dateModified" content="2021-01-23T21:41:52&#43;08:00" />
-<meta itemprop="wordCount" content="3388">
+<meta itemprop="wordCount" content="3349">
 
 
 
@@ -391,7 +391,7 @@
     </li>
     <li><a href="#项目经验">项目经验</a>
       <ul>
-        <li><a href="#opnenessopen-network-edge-service-software">OpneNESS(Open Network Edge Service Software)</a></li>
+        <li><a href="#opennessopen-network-edge-service-software">OpenNESS(Open Network Edge Service Software)</a></li>
         <li><a href="#xtar">XTAR</a></li>
         <li><a href="#linkeychain-公链系统">Linkeychain 公链系统</a></li>
         <li><a href="#conspace-对象存储系统">ConSpace 对象存储系统</a></li>
@@ -408,6 +408,7 @@
       </ul>
     </li>
     <li><a href="#教育经历">教育经历</a></li>
+    <li><a href="#注释">注释</a></li>
   </ul>
 </nav>
   </div>
@@ -437,40 +438,28 @@
 <li>英语水平 CET-6，熟练使用 Google/StackOverflow/Wikipedia, 能够从源头搜集研读英文技术资料，并输出英文技术文档</li>
 </ul>
 <h2 id="项目经验">项目经验</h2>
-<h3 id="opnenessopen-network-edge-service-software">OpneNESS(Open Network Edge Service Software)</h3>
-<p><code>2020 年 7 月 - 今</code><br>
-OpenNESS是一个基于Kubernetes的开源边缘应用程序管理系统，使服务提供商和企业能够在任何网络的边缘上构建、部署和操作自己的边缘应用程序，支持通过简易的方式将运行在 Telco/Public Cloud 中的APP迁移到边缘。</p>
-<ul>
-<li>
-<p><code>2020 年 7 月 - 2020 年 8 月</code>  <br>
-OpenNESS 部分核心微服务组件的单元测试的开发，将代码单元测试覆盖度提高到100%，开发语言为Golang。</p>
+<h3 id="opennessopen-network-edge-service-software">OpenNESS(Open Network Edge Service Software)</h3>
+<h4 id="2020-年-7-月---今">2020 年 7 月 - 今</h4>
+<p>OpenNESS是一个基于Kubernetes的开源边缘应用程序管理系统，使服务提供商和企业能够在任何网络的边缘上构建、部署和操作自己的边缘应用程序，支持通过简易的方式将运行在 Telco/Public Cloud 中的APP迁移到边缘。</p>
+<h5 id="2020-年-7-月---2020-年-8-月">2020 年 7 月 - 2020 年 8 月</h5>
+<p>OpenNESS 部分核心微服务组件的单元测试的开发，将代码单元测试覆盖度提高到100%，开发语言为Golang。</p>
 <ol>
-<li>在开n过程中测试并发现项目成员通过go.mod引入的bug。</li>
+<li>在开发过程中测试并发现项目成员通过go.mod引入的bug。</li>
 <li>引入monkey patch 工具，将常规流程下测试框架无法测试覆盖的代码分支覆盖。</li>
 </ol>
-</li>
-<li>
-<p><code>2020 年 9 月 - 2020 年 11 月 </code>  <br>
-OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon 和 Fabric 这两个子项目的 Ramp-Up，以及支撑 Avalon 在 OpenNESS 中落地的 开源第三方 Intel K8s Device Plugin 和 K8s Add-on NFD(Node Feature Discovery) 的调研。</p>
-<ol>
-<li>Fabric (Golang) 是一个区块链领域里带有准入机制的企业级联盟链项目, 其核心共识组件已经由 Kafka消息队列集群 升级到 CFT(Crash Fault Tolerance) 的 Raft 集群，未来将继续进化到 PBFT(Practical Byzantine Fault Tolerance)集群 以便增强其区块链的去中心化属性。</li>
-<li>Avalon (Python/C++) 则是一个可信计算（TCF, Trusted Compute Service）框架，旨在为区块链提供链下可信计算,在取保交易的安全性和弹性的同时,解决可扩展性和隐私性等痛点。 支持授信执行环境（TEE，Trusted Execution Environment）、零知识证明（ZKP, Zero Knowledge Proofs）和多方计算（MPC, Multi-Party Compute）。</li>
-<li>Intel K8s Device Plugin 主要是以定制 K8s 系统Pod controller 的形式，给 K8s 集群增加 发现 worker node 硬件feature 的能力，有一定的运维自动化特点。</li>
-<li>NFD 则是通过常规的部署 K8s 应用Pod 的形式，给 K8s 集群 提供发现 worker node 硬件feature 的能力，但是提供扩展接口，能够灵活定制 发现 worker node 硬件feature 的时采用的策略。</li>
-</ol>
-<p>这个应用落地的大体构想是通过将将 Avalon 部署到 OpenNESS之上，展现 OpenNESS 在区块链和可信计算场景下的管理边缘计算应用的能力。区块链的方案采用Fabric, 用 Avalon 对接 Fabric 处理链下数据，同时在 Avalon 端采用 TEE 模式提供可信计算，TEE 具体采用 Intel SGX(Software Guard Extensions)指令集扩展以及相关支撑软件,包括SGX PSW(Platform Software)、Intel K8s SGX Device Plugin 以及 NFD 和 定制的 NFD SGX 扩展插件, 而又因为Fabric 以及 Avalon 都是分布式计算平台，通过两者结合并利用OpenNESS做边缘部署以及管理，从而展现 OpenNESS 在区块链和可信计算场景下的能力。</p>
-<p>在预研过程中：</p>
+<h5 id="2020-年-9-月---2020-年-11-月">2020 年 9 月 - 2020 年 11 月</h5>
+<p>OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 和 Fabric<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 这两个子项目的 Ramp-Up，以及支撑 Avalon 在 OpenNESS 中落地的 开源第三方 Intel K8s Device Plugin <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>和 K8s Add-on NFD(Node Feature Discovery)<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 的调研。</p>
+<p>这个应用落地的大体构想是，区块链的方案采用Fabric, 用 Avalon 对接 Fabric 处理链下数据，同时在 Avalon 端采用 TEE 模式提供可信计算，TEE 具体采用 Intel SGX(Software Guard Extensions)指令集扩展以及相关支撑软件,包括SGX PSW(Platform Software)、Intel K8s SGX Device Plugin 以及 NFD 和 定制的 NFD SGX 扩展插件, 而又因为Fabric 以及 Avalon 都是分布式计算平台，通过两者结合并利用OpenNESS做边缘部署以及管理，从而展现 OpenNESS 在区块链和可信计算场景下的能力。</p>
+<p>在预研过程中:</p>
 <ol>
 <li>研读 Fabric 和 Avalon 项目官方文档，了解 Fabric 和 Avalon 整体架构，根据业务逻辑流程走读了 Avalon 的代码，了解待计算数据上链并通过 Avalon 做链下计算的流程。</li>
 <li>部署 Fabric 测试集群，部署 Avalon, 基于Intel SGX 硬件平台，搭建了一套完整的软硬件验证环境，测试验证了整个可信计算的流程。</li>
 <li>研读 Intel SGX 官方文档，了解 SGX 概念，为正确使用 Intel K8s Device Plugin 以及 NFD 做知识储备。</li>
 <li>研读 Intel K8s Device Plugin 的SGX相关部分源代码，以及 NFD 的源代码，搭建测试环境，部署评估如何使用两者在 OpenNESS 上使能 SGX。</li>
-<li>输出了 Avalon Ranmp-up 和 SGX NFD 两份技术slide，以及若干技术说明文档。</li>
+<li>输出了 Avalon Ramp-up 和 SGX NFD 两份技术slide，以及若干技术说明文档。</li>
 </ol>
-</li>
-<li>
-<p><code>2020 年 11 月 - 今</code> <br>
-参与 EMCO（Edge Multi-Cluster OrChestrator）与 OpenNESS 的集成开发，保证任务在关键时间节点正常交付。EMCO 是一个提供多集群云原生应用部署功能的软件框架，集成到OpenNESS中是为了增强其边缘部署能力。</p>
+<h5 id="2020-年-11-月---今">2020 年 11 月 - 今</h5>
+<p>参与 EMCO（Edge Multi-Cluster OrChestrator）与 OpenNESS 的集成开发，保证任务在关键时间节点正常交付。EMCO 是一个提供多集群云原生应用部署功能的软件框架，集成到OpenNESS中是为了增强其边缘部署能力。</p>
 <p>工作内容：</p>
 <ol>
 <li>迅速完成 EMCO 的 Ramp-Up, 接手已有的工作，理清开发任务，与EMCO项目国外的开发人员协作，完成 OpenNESS 自动化集成工具的 ansible 脚本开发。</li>
@@ -478,14 +467,12 @@ OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon 和 F
 <li>完成相关自动化脚本以及输出内部测试文档，并协助测试人员工作。</li>
 <li>解决测试人员和组外人员使用集成工具时上报的Bug。</li>
 </ol>
-</li>
-</ul>
 <h3 id="xtar">XTAR</h3>
 <p>2019 年 7 月 - 2019 年 12 月<br>
 基于区块链的去中心化的交易系统</p>
 <h4 id="项目简介">项目简介</h4>
 <p>XTAR 是以 VRF(可验证随机函数算法)和 PBFT(实用拜占庭容错算法)为基础来实现 DPOS(Delegated Proof of Stake，委任权益证明)机制的去中心化价值交易平台。独有的两阶段共识算法，提高了整个系统的区块出块速度，并通过 native 系统合约实现了链上治理，保证了共识的民主公平。</p>
-<h5 id="主要职责">主要职责</h5>
+<h4 id="主要职责">主要职责</h4>
 <ul>
 <li>XTAR 系统对等网络层(P2P 网络层)的功能重构和性能优化</li>
 <li>XTAR 底层代码的交叉 review</li>
@@ -493,7 +480,7 @@ OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon 和 F
 <li>XTAR 系统生态圈内后端服务的开发</li>
 <li>基于 XTAR 系统 SDK 的系统流程测试开发</li>
 </ul>
-<h5 id="技术细节">技术细节</h5>
+<h4 id="技术细节">技术细节</h4>
 <ul>
 <li>开发语言为<code>Golang</code></li>
 <li>网络层第三方库为<code>libp2p</code></li>
@@ -510,12 +497,12 @@ OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon 和 F
 基于<code>DPOS</code>的区块链公链</p>
 <h4 id="项目简介-1">项目简介</h4>
 <p>Linkeychain 是第二代区块链系统，支持智能合约，<code>授权股权证明机制 DPOS</code>，为公司的区块链商业应用提供底层技术支撑。</p>
-<h5 id="主要职责-1">主要职责</h5>
+<h4 id="主要职责-1">主要职责</h4>
 <ul>
 <li>搭建基于区块链的底层服务</li>
 <li>负责公链系统的<code>p2p</code>网络层的搭建和维护</li>
 </ul>
-<h5 id="技术细节-1">技术细节</h5>
+<h4 id="技术细节-1">技术细节</h4>
 <ul>
 <li>开发语言为<code>Golang</code></li>
 <li>参考开源项目<a href="https://github.com/nebulasio/go-nebulas">星云链</a></li>
@@ -526,13 +513,13 @@ OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon 和 F
 基于<code>Ceph</code>的对象存储系统</p>
 <h4 id="项目简介-2">项目简介</h4>
 <p>ConSpace 一个基于<code>Ceph</code>的网盘系统</p>
-<h5 id="主要职责-2">主要职责</h5>
+<h4 id="主要职责-2">主要职责</h4>
 <ul>
 <li>开发环境中<code>Ceph</code>集群的搭建部署</li>
 <li>开发环境中<code>Ceph</code>对象存储系统的搭建部署</li>
 <li>基于<code>Ceph</code>对象存储提供的<code>Amazon S3</code>兼容的 RESTful 接口开发<code>Django</code>后端逻辑</li>
 </ul>
-<h5 id="技术细节-2">技术细节</h5>
+<h4 id="技术细节-2">技术细节</h4>
 <ul>
 <li>采用了 Python 第三方库<code>boto3</code>和<code>requests</code>，在<code>Ceph</code>对象存储系统提供的与 Amazon S3 兼容的 RESTful 接口上，完成了 Http 协议层的 AWSv4 签名认证，以及与对象存储相关的文件操作功能和对象存储层用户信息的管理</li>
 <li>用<code>Django</code>管理 ConSpace 对象存储系统业务层数据</li>
@@ -622,6 +609,24 @@ OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon 和 F
 <li>华中科技大学，<strong>软件工程（硕士）</strong> 2012 年毕业</li>
 <li>武汉理工大学，<strong>电子信息工程（本科）</strong> 2008 年毕业</li>
 </ul>
+<h2 id="注释">注释</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Avalon (Python/C++) 则是一个可信计算（TCF, Trusted Compute Service）框架，旨在为区块链提供链下可信计算,在取保交易的安全性和弹性的同时,解决可扩展性和隐私性等痛点。 支持授信执行环境（TEE，Trusted Execution Environment）、零知识证明（ZKP, Zero Knowledge Proofs）和多方计算（MPC, Multi-Party Compute）。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Fabric (Golang) 是一个区块链领域里带有准入机制的企业级联盟链项目, 其核心共识组件已经由 Kafka消息队列集群 升级到 CFT(Crash Fault Tolerance) 的 Raft 集群，未来将继续进化到 PBFT(Practical Byzantine Fault Tolerance)集群 以便增强其区块链的去中心化属性。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Intel K8s Device Plugin 主要是以定制 K8s 系统Pod controller 的形式，给 K8s 集群增加 发现 worker node 硬件feature 的能力，有一定的运维自动化特点。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>NFD 则是通过常规的部署 K8s 应用Pod 的形式，给 K8s 集群 提供发现 worker node 硬件feature 的能力，但是提供扩展接口，能够灵活定制 发现 worker node 硬件feature 的时采用的策略。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
   </div>
 
