@@ -67,7 +67,7 @@
 <meta itemprop="description" content="个人信息 邮箱：polar9527@gmail.com GitHub：https://github.com/polar9527 个人主页：http">
 <meta itemprop="datePublished" content="2021-01-22T21:38:52&#43;08:00" />
 <meta itemprop="dateModified" content="2021-01-23T21:41:52&#43;08:00" />
-<meta itemprop="wordCount" content="3349">
+<meta itemprop="wordCount" content="3348">
 
 
 
@@ -448,7 +448,7 @@
 <li>引入monkey patch 工具，将常规流程下测试框架无法测试覆盖的代码分支覆盖。</li>
 </ol>
 <h5 id="2020-年-9-月---2020-年-11-月">2020 年 9 月 - 2020 年 11 月</h5>
-<p>OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 和 Fabric<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 这两个子项目的 Ramp-Up，以及支撑 Avalon 在 OpenNESS 中落地的 开源第三方 Intel K8s Device Plugin <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>和 K8s Add-on NFD(Node Feature Discovery)<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 的调研。</p>
+<p>OpenNESS 应用落地预研，主要是 Hyperledger 开源项目下 Avalon<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 和 Fabric<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 这两个子项目的 Ramp-Up，以及支撑 Avalon 在 OpenNESS 中落地的 开源第三方 Intel K8s Device Plugin<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 和 K8s Add-on NFD(Node Feature Discovery)<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 的调研。</p>
 <p>这个应用落地的大体构想是，区块链的方案采用Fabric, 用 Avalon 对接 Fabric 处理链下数据，同时在 Avalon 端采用 TEE 模式提供可信计算，TEE 具体采用 Intel SGX(Software Guard Extensions)指令集扩展以及相关支撑软件,包括SGX PSW(Platform Software)、Intel K8s SGX Device Plugin 以及 NFD 和 定制的 NFD SGX 扩展插件, 而又因为Fabric 以及 Avalon 都是分布式计算平台，通过两者结合并利用OpenNESS做边缘部署以及管理，从而展现 OpenNESS 在区块链和可信计算场景下的能力。</p>
 <p>在预研过程中:</p>
 <ol>
